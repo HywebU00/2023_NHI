@@ -1,0 +1,19 @@
+// 首頁：系統公告 //////////////////////////////////////////////////
+.bulletin{
+  @extend %primSecWidth;
+  .blockHeader{
+    margin: 0;
+    align-items: flex-start;
+    .major{
+      padding: 0 20px; height: 2em; line-height: 2.15;
+      font-size: 1.125rem; display: inline-block; width: auto; 
+      @include grandient1(180deg); color: $fontInvert;
+      border-radius: 2em;
+      &::after{display: none;}
+    }
+  }
+  p.subject{
+    margin: .8em 0 0;
+    font-size: 1.125rem; font-weight: bold; line-height: 1.6;
+  }
+}

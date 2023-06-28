@@ -1,0 +1,349 @@
+a:focus{outline: none;}
+
+
+
+//  快捷鍵 ----------------------------------------------
+.accesskey{ display: none; }
+@media screen and (min-width: $wwNormal){
+  a.accesskey{ display: block; z-index: 9;
+    position: absolute; left: 0; top: 0; margin: 2px;
+    text-decoration: none;
+    &:focus, &:hover { outline: 2px solid $assistant1;}
+  }
+  .webHeader .accesskey{color: $primaryColor;}
+  .webFooter .accesskey{ top: 4px; color: $primaryColor;}
+  .main .accesskey { top: 20px; left: -1.5em; color: $gray;}
+}
+@media screen and (min-width: $wwMaximum){
+  .webHeader .accesskey,
+  .webFooter .accesskey { left: calc(50vw - #{$wwMaximum}*.5);}
+}
+
+
+// more //////////////////////
+.more{
+  text-align: center; margin: 1em 0 0;
+  --moreColor : #000;
+  a{
+    position: relative;
+    display: inline-block; height: 2.8em; line-height: 2.8; padding: 0 64px 0 16px;
+    color: var(--moreColor); text-decoration: none; border-radius: 2em;
+    
+    &::before, &::after{
+      content: ''; position: absolute;
+      transition: .2s;
+    }
+    &::before{
+      right: 15px; top:calc(50% - 5px); width: 8px;height: 8px;
+      border: 2px solid var(--moreColor); border-left: none; border-bottom: none;
+      transform:  rotate(45deg);
+    }
+    &::after {
+      top: calc(50% - 1px); right: 16px;
+      width: 2px; height: 2px; border-radius: 1px;
+      background-color: var(--moreColor);
+      box-shadow: var(--moreColor) -1px 0 0, var(--moreColor) -2px 0 0, var(--moreColor) -3px 0 0, var(--moreColor) -4px 0 0, var(--moreColor) -5px 0 0, var(--moreColor) -6px 0 0, var(--moreColor) -7px 0 0, var(--moreColor) -8px 0 0, var(--moreColor) -13px 0 0 , var(--moreColor) -18px 0 0, var(--moreColor) -23px 0 0, var(--moreColor) -28px 0 0, var(--moreColor) -33px 0 0, var(--moreColor) -38px 0 0;
+    }
+
+    &:hover, &:focus {
+      &::after { width: 6px;  }
+    }
+
+  }
+}
+
+
+// 跳至內容區 ----------------------------------------------
+.goCenter{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; position: absolute; top: -2em; left: 0; z-index: 99;
+    padding: 0 1em; margin-left: 2em; border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    font-size: .9rem; height: 1.6em; line-height: 1.6;
+    background-color: $primaryColor; color: $fontInvert;
+    text-decoration: none; outline: none;  cursor: pointer;
+    transition:top .3s; 
+    &:focus{ top: 0;}
+    &:hover, &:focus{  opacity: 1; }
+  }
+  @media screen and (min-width: $wwMaximum){
+    left: calc(50vw  - #{$wwMaximum}*.5);
+  }
+}
+
+// 查詢圖示 + 行動版側欄開關 ////////////////////////////////////////
+.searchCtrl, .sidebarCtrl{ 
+  position: relative;  width: 44px; height: 44px;
+  border-radius: 0; background-color: transparent; border: none; margin: 0;
+  border: none; box-shadow: none;background-color: transparent;
+  text-indent: -20em; overflow: hidden;
+}
+
+// 查詢圖示 ////////////////////
+.searchCtrl{ 
+  transition: background-color .2s, box-shadow .2s;
+
+  &::before, &::after{
+    content: ''; position: absolute;
+  }
+  &::before{
+    left: calc(50% - 12px); top: calc(50% - 12px);
+    width: 14px; height: 14px; border: 3px solid $white; border-radius: 50%;
+  }
+  &::after{
+    width: 11px; height: 4px; background-color: $white; border-radius: 0 2px 2px 0;
+    left: calc(50% + 2px); top: calc(50% + 6px);
+    transform: rotate(45deg);
+  }
+
+  &:hover, &:focus{ 
+    background-color: $btnBg1; box-shadow: none;
+  }
+  &:focus{box-shadow: $btnBg1 0 0 0 2px;}
+
+  @media screen and (min-width: $wwNormal){
+    border-radius: 4px;
+  }
+}
+
+// 行動版側欄開關 //////////////////////
+.sidebarCtrl{
+  &::before, &::after{
+    content: ''; position: absolute; left: 8px;height: 3px;
+    border-radius: 3px;
+    background: $white; 
+    transition: .2s;
+  }
+  &::before{
+    top: 12px; width: 28px; 
+    box-shadow: $white 0 18px 0;
+  }
+  &::after{
+    top: 21px; width: 6px;
+    box-shadow: $white 4px 0 0, $white 8px 0 0, $white 12px 0 0 , $white 22px 0;
+  }
+
+  &:hover, &:focus {
+    background-color: $btnBg1;
+    box-shadow:none
+    // &::before, &::after{ background-color: $white;}
+    // &::before{ box-shadow: $white 0 18px 0;}
+
+  }
+}
+
+.sidebarCtrl{
+  &.closeIt{
+    &::before, &::after{ background-color: $white;}
+    &::before{ box-shadow: $white 0 18px 0;}
+    &::after{
+      box-shadow: $white 5px 0 0, $white 10px 0 0, $white 21px 0;
+    }
+    &::before{ 
+      box-shadow: none;
+      top: 22px; transform: rotate(45deg);
+    }
+    &:after{
+      box-shadow: none;
+      width: 28px; transform: rotate(-45deg);
+    }
+  }
+}
+
+
+// 側欄遮罩 ----------------------------------------------
+.sidebarMask {
+  display: none;z-index: 980;
+  position: fixed;left: 0;right: 0;top: 0;bottom: 0;
+  background-color: rgba(0,0,0,.8);
+}
+
+// 關閉 「X」
+button.closeThis{
+  position: relative;
+  height: 44px; width: 44px; padding: 0; margin: 0;
+  text-indent: -20em; overflow: hidden;
+  background-color: rgba(0,0,0,.8);box-shadow: none;border: none;
+  &::before, &::after{
+    content: ''; position: absolute; left: 11px; top: 21px;
+    width: 24px; height: 2px; background-color: #fff;
+  }
+  &::before{
+    transform: rotate(45deg);
+  }
+  &::after{
+    transform: rotate(-45deg);
+  }
+
+  &:hover{ background-color: $btnBg2; box-shadow: none; }
+  &:focus{ background-color: $btnBg1; box-shadow: $btnBg1 0 0 0 2px}
+}
+
+
+
+
+// slick套件 ----------------------------------------------
+// slick套件: 左右箭頭
+.slick-arrow{
+  position: absolute; top: 50%; margin: -22px 0 0; z-index: 9;
+  width: 44px; height: 44px; border-radius: 50%; 
+  text-indent: -20em; overflow: hidden; border: none;
+  background-color: transparent;
+  box-shadow: $secondaryColor 0 0 0 0;
+  transition: background .2s, box-shadow .1s;
+
+  &::before, &::after{
+    content: ''; position: absolute;left: calc(50% - 12px);
+    width: 20px; height: 5px;border-radius: 3px;
+    background-color: #aaa;
+  }
+  &::before{
+    bottom: calc(50% + 3px);
+    transform: rotate(-45deg);
+  }
+  &::after{
+    top:calc(50% + 3px);
+    transform: rotate(45deg);
+  }
+  &.slick-prev{left: 4px;}
+  &.slick-next{ transform:scaleX(-100%);right: 4px;}
+
+  &:hover, &:focus{
+    background-color: $secondaryColor;
+    box-shadow: $secondaryColor 0 0 0 4px;
+    transition: background .2s, box-shadow .5s;
+  }
+}
+// slick套件: 點點 indicators
+.slick-dots{
+  $dotDia: 8px; // 圓點直徑
+  margin: 10px auto 5px; z-index: 99;
+  display: flex; justify-content: center;
+  list-style: none; margin: 0 auto; padding: 0;
+  li{ 
+    flex: 0 0 auto; margin: 0 4px; padding: 0;
+    button{
+      width: $dotDia; height: $dotDia; border-radius: $dotDia;
+      padding: 0; font-size: 0; border: none; box-shadow: none;
+      background: darken($gray, 20%);
+      transform: .2s;
+      &:hover, &:focus {background-color: $grayDark; }
+      // &:focus{
+      //   width: calc($dotDia * 4);
+      // }
+    }
+    &.slick-active{
+      button{
+        background-color: $primaryColor; width: calc($dotDia * 4);
+      }
+    }
+  }
+}
+
+
+// 自製 photoflow 配件----------------------------------------------
+// photoflow: 左右箭頭
+.diskBtn{
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 9;
+  width: 64px; height: 64px; border-radius: 50%; 
+  text-indent: -20em; overflow: hidden; margin: 0; border: none;
+  background-color: transparentize($secondaryColor, .65);
+  cursor: pointer;
+  &::before{
+    content: ''; position: absolute; width: 14px; height: 14px;
+    left: 50%; top: 50%; margin-top: -8px;
+    border: 3px solid #fff;border-top: none; border-right: none; border-radius: 1px;
+    transform: rotate(45deg);
+  }
+  &.prev{ left: 0; 
+    &::before{ margin-left: -5px; }
+  }
+  &.next{ right: 0;
+      &::before{transform: rotate(225deg); margin-left: -11px;}
+  }
+
+  &:hover, &:focus{
+    background-color: transparentize($secondaryColor, .2);
+    box-shadow: none;
+  }
+  &:focus{
+    box-shadow: #fff 0 0 0 1px, $secondaryColor 0 0 0 4px;
+  }
+}
+
+
+// 影片播放圖示 ----------------------------------------------
+.playIcon{
+  position: absolute; left: 50%; top: 50%;
+  width: 72px; height: 72px; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,.5);
+  box-shadow: #fff 0 0 0 8px;
+  &::before{
+    content: ''; position: absolute; top: calc(50% - 20px); left: calc(50% - 9px);
+    width: 2px; height: 2px;
+    border-style: solid; border-color: transparent transparent transparent #fff;
+    border-width: 20px 0 20px 28px;
+    box-sizing: border-box; border-radius: 3px;
+  }
+  &:hover{
+    background-color: rgba(200,0,0,.9);
+  }
+}
+
+// 影片播放符號
+.videoThumb{ position: relative;
+  &::before, &::after{ content: ''; position: absolute; left: 50%; top: 50%; opacity: .7; transition: .2s;}
+  &::before{ width: 44px; height: 44px; border-radius: 50%; 
+    margin: -22px 0 0 -22px; background-color: rgba(0, 0, 0, 0.5); box-shadow: #fff 0 0 0 4px; }
+  &::after{ width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #fff;
+    margin: -10px 0 0 -4px;
+  }
+}
+a:hover .videoThumb{
+  &::before, &::after{opacity: 1;}
+  &::before {background-color: rgba(204, 0, 0, 0.8);/* box-shadow: #c00b 0 0 0 4px; */}
+}
+
+
+
+// 回頁面最上方 ----------------------------------------------
+.goTop{
+  position: fixed; bottom: -60px; right: 12px;  z-index: 90; 
+  padding:15px 0 0;margin: 0; width: 48px; height: 48px; line-height: 1;
+  text-indent: -10em; overflow: hidden;
+  font-size: .85rem; text-transform: uppercase; font-weight: bold;
+  border: none; border-radius: 50%; 
+  background: rgba(0,0,0,.6);color: $fontInvert;
+  box-shadow: rgba(255,255,255, .4) 0 0 0 3px;
+  transition:background .2s, box-shadow .2s, bottom 1.2s;
+
+  &:hover, &:focus{ background: #000;box-shadow: rgba(255,255,255, .7) 0 0 0 3px;}
+  &:focus{ box-shadow:#000 0 0 0 3px; }
+
+  &::before{
+    content: ''; position: absolute;
+    width: 10px; height: 10px; left: 18px; top: 20px;
+    border: 2px solid $fontInvert;  border-bottom: none; border-right: none;
+    transform: rotate(45deg);
+  }
+
+  &.show{bottom: 30px; transition:bottom .8s;}
+
+  @media screen and (min-width: calc($wwMaximum + 146px) ){
+    right: calc(50% - #{$wwMaximum}/2 - 60px);
+  }
+
+}
+
+
+// 鍵盤樣式
+kbd {
+  display: inline-block; vertical-align: middle; 
+  margin: 0 .1em; padding: 0 .4em; height: 1.7em; line-height: 1.6;
+  font-size: .938em; font-family: sans-serif; font-weight: bold; 
+  border: 1px solid $borderColor; border-radius: 0.2em; 
+  color: $fontColor; background: $fontInvert; 
+}

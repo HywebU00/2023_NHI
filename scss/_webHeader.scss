@@ -1,0 +1,106 @@
+.webHeader{
+  position: relative;
+  background: linear-gradient(90deg, $primaryColor 10%, $secondaryColor 90%);
+  
+  h1{
+    margin: 0 60px;padding:5px 0;
+    img{
+      display: block; height: 48px; margin: 0 auto;
+    }
+  }
+
+  .sidebarCtrl, .searchCtrl { position: absolute; top: 7px; z-index: 992;
+    &:hover, &:focus{ background-color: rgba(0,20,40,.5);}
+    &:focus{ box-shadow: rgba(0,20,40,.5) 0 0 0 3px;}
+  }
+  .sidebarCtrl { left: 7px;}
+  .searchCtrl { right: 7px;}
+
+
+  @media screen and (min-width: $wwNormal){
+    padding: 30px 0 0; margin: 0;
+    h1{
+      margin: 0 0 0 40px; padding: 0 0 24px; width: $wwMaximum*.4;
+      img{height: 72px; margin: 0;}
+    }
+
+    .searchCtrl{ top: 41px; right: 20px;}
+    .sidebarCtrl{display: none;}
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    h1 {position: relative; left: calc( 50% - $wwMaximum*.5);}
+    .topLinks{right: calc( 50% - $wwMaximum*.5);}
+    .searchCtrl{ right: calc( 50% - $wwMaximum*.5 + 20px); }
+  }
+  
+}
+
+// ---------- 快速查詢區
+.search { 
+  display: none;
+  position: absolute; top: 58px; left: auto; right: 0; z-index: 12;
+  width: 100vw; max-width:500px; padding: 24px 5vw 10px;
+  transform: translateX(100%);
+  background:$grayDark; color: darken($fontInvert, 20%);
+  transition:transform .5s;
+  &.reveal{transform: translateX(0);}
+
+  a{ color: $fontInvert; }
+
+  input[type="text"],
+  input[type="button"], input[type="submit"] {
+    float: left;
+    padding: 0 .5em; margin: 0;
+    font-size: inherit; height: 2.6em; line-height: 2.6;
+    border: none; border-radius: 0;
+    box-shadow: $assistant1 0 0 0 2px;
+  }
+  input[type="text"]{
+    width: calc(100% - 5em - 2px); max-width: 24em; margin-right: 2px;
+    background-color: #fff;
+    &:focus{box-shadow: $assistant1 0 0 0 2px, #000 0 0 0 1px inset;}
+  }
+  input[type="button"], input[type="submit"] {
+    width: 5em;background-color: $assistant1;
+    &:hover{ background-color: $primaryColor; box-shadow: $assistant1 0 0 0 2px;}
+    &:focus{ background-color: $primaryColor; box-shadow: $assistant1 0 0 0 2px, rgba(255,255,255,.8) 0 0 0 1px inset;}
+
+  }
+
+  // 熱門關鍵字
+  .hotKeywords{
+    clear: both; padding-top: 14px;
+    .label{display: inline-block; margin-right: .4em;line-height: 1.1; vertical-align: top;}
+    ul{ list-style: none; margin: 0; padding: 0; display: inline-block; line-height: 1.1;}
+    li{ margin:0 1em .4em 0; float: left;
+      a{ display: block; text-decoration: none; cursor: pointer;
+        &:hover, &:focus{ text-decoration: underline;}
+      }
+    }
+  }
+
+  .skip{
+    position: absolute; right: 0; width: 1px; height: 1px;
+    padding: 0; opacity: 0; overflow: hidden;
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+    // position: fixed;
+    top: 100px; right: 30px;
+    width: auto; height:0; padding: 0 30px;
+    background: transparentize($grayDark, .15);
+    transform: translateX(0);
+    transition: .5s;
+    // display: block; 
+    overflow: hidden;
+
+    &.reveal{ height: 7em; padding: 1.5em 30px;}
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    right:calc( 50vw - #{$wwMaximum}/2);
+  }
+
+}

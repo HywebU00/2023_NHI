@@ -1,0 +1,129 @@
+.webFooter{
+  position: relative;
+  a{text-decoration: none; }
+
+  .base{
+    position: relative; padding:40px 4vw;
+    font-size: .875em; line-height: 1.5;
+
+    p{ margin: 0;}
+  }
+
+  .fatFooter{
+    // background-color: $footBg;
+    background-image: linear-gradient( to bottom, $primaryColor 10%, $secondaryColor 90%);
+  }
+
+}
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// 控制 fat footer 開合的 button
+.fatFootCtrl{
+  position: absolute; right:4vw; top: 30px; z-index: 9;
+  width: 35px; height: 35px; padding: 0; border-radius: 50%;
+  background: #fff;
+  text-indent: -10em; overflow: hidden; border: none;
+  transition: background .2s;
+
+  &:hover, &:focus{ 
+    box-shadow: $assistant1 0 0 0 2px; outline: none;
+    background-color: $assistant1;
+    &::before{border-color: #fff;}
+  }
+  &::before{
+    content: '';position: absolute; left: 50%; top: 50%;
+    width: 9px; height: 9px; margin: -4px auto auto -6px;
+    border: 3px solid #000; border-right: none; border-bottom: none;
+    transform: rotate(45deg); transition:transform .4s;
+  }
+
+  &.closed{
+    &::before{transform: rotate(225deg); margin-top: -8px;}
+  }
+
+  @media screen and (min-width: $wwNormal){
+    right: 9vw;
+  }
+  @media screen and (min-width: $wwMaximum){
+    right: calc(50vw - #{$wwMaximum}*.41); 
+  }
+}
+
+
+// 頁腳的選單 ////////////////////////////////////////////////////////////
+.siteTree{
+  position: relative; z-index: 2;
+  margin: 0 auto; padding: 80px 0 60px; font-size: 1.2rem;
+  color: $fontInvert;
+  ul{list-style: none; margin: 0 auto; padding: 0; line-height: 1.2;}
+  
+  &>ul{
+    // @extend %mainWidth; 
+    width: 96%; margin: 0 auto;
+    outline: 1px solid #fff1;
+    &>li{ padding:0; margin: 0 auto 2em;
+      a{
+        display: block; position: relative;
+        border-bottom: 1px solid transparent; transition: .2s;
+      }
+      &>a{
+        color: $assistant1; border-bottom-width: 2px;
+        &:hover, &:focus{border-bottom-color: $assistant1;}
+      }
+      &>ul{ font-size: .95rem;
+        &>li{margin: 1em 0;
+          &>a{ 
+            color: $fontInvert;
+            &:hover, &:focus{border-bottom-color: $fontInvert;}
+            // position: relative;
+            // &::before{content: ''; width: 5px; height: 1px; 
+            //   background: $fontInvert;
+            //   position: absolute; left: .2em; top: .6em;
+            // }
+          }
+        }
+        ul{display: none;} // 第三層開始不顯示
+      }
+    }
+  }
+
+  // &::after{
+  //   content: ''; position: absolute; right: 0; bottom: 0; width: 60%; height: 16px;
+  //   background-color: $primaryColor; @extend %grandient;
+  // }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul{
+      display: flex; flex-flow: row wrap; 
+      &>li{
+        flex: 0 0 44%; margin: 1em 3% .5em;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    
+    &>ul{
+      &>li {
+        flex-basis: 21%; margin-left: 2%; margin-right: 2%;
+      }
+    }
+
+    &::after{ width: 40%;}
+  }
+
+}
+
+
+// 熱門議題 ////////////////////////////////////////////////////////////
+.hotIssue{
+  width: 96%;
+  margin: 0 auto; padding: 30px 0 60px;
+  .blockHeader{
+    font-size: 2em; text-align: center;
+    color: $assistant1;
+  }
+}

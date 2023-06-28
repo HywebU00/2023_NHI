@@ -1,0 +1,141 @@
+//////////////////////////////////////////////////
+.topics, .services{
+  @extend %primSecWidth;
+  .blockHeader{
+    .major{
+      font-size: 1.875rem; padding-bottom: 4px;
+      &::after{display: none;}
+    }
+  }
+}
+// 首頁：主題專區 //////////////////////////////////////////////////
+.topics{
+  padding: 20px 0 40px;
+  box-shadow: rgba(0,0,0,.3) 0 0 6px;
+  border-radius: 24px;
+
+  .flowList{
+    overflow: hidden;position: relative; margin: 0 auto; padding: 0 30px;
+  }
+  .flowItem{
+    text-align: center;margin: 0 10px;
+    a{ 
+      display: block;margin: 0 auto;
+      color: $fontColor; text-decoration: none;
+    }
+    img{ display: block; width: 100%; height: calc(47vw - 50px); object-fit: cover;}
+    p{
+      margin: 12px auto 0;  text-align: left;
+      // text-overflow: ellipsis; white-space: nowrap;overflow: hidden;
+      font-size: 1.25rem; font-weight: bold; line-height: 1.3;
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+      overflow: hidden;
+  
+    }
+  }
+  .slick-arrow{
+    top: calc( 23.5vw - 25px);
+    &.slick-prev{left: 4px;}
+    &.slick-next{right: 4px;}    
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    .flowList{ 
+      border: 1px solid red;
+      padding-left: 60px; padding-right: 60px;
+      // width: 90vw;
+    }
+    .flowItem{
+      img{ height: calc(50vw - 100px);}
+    }
+    .slick-arrow{
+      top: calc(25vw - 50px);
+    }
+
+  }
+
+  @media screen and (min-width: $wwNormal){
+    position: relative;
+    box-shadow: rgba(0,0,0,.3) 0 0 12px;
+    padding: 36px 2% 32px 22%;
+
+    .blockHeader{
+      border: 1px solid red;
+      position: absolute; left:3% ; top: 30px; width: 20%;
+      padding: 0; margin: 0;
+      .major{font-size: 1.6rem;}
+      .engSub{ font-size: 1rem;}
+    }
+    .flowList{
+      width: auto; padding-left: 40px; padding-right: 40px;
+    }
+    .flowItem{
+      margin: 0 22px;
+      img{ height: calc(23vw - 60px);}
+      p{ font-size: 1.2rem;}
+    }
+
+    .slick-arrow{
+      top: calc(11.5vw - 30px);
+    }
+
+  }
+
+}
+
+// 首頁：常用服務 //////////////////////////////////////////////////
+.services{
+  padding: 20px 0 40px;
+  box-shadow: rgba(57, 120, 132, .3) 0 0 20px;border-radius: 24px;
+
+  .servList{
+    list-style: none; margin: 0 auto;padding: 0; width: 96%;
+    display: flex; flex-flow: row wrap; justify-content: center;
+    text-align: center; font-size: 1.125rem; line-height: 1.3;
+    &>li{
+      // outline: 1px solid red;
+      flex: 0 0 calc(33% - 20px); margin: 5px 10px;
+      a{
+        display: block; padding: 16px 5px 8px;
+        text-decoration: none;color: $fontColor; border-radius: 16px;
+        transition: .2s;
+        &:hover, &:focus{
+          img{ transform: scale(1.1);}
+        }
+        &:focus{
+          box-shadow: $primaryColor 0 0 12px;
+        }
+      }
+      img{
+        display: block; margin: 0 auto 8px; padding: 0;
+        width: 18vw; height: 18vw;border-radius: 50%;
+        @include grandient1(0deg);
+        transition: .2s;
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+    display: flex; flex-flow: row nowrap; align-items: center;
+    padding: 30px;
+    .blockHeader{
+      flex: 0 0 220px; margin: 0; min-height: 250px;
+      outline: 1px solid pink;
+      background: url(../images/services_img.png) no-repeat center bottom 0;
+      background-size: 100% auto;
+    }
+
+    .servList{
+      flex: 1 1 auto; width: auto;
+      &>li{
+        flex-basis: calc(16.66% - 20px);
+        a{ padding: 12px 6px 6px;}
+        img{ width: 80px; height: 80px;object-fit: contain;}
+      }
+    }
+  }
+
+}
+

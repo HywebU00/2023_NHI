@@ -1,0 +1,44 @@
+// 版頭區大圖輪播、
+.bigBanner {
+  position: relative; padding-bottom: 50px;
+  // border: 1px solid red;
+  .banner{
+    position: relative; overflow: hidden;
+    a{ display: block; color: $fontColor;}
+    img{
+      display: block; width: 100%; height: 30vw; // w:h = 10:3
+    }
+  }
+  .slick-arrow{ top: 15vw;}
+
+  .slick-dots{ position: absolute; left: 0; right: 0; bottom: 10px;}
+
+
+  @media screen and (min-width: $wwMaximum){
+    overflow: hidden;
+    .slick-list{ 
+      width: $wwMaximum; margin: 0 auto; overflow: visible; 
+      &::before, &::after{
+        content: ''; position: absolute; top: 0; z-index: 19;
+        height: 100%; width: 100vw;
+        background-color: rgba(255,255,255,.7); 
+      }
+      &::before{left: 0; transform: translateX(-100%);}
+      &::after{right: 0;transform: translateX(100%);}
+    }
+    .banner{
+      img{ height: $wwMaximum*.3;}
+    }
+    .slick-arrow{top: $wwMaximum*.15;}
+
+  }
+
+  @media screen and (min-width: calc( $wwMaximum + 80px)){
+    .slick-arrow{
+      &.slick-prev{ left: 50%; margin-left: -.5*$wwMaximum - 22px;}
+      &.slick-next{ right: 50%; margin-right: -.5*$wwMaximum - 22px;}
+    }
+  }
+
+
+}

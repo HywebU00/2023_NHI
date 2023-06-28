@@ -1,0 +1,150 @@
+.menu{
+  ul{
+    list-style: none; margin: 0; padding: 0; line-height: 1.4;
+    li{ margin: 0; padding: 0;}
+    a{ display: block; position: relative; text-decoration: none;}
+  }
+}
+
+// 行動版側欄
+.sidebar{
+  position: fixed; z-index: 990;
+  width: $sideBarWidth; padding-top: 58px;
+  margin-left:$sideBarWidth * (-1);
+  top: 0; bottom: 0; overflow: auto;
+  background: $sidebarBg; color: $fontInvert;
+  transition: .5s;
+
+  .menu , .topLink{ display: none;}
+
+  &.reveal{ margin-left:0;
+    .menu, .topLink { display: block;}
+  }
+
+
+  // 行動版側欄主選單
+  .menu{
+    border-top: 1px solid #fff;
+    &>ul{
+      font-size: 1.2rem;
+      li{
+        a{position: relative;color: $fontInvert; text-decoration: none;
+          &:hover, &:focus{background-color: rgba(0,0,0,.6)}
+        }
+        &.hasChild{
+          &>a{
+            padding-right: 36px;
+            &::after{
+              content: ''; position: absolute; right: 15px; top: 1.2em;
+              width: 8px; height: 8px; border: 2px solid $assistant1;
+              transform: rotate(45deg); border-left: none; border-top: none;
+              transition: .2s;
+            }
+          }
+          &.closeIt>a{
+            &::after{ transform: rotate(225deg); top: 1.5em; }
+          }
+        }
+
+        ul{ 
+          display: none;
+          font-size: 1rem; border-top: 1px solid rgba(255,255,255,.2);
+          li{
+            a{
+              padding: .9em .8em .8em 36px;
+              &::before{
+                content: ''; position: absolute; left: 1.2rem; top: 1.5em;
+                width: 8px; height: 2px; background-color: $fontInvert;
+              }
+            }
+          }
+          // 第三層和其之後
+          ul{ margin-left: 32px; border-top: none;
+            a{ padding-left: 22px;
+              &::before {left: 7px; height: 1px;}
+            }
+          }
+        }
+      }
+      // 第一層選單項目
+      &>li{
+        border-bottom: 1px solid rgba(255,255,255,.4);
+        // &:last-child{ border-bottom: none;}
+        &>a{
+          position: relative;
+          padding: .9em .8em .8em; transition: .2s;
+        }
+      }
+    }
+
+  }
+
+
+
+  @media screen and (min-width: $wwNormal){
+    display: none;
+  }
+
+}
+
+
+////////////////////////////////////////////////////////////
+// 寬版主選單
+.webHeader .menu{
+  display: none;
+
+  @media screen and (min-width: $wwNormal){
+    display: block; background: #fff;
+    a{ color: $fontColor;}
+    
+    &>ul{
+      display: flex; flex-flow: row wrap; 
+      margin: 0 auto; width: 100%;
+      &>li{
+        flex: 1 1 auto; margin: 0;
+        font-size: 1.125rem; text-align: center;
+        &>a{ 
+          height: 3em; line-height: 3; padding: 0 .3em;
+          
+          font-weight: bold;
+          &::after{
+            content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+            height: 0; background-color: $secondaryColor;
+            transition: height .15s;
+          }
+          &:hover, &:focus{ 
+            &::after{ height: 4px;}
+          }
+        }
+        &>ul{
+          display: none;margin: 1em 0 0;
+          &>li{
+            &>a{ 
+              padding: .5em 0 .1em 22px;
+              border-bottom: 1px solid transparent;
+              &::before{
+                content: ''; position: absolute; left: 3px; top: 1.2em;
+                width: 8px; height: 2px; background: $fontInvert;
+                transition: .15s;
+              }
+              &:hover, &:focus{ border-color: transparentize($fontInvert, .4);
+                &::before{ height: 8px; transform: translateY(-4px);}
+              }
+            }
+            &+li{margin-top: 4px;}
+          }
+        }
+  
+      }
+  
+      ul{ font-size: 1.4rem;}
+      ul ul{ display: none;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum ){
+   
+    &>ul{width: $wwMaximum;}
+
+  }
+}

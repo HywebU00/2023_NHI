@@ -1,0 +1,116 @@
+.topLinks{
+  ul{list-style: none; margin: 0;padding: 0;}
+  a{text-decoration: none;display: block;}
+}
+
+
+.webHeader .topLinks{
+  display: none;
+  
+  @media screen and (min-width: $wwNormal){
+    display: flex;align-items: center;
+    position: absolute; right: 0; top: 44px; margin-right: 64px;
+    // outline: 1px solid #fff3;
+
+    ul.text{
+      display: flex;align-items: center;
+      font-size: 1rem; line-height: 1.1; text-align: center;
+      &>li{
+        position: relative; margin: 0 4px;
+        padding: 0 0 0 .6em ; margin: 0 .6em 0 0;
+        &::before{
+          position: absolute; left: 0; top: .36em;
+          content: ''; width: 1px; height: .85em; line-height: 1;
+          background-color: $fontInvert;
+        }
+        &:first-child::before{ display: none;}
+      
+        &>a{
+          position: relative; padding: 5px 0 4px;
+          color: $fontInvert;
+          &::after {
+            content: ""; position: absolute; left: 50%; right: 50%; bottom: 0;
+            height: 3px; background-color: $fontInvert;
+            transition: .2s;
+          }
+          &:hover, &:focus {
+            &::after{left: 0; right: 0;}
+          }
+        }
+      }
+    }
+
+    ul.disks{
+      display: flex; margin: 0 8px;
+      &>li{
+        margin: 0 3px; padding: 0;
+        &>a, button {
+          width: 40px; height: 40px;line-height: 40px; border-radius: 50%;
+          margin: 0; padding: 0;
+          background-color: $primaryColor; color: $fontInvert;
+          border: none; box-shadow: none;
+          transition: .2s;
+          &:hover, &:focus { box-shadow:rgba(255,255,255,.6) 0 0 0 1px, $primaryColor 0 0 0 4px;}
+        }
+        &.langEN>a{
+          font-size: .88em; text-align: center;
+          
+        }
+        &.showDivs button{
+          text-indent: -15em; overflow: hidden;
+        }
+        &.fontSize button{
+        }
+      }
+    
+    }
+  
+  }
+}
+
+
+
+.sidebar .topLinks{
+  .menuCtrl, .searchCtrl, .fontSize{ display: none;}
+  ul.text{
+    display: flex; flex-flow: row wrap; justify-content: center;
+    width: calc(100% - 20px); margin: 10px auto;
+    line-height: 1.3;
+    &>li{
+      flex: 0 0 calc( 50% - 10px); margin:4px;
+      a{
+        display: block;  text-align: center; padding:.7em .6em .6em;
+        border-radius: 2em;
+        color: $fontInvert; background-color: rgba(0,0,0,.6);
+        transition: color .2s, background .2s , box-shadow .35s;
+
+        &:hover, &:focus {
+          background-color: $white; color: $fontColor;
+          box-shadow: $white 0 0 0 2px;
+        }
+      }
+    }
+  }
+
+  ul.disks{
+    display: flex; justify-content: center;
+    margin: 12px auto 0;
+    &>li{
+      margin: 6px;
+      button, &>a {
+        width: 48px; height: 48px; padding: 0; border-radius: 50%;
+        background-color: $white; border: none; box-shadow: none;
+        transition: .2s;
+        &:hover, &:focus{
+          box-shadow: #fffa 0 0 0 3px;
+        }
+      }
+      button{ text-indent: -15em; overflow: hidden; margin: 0;}
+      &>a {
+        line-height: 49px; text-align: center; color: #0c6e9f; font-weight: bold;
+        
+      }
+    }
+  }
+
+}
