@@ -1,18 +1,29 @@
 .divisions{
-  display: none;
+  // display: none;
   position: fixed; left: 0; top: 0; width: 100%; height: 100vh;
   z-index: 999;
   overflow-y: scroll;
   padding: 30px 5%;
-  background-color: rgba(0,0,0,.8); color: $fontInvert;
+  background-color: transparentize( darken($primaryColor, 8%), .05); color: $fontInvert;
 
   .closeThis{ position: absolute; top: 0; right: 0;}
   a{color: $fontInvert; text-decoration: none;}
   ul{ list-style: none; margin: 0;padding: 0;}
 
   hgroup{
-    font-size: 1.25em;
+    position: relative; font-size: 1.25em; padding-right: 9em;
     h2{ font-size: 2em; font-weight: normal; margin: 0;}
+    p{margin-top: .5em;}
+    em{ font-style: normal; color: $assistant1;}
+    .more{
+      --moreColor : #fff;
+      position: absolute; right: 0;top: 1.6em;
+      a{
+        padding-left: 1em;
+        transition: .2s;
+        &:hover{box-shadow: $focus 0 0 12px 1px;}
+      }
+    }
   }
 
   .offices{
@@ -25,23 +36,23 @@
       &:nth-child(3n+2){ margin-left: 6.5%; margin-right: 6.5%;}
       
       li{
-        border-bottom: 1px dashed #bbb;
+        border-bottom: 1px solid rgba(255,255,255,.3);
         font-size: 1.25rem; font-weight: normal;
         &>a{
           display: block; position: relative;
-          padding: .55em 24px .5em 28px;
-          &:hover{ background-color: #0008;}
+          padding: .55em 24px .5em 2px;
+          &:hover{ background-color: rgba(0,0,0,.3);}
           &::before, &::after{
             content: ''; position: absolute;
           }
-          &::before{
-            left: 16px; top: 0.9em;
-            width: 11px;height: 11px; background-color: $fontInvert;
-          }
+          // &::before{
+          //   left: 16px; top: 0.9em;
+          //   width: 11px;height: 11px; background-color: $fontInvert;
+          // }
           &::after{
-            right: 10px; top: .9em;
+            right: 12px; top: .9em;
             width: 8px;height: 8px; transform: rotate(45deg);
-            border: 1px solid $white;border-left: none; border-top: none;
+            border: 2px solid $white;border-left: none; border-top: none;
             transition: .3s;
           }
         }
@@ -54,7 +65,7 @@
       }
     }
     ul{
-      border-top: 1px solid #eee;
+      border-top: 1px solid $white;
       margin-top: .5em;
     }
 

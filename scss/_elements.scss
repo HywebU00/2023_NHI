@@ -78,6 +78,11 @@ a:focus{outline: none;}
   border-radius: 4px; background-color: transparent; border: none; margin: 0;
   border: none; box-shadow: none;background-color: transparent;
   text-indent: -20em; overflow: hidden;
+  &:hover, &:focus{ 
+    background-color: $secondaryColor; box-shadow: none;
+  }
+  &:focus{box-shadow: $secondaryColor 0 0 0 2px;}
+
 }
 
 // 查詢圖示 ////////////////////
@@ -88,52 +93,38 @@ a:focus{outline: none;}
     content: ''; position: absolute;
   }
   &::before{
-    left: calc(50% - 12px); top: calc(50% - 12px);
-    width: 14px; height: 14px; border: 3px solid $white; border-radius: 50%;
+    left: calc(50% - 14px); top: calc(50% - 14px);
+    width: 16px; height: 16px; border: 3px solid $black; border-radius: 50%;
   }
   &::after{
-    width: 11px; height: 4px; background-color: $white; border-radius: 0 2px 2px 0;
+    width: 11px; height: 4px; background-color: $black; border-radius: 0 2px 2px 0;
     left: calc(50% + 2px); top: calc(50% + 6px);
     transform: rotate(45deg);
   }
 
-  &:hover, &:focus{ 
-    background-color: $btnBg1; box-shadow: none;
-  }
-  &:focus{box-shadow: $btnBg1 0 0 0 2px;}
-
-  @media screen and (min-width: $wwNormal){
-    border-radius: 4px;
-  }
 }
 
 // 行動版側欄開關 //////////////////////
 .sidebarCtrl{
+  --tinge : #000;
   &::before, &::after{
     content: ''; position: absolute; left: 8px;height: 3px;
     border-radius: 2px;
-    background: $white; 
+    background: var(--tinge); 
     transition: .2s;
   }
   &::before{
     top: 12px; width: 28px; 
-    box-shadow: $white 0 18px 0;
+    box-shadow: var(--tinge) 0 18px 0;
   }
   &::after{
     top: 21px; width: 6px;
-    box-shadow: $white 4px 0 0, $white 8px 0 0, $white 12px 0 0 , $white 22px 0;
-  }
-
-  &:hover, &:focus {
-    background-color: $btnBg1;box-shadow:none
+    box-shadow: var(--tinge) 4px 0 0, var(--tinge) 8px 0 0, var(--tinge) 12px 0 0 , var(--tinge) 22px 0;
   }
 
   &.closeIt{
-    &::before, &::after{ background-color: $white; height: 4px;}
-    // &::before{ box-shadow: $white 0 18px 0;}
-    // &::after{
-    //   box-shadow: $white 5px 0 0, $white 10px 0 0, $white 21px 0;
-    // }
+    --tinge : #fff;
+    &::before, &::after{ background-color: var(--tinge); height: 4px;}
     &::before{ 
       box-shadow: none;
       top: 21px; transform: rotate(45deg);
@@ -147,14 +138,17 @@ a:focus{outline: none;}
 
 
 
-// 側欄遮罩 ----------------------------------------------
+// 側欄遮罩 ///////////////////////////////////////////////
 .sidebarMask {
   display: none;z-index: 980;
   position: fixed;left: 0;right: 0;top: 0;bottom: 0;
   background-color: rgba(0,0,0,.8);
 }
 
-// 關閉 「X」
+
+
+
+// 關閉 「X」///////////////////////////////////////////////
 button.closeThis{
   position: relative;
   height: 44px; width: 44px; padding: 0; margin: 0;

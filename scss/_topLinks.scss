@@ -4,75 +4,6 @@
 }
 
 
-.webHeader .topLinks{
-  display: none;
-  
-  @media screen and (min-width: $wwNormal){
-    display: flex;align-items: center;
-    position: absolute; right: 0; top: 44px; margin-right: 64px;
-    // outline: 1px solid #fff3;
-
-    ul.text{
-      display: flex;align-items: center;
-      font-size: 1rem; line-height: 1.1; text-align: center;
-      &>li{
-        position: relative; margin: 0 4px;
-        padding: 0 0 0 .6em ; margin: 0 .6em 0 0;
-        &::before{
-          position: absolute; left: 0; top: .36em;
-          content: ''; width: 1px; height: .85em; line-height: 1;
-          background-color: $fontInvert;
-        }
-        &:first-child::before{ display: none;}
-      
-        &>a{
-          position: relative; padding: 5px 0 4px;
-          color: $fontInvert;
-          &::after {
-            content: ""; position: absolute; left: 50%; right: 50%; bottom: 0;
-            height: 3px; background-color: $fontInvert;
-            transition: .2s;
-          }
-          &:hover, &:focus {
-            &::after{left: 0; right: 0;}
-          }
-        }
-      }
-    }
-
-    ul.disks{
-      display: flex; margin: 0 8px;
-      &>li{
-        margin: 0 3px; padding: 0;
-        &>a, button {
-          width: 40px; height: 40px;line-height: 40px; border-radius: 50%;
-          margin: 0; padding: 0;
-          background-color: $primaryColor; color: $fontInvert;
-          border: none; box-shadow: none;
-          transition: .2s;
-          &:hover, &:focus { box-shadow:rgba(255,255,255,.6) 0 0 0 1px, $primaryColor 0 0 0 4px;}
-        }
-        &.langEN>a{
-          font-size: .88em; text-align: center;
-          
-        }
-        &.showDivs button{
-          text-indent: -15em; overflow: hidden;
-          background-image: url(../images/icon_mapPin_w.png);
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 16px;
-        }
-        &.fontSize button{
-        }
-      }
-    
-    }
-  
-  }
-}
-
-
 // 在行動版側欄中
 .sidebar .topLinks{
   .menuCtrl, .searchCtrl, .fontSize{ display: none;}
@@ -124,3 +55,73 @@
   }
 
 }
+
+// 寬版 在版頭中
+.webHeader .topLinks{
+  display: none;
+  
+  @media screen and (min-width: $wwNormal){
+    display: flex;align-items: center;
+    position: absolute; right: 0; top: 44px; margin-right: 64px;
+    // outline: 1px solid #fff3;
+
+    ul.text{
+      display: flex;align-items: center;
+      font-size: 1rem; line-height: 1.1; text-align: center;
+      &>li{
+        position: relative; margin: 0 4px;
+        padding: 0 0 0 .6em ; margin: 0 .6em 0 0;
+        &::before{
+          position: absolute; left: 0; top: .36em;
+          content: ''; width: 1px; height: .85em; line-height: 1;
+          background-color: $fontInvert;
+        }
+        &:first-child::before{ display: none;}
+      
+        &>a{
+          position: relative; padding: 5px 0 4px;
+          color: $fontInvert;
+          &::after {
+            content: ""; position: absolute; left: 50%; right: 50%; bottom: 0;
+            height: 3px; background-color: $fontInvert;
+            transition: .2s;
+          }
+          &:hover, &:focus {
+            &::after{left: 0; right: 0;}
+          }
+        }
+      }
+    }
+
+    ul.disks{
+      display: flex; margin: 0 8px;
+      &>li{
+        margin: 0 3px; padding: 0;
+        &>a, button {
+          width: 44px; height: 44px;line-height: 44px; border-radius: 50%;
+          margin: 0; padding: 0;
+          background-color: $primaryColor; color: $fontInvert;
+          border: none; box-shadow: none;
+          transition: .2s;
+          &:hover, &:focus { 
+            box-shadow:rgba(255,255,255,.5) 0 0 0 3px;
+          }
+        }
+        &.langEN>a{
+          font-size: .88em; text-align: center;
+          
+        }
+        &.showDivs button{
+          text-indent: -15em; overflow: hidden;
+          background-image: url(../images/icon_mapPin_w.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 16px;
+        }
+        &.fontSize button{
+        }
+      }
+    }
+  }
+}
+

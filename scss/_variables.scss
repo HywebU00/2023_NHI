@@ -30,9 +30,10 @@ $wwMaximum: 1200px;
 // ---------- 顏色變數 ----------- //
 $primaryColor:#004f73;
 $secondaryColor: #018a9a;
-$assistant1: #93fff1;
+$assistant1: #8affdf;
 // $assistant2: #9beaf6;
 $notice: #d00;
+$focus: #12c0bd;
 
 $fontColor: #081c36;
 $fontColorLight: #666;
@@ -55,8 +56,7 @@ $grayLight: #f1f0ed;
 $grayDark: #424344;
 
 $btnBg1: $primaryColor;
-// $btnBg2: $assistant1;
-$btnBg2: darken($primaryColor, 12%);
+$btnBg2: #01425c;
 
 $footBg: $primaryColor;
 $sidebarBg: $grayDark;

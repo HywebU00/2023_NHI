@@ -9,7 +9,7 @@
 // 行動版側欄
 .sidebar{
   position: fixed; z-index: 990;
-  width: $sideBarWidth; padding-top: 58px;
+  width: $sideBarWidth; padding-top: 70px;
   margin-left:$sideBarWidth * (-1);
   top: 0; bottom: 0; overflow: auto;
   background-image: linear-gradient( 180deg, #004f73 , #0094a0 150%); color: $fontInvert;
