@@ -2,17 +2,181 @@
   position: relative;
   a{text-decoration: none; }
 
-  .base{
-    position: relative; padding:40px 4vw;
-    font-size: .875em; line-height: 1.5;
-
-    p{ margin: 0;}
-  }
+  ul, ol{ list-style: none; margin: 0; padding: 0;}
 
   .fatFooter{
-    // background-color: $footBg;
-    background-image: linear-gradient( to bottom, $primaryColor 10%, $secondaryColor 90%);
+    position: relative; overflow: hidden;
+    background: 
+    url(../images/bg_tinyDots.png) repeat, 
+    linear-gradient( 180deg, #004f73 , #0094a0);
+
+    &::after{
+      content: '';
+      position: absolute; right: -80px; bottom: 60px;
+      width: 420px; height: 420px;
+      background: url(../images/bg_circle.png) no-repeat 0 0;
+      background-size: 100% auto;
+      transform: rotate(100deg);
+      transition: .4s;
+    }
   }
+
+  .middle{
+    padding: 30px 3%; line-height: 1.5;
+    background: #e5e5e5 url(../images/bg_dot.png) repeat 0 0;
+  }
+
+  // 健保諮詢服務專線
+  .phones{
+    color: #042047;
+    p{
+      margin: .6em 0;
+      em{
+        font-style: normal; font-size: 1.25rem;
+      }
+      &.highlight{
+        margin: 1em auto; padding: 5px 1em 3px;
+        text-align: center;border-radius: 1em;
+        background-color: #042047; color: $fontInvert;
+      }
+    }
+  }
+
+  // 分區業務組
+  .regDivisions{
+    font-size: .94rem;
+    li{
+      margin: .5em 0; padding: 0;
+      .tel{
+        display: inline-block;white-space: nowrap; width: 7em; margin: 0 .5em;
+      }
+    }
+  }
+
+
+  // logo 區
+  .base{
+    position: relative; padding:40px 3%; margin: 0 auto;
+    line-height: 1.5;
+    display: flex; flex-flow: column nowrap; align-items: center;
+    background: url(../images/bg_dot.png) repeat 0 0;
+
+    .logo{
+      display: block; margin: 0 auto;
+      height: 80px; width: 94%; object-fit: contain;
+    }
+
+    .phoneAddress{
+      margin: 1.2em auto;
+      p{margin: .5em 0;}
+      // border: 1px solid pink;
+    }
+
+    .findUsHere{
+      list-style: none; margin: 0 auto;padding: 0 0 1em;
+      max-width: 400px;
+      border-bottom: 1px solid $borderColor;
+      display: flex; justify-content: center; flex-flow: row wrap;
+      li{
+        margin: 3px;
+        a{display: block;}
+        img{ display: block; margin:0 auto;width: 52px; height: 52px; border-radius: 50%;}
+      }
+    }
+    
+    .otherLinks{
+      display: none;
+    }
+  
+    .others{
+      text-align: center;
+      padding-top: 1em;
+      li{
+        display: inline-block;
+        img{
+          display: block; height: 46px;
+        }
+        &.egov img{}
+      }
+    }
+  }
+
+
+
+  @media screen and (min-width: $wwMedium){
+    .fatFooter{
+      &::after{ width: 435px; height: 435px; bottom: -50px;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .middle{
+      display: flex;
+      // &>*{border: 1px solid pink;}
+      .phones{ flex: 0 1 45%; margin-right: 3%;}
+      .regDivisions{flex: 0 0 49%;}
+    }
+    .phones{
+      p.highlight{max-width: 25em; width: 100%; float: left;}
+
+    }
+
+    .base{
+      display: flex; flex-flow: row wrap; align-items: flex-start;
+      .logo{
+        flex: 1 1 20%; width: auto; height: 68px; max-width: 300px; margin: 0; padding: 0;
+      }
+      .phoneAddress{
+        flex: 0 1 30%; margin: 0 2.5%;
+        font-size: .875rem;
+      }
+      .findUsHere{
+        flex: 1 1 32%;border: none;
+        // outline: 1px solid red;
+        justify-content: flex-end;
+        li{
+          img{ width: 46px; height: 46px;}
+        }
+      }
+      .otherLinks{
+        display: block; flex: 0 0 100%; margin: 20px 0 0; padding:30px 0 0;
+        font-size: .875rem; line-height: 1.1;
+        border-top: 1px solid $borderColorDark;
+        li{
+          float: left; position: relative;
+          margin: 0 .5em .7em 0; padding: 0 .5em 0 0;
+          &::after{
+            content: ''; position: absolute; right: 0; top: .1em;
+            width: 1px; height: .8em; background-color: $fontColor;
+          }
+          a{
+            display: block; color: $fontColor;
+            border-bottom: 1px solid transparent;
+            &:hover, &:focus {
+              border-bottom-color: $fontColor;
+            }
+          }
+        }
+      }
+
+      .others{
+        position: absolute; right: 3%; bottom: 28px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .base{
+      padding-left: $wwMaximum*.03;padding-right: $wwMaximum*.03;
+      width: $wwMaximum;
+    }
+    .middle{
+      padding-left:calc(50% - $wwMaximum*.47);
+      .phones{ flex-basis: $wwMaximum*.45; right: $wwMaximum*.03;}
+      .regDivisions{flex-basis: $wwMaximum*.49;}
+    }
+  }
+
 
 }
 
@@ -22,26 +186,33 @@
 
 // 控制 fat footer 開合的 button
 .fatFootCtrl{
-  position: absolute; right:4vw; top: 30px; z-index: 9;
-  width: 35px; height: 35px; padding: 0; border-radius: 50%;
-  background: #fff;
+  position: absolute; left:calc(50% - 24px); top: 12px; z-index: 9;
+  width: 48px; height: 48px; padding: 0; border-radius: 50%;
   text-indent: -10em; overflow: hidden; border: none;
-  transition: background .2s;
-
-  &:hover, &:focus{ 
-    box-shadow: $assistant1 0 0 0 2px; outline: none;
-    background-color: $assistant1;
-    &::before{border-color: #fff;}
+  background: transparent;
+  transition:.3s;
+  &::before, &::after{
+    content: '';position: absolute; top: 20px; 
+    width: 18px; height: 5px; border-radius: 3px;
+    background-color: $white;
   }
   &::before{
-    content: '';position: absolute; left: 50%; top: 50%;
-    width: 9px; height: 9px; margin: -4px auto auto -6px;
-    border: 3px solid #000; border-right: none; border-bottom: none;
-    transform: rotate(45deg); transition:transform .4s;
+    transform: rotate(-45deg);
+    right: calc(50% - 4px);
+  }
+  &::after{
+    transform: rotate(45deg);
+    left: calc(50% - 4px);
+  }
+  &:hover, &:focus{ 
+    box-shadow: transparentize($black, .7) 0 0 0 4px; outline: none;
+    background-color: transparentize($black, .4);
   }
 
-  &.closed{
-    &::before{transform: rotate(225deg); margin-top: -8px;}
+  &.closed{ transform: rotate(180deg);
+    & ~ .fatFooter{
+      &::after{margin-bottom: -150px;}
+    }
   }
 
   @media screen and (min-width: $wwNormal){
@@ -55,22 +226,20 @@
 
 // 頁腳的選單 ////////////////////////////////////////////////////////////
 .siteTree{
-  position: relative; z-index: 2;
+  position: relative; z-index: 2; overflow: hidden;
   margin: 0 auto; padding: 80px 0 60px; font-size: 1.2rem;
   color: $fontInvert;
   ul{list-style: none; margin: 0 auto; padding: 0; line-height: 1.2;}
   
   &>ul{
-    // @extend %mainWidth; 
-    width: 96%; margin: 0 auto;
-    outline: 1px solid #fff1;
+    @extend %primSecWidth; margin: 0 auto;
     &>li{ padding:0; margin: 0 auto 2em;
       a{
         display: block; position: relative;
         border-bottom: 1px solid transparent; transition: .2s;
       }
       &>a{
-        color: $assistant1; border-bottom-width: 2px;
+        color: #8affdf; border-bottom-width: 2px;
         &:hover, &:focus{border-bottom-color: $assistant1;}
       }
       &>ul{ font-size: .95rem;
@@ -90,40 +259,39 @@
     }
   }
 
-  // &::after{
-  //   content: ''; position: absolute; right: 0; bottom: 0; width: 60%; height: 16px;
-  //   background-color: $primaryColor; @extend %grandient;
-  // }
+  @media screen and (min-width: $wwSlim){
+    &>ul{
+      display: flex; flex-flow: row wrap;
+      &>li{
+        flex: 0 0 47%; margin: 1em 0;
+        &:nth-child(2n){margin-left: 6%;}
+      }
+    }
+  }
 
   @media screen and (min-width: $wwMedium){
     &>ul{
-      display: flex; flex-flow: row wrap; 
       &>li{
-        flex: 0 0 44%; margin: 1em 3% .5em;
+        flex: 0 0 30%;
+        &:nth-child(n){ margin-left: 0;}
+        &:nth-child(3n + 2){ margin-left: 5%; margin-right: 5%;}
       }
     }
   }
 
   @media screen and (min-width: $wwNormal){
-    
     &>ul{
       &>li {
-        flex-basis: 21%; margin-left: 2%; margin-right: 2%;
+        flex-basis: 21%;
+        &:nth-child(n){ margin-left: 0; margin-right: 4%;}
+        &:nth-child(4n) {margin-right: 0;}
       }
     }
 
     &::after{ width: 40%;}
   }
 
+
 }
 
 
-// 熱門議題 ////////////////////////////////////////////////////////////
-.hotIssue{
-  width: 96%;
-  margin: 0 auto; padding: 30px 0 60px;
-  .blockHeader{
-    font-size: 2em; text-align: center;
-    color: $assistant1;
-  }
-}
