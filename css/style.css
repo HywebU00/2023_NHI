@@ -85,11 +85,11 @@ a:focus {
     outline: 2px solid #93fff1;
   }
   .webHeader .accesskey {
-    color: #00496a;
+    color: #004f73;
   }
   .webFooter .accesskey {
     top: 4px;
-    color: #00496a;
+    color: #004f73;
   }
   .main .accesskey {
     top: 20px;
@@ -163,7 +163,7 @@ a:focus {
     font-size: 0.9rem;
     height: 1.6em;
     line-height: 1.6;
-    background-color: #00496a;
+    background-color: #004f73;
     color: #fff;
     text-decoration: none;
     outline: none;
@@ -187,7 +187,7 @@ a:focus {
   position: relative;
   width: 44px;
   height: 44px;
-  border-radius: 0;
+  border-radius: 4px;
   background-color: transparent;
   border: none;
   margin: 0;
@@ -223,11 +223,11 @@ a:focus {
   transform: rotate(45deg);
 }
 .searchCtrl:hover, .searchCtrl:focus {
-  background-color: #00496a;
+  background-color: #004f73;
   box-shadow: none;
 }
 .searchCtrl:focus {
-  box-shadow: #00496a 0 0 0 2px;
+  box-shadow: #004f73 0 0 0 2px;
 }
 @media screen and (min-width: 1000px) {
   .searchCtrl {
@@ -240,7 +240,7 @@ a:focus {
   position: absolute;
   left: 8px;
   height: 3px;
-  border-radius: 3px;
+  border-radius: 2px;
   background: #fff;
   transition: 0.2s;
 }
@@ -255,22 +255,16 @@ a:focus {
   box-shadow: #fff 4px 0 0, #fff 8px 0 0, #fff 12px 0 0, #fff 22px 0;
 }
 .sidebarCtrl:hover, .sidebarCtrl:focus {
-  background-color: #00496a;
+  background-color: #004f73;
   box-shadow: none;
 }
-
 .sidebarCtrl.closeIt::before, .sidebarCtrl.closeIt::after {
   background-color: #fff;
-}
-.sidebarCtrl.closeIt::before {
-  box-shadow: #fff 0 18px 0;
-}
-.sidebarCtrl.closeIt::after {
-  box-shadow: #fff 5px 0 0, #fff 10px 0 0, #fff 21px 0;
+  height: 4px;
 }
 .sidebarCtrl.closeIt::before {
   box-shadow: none;
-  top: 22px;
+  top: 21px;
   transform: rotate(45deg);
 }
 .sidebarCtrl.closeIt:after {
@@ -318,12 +312,12 @@ button.closeThis::after {
   transform: rotate(-45deg);
 }
 button.closeThis:hover {
-  background-color: #001f2d;
+  background-color: #002536;
   box-shadow: none;
 }
 button.closeThis:focus {
-  background-color: #00496a;
-  box-shadow: #00496a 0 0 0 2px;
+  background-color: #004f73;
+  box-shadow: #004f73 0 0 0 2px;
 }
 
 .slick-arrow {
@@ -400,7 +394,7 @@ button.closeThis:focus {
   background-color: #424344;
 }
 .slick-dots li.slick-active button {
-  background-color: #00496a;
+  background-color: #004f73;
   width: 32px;
 }
 
@@ -568,6 +562,21 @@ a:hover .videoThumb::before {
   }
 }
 
+button.skip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 1px;
+  height: 1px;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  text-indent: -20em;
+  overflow: hidden;
+}
+
 kbd {
   display: inline-block;
   vertical-align: middle;
@@ -603,13 +612,13 @@ kbd {
 .sidebar {
   position: fixed;
   z-index: 990;
-  width: 280px;
+  width: 300px;
   padding-top: 58px;
-  margin-left: -280px;
+  margin-left: -300px;
   top: 0;
   bottom: 0;
   overflow: auto;
-  background: #424344;
+  background-image: linear-gradient(180deg, #004f73, #0094a0 150%);
   color: #fff;
   transition: 0.5s;
 }
@@ -622,11 +631,9 @@ kbd {
 .sidebar.reveal .menu, .sidebar.reveal .topLink {
   display: block;
 }
-.sidebar .menu {
-  border-top: 1px solid #fff;
-}
 .sidebar .menu > ul {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
 }
 .sidebar .menu > ul li a {
   position: relative;
@@ -634,7 +641,7 @@ kbd {
   text-decoration: none;
 }
 .sidebar .menu > ul li a:hover, .sidebar .menu > ul li a:focus {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 20, 20, 0.4);
 }
 .sidebar .menu > ul li.hasChild > a {
   padding-right: 36px;
@@ -643,10 +650,10 @@ kbd {
   content: "";
   position: absolute;
   right: 15px;
-  top: 1.2em;
+  top: 1em;
   width: 8px;
   height: 8px;
-  border: 2px solid #93fff1;
+  border: 2px solid #fff;
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
@@ -654,22 +661,22 @@ kbd {
 }
 .sidebar .menu > ul li.hasChild.closeIt > a::after {
   transform: rotate(225deg);
-  top: 1.5em;
+  top: 1.2em;
 }
 .sidebar .menu > ul li ul {
   display: none;
-  font-size: 1rem;
+  font-size: 1.125rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 .sidebar .menu > ul li ul li a {
-  padding: 0.9em 0.8em 0.8em 36px;
+  padding: 0.8em 0.8em 0.7em 36px;
 }
 .sidebar .menu > ul li ul li a::before {
   content: "";
   position: absolute;
   left: 1.2rem;
   top: 1.5em;
-  width: 8px;
+  width: 6px;
   height: 2px;
   background-color: #fff;
 }
@@ -685,11 +692,11 @@ kbd {
   height: 1px;
 }
 .sidebar .menu > ul > li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .sidebar .menu > ul > li > a {
   position: relative;
-  padding: 0.9em 0.8em 0.8em;
+  padding: 0.8em 16px 0.7em;
   transition: 0.2s;
 }
 @media screen and (min-width: 1000px) {
@@ -863,14 +870,14 @@ kbd {
     border-radius: 50%;
     margin: 0;
     padding: 0;
-    background-color: #00496a;
+    background-color: #004f73;
     color: #fff;
     border: none;
     box-shadow: none;
     transition: 0.2s;
   }
   .webHeader .topLinks ul.disks > li > a:hover, .webHeader .topLinks ul.disks > li > a:focus, .webHeader .topLinks ul.disks > li button:hover, .webHeader .topLinks ul.disks > li button:focus {
-    box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px, #00496a 0 0 0 4px;
+    box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px, #004f73 0 0 0 4px;
   }
   .webHeader .topLinks ul.disks > li.langEN > a {
     font-size: 0.88em;
@@ -879,6 +886,10 @@ kbd {
   .webHeader .topLinks ul.disks > li.showDivs button {
     text-indent: -15em;
     overflow: hidden;
+    background-image: url(../images/icon_mapPin_w.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px;
   }
 }
 
@@ -890,7 +901,7 @@ kbd {
   flex-flow: row wrap;
   justify-content: center;
   width: calc(100% - 20px);
-  margin: 10px auto;
+  margin: 15px auto 10px;
   line-height: 1.3;
 }
 .sidebar .topLinks ul.text > li {
@@ -900,16 +911,16 @@ kbd {
 .sidebar .topLinks ul.text > li a {
   display: block;
   text-align: center;
-  padding: 0.7em 0.6em 0.6em;
+  padding: 0.8em 0.6em 0.7em;
   border-radius: 2em;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: color 0.2s, background 0.2s, box-shadow 0.35s;
+  background-color: rgba(0, 40, 50, 0.8);
+  transition: 0.2s;
 }
 .sidebar .topLinks ul.text > li a:hover, .sidebar .topLinks ul.text > li a:focus {
   background-color: #fff;
   color: #081c36;
-  box-shadow: #fff 0 0 0 2px;
+  box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 3px;
 }
 .sidebar .topLinks ul.disks {
   display: flex;
@@ -920,8 +931,8 @@ kbd {
   margin: 6px;
 }
 .sidebar .topLinks ul.disks > li button, .sidebar .topLinks ul.disks > li > a {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   padding: 0;
   border-radius: 50%;
   background-color: #fff;
@@ -930,7 +941,7 @@ kbd {
   transition: 0.2s;
 }
 .sidebar .topLinks ul.disks > li button:hover, .sidebar .topLinks ul.disks > li button:focus, .sidebar .topLinks ul.disks > li > a:hover, .sidebar .topLinks ul.disks > li > a:focus {
-  box-shadow: rgba(255, 255, 255, 0.6666666667) 0 0 0 3px;
+  box-shadow: #fff 0 0 0 2px, rgba(255, 255, 255, 0.5) 0 0 0 6px;
 }
 .sidebar .topLinks ul.disks > li button {
   text-indent: -15em;
@@ -938,15 +949,22 @@ kbd {
   margin: 0;
 }
 .sidebar .topLinks ul.disks > li > a {
-  line-height: 49px;
+  line-height: 54px;
   text-align: center;
-  color: #0c6e9f;
+  color: #018a9a;
   font-weight: bold;
+  font-size: 1.2rem;
+}
+.sidebar .topLinks ul.disks > li.showDivs button {
+  background-image: url(../images/icon_mapPin_b.png);
+  background-size: 40% auto;
+  background-position: center 52%;
+  background-repeat: no-repeat;
 }
 
 .webHeader {
   position: relative;
-  background: linear-gradient(90deg, #00496a 10%, #018a9a 90%);
+  background: linear-gradient(90deg, #004f73 10%, #018a9a 90%);
 }
 .webHeader h1 {
   margin: 0 60px;
@@ -1056,11 +1074,11 @@ kbd {
   background-color: #93fff1;
 }
 .search input[type=button]:hover, .search input[type=submit]:hover {
-  background-color: #00496a;
+  background-color: #004f73;
   box-shadow: #93fff1 0 0 0 2px;
 }
 .search input[type=button]:focus, .search input[type=submit]:focus {
-  background-color: #00496a;
+  background-color: #004f73;
   box-shadow: #93fff1 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 1px inset;
 }
 .search .hotKeywords {
@@ -1630,8 +1648,8 @@ input[type=submit], input[type=reset], input[type=button] {
   padding: 0 1em;
   margin: 3px;
   vertical-align: middle;
-  border: 1px solid #00496a;
-  background-color: #00496a;
+  border: 1px solid #004f73;
+  background-color: #004f73;
   color: #fff;
   border-radius: 3px;
   cursor: pointer;
@@ -1640,9 +1658,9 @@ input[type=submit], input[type=reset], input[type=button] {
 .button > a:hover, .button > a:focus, button:hover, button:focus,
 input[type=submit]:hover,
 input[type=submit]:focus, input[type=reset]:hover, input[type=reset]:focus, input[type=button]:hover, input[type=button]:focus {
-  background-color: #001f2d;
+  background-color: #002536;
   border-color: transparent;
-  box-shadow: #001f2d 0 0 0 2px;
+  box-shadow: #002536 0 0 0 2px;
 }
 
 input[type=reset] {
@@ -1692,28 +1710,28 @@ input[type=radio] {
 input[type=radio]:focus, input[type=radio]:checked {
   border-width: 2px;
   border-color: #fff;
-  box-shadow: #001f2d 0 0 0 3px;
-  background-color: #001f2d;
+  box-shadow: #002536 0 0 0 3px;
+  background-color: #002536;
 }
 input[type=radio]:checked:focus {
-  box-shadow: #fff 0 0 0 1px, #001f2d 0 0 0 4px;
+  box-shadow: #fff 0 0 0 1px, #002536 0 0 0 4px;
 }
 
 input[type=checkbox] {
   border-radius: 3px;
 }
 input[type=checkbox]:focus {
-  box-shadow: #001f2d 0 0 0 2px;
+  box-shadow: #002536 0 0 0 2px;
   border-color: #fff;
 }
 input[type=checkbox]:checked {
-  background: #001f2d url(../images/icon_check.svg) no-repeat center 0.05em;
+  background: #002536 url(../images/icon_check.svg) no-repeat center 0.05em;
   background-size: 96%;
-  box-shadow: #001f2d 0 0 0 2px;
+  box-shadow: #002536 0 0 0 2px;
   border-color: transparent;
 }
 input[type=checkbox]:checked:focus {
-  box-shadow: #fff 0 0 0 2px, #001f2d 0 0 0 4px;
+  box-shadow: #fff 0 0 0 2px, #002536 0 0 0 4px;
 }
 
 select[disabled],
@@ -1978,7 +1996,7 @@ fieldset legend {
   font-size: 1.125rem;
   display: inline-block;
   width: auto;
-  background-image: linear-gradient(180deg, #004f73, #0094a0);
+  background-image: linear-gradient(180deg, #00486a, #018e9f);
   color: #fff;
   border-radius: 2em;
 }
@@ -2133,7 +2151,7 @@ fieldset legend {
   transform: scale(1.1);
 }
 .services .servList > li a:focus {
-  box-shadow: #00496a 0 0 12px;
+  box-shadow: #004f73 0 0 12px;
 }
 .services .servList > li img {
   display: block;
@@ -2142,7 +2160,7 @@ fieldset legend {
   width: 18vw;
   height: 18vw;
   border-radius: 50%;
-  background-image: linear-gradient(0deg, #004f73, #0094a0);
+  background-image: linear-gradient(0deg, #00486a, #018e9f);
   transition: 0.2s;
 }
 @media screen and (min-width: 1000px) {
@@ -2209,7 +2227,7 @@ fieldset legend {
   background-color: rgba(255, 255, 255, 0.18);
 }
 .news .tabItems button:hover, .news .tabItems button:focus {
-  background-color: rgba(0, 31, 45, 0.3);
+  background-color: rgba(0, 37, 54, 0.3);
   box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px inset;
 }
 .news .tabItems button.active {
@@ -2250,7 +2268,7 @@ fieldset legend {
   padding-right: 8px;
   margin-left: -5px;
   margin-right: -5px;
-  background-color: rgba(0, 31, 45, 0.3);
+  background-color: rgba(0, 37, 54, 0.3);
   border-bottom-color: transparent;
   box-shadow: #01a5b8 0 0 0 3px;
 }
@@ -2332,14 +2350,14 @@ fieldset legend {
   display: flex;
   align-items: center;
   padding: 18px;
-  box-shadow: #00496a 0 0 0 0, rgba(57, 120, 132, 0.3) 0 0 20px;
+  box-shadow: #004f73 0 0 0 0, rgba(57, 120, 132, 0.3) 0 0 20px;
   color: #081c36;
   border-radius: 24px;
   text-decoration: none;
   transition: 0.2s;
 }
 .appAndSocialMedia ul li a:hover, .appAndSocialMedia ul li a:focus {
-  box-shadow: #00496a 0 0 0 3px, rgba(57, 120, 132, 0.6) 0 0 25px;
+  box-shadow: #004f73 0 0 0 3px, rgba(57, 120, 132, 0.6) 0 0 25px;
 }
 .appAndSocialMedia ul li img {
   display: block;
@@ -2631,7 +2649,7 @@ fieldset legend {
   transition: 0.2s;
 }
 .contactUs .navButtons button.active {
-  color: #00496a;
+  color: #004f73;
 }
 .contactUs .navButtons button.active::after {
   background-color: #018a9a;

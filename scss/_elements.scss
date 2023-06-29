@@ -75,7 +75,7 @@ a:focus{outline: none;}
 // 查詢圖示 + 行動版側欄開關 ////////////////////////////////////////
 .searchCtrl, .sidebarCtrl{ 
   position: relative;  width: 44px; height: 44px;
-  border-radius: 0; background-color: transparent; border: none; margin: 0;
+  border-radius: 4px; background-color: transparent; border: none; margin: 0;
   border: none; box-shadow: none;background-color: transparent;
   text-indent: -20em; overflow: hidden;
 }
@@ -111,7 +111,7 @@ a:focus{outline: none;}
 .sidebarCtrl{
   &::before, &::after{
     content: ''; position: absolute; left: 8px;height: 3px;
-    border-radius: 3px;
+    border-radius: 2px;
     background: $white; 
     transition: .2s;
   }
@@ -125,24 +125,18 @@ a:focus{outline: none;}
   }
 
   &:hover, &:focus {
-    background-color: $btnBg1;
-    box-shadow:none
-    // &::before, &::after{ background-color: $white;}
-    // &::before{ box-shadow: $white 0 18px 0;}
-
+    background-color: $btnBg1;box-shadow:none
   }
-}
 
-.sidebarCtrl{
   &.closeIt{
-    &::before, &::after{ background-color: $white;}
-    &::before{ box-shadow: $white 0 18px 0;}
-    &::after{
-      box-shadow: $white 5px 0 0, $white 10px 0 0, $white 21px 0;
-    }
+    &::before, &::after{ background-color: $white; height: 4px;}
+    // &::before{ box-shadow: $white 0 18px 0;}
+    // &::after{
+    //   box-shadow: $white 5px 0 0, $white 10px 0 0, $white 21px 0;
+    // }
     &::before{ 
       box-shadow: none;
-      top: 22px; transform: rotate(45deg);
+      top: 21px; transform: rotate(45deg);
     }
     &:after{
       box-shadow: none;
@@ -150,6 +144,7 @@ a:focus{outline: none;}
     }
   }
 }
+
 
 
 // 側欄遮罩 ----------------------------------------------
@@ -336,6 +331,14 @@ a:hover .videoThumb{
     right: calc(50% - #{$wwMaximum}/2 - 60px);
   }
 
+}
+
+
+button.skip{
+  position: absolute; right: 0; bottom: 0; 
+  padding: 0; margin: 0; width: 1px; height: 1px;
+  background: none; box-shadow: none; outline: none;
+  text-indent: -20em;overflow: hidden;
 }
 
 

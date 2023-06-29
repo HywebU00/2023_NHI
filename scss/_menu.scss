@@ -12,7 +12,7 @@
   width: $sideBarWidth; padding-top: 58px;
   margin-left:$sideBarWidth * (-1);
   top: 0; bottom: 0; overflow: auto;
-  background: $sidebarBg; color: $fontInvert;
+  background-image: linear-gradient( 180deg, #004f73 , #0094a0 150%); color: $fontInvert;
   transition: .5s;
 
   .menu , .topLink{ display: none;}
@@ -24,55 +24,57 @@
 
   // 行動版側欄主選單
   .menu{
-    border-top: 1px solid #fff;
     &>ul{
-      font-size: 1.2rem;
+      font-size: 1.25rem; line-height: 1.2;
       li{
-        a{position: relative;color: $fontInvert; text-decoration: none;
-          &:hover, &:focus{background-color: rgba(0,0,0,.6)}
+        a{
+          position: relative;color: $fontInvert; text-decoration: none;
+          &:hover, &:focus{background-color: rgba(0,20,20,.4)}
         }
         &.hasChild{
           &>a{
             padding-right: 36px;
             &::after{
-              content: ''; position: absolute; right: 15px; top: 1.2em;
-              width: 8px; height: 8px; border: 2px solid $assistant1;
+              content: ''; position: absolute; right: 15px; top: 1em;
+              width: 8px; height: 8px; border: 2px solid $white;
               transform: rotate(45deg); border-left: none; border-top: none;
               transition: .2s;
             }
           }
           &.closeIt>a{
-            &::after{ transform: rotate(225deg); top: 1.5em; }
+            &::after{ transform: rotate(225deg); top: 1.2em; }
           }
         }
 
+        // 第二層
         ul{ 
           display: none;
-          font-size: 1rem; border-top: 1px solid rgba(255,255,255,.2);
+          font-size: 1.125rem; border-top: 1px solid rgba(255,255,255,.2);
           li{
             a{
-              padding: .9em .8em .8em 36px;
+              padding: .8em .8em .7em 36px;
               &::before{
                 content: ''; position: absolute; left: 1.2rem; top: 1.5em;
-                width: 8px; height: 2px; background-color: $fontInvert;
+                width: 6px; height: 2px; background-color: $fontInvert;
               }
             }
           }
           // 第三層和其之後
-          ul{ margin-left: 32px; border-top: none;
+          ul{ 
+            margin-left: 32px; border-top: none;
             a{ padding-left: 22px;
               &::before {left: 7px; height: 1px;}
             }
           }
         }
       }
+
       // 第一層選單項目
       &>li{
-        border-bottom: 1px solid rgba(255,255,255,.4);
-        // &:last-child{ border-bottom: none;}
+        border-bottom: 1px solid rgba(255,255,255,.2);
         &>a{
           position: relative;
-          padding: .9em .8em .8em; transition: .2s;
+          padding: .8em 16px .7em; transition: .2s;
         }
       }
     }

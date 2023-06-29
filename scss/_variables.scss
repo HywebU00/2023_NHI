@@ -1,6 +1,6 @@
 // variables
 // ---------- 長度常數 ---------- //
-$sideBarWidth: 280px;  // 窄版側欄選單
+$sideBarWidth: 300px;  // 窄版側欄選單
 $mobileWidth: 92vw; // 窄螢幕寬度 moduals width in mobile
 $normalWidth: 82vw; // 寬螢幕寬度
 // ---------- 長度常數 ---------- //
@@ -28,7 +28,7 @@ $wwMaximum: 1200px;
 
 
 // ---------- 顏色變數 ----------- //
-$primaryColor:#00496a;
+$primaryColor:#004f73;
 $secondaryColor: #018a9a;
 $assistant1: #93fff1;
 // $assistant2: #9beaf6;
@@ -83,7 +83,7 @@ $sidebarBg: $grayDark;
 //   background-image: linear-gradient(0deg,#2a90d1, #00b6d1);
 // }
 @mixin grandient1($degree: 0deg) {
-  background-image: linear-gradient( $degree, #004f73 , #0094a0);
+  background-image: linear-gradient( $degree, #00486a , #018e9f);
 }
 @mixin grandient2($degree: 0deg) {
   background-image: linear-gradient( $degree, #0086cb 5%, #00c069 95%);
