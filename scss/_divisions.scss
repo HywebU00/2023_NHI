@@ -1,5 +1,5 @@
 .divisions{
-  // display: none;
+  display: none;
   position: fixed; left: 0; top: 0; width: 100%; height: 100vh;
   z-index: 999;
   overflow-y: scroll;
@@ -11,13 +11,13 @@
   ul{ list-style: none; margin: 0;padding: 0;}
 
   hgroup{
-    position: relative; font-size: 1.25em; padding-right: 9em;
+    font-size: 1.25em; line-height: 1.5;
     h2{ font-size: 2em; font-weight: normal; margin: 0;}
     p{margin-top: .5em;}
     em{ font-style: normal; color: $assistant1;}
     .more{
       --moreColor : #fff;
-      position: absolute; right: 0;top: 1.6em;
+      text-align: right;
       a{
         padding-left: 1em;
         transition: .2s;
@@ -27,13 +27,11 @@
   }
 
   .offices{
-    display: flex; flex-flow: row wrap;
     line-height: 1.3;
     &>li{
-      // outline: 1px solid #f004;
-      flex: 0 0 29%; margin: 2em 0; padding: 0;
+      margin: 2em 0; padding: 0;
       font-size: 1.45rem; font-weight: bold; text-indent: 8px;
-      &:nth-child(3n+2){ margin-left: 6.5%; margin-right: 6.5%;}
+      
       
       li{
         border-bottom: 1px solid rgba(255,255,255,.3);
@@ -70,9 +68,56 @@
     }
 
     .info{
-      display: none;padding:5px 4px 15px 14px;
+      display: none;
+      padding:12px 6px 9px 12px; margin: 6px 3px; border-radius: 12px;
       font-size: 1.06rem; text-indent: 0; color: darken($fontInvert, 15%);
-      p{margin: 0 0 .3em; line-height: 1.3;}
+      background-color: rgba(0,0,0,.2);
+      background-color: $primaryColor;
+      p{
+        margin: 0 0 .3em; line-height: 1.3;
+      }
+
+      .toGmap{
+        display: inline-block; vertical-align: middle;
+        margin: -3px 0 0 4px;
+        width: 32px; height: 32px; border-radius: 50%;
+        background: $white url(../images/icon_mapPin_b.png) no-repeat center center;
+        background-size: auto 64%;
+        text-indent: -12em; overflow: hidden;
+        transition: .1s;
+        &:hover, &:focus{
+          transform: scale(1.2);
+          background-color: $assistant2;
+
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .offices{
+      display: flex; flex-flow: row wrap;
+      &>li{
+        flex: 0 0 47%;
+        &:nth-child(2n){ margin-left: 6%;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    hgroup{
+      position: relative;padding-right: 9em;
+      .more{
+        position: absolute; right: 0;top: 1.8em;
+      }
+    }
+
+    .offices{
+      &>li{
+        flex: 0 0 29%;
+        &:nth-child(n){ margin-left: 0;}
+        &:nth-child(3n+2){ margin-left: 6.5%; margin-right: 6.5%;}
+      }
     }
   }
 

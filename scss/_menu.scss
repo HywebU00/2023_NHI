@@ -96,41 +96,61 @@
   display: none;
 
   @media screen and (min-width: $wwNormal){
-    display: block; background: #fff;
+    display: block; background: $white;
     a{ color: $fontColor;}
     
     &>ul{
       display: flex; flex-flow: row wrap; 
       margin: 0 auto; width: 100%;
+      a{display: block;}
       &>li{
+        position: relative;
         flex: 1 1 auto; margin: 0;
         font-size: 1.125rem; text-align: center;
+        &:hover>a{ &::after{ height: 4px;} }
         &>a{ 
           height: 3em; line-height: 3; padding: 0 .3em;
-          
           font-weight: bold;
           &::after{
             content: ''; position: absolute; left: 0; right: 0; bottom: 0;
-            height: 0; background-color: $secondaryColor;
+            height: 0;
+            @include grandient2(90deg);
             transition: height .15s;
           }
-          &:hover, &:focus{ 
+          &:focus{ 
             &::after{ height: 4px;}
           }
         }
+        // level2
         &>ul{
-          display: none;margin: 1em 0 0;
+          display: none;margin:0; padding: 20px 0 10px;
+          position: absolute; top: auto; z-index: 199;
+          width: 100vw;
+          font-size: 1rem;text-align: left;
+          background: rgba(240, 240, 240, .95);
+          box-shadow: rgba(0,0,0,.4) 0 5px 20px;
+          flex-flow: row wrap;
+          &.show{ display: flex;}
           &>li{
+            flex: 0 0 22%; margin: 8px 1.5% 20px;
             &>a{ 
-              padding: .5em 0 .1em 22px;
-              border-bottom: 1px solid transparent;
+              padding: 0 0 .1em 20px;
+              border-bottom: 2px solid transparent;
+              &::before, &::after{content: ''; position: absolute;transition: .15s;}
               &::before{
-                content: ''; position: absolute; left: 3px; top: 1.2em;
-                width: 8px; height: 2px; background: $fontInvert;
-                transition: .15s;
+                left: 0; top: 10px;
+                width: 12px; height: 2px; background: $fontColor;
               }
-              &:hover, &:focus{ border-color: transparentize($fontInvert, .4);
-                &::before{ height: 8px; transform: translateY(-4px);}
+              &::after{
+                width: 8px; height: 8px;
+                border: 2px solid $fontColor; border-left: none; border-bottom: none;
+                transform: rotate(45deg);
+                left: 1px; top: 6px;
+              }
+              &:hover, &:focus{
+                border-color: $secondaryColor;
+                &::before{ left: 3px;}
+                &::after{left: 4px;}
               }
             }
             &+li{margin-top: 4px;}
@@ -146,7 +166,11 @@
 
   @media screen and (min-width: $wwMaximum ){
    
-    &>ul{width: $wwMaximum;}
+    &>ul{width: $wwMaximum;
+      &>li>ul{
+        width: $wwMaximum;
+      }
+    }
 
   }
 }

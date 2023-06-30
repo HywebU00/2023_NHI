@@ -14,7 +14,6 @@ $(function(){
   const wwMaximum = 1200;
 
   var _menu = $('.webHeader .menu');
-  // var _menuCtrl = $('.menuCtrl');
   var _sidebar = $('.sidebar');
   var _webHeader = $('.webHeader');
   var _webFooter = $('.webFooter');
@@ -29,8 +28,23 @@ $(function(){
   _menu.find('li').has('ul').addClass('hasChild');
 
   // 寬版「主選單」
+  var _mmHasChild = _menu.find('.hasChild');
+  var _mmA = _menu.children('ul').children('li').children('a');
 
-  
+  // hover
+  _mmHasChild.on( 'mouseenter', function(){
+    let _thisLi = $(this);
+    let _childUl = _thisLi.children('ul');
+    _childUl.addClass('show').offset({ left:_menu.children('ul').offset().left });
+  }).on( 'mouseleave', function(){
+    $(this).children('ul').removeClass('show');
+  })
+
+  // focus
+  _mmA.focus(function(){
+    $(this).parent().siblings().children('ul').removeClass('show');
+    $(this).next('ul').addClass('show').offset({ left:_menu.children('ul').offset().left });
+  });
   
   // 行動版側欄主選單
   // 複製「主選單」到側欄給行動版用
@@ -99,7 +113,6 @@ $(function(){
           _sidebarCtrl.removeClass('closeIt');
         } else {
           _menu.hide().removeAttr('style');
-          // _menuCtrl.removeClass('closeIt');
         }
       }, 200);
     });
@@ -136,8 +149,8 @@ $(function(){
     })
   
   
-
-  // --------------------- 外掛套件 slick 參數設定
+  // ------------------------------------------ //
+  // ------- 外掛套件 slick 參數設定
 
   // 首頁大圖輪播
   $('.bigBanner').slick({
@@ -145,7 +158,7 @@ $(function(){
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     speed: 800,
-    autoplay: true,
+    autoplay: false,
     arrows: true,
     dots: true,
     fade: false,
@@ -178,7 +191,7 @@ $(function(){
   });
 
 
-  // 首頁《主題專區》//////////////////////////////
+  // 首頁《主題專區》
   $('.topics').find('.flowList').slick({
     slidesToShow: 2,
     slidesToScroll: 1,
@@ -192,16 +205,12 @@ $(function(){
     responsive: [
       {
         breakpoint: 700,
-        settings: {slidesToShow: 2}
-      },
-      {
-        breakpoint: 1000,
         settings: {slidesToShow: 3}
       }
     ]
   });
 
-  // 首頁《Contact Us》地圖與聯絡資訊切換 //////////////////////////////
+  // 首頁《Contact Us》地圖與聯絡資訊切換 
   $('.mapList').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -220,7 +229,8 @@ $(function(){
     asNavFor: '.mapList'
   });
 
-  // --------------------- slick 參數設定：結束
+  // ---------- slick 參數設定：結束
+  // ------------------------------------------ //
 
 
   // 複合功能圖示
@@ -682,10 +692,11 @@ $(function(){
 
   // 分區業務組  -----------------------------------------------------0619
   var _divisions = $('.divisions');
-  var _showDivs = $('.showDivs>a');
+  var _showDivs = $('.showDivs>button');
   var _closeDivs = _divisions.find('.closeThis');
   var _divOffices = _divisions.find('.offices');
   var _eachOffice = _divOffices.find('li').find('li>a');
+  var _officeInfo = _divOffices.find('.info');
 
   _showDivs.click( function(e){
     _divisions.stop(true, false).fadeIn(400);
@@ -699,13 +710,15 @@ $(function(){
   })
   _eachOffice.click(function(e){
     let _thisOffice = $(this).parent('li');
-    let _officeInfo  = _thisOffice.find('.info');
+    let _thisOfficeInfo  = _thisOffice.find('.info');
     if ( _thisOffice.hasClass('closeIt') ){
       _thisOffice.removeClass('closeIt');
-      _officeInfo.slideUp(300);
+      _thisOfficeInfo.slideUp(300);
     } else {
+      _eachOffice.parent().removeClass('closeIt');
       _thisOffice.addClass('closeIt');
-      _officeInfo.slideDown(300);
+      _officeInfo.slideUp(300);
+      _thisOfficeInfo.slideDown(300);
     }
     e.preventDefault;
   })

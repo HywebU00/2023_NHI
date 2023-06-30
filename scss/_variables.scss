@@ -1,8 +1,10 @@
 // variables
 // ---------- 長度常數 ---------- //
 $sideBarWidth: 300px;  // 窄版側欄選單
-$mobileWidth: 92vw; // 窄螢幕寬度 moduals width in mobile
-$normalWidth: 82vw; // 寬螢幕寬度
+// $mobileWidth: 92vw; // 窄螢幕寬度 moduals width in mobile
+// $normalWidth: 82vw; // 寬螢幕寬度
+
+$bigRadius: 32px; // 圓角半徑
 // ---------- 長度常數 ---------- //
 
 
@@ -15,23 +17,32 @@ $wwMaximum: 1200px;
 
 
 // ---------- 主要內容寬度設定 ----------- //
-%mainWidth {
-  width: $mobileWidth; margin: 0 auto;
-  @media screen and (min-width: $wwNormal){
-    width: $normalWidth;
-  }
+// %mainWidth {
+//   width: $mobileWidth; margin: 0 auto;
+//   @media screen and (min-width: $wwNormal){
+//     width: $normalWidth;
+//   }
+//   @media screen and (min-width: $wwMaximum){
+//     width: $wwMaximum*.82;
+//   }
+// }
+// ---------- 主要內容寬度設定 ----------- //
+
+
+// ---------- 首頁主要區塊寬度 ----------- //
+%primSecWidth {
+  width: 94%; margin: 30px auto;
   @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.82;
+    width: $wwMaximum*.94;
   }
 }
-// ---------- 主要內容寬度設定 ----------- //
 
 
 // ---------- 顏色變數 ----------- //
 $primaryColor:#004f73;
 $secondaryColor: #018a9a;
 $assistant1: #8affdf;
-// $assistant2: #9beaf6;
+$assistant2: #fff677;
 $notice: #d00;
 $focus: #12c0bd;
 
@@ -64,26 +75,11 @@ $sidebarBg: $grayDark;
 // ---------- 顏色變數 ----------- //
 
 
-
-// ---------- 首頁主要區塊寬度 ----------- //
-%primSecWidth {
-  width: 94%; margin: 30px auto;
-  @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.94;
-  }
-}
-
-
-
 // ---------- 漸層 ----------- //
-// %grandient{
-//   background-image: linear-gradient( 90deg, #004f73 , #0094a0);
-// }
-// %grandientV{
-//   background-image: linear-gradient(0deg,#2a90d1, #00b6d1);
-// }
 @mixin grandient1($degree: 0deg) {
   background-image: linear-gradient( $degree, #00486a , #018e9f);
+  // background-image: linear-gradient( $degree, hwb(199 0% 58%) , hwb(186 0% 38%));
+
 }
 @mixin grandient2($degree: 0deg) {
   background-image: linear-gradient( $degree, #0086cb 5%, #00c069 95%);

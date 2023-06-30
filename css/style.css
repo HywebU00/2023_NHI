@@ -719,11 +719,18 @@ kbd {
     margin: 0 auto;
     width: 100%;
   }
+  .webHeader .menu > ul a {
+    display: block;
+  }
   .webHeader .menu > ul > li {
+    position: relative;
     flex: 1 1 auto;
     margin: 0;
     font-size: 1.125rem;
     text-align: center;
+  }
+  .webHeader .menu > ul > li:hover > a::after {
+    height: 4px;
   }
   .webHeader .menu > ul > li > a {
     height: 3em;
@@ -738,36 +745,67 @@ kbd {
     right: 0;
     bottom: 0;
     height: 0;
-    background-color: #018a9a;
+    background-image: linear-gradient(90deg, #0086cb 5%, #00c069 95%);
     transition: height 0.15s;
   }
-  .webHeader .menu > ul > li > a:hover::after, .webHeader .menu > ul > li > a:focus::after {
+  .webHeader .menu > ul > li > a:focus::after {
     height: 4px;
   }
   .webHeader .menu > ul > li > ul {
     display: none;
-    margin: 1em 0 0;
+    margin: 0;
+    padding: 20px 0 10px;
+    position: absolute;
+    top: auto;
+    z-index: 199;
+    width: 100vw;
+    font-size: 1rem;
+    text-align: left;
+    background: rgba(240, 240, 240, 0.95);
+    box-shadow: rgba(0, 0, 0, 0.4) 0 5px 20px;
+    flex-flow: row wrap;
+  }
+  .webHeader .menu > ul > li > ul.show {
+    display: flex;
+  }
+  .webHeader .menu > ul > li > ul > li {
+    flex: 0 0 22%;
+    margin: 8px 1.5% 20px;
   }
   .webHeader .menu > ul > li > ul > li > a {
-    padding: 0.5em 0 0.1em 22px;
-    border-bottom: 1px solid transparent;
+    padding: 0 0 0.1em 20px;
+    border-bottom: 2px solid transparent;
   }
-  .webHeader .menu > ul > li > ul > li > a::before {
+  .webHeader .menu > ul > li > ul > li > a::before, .webHeader .menu > ul > li > ul > li > a::after {
     content: "";
     position: absolute;
-    left: 3px;
-    top: 1.2em;
-    width: 8px;
-    height: 2px;
-    background: #fff;
     transition: 0.15s;
   }
+  .webHeader .menu > ul > li > ul > li > a::before {
+    left: 0;
+    top: 10px;
+    width: 12px;
+    height: 2px;
+    background: #081c36;
+  }
+  .webHeader .menu > ul > li > ul > li > a::after {
+    width: 8px;
+    height: 8px;
+    border: 2px solid #081c36;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+    left: 1px;
+    top: 6px;
+  }
   .webHeader .menu > ul > li > ul > li > a:hover, .webHeader .menu > ul > li > ul > li > a:focus {
-    border-color: rgba(255, 255, 255, 0.6);
+    border-color: #018a9a;
   }
   .webHeader .menu > ul > li > ul > li > a:hover::before, .webHeader .menu > ul > li > ul > li > a:focus::before {
-    height: 8px;
-    transform: translateY(-4px);
+    left: 3px;
+  }
+  .webHeader .menu > ul > li > ul > li > a:hover::after, .webHeader .menu > ul > li > ul > li > a:focus::after {
+    left: 4px;
   }
   .webHeader .menu > ul > li > ul > li + li {
     margin-top: 4px;
@@ -781,6 +819,9 @@ kbd {
 }
 @media screen and (min-width: 1200px) {
   .webHeader .menu > ul {
+    width: 1200px;
+  }
+  .webHeader .menu > ul > li > ul {
     width: 1200px;
   }
 }
@@ -1043,7 +1084,7 @@ kbd {
 @media screen and (min-width: 1000px) {
   .search {
     top: 100px;
-    right: 30px;
+    right: 20px;
     width: 500px;
     height: 0;
     padding: 0 30px;
@@ -1092,14 +1133,14 @@ kbd {
 @media screen and (min-width: 1000px) {
   .webHeader {
     background: url(../images/bg_tinyDots.png) repeat, linear-gradient(90deg, #004f73, #0094a0);
-    padding: 30px 0 0;
+    padding: 0;
     margin: 0;
   }
   .webHeader h1 {
     background: none;
     height: auto;
-    margin: 0 0 0 40px;
-    padding: 0 0 24px;
+    margin: 0 0 0 30px;
+    padding: 30px 0;
     width: 480px;
   }
   .webHeader h1 img {
@@ -1806,6 +1847,7 @@ fieldset legend {
 }
 
 .divisions {
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -1832,9 +1874,8 @@ fieldset legend {
   padding: 0;
 }
 .divisions hgroup {
-  position: relative;
   font-size: 1.25em;
-  padding-right: 9em;
+  line-height: 1.5;
 }
 .divisions hgroup h2 {
   font-size: 2em;
@@ -1850,9 +1891,7 @@ fieldset legend {
 }
 .divisions hgroup .more {
   --moreColor: #fff;
-  position: absolute;
-  right: 0;
-  top: 1.6em;
+  text-align: right;
 }
 .divisions hgroup .more a {
   padding-left: 1em;
@@ -1862,21 +1901,14 @@ fieldset legend {
   box-shadow: #12c0bd 0 0 12px 1px;
 }
 .divisions .offices {
-  display: flex;
-  flex-flow: row wrap;
   line-height: 1.3;
 }
 .divisions .offices > li {
-  flex: 0 0 29%;
   margin: 2em 0;
   padding: 0;
   font-size: 1.45rem;
   font-weight: bold;
   text-indent: 8px;
-}
-.divisions .offices > li:nth-child(3n+2) {
-  margin-left: 6.5%;
-  margin-right: 6.5%;
 }
 .divisions .offices > li li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -1916,14 +1948,68 @@ fieldset legend {
 }
 .divisions .offices .info {
   display: none;
-  padding: 5px 4px 15px 14px;
+  padding: 12px 6px 9px 12px;
+  margin: 6px 3px;
+  border-radius: 12px;
   font-size: 1.06rem;
   text-indent: 0;
   color: #d9d9d9;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #004f73;
 }
 .divisions .offices .info p {
   margin: 0 0 0.3em;
   line-height: 1.3;
+}
+.divisions .offices .info .toGmap {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -3px 0 0 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff url(../images/icon_mapPin_b.png) no-repeat center center;
+  background-size: auto 64%;
+  text-indent: -12em;
+  overflow: hidden;
+  transition: 0.1s;
+}
+.divisions .offices .info .toGmap:hover, .divisions .offices .info .toGmap:focus {
+  transform: scale(1.2);
+  background-color: #fff677;
+}
+@media screen and (min-width: 700px) {
+  .divisions .offices {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .divisions .offices > li {
+    flex: 0 0 47%;
+  }
+  .divisions .offices > li:nth-child(2n) {
+    margin-left: 6%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .divisions hgroup {
+    position: relative;
+    padding-right: 9em;
+  }
+  .divisions hgroup .more {
+    position: absolute;
+    right: 0;
+    top: 1.8em;
+  }
+  .divisions .offices > li {
+    flex: 0 0 29%;
+  }
+  .divisions .offices > li:nth-child(n) {
+    margin-left: 0;
+  }
+  .divisions .offices > li:nth-child(3n+2) {
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+  }
 }
 
 .bigBanner {
@@ -2021,6 +2107,10 @@ fieldset legend {
   line-height: 1.6;
 }
 
+.topics, .services {
+  box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
+  border-radius: 32px;
+}
 .topics .blockHeader .major, .services .blockHeader .major {
   font-size: 1.875rem;
   padding-bottom: 4px;
@@ -2031,30 +2121,26 @@ fieldset legend {
 
 .topics {
   padding: 20px 0 40px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 0 6px;
-  border-radius: 24px;
 }
 .topics .flowList {
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 40px;
 }
 .topics .flowItem {
   text-align: center;
-  margin: 0 10px;
+  margin: 0 8px;
 }
 .topics .flowItem a {
   display: block;
-  margin: 0 auto;
   color: #081c36;
   text-decoration: none;
 }
 .topics .flowItem img {
   display: block;
   width: 100%;
-  height: calc(47vw - 50px);
-  object-fit: cover;
+  height: calc(47vw - 56px);
 }
 .topics .flowItem p {
   margin: 12px auto 0;
@@ -2068,7 +2154,7 @@ fieldset legend {
   overflow: hidden;
 }
 .topics .slick-arrow {
-  top: calc(23.5vw - 25px);
+  top: calc(23.5vw - 28px);
 }
 .topics .slick-arrow.slick-prev {
   left: 4px;
@@ -2077,68 +2163,58 @@ fieldset legend {
   right: 4px;
 }
 @media screen and (min-width: 700px) {
-  .topics .flowList {
-    border: 1px solid red;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
   .topics .flowItem img {
-    height: calc(50vw - 100px);
+    height: calc((94vw - 128px) / 3);
   }
   .topics .slick-arrow {
-    top: calc(25vw - 50px);
+    top: calc((94vw - 128px) / 6);
   }
 }
 @media screen and (min-width: 1000px) {
   .topics {
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 0 12px;
-    padding: 36px 2% 32px 22%;
+    padding: 30px 10px 30px 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
   }
   .topics .blockHeader {
-    border: 1px solid red;
-    position: absolute;
-    left: 3%;
-    top: 30px;
-    width: 20%;
-    padding: 0;
+    flex: 0 0 220px;
+    padding: 0 0 200px;
     margin: 0;
-  }
-  .topics .blockHeader .major {
-    font-size: 1.6rem;
-  }
-  .topics .blockHeader .engSub {
-    font-size: 1rem;
-  }
-  .topics .flowList {
-    width: auto;
-    padding-left: 40px;
-    padding-right: 40px;
+    background: url(../images/topic_img.png) no-repeat center bottom;
+    background-size: 100% auto;
   }
   .topics .flowItem {
-    margin: 0 22px;
+    margin: 0 20px;
   }
   .topics .flowItem img {
-    height: calc(23vw - 60px);
+    height: calc((94vw - 460px) / 3);
   }
   .topics .flowItem p {
     font-size: 1.2rem;
   }
   .topics .slick-arrow {
-    top: calc(11.5vw - 30px);
+    top: calc((94vw - 460px) / 6);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .topics .flowItem img {
+    height: 222.6666666667px;
+  }
+  .topics .slick-arrow {
+    top: 111.3333333333px;
   }
 }
 
 .services {
   padding: 20px 0 40px;
-  box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
-  border-radius: 24px;
 }
 .services .servList {
+  width: 96%;
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 96%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -2153,6 +2229,7 @@ fieldset legend {
 .services .servList > li a {
   display: block;
   padding: 16px 5px 8px;
+  height: 100%;
   text-decoration: none;
   color: #081c36;
   border-radius: 16px;
@@ -2169,10 +2246,18 @@ fieldset legend {
   margin: 0 auto 8px;
   padding: 0;
   width: 18vw;
-  height: 18vw;
+  height: auto;
   border-radius: 50%;
   background-image: linear-gradient(0deg, #00486a, #018e9f);
   transition: 0.2s;
+}
+@media screen and (min-width: 700px) {
+  .services .servList > li {
+    flex-basis: calc(25% - 20px);
+  }
+  .services .servList > li img {
+    width: 76%;
+  }
 }
 @media screen and (min-width: 1000px) {
   .services {
@@ -2185,7 +2270,6 @@ fieldset legend {
     flex: 0 0 220px;
     margin: 0;
     min-height: 250px;
-    outline: 1px solid pink;
     background: url(../images/services_img.png) no-repeat center bottom 0;
     background-size: 100% auto;
   }
@@ -2194,7 +2278,8 @@ fieldset legend {
     width: auto;
   }
   .services .servList > li {
-    flex-basis: calc(16.66% - 20px);
+    margin: 5px;
+    flex-basis: calc(16.66% - 10px);
   }
   .services .servList > li a {
     padding: 12px 6px 6px;
