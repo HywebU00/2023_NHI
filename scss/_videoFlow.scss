@@ -1,7 +1,10 @@
 // 即時影音
 .videoFlow{
   padding: 90px 0 100px;margin: 0 auto;
-  background-color: #1a354b; color: $fontInvert;
+  
+  background:#2b3e4f url(../images/bg_videoFlow.jpg) no-repeat center top;
+  color: $fontInvert;
+
   .blockHeader{
     .engSub{ 
       background-image: none; color: $fontInvert;
@@ -44,19 +47,20 @@
   }
 
   .slick-dots{
-     margin: 30px 0 0;
-     .slick-active{
-      button{ background-color: $white;}
-    }
+    --dotBgc: #81898c;
+    --dotActive: #fff;
+  
+     margin: 40px 0 0;
   }
   .slick-arrow{
     top: 18vw;
-    &.slick-prev{ left: 20px;}
-    &.slick-next{ right: 20px;}
+    &.slick-prev{ left: 18px;}
+    &.slick-next{ right: 18px;}
   }
 
   .more{
     --moreColor : #fff;
+    margin-top: 1.5em;
   }
 
   @media screen and (min-width: $wwMedium){
@@ -76,6 +80,7 @@
 
 
   @media screen and (min-width: $wwNormal){
+    
     .flowList{
       margin-top: 70px;
       padding-left: 6vw; padding-right: 6vw;
@@ -89,13 +94,15 @@
       }
     }
     .slick-arrow{ top: calc(8.25vw - 13.5px);}
+    .slick-dots{ margin-top: 60px; }
 
-    .more{ text-align: right; margin-right: 40px;}
+    .more{ text-align: right; margin:-32px 40px auto auto;}
   }
 
   @media screen and (min-width: $wwMaximum){
-    width:  $wwMaximum;padding: 150px 0;
+
     .flowList{
+      width:  $wwMaximum; margin-left: auto; margin-right: auto;
       padding-left: $wwMaximum*.06; padding-right: $wwMaximum*.06;
     }
     .flowItem{
@@ -106,8 +113,9 @@
       }
 
     }
-    .slick-dots{ margin-top: 60px; }
     .slick-arrow{ top: calc($wwMaximum*.0825 - 13.5px);}
+    
+    .more{ margin-right: calc(50% - $wwMaximum*.5 + 40px);}
 
   }
 

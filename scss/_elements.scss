@@ -22,8 +22,9 @@ a:focus{outline: none;}
 
 // more //////////////////////
 .more{
-  text-align: center; margin: 1em 0 0;
   --moreColor : #000;
+  
+  text-align: center; margin: 1em 0 0; font-size: 1.125rem;
   a{
     position: relative;
     display: inline-block; height: 2.8em; line-height: 2.8; padding: 0 64px 0 16px;
@@ -175,39 +176,41 @@ button.closeThis{
 // slick套件 ----------------------------------------------
 // slick套件: 左右箭頭
 .slick-arrow{
-  position: absolute; top: 50%; margin: -22px 0 0; z-index: 9;
-  width: 44px; height: 44px; border-radius: 50%; 
+  position: absolute; top: 50%; margin: -30px 0 0; z-index: 9;
+  width: 60px; height: 60px; border-radius: 50%; 
   text-indent: -20em; overflow: hidden; border: none;
-  background-color: transparent;
-  box-shadow: $secondaryColor 0 0 0 0;
-  transition: background .2s, box-shadow .1s;
+  background-color: transparent; box-shadow: none;
+  transition: background-color .3s;
 
   &::before, &::after{
-    content: ''; position: absolute;left: calc(50% - 12px);
-    width: 20px; height: 5px;border-radius: 3px;
-    background-color: #aaa;
+    content: ''; position: absolute;left: calc(50% - 14px);
+    width: 24px; height: 6px;border-radius: 3px;
+    background-color: #c3c3c3;
+    transition: .2s;
   }
   &::before{
-    bottom: calc(50% + 3px);
+    bottom: calc(50% + 4px);
     transform: rotate(-45deg);
   }
   &::after{
-    top:calc(50% + 3px);
+    top:calc(50% + 4px);
     transform: rotate(45deg);
   }
   &.slick-prev{left: 4px;}
   &.slick-next{ transform:scaleX(-100%);right: 4px;}
 
   &:hover, &:focus{
-    background-color: $secondaryColor;
-    box-shadow: $secondaryColor 0 0 0 4px;
-    transition: background .2s, box-shadow .5s;
+    background-color: rgba(0,0,0,.7);box-shadow: none;
+    &::before, &::after{ background-color: #fff;}
   }
 }
 // slick套件: 點點 indicators
 .slick-dots{
-  $dotDia: 8px; // 圓點直徑
-  margin: 10px auto 5px; z-index: 99;
+  --dotBgc: #cad9e4;
+  --dotActive: #06689a;
+  $dotDia: 9px; // 圓點直徑
+
+  margin: 10px auto 5px; z-index: 19;
   display: flex; justify-content: center;
   list-style: none; margin: 0 auto; padding: 0;
   li{ 
@@ -215,16 +218,13 @@ button.closeThis{
     button{
       width: $dotDia; height: $dotDia; border-radius: $dotDia;
       padding: 0; font-size: 0; border: none; box-shadow: none;
-      background: darken($gray, 20%);
+      background: var(--dotBgc);
       transform: .2s;
-      &:hover, &:focus {background-color: $grayDark; }
-      // &:focus{
-      //   width: calc($dotDia * 4);
-      // }
+      &:hover, &:focus {background-color: var(--dotActive); }
     }
     &.slick-active{
       button{
-        background-color: $primaryColor; width: calc($dotDia * 4);
+        background-color: var(--dotActive); width: calc($dotDia * 4);
       }
     }
   }
@@ -300,34 +300,38 @@ a:hover .videoThumb{
 
 // 回頁面最上方 ----------------------------------------------
 .goTop{
-  position: fixed; bottom: -60px; right: 12px;  z-index: 90; 
-  padding:15px 0 0;margin: 0; width: 48px; height: 48px; line-height: 1;
-  text-indent: -10em; overflow: hidden;
+  position: fixed; bottom: -60px; right: 16px;  z-index: 90; 
+  padding:14px 0 0;margin: 0; width: 48px; height: 48px; line-height:1 ;
+  overflow: hidden;
   font-size: .85rem; text-transform: uppercase; font-weight: bold;
   border: none; border-radius: 50%; 
   background: rgba(0,0,0,.6);color: $fontInvert;
-  box-shadow: rgba(255,255,255, .4) 0 0 0 3px;
+  box-shadow: none;
   transition:background .2s, box-shadow .2s, bottom 1.2s;
 
-  &:hover, &:focus{ background: #000;box-shadow: rgba(255,255,255, .7) 0 0 0 3px;}
-  &:focus{ box-shadow:#000 0 0 0 3px; }
+  &:hover{background: rgba(0,0,0,.85); box-shadow: rgba(255,255,255,.2) 0 0 0 4px;}
+  &:focus{background: rgba(0,0,0,.85); box-shadow: transparentize($secondaryColor, .3) 0 0 0 4px;}
 
   &::before{
     content: ''; position: absolute;
-    width: 10px; height: 10px; left: 18px; top: 20px;
+    width: 10px; height: 10px; left: 18px; top: 12px;
     border: 2px solid $fontInvert;  border-bottom: none; border-right: none;
     transform: rotate(45deg);
   }
 
-  &.show{bottom: 30px; transition:bottom .8s;}
+  &.show{bottom: 30px;}
 
-  @media screen and (min-width: calc($wwMaximum + 146px) ){
-    right: calc(50% - #{$wwMaximum}/2 - 60px);
+  @media screen and (min-width: $wwNormal){
+    right: calc(3vw - 24px);
+  }
+
+  @media screen and (min-width: calc($wwMaximum + 150px) ){
+    right: calc(50% - $wwMaximum*.5 - 60px);
   }
 
 }
 
-
+// 燈箱跳離元件
 button.skip{
   position: absolute; right: 0; bottom: 0; 
   padding: 0; margin: 0; width: 1px; height: 1px;

@@ -33,10 +33,10 @@
 
   }
 
-  @media screen and (min-width: calc( $wwMaximum + 80px)){
+  @media screen and (min-width: calc( $wwMaximum + 60px)){
     .slick-arrow{
-      &.slick-prev{ left: 50%; margin-left: -.5*$wwMaximum - 22px;}
-      &.slick-next{ right: 50%; margin-right: -.5*$wwMaximum - 22px;}
+      &.slick-prev{ left: 50%; margin-left: -.5*$wwMaximum - 30px;}
+      &.slick-next{ right: 50%; margin-right: -.5*$wwMaximum - 30px;}
     }
   }
 

@@ -444,7 +444,7 @@
       </div>
     </section>
 
-    <section class="bulletin">
+    <section class="bulletin" style="display: none;">
       <h2 class="blockHeader">
         <span class="major">系統公告</span>
       </h2>
@@ -455,7 +455,7 @@
     </section>
 
     <!-- 主題專區 -->
-    <section class="topics">
+    <section class="topics" style="display: none;">
       <h2 class="blockHeader">
         <span class="major">主題專區</span>
         <span class="engSub">HOT TOPICS</span>
@@ -493,7 +493,7 @@
     </section>
 
     <!-- 常用服務 -->
-    <section class="services">
+    <section class="services" style="display: none;">
       <h2 class="blockHeader">
         <span class="major">常用服務</span>
         <span class="engSub">POPULAR SERVICES</span>
@@ -515,7 +515,7 @@
     </section>
 
     <!-- 最新消息 -->
-    <section class="news">
+    <section class="news" style="display: none;">
       <h2 class="blockHeader">
         <span class="major">最新消息</span>
         <span class="engSub">NEWS RELEASE</span>
@@ -533,7 +533,12 @@
         <div class="tabContentGroup">
           <div class="tabContent">
             <ul class="newsList">
-              <li><a href="#"><time>110/12/16</time>健保署與玉皇宮等共同見證臺南市最高學府「南化區瑞峰國小」口腔保健站提供健</a></li>
+              <li class="headLine"><a href="#">
+                <img src="publicData/ph04.jpg" alt="">
+                <time>110/12/16</time>
+                <p>「肝部分切除術」等17項達文西手術費納入健保給付，近千人受惠</p>
+              </a></li>
+              <li><a href="#"><time>110/12/16</time>種文華防因轉品不身科望政八才際配，無去靜動葉要路身，麗往長時日感種西該及家開兒了線或因設管團與時</a></li>
               <li><a href="#"><time>110/12/16</time>預防接種受害救濟，預防接種受害救濟，您了解嗎?</a></li>
               <li><a href="#"><time>110/12/16</time>腎臟長泡泡「藥」怎麼辦?</a></li>
               <li><a href="#"><time>110/12/16</time>認識管制藥品認識「管制藥品」，遵守規則不濫用 </a></li>
@@ -547,7 +552,7 @@
     </section>
 
     <!-- App 下載與社群平台 -->
-    <section class="appAndSocialMedia">
+    <section class="appAndSocialMedia" style="display: none;">
       <ul>
         <li><a href="#">
           <img class="leading" src="publicData/logo_nhi.png" alt="">
@@ -618,33 +623,24 @@
     </section>
 
     <!-- 聯絡我們 -->
-    <section class="contactUs"  style="display: none;">
+    <section class="contactUs">
       <h2 class="blockHeader">
         <span class="major">聯絡我們</span>
         <span class="engSub">CONTACT US</span>
       </h2>
 
       <section class="cardBox">
-        <div class="navButtons">
-          <button class="active" type="button">署本部</button>
-          <button type="button">臺北</button>
-          <button type="button">北區</button>
-          <button type="button">中區</button>
-          <button type="button">南區</button>
-          <button type="button">高屏</button>
-          <button type="button">東區</button>
-        </div>
         <div class="cardList">
           <div class="infoCard">
             <ul>
-              <li><span class="dt">服務電話</span>(02)2706-5866</li>
+              <li><span class="dt">服務電話</span>(02)2706-5866（署本部）</li>
               <li><span class="dt">服務時間</span>星期一至星期五<br> 08:30-12:30;13:30-17:30</li>
               <li><span class="dt">交通地址</span>106211臺北市大安區信義路三段140號</li>
             </ul>
           </div>
           <div class="infoCard">
             <ul>
-              <li><span class="dt">服務電話</span>(02)2191-2006</li>
+              <li><span class="dt">服務電話</span>(02)2191-2006（臺北）</li>
               <li><span class="dt">交通地址</span>100008臺北市中正區公園路15-1號</li>  
             </ul>
           </div>
@@ -678,7 +674,6 @@
               <li><span class="dt">交通地址</span>970009花蓮縣花蓮市軒轅路36號</li>
             </ul>
           </div>
-
         </div>
         <div class="base">
           <p>健保諮詢服務專線</p>
@@ -879,7 +874,7 @@
   </footer>
 
 
-  <button type="button" class="goTop">回到頁面頂端</button>
+  <button type="button" title="回到頁面頂端" class="goTop">TOP</button>
 </body>
 
 </html>

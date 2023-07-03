@@ -223,15 +223,25 @@ $(function(){
   $('.cardBox').find('.cardList').slick({
     slidesToShow: 1,  
     slidesToScroll: 1,
-    dots: false,
-    fade: true,
+    dots: true,
+    fade: false,
     infinite: true,
     asNavFor: '.mapList'
   });
 
+
   // ---------- slick 參數設定：結束
   // ------------------------------------------ //
 
+  // 首頁《Contact Us》地圖與聯絡資訊切換：補上方區域名稱切換
+  var _navMapDots = $('.contactUs').find('.cardBox').find('.slick-dots');
+  var _navMapLi = _navMapDots.find('li');
+  const region = ["署本部", "臺北", "北區", "中區", "南區", "高屏", "東區"];
+  for (let i=0 ; i<region.length ; i++) {
+    _navMapLi.eq(i).find('button').text(region[i]);
+  }
+  _navMapDots.prependTo('.cardBox .cardList');
+  _navMapLi.find('button').focus( function(){$(this).trigger('click');} )
 
   // 複合功能圖示
   var _compIcon = $('.compound'); //li
@@ -578,7 +588,6 @@ $(function(){
     // 點擊.photoflow的圖片，開燈箱顯示大圖
     _flowItem.children('a').click(function(){
       photoIndex = $(this).parent().attr('data-index');
-      //console.log(photoIndex);
       _cpBigPhoto.stop(true, false).fadeIn().find('.flowList').find('li').filter( function(){
         return $(this).attr('data-index') == photoIndex;
       }).show();
@@ -618,8 +627,6 @@ $(function(){
     _btnRight.click(function(){
       i = Number( _photoItem.filter(':visible').attr('data-index') );
       j = (i+1) % photoCount;
-
-      // console.log(i, j);
 
       _photoItem.filter( function(){
         return $(this).attr('data-index') == i;
