@@ -2,18 +2,23 @@
 .bulletin{
   @extend %primSecWidth;
   .blockHeader{
-    margin: 0;
-    align-items: flex-start;
+    margin: 0; align-items: flex-start;
     .major{
-      padding: 0 20px; height: 2em; line-height: 2.15;
-      font-size: 1.125rem; display: inline-block; width: auto; 
+      padding: 0 1em; height: 2em; line-height: 2.1;
+      font-size: 1.125rem; display: inline-block; width: auto;
+      letter-spacing: 1px;
       @include grandient1(180deg); color: $fontInvert;
       border-radius: 2em;
       &::after{display: none;}
     }
   }
-  p.subject{
+  .subject{
     margin: .8em 0 0;
     font-size: 1.125rem; font-weight: bold; line-height: 1.6;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .blockHeader{ float: left;}
+    .subject{ padding-top: .25em; margin-left: 7.2em;}
   }
 }
