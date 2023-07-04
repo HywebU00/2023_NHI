@@ -3,6 +3,7 @@
   @extend %primSecWidth;
   box-shadow: rgba(57, 120, 132, .3) 0 0 20px;
   border-radius: $bigRadius;
+  background-color: rgba(255,255,255,.65);
   .blockHeader{
     // outline: 1px solid pink;
     .major{

@@ -10,12 +10,12 @@
         display: flex; align-items: center;
         padding: 18px;
         box-shadow:$primaryColor 0 0 0 0, rgba(57, 120, 132, .3) 0 0 20px;
-        color: $fontColor; 
+        background-color: $white; color: $fontColor; 
         border-radius: 24px; text-decoration: none;
         transition: .2s;
 
         &:hover, &:focus{
-          box-shadow:$primaryColor 0 0 0 3px, rgba(57, 120, 132, .6) 0 0 25px;
+          box-shadow:$focus 0 0 0 3px, rgba(57, 120, 132, .6) 0 0 25px;
         }
 
       }

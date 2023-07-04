@@ -26,6 +26,8 @@ body * {
 .main {
   position: relative;
   margin: 0 auto;
+  background: url(../images/bg_dot.png) repeat 0 0, url(../images/bg+left.jpg) no-repeat left 0 top 400px, url(../images/bg+right.jpg) no-repeat right 0 top 1110px;
+  background-color: #fff;
 }
 @media screen and (min-width: 1000px) {
   .main.inner {
@@ -924,7 +926,7 @@ kbd {
     align-items: center;
     position: absolute;
     right: 0;
-    top: 44px;
+    top: 36px;
     margin-right: 64px;
   }
   .webHeader .topLinks ul.text {
@@ -1049,7 +1051,7 @@ kbd {
   background-color: #fff;
 }
 .search input[type=text]:focus {
-  box-shadow: #12c0bd 0 0 0 2px;
+  box-shadow: #07b4b1 0 0 0 2px;
 }
 .search input[type=button], .search input[type=submit] {
   width: 5em;
@@ -1060,7 +1062,7 @@ kbd {
 }
 .search input[type=button]:focus, .search input[type=submit]:focus {
   background-color: #01425c;
-  box-shadow: #12c0bd 0 0 0 2px;
+  box-shadow: #07b4b1 0 0 0 2px;
 }
 .search .hotKeywords {
   clear: both;
@@ -1149,8 +1151,8 @@ kbd {
   .webHeader h1 {
     background: none;
     height: auto;
-    margin: 0 0 0 30px;
-    padding: 30px 0;
+    margin: 0 0 0 24px;
+    padding: 24px 0;
     width: 480px;
   }
   .webHeader h1 img {
@@ -1908,7 +1910,7 @@ fieldset legend {
   transition: 0.2s;
 }
 .divisions hgroup .more a:hover {
-  box-shadow: #12c0bd 0 0 12px 1px;
+  box-shadow: #07b4b1 0 0 12px 1px;
 }
 .divisions .offices {
   line-height: 1.3;
@@ -2037,7 +2039,7 @@ fieldset legend {
 .bigBanner .banner img {
   display: block;
   width: 100%;
-  height: 30vw;
+  height: 31vw;
 }
 .bigBanner .slick-arrow {
   top: 15vw;
@@ -2075,10 +2077,10 @@ fieldset legend {
     transform: translateX(100%);
   }
   .bigBanner .banner img {
-    height: 360px;
+    height: 372px;
   }
   .bigBanner .slick-arrow {
-    top: 180px;
+    top: 186px;
   }
 }
 @media screen and (min-width: 1260px) {
@@ -2120,6 +2122,7 @@ fieldset legend {
 .topics, .services {
   box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
   border-radius: 32px;
+  background-color: rgba(255, 255, 255, 0.65);
 }
 .topics .blockHeader .major, .services .blockHeader .major {
   font-size: 1.875rem;
@@ -2505,13 +2508,14 @@ fieldset legend {
   align-items: center;
   padding: 18px;
   box-shadow: #004f73 0 0 0 0, rgba(57, 120, 132, 0.3) 0 0 20px;
+  background-color: #fff;
   color: #081c36;
   border-radius: 24px;
   text-decoration: none;
   transition: 0.2s;
 }
 .appAndSocialMedia ul li a:hover, .appAndSocialMedia ul li a:focus {
-  box-shadow: #004f73 0 0 0 3px, rgba(57, 120, 132, 0.6) 0 0 25px;
+  box-shadow: #07b4b1 0 0 0 3px, rgba(57, 120, 132, 0.6) 0 0 25px;
 }
 .appAndSocialMedia ul li img {
   display: block;
@@ -2771,7 +2775,7 @@ fieldset legend {
   position: relative;
   z-index: 9;
   background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px;
   padding: 1em 1.2em;
   width: 12em;
   margin: 0 auto;
@@ -2782,19 +2786,16 @@ fieldset legend {
   width: 94%;
   max-width: 540px;
   margin: 24px auto;
-  padding: 4em 25px 25px;
+  padding: 4em 20px 20px;
   z-index: 9;
   font-size: 1.125rem;
   border-radius: 32px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: rgba(0, 0, 0, 0.25) 0 0 30px;
 }
 .contactUs .cardBox .cardList {
   position: relative;
   margin: 0 30px;
-}
-.contactUs .cardBox .infoCard {
-  padding: 1em 5px;
 }
 .contactUs .cardBox .infoCard ul {
   list-style: none;
@@ -2806,16 +2807,16 @@ fieldset legend {
   padding-left: 5em;
 }
 .contactUs .cardBox .infoCard li + li {
-  margin-top: 0.5em;
+  margin-top: 0.3em;
 }
 .contactUs .cardBox .infoCard li .dt {
   display: inline-block;
   margin-left: -5em;
 }
 .contactUs .cardBox .infoCard li .dt::after {
-  content: " / ";
+  content: "/";
   margin-right: 0.3em;
-  margin-left: 0.2em;
+  margin-left: 0.3em;
 }
 .contactUs .cardBox .slick-arrow {
   z-index: 9;
@@ -2829,9 +2830,9 @@ fieldset legend {
 }
 .contactUs .cardBox .slick-dots {
   position: absolute;
-  top: -2.5em;
-  left: -36px;
-  right: -36px;
+  top: -2.8em;
+  left: -30px;
+  right: -30px;
   display: flex;
   justify-content: space-between;
 }
@@ -2863,9 +2864,6 @@ fieldset legend {
   height: 3px;
   transition: 0.2s;
 }
-.contactUs .cardBox .slick-dots li button:focus::after {
-  background-color: #c00;
-}
 .contactUs .cardBox .slick-dots li.slick-active button {
   color: #005a7f;
 }
@@ -2873,12 +2871,12 @@ fieldset legend {
   background-color: #018a9a;
 }
 .contactUs .cardBox .base {
-  padding: 1em 1em 0.8em 140px;
+  padding: 15px 15px 13px 100px;
   margin: 10px auto 0;
   line-height: 1.3;
   border-radius: 20px;
-  background: url(../images/bg_cardBox.png) no-repeat 36px center, linear-gradient(to bottom, #0094a0, #004f73);
-  background-size: 77px, auto;
+  background: url(../images/bg_cardBox.png) no-repeat 16px center, linear-gradient(to bottom, #0094a0, #004f73);
+  background-size: 70px, auto;
   color: #fff;
 }
 .contactUs .cardBox .base p {
@@ -2894,31 +2892,26 @@ fieldset legend {
   margin-top: 0.3em;
 }
 .contactUs .mapList {
-  position: relative;
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  overflow: hidden;
 }
 .contactUs .mapList .map {
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
 }
 .contactUs .mapList .map img {
   display: block;
   width: 100%;
-  height: 800px;
+  height: 1280px;
+  object-position: 72% 0%;
   object-fit: cover;
-  object-position: 60% 0;
 }
 .contactUs .mapList .map a {
-  position: relative;
   display: block;
 }
 .contactUs .mapList .map a::before {
@@ -2929,41 +2922,36 @@ fieldset legend {
   top: 0;
   bottom: 0;
   transition: 0.2s;
-  z-index: 9;
+  z-index: 11;
 }
 .contactUs .mapList .map a:hover::before {
-  box-shadow: #8affdf 0 0 0 1px inset;
+  box-shadow: #07b4b1 0 0 0 2px inset;
 }
 .contactUs .mapList .map a:focus::before {
-  box-shadow: #8affdf 0 0 0 2px inset;
+  box-shadow: #000 0 0 0 3px inset;
+}
+@media screen and (min-width: 700px) {
+  .contactUs .cardBox {
+    padding: 5em 30px 30px;
+  }
+  .contactUs .cardBox .base {
+    padding: 25px 25px 22px 130px;
+    background-size: 77px, auto;
+    background-position: 30px center, 0 0;
+  }
 }
 @media screen and (min-width: 1000px) {
   .contactUs {
     padding: 1px 40px 0;
     height: 640px;
   }
-  .contactUs .mapList {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: 0;
-  }
-  .contactUs .mapList .map {
-    height: 640px;
-  }
-  .contactUs .mapList .map img {
-    height: 640px;
-    object-position: 50% 50%;
-  }
   .contactUs .cardBox {
     position: absolute;
     top: auto;
     left: 60px;
     bottom: 0;
-    margin: 0;
-    padding: 5em 36px 25px;
     border-radius: 32px 32px 0 0;
+    margin: 0;
   }
   .contactUs .cardBox .cardList {
     margin: 0 46px;
@@ -2981,6 +2969,10 @@ fieldset legend {
   }
   .contactUs .cardBox .slick-dots li button {
     padding: 0 4px;
+  }
+  .contactUs .mapList .map img {
+    height: 900px;
+    object-position: 50% 50%;
   }
 }
 @media screen and (min-width: 1320px) {

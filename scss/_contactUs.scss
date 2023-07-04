@@ -1,58 +1,33 @@
 // 首頁：Contact Us 地圖與聯絡資訊--------------------------------------
 .contactUs{
   position: relative; margin: 0 auto; padding: 1px 0 200px;
-  // border: 1px solid transparent;
   .blockHeader{
     position: relative; z-index: 9;
-    background: $white; box-shadow: rgba(0,0,0,.25) 0 4px 12px;
+    background: $white; box-shadow: rgba(0,0,0,.25) 0 4px 16px;
     padding:1em 1.2em; width: 12em; margin: 0 auto;
     border-radius: 3em;
   }
 
-  // --- 地圖與聯絡資訊 --- // 
-  // .container{ padding: 24px 0 0; }
-
-  // .navButtons{
-  //   display: flex; justify-content: space-between;
-  //   margin: 0 0 1em;
-  //   button{
-  //     position: relative;
-  //     margin: 0 3px; padding: 0; height: 1.6em; line-height: 1.6;
-  //     font-size: 1.25rem; font-weight: bold;
-  //     background: none; box-shadow: none; border: none;
-  //     color: $fontColor;
-  //     &::after{
-  //       content: ''; position: absolute; left: 0;right: 0;bottom: 0;
-  //       height: 3px; transition: .2s;
-  //     }
-  //     &.slick-current{
-  //       color: $primaryColor;
-  //       &::after{background-color: $secondaryColor;}
-  //     }
-  //   }
-  // }
-
 
   .cardBox{
     position: relative; width: 94%; max-width: 540px;
-    margin: 24px auto; padding:4em 25px 25px; z-index: 9;
+    margin: 24px auto; padding:4em 20px 20px; z-index: 9;
     font-size: 1.125rem; border-radius: 32px;
-    background: $white; box-shadow: rgba(0,0,0,.25) 0 0 30px; 
+    background: rgba(255,255,255,.9); box-shadow: rgba(0,0,0,.25) 0 0 30px; 
 
     .cardList{ 
       position: relative; margin: 0 30px;
     }
 
     .infoCard{
-      padding: 1em 5px;
       ul{ list-style: none; margin: 0; padding: 0;line-height: 1.5; }
       li{
-        &+li{ margin-top: .5em;}
+        &+li{ margin-top: .3em;}
         padding-left: 5em;
         .dt{
           display: inline-block; margin-left: -5em;
           &::after{
-            content: ' / '; margin-right: .3em; margin-left: .2em;
+            content: '/'; margin-right: .3em; margin-left: .3em;
           }
         }
       }
@@ -64,7 +39,7 @@
     }
 
     .slick-dots{
-      position: absolute; top: -2.5em; left: -36px; right: -36px;
+      position: absolute; top: -2.8em; left: -30px; right: -30px;
       display: flex; justify-content: space-between;
       li {
         flex: 0 1 auto; margin: 0;
@@ -78,9 +53,9 @@
             content: ''; position: absolute; left: 0;right: 0;bottom: 0;
             height: 3px; transition: .2s;
           }
-          &:focus{
-           &::after{ background-color: #c00;}
-          }       
+          // &:focus{
+          //  &::after{ background-color: #c00;}
+          // }       
         }
         &.slick-active{
           button{
@@ -92,17 +67,16 @@
     }
 
     .base{
-      padding:1em 1em .8em 140px; margin:10px auto 0;
+      padding:15px 15px 13px 100px; margin:10px auto 0;
       line-height: 1.3;border-radius: 20px;
-      background:url(../images/bg_cardBox.png) no-repeat 36px center, linear-gradient(to bottom, #0094a0, #004f73);
-      background-size: 77px, auto;
+      background:url(../images/bg_cardBox.png) no-repeat 16px center, linear-gradient(to bottom, #0094a0, #004f73);
+      background-size: 70px, auto;
       color: $fontInvert;
       p { 
         margin: 0;
         &:first-child {
-          margin-bottom: 0.6em;
-          font-size: 1.5rem;font-weight: bold;
-           color: #e3fff7;
+          margin-bottom: 0.6em;font-size: 1.5rem;font-weight: bold;
+          color: #e3fff7;
         }
         & + p{ margin-top: .3em;}
       }
@@ -112,41 +86,49 @@
 
   // 地圖
   .mapList{ 
-    position: relative; overflow: hidden;
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    // border: 3px solid blue;
+    overflow: hidden;
     .map{ 
-      position: absolute; left: 0; top: 0; bottom: 0;width: 100%;overflow: hidden;
-      img{ display: block;  width: 100%; height: 800px; object-fit: cover; object-position: 60% 0; }
-      a{ position: relative;  display: block;
+      position: absolute; left: 0; top: 0;
+      img{ 
+        display: block; width: 100%; height: 1280px;
+        object-position: 72% 0%;object-fit: cover; 
+      }
+      a{ 
+        display: block;
         &::before{ 
-          content: ''; position: absolute; left: 0;right: 0;top: 0;bottom: 0;
-          transition: .2s;z-index: 9;
+          content: ''; position: absolute; left: 0;right: 0;top: 0; bottom: 0;
+          transition: .2s; z-index: 11;
         }
         &:hover{
-          &::before{box-shadow: $assistant1 0 0 0 1px inset;}
+          &::before{box-shadow: $focus 0 0 0 2px inset;}
         }
         &:focus{
-          &::before{box-shadow: $assistant1 0 0 0 2px inset;}
+          &::before{box-shadow: $black 0 0 0 3px inset;}
         }
       }
     }
   }
 
+  @media screen and (min-width: $wwMedium){
+    .cardBox{
+      padding:5em 30px 30px;
+      .base{
+        padding:25px 25px 22px 130px;
+        background-size: 77px, auto;
+        background-position: 30px center, 0 0;
+      }
+    }
+    
+  }
+
 
   @media screen and (min-width:$wwNormal){
     padding: 1px 40px 0; height: 640px;
-    .mapList{ 
-      position: absolute; left: 0; right: 0; top: 0; margin: 0;
-      .map{ 
-        height:640px;
-        img{ height:640px ; object-position: 50% 50%;}
-      }
-    }
+
     .cardBox{
       position: absolute; top: auto; left: 60px; bottom: 0;
-      margin: 0; padding:5em 36px 25px; 
-      border-radius: 32px 32px 0 0;
+      border-radius: 32px 32px 0 0; margin: 0;
 
       .cardList{
         margin: 0 46px;
@@ -161,11 +143,19 @@
         top: -3em;left: -50px; right: -50px;
         li {
           button{ padding: 0 4px;
-            // &:focus{ box-shadow: $focus 0 0 5px;}
           }
         }
       }
     }
+
+    // 地圖
+    .mapList{ 
+      .map{ 
+        // height:900px;
+        img{ height:900px ; object-position: 50% 50%;}
+      }
+    }
+
   }
 
   @media screen and (min-width: calc($wwMaximum + 120px)){

@@ -6,7 +6,7 @@
     position: relative; overflow: hidden;
     a{ display: block; color: $fontColor;}
     img{
-      display: block; width: 100%; height: 30vw; // w:h = 10:3
+      display: block; width: 100%; height: 31vw; // w:h = 100:31
     }
   }
   .slick-arrow{ top: 15vw;}
@@ -27,9 +27,9 @@
       &::after{right: 0;transform: translateX(100%);}
     }
     .banner{
-      img{ height: $wwMaximum*.3;}
+      img{ height: $wwMaximum*.31;}
     }
-    .slick-arrow{top: $wwMaximum*.15;}
+    .slick-arrow{top: $wwMaximum*.155;}
 
   }
 
