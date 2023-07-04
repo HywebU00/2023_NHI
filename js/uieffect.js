@@ -20,14 +20,14 @@ $(function(){
 
   _html.removeClass('no-js');
 
-  // 製作側欄選單遮罩
+  // 製作側欄選單遮罩 ///////////////
   _body.append('<div class="sidebarMask"></div>');
   var _sidebarMask = $('.sidebarMask');
 
-  // 找出_menu中有次選單的li
+  // 找出_menu中有次選單的li ///////////////
   _menu.find('li').has('ul').addClass('hasChild');
 
-  // 寬版「主選單」
+  // 寬版「主選單」/////////////////////////////////////////////
   var _mmHasChild = _menu.find('.hasChild');
   var _mmA = _menu.children('ul').children('li').children('a');
 
@@ -45,8 +45,10 @@ $(function(){
     $(this).parent().siblings().children('ul').removeClass('show');
     $(this).next('ul').addClass('show').offset({ left:_menu.children('ul').offset().left });
   });
+  /////////////// end ////////////////////////////////////////////////////////////
   
-  // 行動版側欄主選單
+
+  // 行動版側欄主選單 /////////////////////////////////////////////
   // 複製「主選單」到側欄給行動版用
   _menu.clone().prependTo(_sidebar);
   $('.topLinks').clone().appendTo(_sidebar);
@@ -101,56 +103,54 @@ $(function(){
   
   
   
-    let winResizeTimer0;
-    _window.resize(function () {
-      clearTimeout(winResizeTimer0);
-      ww = _window.width();
-      winResizeTimer = setTimeout(function () {
-        if(ww >= wwNormal) {
-          _sidebarMask.hide();
-          _body.removeClass('noScroll');
-          _sidebar.removeClass('reveal');
-          _sidebarCtrl.removeClass('closeIt');
-        } else {
-          _menu.hide().removeAttr('style');
-        }
-      }, 200);
-    });
-  
-  
-  
-    // 查詢區開合 -----------------------------------------------------
-    var _searchCtrl = $('.searchCtrl');
-    var _search = $('.search');
-    _search.append('<button class="skip" type="button">回到控制開關</button>');
-    var _skipSearch = _search.find('.skip');
-    const srSpeed = 510;
-    _searchCtrl.click(function(){
-      if( _search.hasClass('reveal')) {
-        _search.removeClass('reveal');
-        setTimeout(function(){_search.hide()}, srSpeed);
+  let winResizeTimer0;
+  _window.resize(function () {
+    clearTimeout(winResizeTimer0);
+    ww = _window.width();
+    winResizeTimer = setTimeout(function () {
+      if(ww >= wwNormal) {
+        _sidebarMask.hide();
+        _body.removeClass('noScroll');
+        _sidebar.removeClass('reveal');
+        _sidebarCtrl.removeClass('closeIt');
       } else {
-        _search.show(0, function(){
-          _search.addClass('reveal');
-          setTimeout (function(){_search.find('input[type="text"]').focus()}, srSpeed);
-        });
+        _menu.hide().removeAttr('style');
       }
-    })
-  
-    // _search.find('input[type="text"]').focus(function () {
-    //   _search.addClass('reveal');
-    // })
+    }, 200);
+  });
+  /////////////// end /////////////////////////////////////////////
   
   
-    _skipSearch.focus(function(){
+  // 版頭查詢區開合 /////////////////////////////////////////////
+  var _searchCtrl = $('.searchCtrl');
+  var _search = $('.search');
+  _search.append('<button class="skip" type="button">回到控制開關</button>');
+  var _skipSearch = _search.find('.skip');
+  const srSpeed = 510;
+  _searchCtrl.click(function(){
+    if( _search.hasClass('reveal')) {
       _search.removeClass('reveal');
       setTimeout(function(){_search.hide()}, srSpeed);
-      _searchCtrl.focus();
-    })
+    } else {
+      _search.show(0, function(){
+        _search.addClass('reveal');
+        setTimeout (function(){_search.find('input[type="text"]').focus()}, srSpeed);
+      });
+    }
+  })
+  _skipSearch.focus(function(){
+    _search.removeClass('reveal');
+    setTimeout(function(){_search.hide()}, srSpeed);
+    _searchCtrl.focus();
+  })
+
+  /////////////// end /////////////////////////////////////////////
+
   
-  
+
+
   // ------------------------------------------ //
-  // ------- 外掛套件 slick 參數設定
+  // -------- 外掛套件 slick 參數設定 --------- //
 
   // 首頁大圖輪播
   $('.bigBanner').slick({
@@ -190,7 +190,6 @@ $(function(){
 
   });
 
-
   // 首頁《主題專區》
   $('.topics').find('.flowList').slick({
     slidesToShow: 2,
@@ -229,11 +228,11 @@ $(function(){
     asNavFor: '.mapList'
   });
 
-
-  // ---------- slick 參數設定：結束
+  // ---------- slick 參數設定：結束 --------- //
   // ------------------------------------------ //
 
-  // 首頁《Contact Us》地圖與聯絡資訊切換：補上方區域名稱切換
+
+  // 首頁《Contact Us》地圖與聯絡資訊切換：補上方區域名稱切換 //////////////////////////////
   var _navMapDots = $('.contactUs').find('.cardBox').find('.slick-dots');
   var _navMapLi = _navMapDots.find('li');
   const region = ["署本部", "臺北", "北區", "中區", "南區", "高屏", "東區"];
@@ -242,8 +241,12 @@ $(function(){
   }
   _navMapDots.prependTo('.cardBox .cardList');
   _navMapLi.find('button').focus( function(){$(this).trigger('click');} )
+  //////////////////////////////////////////////////////////////////////////////////////////
 
-  // 複合功能圖示
+
+
+  // 複合功能圖示 /////////////////////////////////////////////
+  // 文字大小和分享
   var _compIcon = $('.compound'); //li
   _compIcon.each(function(){
     let _this = $(this);
@@ -290,10 +293,8 @@ $(function(){
     _this.siblings().click(glideUp);
     _this.siblings().children('a, button').focus(glideUp);
   })
-
-
-
-  // /////////// font size 和 cookie ///////////////
+  
+  /////////// font size 和 cookie /////////////////////////////////////////////
   // font size：顯示所選項目
   var _fontSize = $('.fontSize');
   var _fontSizeBtn = _fontSize.children('button');
@@ -305,18 +306,6 @@ $(function(){
     _fontSizeBtn.removeClass().addClass(fontClass);
     _innerMain.removeClass('largeFont mediumFont smallFont').addClass(fontClass);
     createCookie('FontSize', fontClass , 365);
-
-    // font size：改變 _innerMain 字體大小
-    // if ( fontClass == 'smallFont') {
-    //   _innerMain.removeClass('largeFont').addClass(fontClass);
-    //   createCookie('FontSize', 'small', 365);
-    // } else if ( fontClass == 'largeFont' ) {
-    //   _innerMain.removeClass('smallFont').addClass(fontClass);
-    //   createCookie('FontSize', 'large', 365);
-    // } else {
-    //   _innerMain.removeClass('largeFont smallFont');
-    //   createCookie('FontSize', 'medium', 365);
-    // }
   })
 
   function createCookie(name, value, days) {
@@ -328,8 +317,6 @@ $(function(){
       expires = '';
     }
     document.cookie = name + '=' + value + expires + '; path=/';
-    // else expires = '';
-    // document.cookie = name + '=' + value + expires + '; path=/';
   }
 
   function readCookie(name) {
@@ -343,25 +330,25 @@ $(function(){
     return null;
   }
 
-
   window.onload = function () {
     var cookie = readCookie('FontSize');
 
     _innerMain.removeClass('largeFont mediumFont smallFont').addClass(cookie);
     _fontSizeBtn.removeClass().addClass(cookie);
-
-    // alert('cookie='+cookie);
-    // if ( cookie == 'small' ) {
-    //   _innerMain.removeClass('largeFont').addClass('smallFont');
-    //   _fontSizeBtn.removeClass().addClass('smallFont');
-    // } else if ( cookie == 'large' ) {
-    //   _innerMain.removeClass('smallFont ').addClass('largeFont');
-    //   _fontSizeBtn.removeClass().addClass('largeFont');
-    // } else {
-    //   _innerMain.removeClass('smallFont largeFont');
-    //   _fontSizeBtn.removeClass();
-    // }
   }
+
+  // end //////////////////////////////////////////////////////////// //
+
+
+
+
+  
+
+
+
+
+
+
 
 
 
@@ -697,7 +684,7 @@ $(function(){
   // --end of-- 查詢區 -----------------------------------------------------
 
 
-  // 分區業務組  -----------------------------------------------------0619
+  // 分區業務組  ----------------------------------------------------20230619
   var _divisions = $('.divisions');
   var _showDivs = $('.showDivs>button');
   var _closeDivs = _divisions.find('.closeThis');
@@ -707,14 +694,19 @@ $(function(){
 
   _showDivs.click( function(e){
     _divisions.stop(true, false).fadeIn(400);
+    _closeDivs.focus();
     _body.addClass('noScroll');
     e.preventDefault;
   })
+
   _closeDivs.click( function(){
     _eachOffice.parent().removeClass('closeIt').find('.info').slideUp(200);
-    _divisions.stop(true, false).fadeOut(400);
+    _divisions.stop(true, false).fadeOut(400, function(){
+      _showDivs.focus();
+    });
     _body.removeClass('noScroll');
   })
+
   _eachOffice.click(function(e){
     let _thisOffice = $(this).parent('li');
     let _thisOfficeInfo  = _thisOffice.find('.info');
@@ -729,6 +721,13 @@ $(function(){
     }
     e.preventDefault;
   })
+  
+  // ***** //
+  _divOffices.children('li:last-child').find('li:last-child').children('a').blur( function(){
+    _closeDivs.focus();
+  });
+
+  
 
 
   // fatfooter 開合 -----------------------------------------------------

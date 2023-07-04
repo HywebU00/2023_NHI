@@ -21,7 +21,6 @@
 
 
   @media screen and (min-width: $wwNormal){
-    // @include grandient1(90deg);
     background:url(../images/bg_tinyDots.png) repeat, linear-gradient( 90deg, #004f73 , #0094a0);
     padding:0; margin: 0;
     h1{
@@ -31,14 +30,7 @@
     }
 
     .searchCtrl{ 
-      top: 44px; right: 20px; border-radius: 50%;
-      &::before{border-color: $white;}
-      &::after{background-color: $white;}
-      &:hover, &:focus{ 
-        @include grandient1(-30deg);
-        box-shadow: rgba(255,255,255,.5) 0 0 0 3px;
-      }
-
+      top: 36px; right: 20px; border-radius: 50%;
     }
     .sidebarCtrl{display: none;}
   }

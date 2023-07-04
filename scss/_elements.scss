@@ -5,18 +5,20 @@ a:focus{outline: none;}
 //  快捷鍵 ----------------------------------------------
 .accesskey{ display: none; }
 @media screen and (min-width: $wwNormal){
-  a.accesskey{ display: block; z-index: 9;
-    position: absolute; left: 0; top: 0; margin: 2px;
-    text-decoration: none;
-    &:focus, &:hover { outline: 2px solid $assistant1;}
+  a.accesskey{ 
+    display: block; z-index: 19;
+    position: absolute; left: 0; top: 4px; margin: 4px;
+    text-decoration: none; color: #000;
+    &:focus, &:hover { outline: 2px solid $focus;}
   }
-  .webHeader .accesskey{color: $primaryColor;}
-  .webFooter .accesskey{ top: 4px; color: $primaryColor;}
-  .main .accesskey { top: 20px; left: -1.5em; color: $gray;}
+  .webHeader .accesskey{color: $fontInvert;}
+  .webFooter .accesskey{ color: $fontInvert;}
+  .main .accesskey { background-color: rgba(255,255,255,.4); z-index: 999; }
 }
 @media screen and (min-width: $wwMaximum){
   .webHeader .accesskey,
-  .webFooter .accesskey { left: calc(50vw - #{$wwMaximum}*.5);}
+  .webFooter .accesskey{ left: calc(50vw - #{$wwMaximum}*.5);}
+  .main .accesskey { left: calc(50vw - #{$wwMaximum}*.5 - 1.5em);}
 }
 
 
@@ -79,15 +81,18 @@ a:focus{outline: none;}
   border-radius: 4px; background-color: transparent; border: none; margin: 0;
   border: none; box-shadow: none;background-color: transparent;
   text-indent: -20em; overflow: hidden;
-  &:hover, &:focus{ 
-    background-color: $secondaryColor; box-shadow: none;
+  &:hover{ 
+    background-color: $focus; box-shadow: none;
   }
-  &:focus{box-shadow: $secondaryColor 0 0 0 2px;}
-
+  &:focus{
+    background-color: $focus;
+    box-shadow: $focus 0 0 0 3px;
+  }
 }
 
 // 查詢圖示 ////////////////////
 .searchCtrl{ 
+  --tinge : #000;
   transition: background-color .2s, box-shadow .2s;
 
   &::before, &::after{
@@ -95,12 +100,25 @@ a:focus{outline: none;}
   }
   &::before{
     left: calc(50% - 14px); top: calc(50% - 14px);
-    width: 16px; height: 16px; border: 3px solid $black; border-radius: 50%;
+    width: 16px; height: 16px; border: 3px solid var(--tinge); border-radius: 50%;
   }
   &::after{
-    width: 11px; height: 4px; background-color: $black; border-radius: 0 2px 2px 0;
+    width: 11px; height: 4px; background-color: var(--tinge); border-radius: 0 2px 2px 0;
     left: calc(50% + 2px); top: calc(50% + 6px);
     transform: rotate(45deg);
+  }
+
+  @media screen and (min-width: $wwNormal){
+    --tinge : #fff;
+    &:hover{
+      background-color: $primaryColor;
+      box-shadow: $primaryColor 0 0 0 3px;
+    }
+    &:focus{
+      background-color: $primaryColor;
+      box-shadow: $focus 0 0 0 3px;
+
+    }
   }
 
 }
@@ -151,13 +169,18 @@ a:focus{outline: none;}
 
 // 關閉 「X」///////////////////////////////////////////////
 button.closeThis{
+  --bc : rgba(0,0,0,.8);
+  --fc: #fff;
+  --focus: #e40;
+
   position: relative;
   height: 44px; width: 44px; padding: 0; margin: 0;
   text-indent: -20em; overflow: hidden;
-  background-color: rgba(0,0,0,.8);box-shadow: none;border: none;
+  box-shadow: none;border: none; border-radius: 0;
+  background-color: var(--bc);
   &::before, &::after{
     content: ''; position: absolute; left: 11px; top: 21px;
-    width: 24px; height: 2px; background-color: #fff;
+    width: 24px; height: 2px; background-color: var(--fc);
   }
   &::before{
     transform: rotate(45deg);
@@ -166,8 +189,8 @@ button.closeThis{
     transform: rotate(-45deg);
   }
 
-  &:hover{ background-color: $btnBg2; box-shadow: none; }
-  &:focus{ background-color: $btnBg1; box-shadow: $btnBg1 0 0 0 2px}
+  &:hover{ background-color: $black; box-shadow: none; }
+  &:focus{ background-color: var(--focus); box-shadow: var(--focus) 0 0 0 3px}
 }
 
 

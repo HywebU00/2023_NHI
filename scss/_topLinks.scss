@@ -6,7 +6,7 @@
 
 // 在行動版側欄中
 .sidebar .topLinks{
-  .menuCtrl, .searchCtrl, .fontSize{ display: none;}
+  .searchCtrl, .fontSize{ display: none;}
   ul.text{
     display: flex; flex-flow: row wrap; justify-content: center;
     width: calc(100% - 20px); margin: 15px auto 10px;
@@ -97,19 +97,21 @@
       display: flex; margin: 0 8px;
       &>li{
         margin: 0 3px; padding: 0;
-        &>a, button {
+        a, button {
           width: 44px; height: 44px;line-height: 44px; border-radius: 50%;
           margin: 0; padding: 0;
           background-color: $primaryColor; color: $fontInvert;
           border: none; box-shadow: none;
           transition: .2s;
-          &:hover, &:focus { 
-            box-shadow:rgba(255,255,255,.5) 0 0 0 3px;
+          &:hover { 
+            box-shadow:$primaryColor 0 0 0 2px;
+          }
+          &:focus{
+            box-shadow: $focus 0 0 0 3px;
           }
         }
         &.langEN>a{
-          font-size: .88em; text-align: center;
-          
+          text-align: center;
         }
         &.showDivs button{
           text-indent: -15em; overflow: hidden;
@@ -118,10 +120,42 @@
           background-position: center center;
           background-size: 16px;
         }
-        &.fontSize button{
+        &.compound {
+          position: relative; 
+          // 第二層：選文字大小
+          ul{
+            display: none;z-index: 99;
+            position: absolute; top: 0; left: 0; 
+            width: 44px; margin-top: -2px; top: auto;
+            &>li{
+              position: absolute; top: 0; left: 0; 
+              margin: 4px 0; padding: 0;
+              a, button{
+                background-color: $primaryColor;
+                &:hover{
+                  background-color: $primaryColor;
+                  box-shadow:$primaryColor 0 0 0 2px;
+                }
+                &:focus{box-shadow:$focus 0 0 0 3px;}
+              }
+              img{ display: block; width: 100%; height: 100%; margin: 0 auto;border-radius: 50%; }
+            }
+          }
         }
+
       }
+
     }
   }
 }
 
+
+// 文字大小 //
+.fontSize{
+  // button{ line-height: 44px;}
+  .smallFont{ font-size: .875rem;}
+  .mediumFont{ font-size: 1rem;}
+  .largeFont{ font-size: 1.25rem;}
+  &>.smallFont::after{content: '小'; font-size: .5em;}
+  &>.largeFont::after{content: '大';font-size: .5em;}
+}
