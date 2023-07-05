@@ -4,13 +4,24 @@
   // border: 1px solid red;
   .banner{
     position: relative; overflow: hidden;
-    a{ display: block; color: $fontColor;}
     img{
       display: block; width: 100%; height: 31vw; // w:h = 100:31
     }
+    a{ 
+      display: block; color: $fontColor;
+      &::after{
+        content: ''; opacity: 0;
+        position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+        box-shadow: $fontColor 0 0 0 2px inset;
+        transition: .2s;
+      }
+      &:focus{
+        &::after{ opacity: 1;}
+      }
+    }
   }
-  .slick-arrow{ top: 15vw;}
 
+  .slick-arrow{ top: 15vw;}
   .slick-dots{ position: absolute; left: 0; right: 0; bottom: 10px;}
 
 

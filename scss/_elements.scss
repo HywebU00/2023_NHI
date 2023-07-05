@@ -13,7 +13,7 @@ a:focus{outline: none;}
   }
   .webHeader .accesskey{color: $fontInvert;}
   .webFooter .accesskey{ color: $fontInvert;}
-  .main .accesskey { background-color: rgba(255,255,255,.4); z-index: 999; }
+  .main .accesskey { background-color: rgba(255,255,255,.4); z-index: 19;}
 }
 @media screen and (min-width: $wwMaximum){
   .webHeader .accesskey,
@@ -25,31 +25,35 @@ a:focus{outline: none;}
 // more //////////////////////
 .more{
   --moreColor : #000;
+  --hoverBg : rgba(0,0,0,.3);
   
   text-align: center; margin: 1em 0 0; font-size: 1.125rem;
   a{
     position: relative;
-    display: inline-block; height: 2.8em; line-height: 2.8; padding: 0 64px 0 16px;
+    display: inline-block; height: 2.8em; line-height: 2.8; padding: 0 70px 0 18px;
     color: var(--moreColor); text-decoration: none; border-radius: 2em;
+    transition: .2s;
     
     &::before, &::after{
       content: ''; position: absolute;
       transition: .2s;
     }
     &::before{
-      right: 15px; top:calc(50% - 5px); width: 8px;height: 8px;
+      right: 22px; top:calc(50% - 5px); width: 8px;height: 8px;
       border: 2px solid var(--moreColor); border-left: none; border-bottom: none;
       transform:  rotate(45deg);
     }
     &::after {
-      top: calc(50% - 1px); right: 16px;
+      top: calc(50% - 1px); right: 23px;
       width: 2px; height: 2px; border-radius: 1px;
       background-color: var(--moreColor);
       box-shadow: var(--moreColor) -1px 0 0, var(--moreColor) -2px 0 0, var(--moreColor) -3px 0 0, var(--moreColor) -4px 0 0, var(--moreColor) -5px 0 0, var(--moreColor) -6px 0 0, var(--moreColor) -7px 0 0, var(--moreColor) -8px 0 0, var(--moreColor) -13px 0 0 , var(--moreColor) -18px 0 0, var(--moreColor) -23px 0 0, var(--moreColor) -28px 0 0, var(--moreColor) -33px 0 0, var(--moreColor) -38px 0 0;
     }
 
     &:hover, &:focus {
-      &::after { width: 6px;  }
+      &::before {right: 16px;}
+      &::after { width: 6px; right: 17px; }
+      background-color: var(--hoverBg);
     }
 
   }
@@ -64,7 +68,7 @@ a:focus{outline: none;}
     padding: 0 1em; margin-left: 2em; border-radius: 0 0 4px 4px;
     overflow: hidden;
     font-size: .9rem; height: 1.6em; line-height: 1.6;
-    background-color: $primaryColor; color: $fontInvert;
+    background-color: $secondaryColor; color: $fontInvert;
     text-decoration: none; outline: none;  cursor: pointer;
     transition:top .3s; 
     &:focus{ top: 0;}

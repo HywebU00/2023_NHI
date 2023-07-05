@@ -21,13 +21,6 @@
     .more{
       --moreColor : #fff;
       text-align: right;
-      a{
-        padding-left: 1em;
-        transition: .2s;
-        &:hover, &:focus{box-shadow: var(--moreColor) 0 0 8px;
-          background-color: rgba(0,0,0,.3);
-        }
-      }
     }
   }
 
@@ -40,15 +33,11 @@
       li{
         border-bottom: 1px solid rgba(255,255,255,.3);
         font-size: 1.25rem; font-weight: normal;
-        
         &>a{
           display: block; position: relative;
           padding: .55em 24px .5em 2px;
           &:focus, &:hover{ background-color: rgba(0,0,0,.3);}
-          &::before, &::after{
-            content: ''; position: absolute;
-          }
-
+          &::before, &::after{content: ''; position: absolute;}
           &::after{
             right: 12px; top: .9em;
             width: 8px;height: 8px; transform: rotate(45deg);
@@ -56,7 +45,6 @@
             transition: .3s;
           }
         }
-
         &.closeIt{
           background-color: rgba(0,0,0,.2);
           &>a {
@@ -75,24 +63,20 @@
       border-top: 1px dashed rgba(255,255,255, .3);
       padding:12px 6px 9px 12px; margin: 0 3px 6px; 
       font-size: 1.06rem; text-indent: 0; color: $fontInvert;
-        // background-color: rgba(0,0,0,.2);
-        // background-color: $primaryColor;
       p{
         margin: 0 0 .3em; line-height: 1.3;
       }
 
       .toGmap{
         display: inline-block; vertical-align: middle;
-        margin: -3px 0 0 4px;
-        width: 32px; height: 32px; border-radius: 50%;
+        margin: 3px 3px 3px 6px;
+        width: 28px; height: 28px; border-radius: 50%;
         background: $white url(../images/icon_mapPin_b.png) no-repeat center center;
         background-size: auto 64%;
         text-indent: -12em; overflow: hidden;
         transition: .1s;
         &:hover, &:focus{
-          transform: scale(1.2);
-          background-color: $assistant2;
-
+          box-shadow: $primaryColor 0 0 0 1px, rgba(255,255,255, .7) 0 0 0 3px;
         }
       }
     }

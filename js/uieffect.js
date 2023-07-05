@@ -35,9 +35,11 @@ $(function(){
   _mmHasChild.on( 'mouseenter', function(){
     let _thisLi = $(this);
     let _childUl = _thisLi.children('ul');
+    // _childUl.fadeIn().offset({ left:_menu.children('ul').offset().left });
     _childUl.addClass('show').offset({ left:_menu.children('ul').offset().left });
   }).on( 'mouseleave', function(){
     $(this).children('ul').removeClass('show');
+    // $(this).children('ul').fadeOut();
   })
 
   // focus
@@ -45,6 +47,13 @@ $(function(){
     $(this).parent().siblings().children('ul').removeClass('show');
     $(this).next('ul').addClass('show').offset({ left:_menu.children('ul').offset().left });
   });
+
+  // 離開 _menu 隱藏所有次選單
+  $('*').focus(function(){
+    if( $(this).parents('.menu').length == 0 ){
+      _menu.find('.hasChild').removeClass('here').find('ul').removeClass('show').removeAttr('style');
+    }
+  })
   /////////////// end ////////////////////////////////////////////////////////////
   
 
@@ -337,11 +346,97 @@ $(function(){
     _fontSizeBtn.removeClass().addClass(cookie);
   }
 
-  // end //////////////////////////////////////////////////////////// //
+  // end ////////////////////////////////////////////////////////////
 
 
 
 
+	// 頁籤功能 ////////////////////////////////////////////////////////////
+	function tabFun() {
+		var activeClass = 'active'; // 啟動的 class
+		var tabSet = $('.tabSet');
+    
+		tabSet.each(function () {
+      let _this = $(this);
+			// var _tabBtnBlock = _this.find('.tabItems');
+			let _tabBtn = _this.find('.tabItems').children('button');
+			let _tabBtnLength = _tabBtn.length;
+			let _tabContent =  _this.find('.tabContent');
+      
+			_tabBtn.removeClass(activeClass).eq(0).addClass(activeClass);
+			_tabContent.eq(0).show();
+
+			for (let i = 0; i < _tabBtnLength; i++) {
+				(
+					function (i) {
+						let _this = _tabBtn.eq(i);
+						let _thisContent = _tabContent.eq(i);
+						let _thisPrevItem = _tabContent.eq(i - 1);
+						let _itemAllA = _thisContent.find('[href], input'); //這一個頁籤內容所有a和input項目
+						let _prevItemAllA = _thisPrevItem.find('[href], input'); //前一個頁籤內容所有a和input項目
+						let _isFirstTab = i === 0; //如果是第一個頁籤
+						let _isLastTab = i === _tabBtnLength - 1; //如果是最後一個頁籤
+						let _itemFirstA = _itemAllA.eq(0); //頁籤內容第一個a或是input
+						let _itemLastA = _itemAllA.eq(-1); //頁籤內容最後一個a或是input
+						let _prevItemLastA = _prevItemAllA.eq(-1); //前一個頁籤的最後一個a或是input
+
+						// _this頁籤觸發focus內容裡的第一個a
+						_this.on('keydown', function (e) {
+							//頁籤第幾個按鈕觸發時無
+							if (e.which === 9 && !e.shiftKey) { // 按下 tab 時沒有按著 shift
+								// e.preventDefault();
+								startTab(i); //啟動頁籤切換功能
+								if (_itemAllA.length) { // 如果 _itemAllA.length 不是 0（內容有至少一個 a 或 input）
+									_itemFirstA.focus(); // 內容的第一個 a 或是 input focus
+								} else {
+									_tabBtn.eq(i + 1).focus(); // 當內容沒有 a 或是 input 跳下一個頁籤
+								}
+							} else if (e.which === 9 && e.shiftKey && !_isFirstTab) { // 按下 tab 時同時按著 shift，且不是第一個頁籤
+								e.preventDefault();
+								startTab(i - 1); //啟動頁籤切換功能，切換到上一個頁籤
+
+								if (_prevItemAllA.length) { // 如果前ㄧ個頁籤的內容有至少一個 a 或 input
+									_prevItemLastA.focus(); // 前一個頁籤內容的最後一個a或是input focus
+								} else { // 當內容沒有a或是input
+									_tabBtn.eq(i - 1).focus(); // focus 上一個頁籤
+								}
+							}
+						});
+
+						// 當按下shift+tab且為該內容的第一個a或是input
+						// 將focus目標轉回tab頁籤上，呼叫上方功能startTab(i - 1);往前一個頁籤
+						_itemFirstA.on('keydown', function (e) {
+							if (e.which === 9 && e.shiftKey) {
+								e.preventDefault();
+								_tabBtn.eq(i).focus();
+							}
+						});
+
+						//當按下shift+tab且為該內容的最後一個a或是input，focus到下一個頁籤
+						_itemLastA.on('keydown', function (e) {
+							if (e.which === 9 && !e.shiftKey && !_isLastTab) {
+								e.preventDefault();
+								_tabBtn.eq(i + 1).focus();
+							}
+						});
+					})(i);
+
+				//滑鼠點擊事件
+				_tabBtn.on('click', function (e) {
+					e.preventDefault();
+					startTab( $(this).index() );
+				});
+
+				//切換tab
+				function startTab(_now) {
+					_tabBtn.eq(_now).addClass(activeClass).siblings().removeClass(activeClass);
+					_tabContent.hide().eq(_now).show();
+				}
+			}
+		});
+	}
+	tabFun();
+  // end //////////////////////////////////////////////////////////
   
 
 

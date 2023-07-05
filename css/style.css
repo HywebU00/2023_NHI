@@ -37,6 +37,7 @@ body * {
 .blockHeader {
   text-align: center;
   line-height: 1.2;
+  margin: 10px 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -95,7 +96,7 @@ a:focus {
   }
   .main .accesskey {
     background-color: rgba(255, 255, 255, 0.4);
-    z-index: 999;
+    z-index: 19;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -109,6 +110,7 @@ a:focus {
 }
 .more {
   --moreColor: #000;
+  --hoverBg: rgba(0,0,0,.3);
   text-align: center;
   margin: 1em 0 0;
   font-size: 1.125rem;
@@ -118,10 +120,11 @@ a:focus {
   display: inline-block;
   height: 2.8em;
   line-height: 2.8;
-  padding: 0 64px 0 16px;
+  padding: 0 70px 0 18px;
   color: var(--moreColor);
   text-decoration: none;
   border-radius: 2em;
+  transition: 0.2s;
 }
 .more a::before, .more a::after {
   content: "";
@@ -129,7 +132,7 @@ a:focus {
   transition: 0.2s;
 }
 .more a::before {
-  right: 15px;
+  right: 22px;
   top: calc(50% - 5px);
   width: 8px;
   height: 8px;
@@ -140,15 +143,22 @@ a:focus {
 }
 .more a::after {
   top: calc(50% - 1px);
-  right: 16px;
+  right: 23px;
   width: 2px;
   height: 2px;
   border-radius: 1px;
   background-color: var(--moreColor);
   box-shadow: var(--moreColor) -1px 0 0, var(--moreColor) -2px 0 0, var(--moreColor) -3px 0 0, var(--moreColor) -4px 0 0, var(--moreColor) -5px 0 0, var(--moreColor) -6px 0 0, var(--moreColor) -7px 0 0, var(--moreColor) -8px 0 0, var(--moreColor) -13px 0 0, var(--moreColor) -18px 0 0, var(--moreColor) -23px 0 0, var(--moreColor) -28px 0 0, var(--moreColor) -33px 0 0, var(--moreColor) -38px 0 0;
 }
+.more a:hover, .more a:focus {
+  background-color: var(--hoverBg);
+}
+.more a:hover::before, .more a:focus::before {
+  right: 16px;
+}
 .more a:hover::after, .more a:focus::after {
   width: 6px;
+  right: 17px;
 }
 
 .goCenter {
@@ -168,7 +178,7 @@ a:focus {
     font-size: 0.9rem;
     height: 1.6em;
     line-height: 1.6;
-    background-color: #004f73;
+    background-color: #018a9a;
     color: #fff;
     text-decoration: none;
     outline: none;
@@ -1081,13 +1091,17 @@ kbd {
 .fontSize .largeFont {
   font-size: 1.25rem;
 }
-.fontSize > .smallFont::after {
+.fontSize > .smallFont::before {
   content: "小";
-  font-size: 0.5em;
+  font-size: 0.4em;
 }
-.fontSize > .largeFont::after {
+.fontSize > .mediumFont::before {
+  content: "中";
+  font-size: 0.4em;
+}
+.fontSize > .largeFont::before {
   content: "大";
-  font-size: 0.5em;
+  font-size: 0.4em;
 }
 
 .search {
@@ -1205,6 +1219,12 @@ kbd {
   height: 80px;
   background: url(../images/h1_mobile.png) no-repeat center center;
   background-size: auto 60px;
+}
+.webHeader h1 a {
+  display: block;
+}
+.webHeader h1 a:focus {
+  box-shadow: #07b4b1 0 0 0 1px;
 }
 .webHeader h1 img {
   display: none;
@@ -1358,10 +1378,7 @@ kbd {
   flex-flow: row wrap;
 }
 .webFooter .base .findUsHere li {
-  margin: 3px;
-}
-.webFooter .base .findUsHere li a {
-  display: block;
+  margin: 4px;
 }
 .webFooter .base .findUsHere li img {
   display: block;
@@ -1369,6 +1386,13 @@ kbd {
   width: 52px;
   height: 52px;
   border-radius: 50%;
+  transition: 0.2s;
+}
+.webFooter .base .findUsHere li a {
+  display: block;
+}
+.webFooter .base .findUsHere li a:hover img, .webFooter .base .findUsHere li a:focus img {
+  box-shadow: #fff 0 0 0 1px, #374459 0 0 0 4px;
 }
 .webFooter .base .otherLinks {
   display: none;
@@ -1379,10 +1403,20 @@ kbd {
 }
 .webFooter .base .others li {
   display: inline-block;
+  margin-left: 3px;
 }
 .webFooter .base .others li img {
   display: block;
   height: 46px;
+}
+.webFooter .base .others li a {
+  display: block;
+}
+.webFooter .base .others li a:hover {
+  box-shadow: #07b4b1 0 0 0 1px;
+}
+.webFooter .base .others li a:focus {
+  box-shadow: #374459 0 0 0 2px;
 }
 @media screen and (min-width: 700px) {
   .webFooter .fatFooter::after {
@@ -1427,7 +1461,9 @@ kbd {
   }
   .webFooter .base .findUsHere {
     flex: 1 1 32%;
+    align-self: flex-end;
     border: none;
+    padding-bottom: 4px;
     justify-content: flex-end;
   }
   .webFooter .base .findUsHere li img {
@@ -1974,14 +2010,6 @@ fieldset legend {
   --moreColor: #fff;
   text-align: right;
 }
-.divisions hgroup .more a {
-  padding-left: 1em;
-  transition: 0.2s;
-}
-.divisions hgroup .more a:hover, .divisions hgroup .more a:focus {
-  box-shadow: var(--moreColor) 0 0 8px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
 .divisions .offices {
   line-height: 1.3;
   margin: 0 auto;
@@ -2049,9 +2077,9 @@ fieldset legend {
 .divisions .offices .info .toGmap {
   display: inline-block;
   vertical-align: middle;
-  margin: -3px 0 0 4px;
-  width: 32px;
-  height: 32px;
+  margin: 3px 3px 3px 6px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: #fff url(../images/icon_mapPin_b.png) no-repeat center center;
   background-size: auto 64%;
@@ -2060,8 +2088,7 @@ fieldset legend {
   transition: 0.1s;
 }
 .divisions .offices .info .toGmap:hover, .divisions .offices .info .toGmap:focus {
-  transform: scale(1.2);
-  background-color: #fff677;
+  box-shadow: #004f73 0 0 0 1px, rgba(255, 255, 255, 0.7) 0 0 0 3px;
 }
 @media screen and (min-width: 700px) {
   .divisions .offices {
@@ -2113,14 +2140,28 @@ fieldset legend {
   position: relative;
   overflow: hidden;
 }
-.bigBanner .banner a {
-  display: block;
-  color: #081c36;
-}
 .bigBanner .banner img {
   display: block;
   width: 100%;
   height: 31vw;
+}
+.bigBanner .banner a {
+  display: block;
+  color: #081c36;
+}
+.bigBanner .banner a::after {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: #081c36 0 0 0 2px inset;
+  transition: 0.2s;
+}
+.bigBanner .banner a:focus::after {
+  opacity: 1;
 }
 .bigBanner .slick-arrow {
   top: 15vw;
@@ -2224,7 +2265,7 @@ fieldset legend {
 }
 
 .topics {
-  padding: 20px 0 40px;
+  padding: 25px 0 30px;
 }
 .topics .flowList {
   overflow: hidden;
@@ -2234,17 +2275,27 @@ fieldset legend {
 }
 .topics .flowItem {
   text-align: center;
-  margin: 0 8px;
+  margin: 10px 8px;
 }
 .topics .flowItem a {
   display: block;
   color: #081c36;
   text-decoration: none;
 }
+.topics .flowItem a:hover img, .topics .flowItem a:focus img {
+  transform: scale(1.05);
+}
+.topics .flowItem a:hover p, .topics .flowItem a:focus p {
+  text-decoration: underline;
+}
+.topics .flowItem a:focus img {
+  box-shadow: #434242 0 0 0 2px;
+}
 .topics .flowItem img {
   display: block;
   width: 100%;
   height: calc(47vw - 56px);
+  transition: 0.2s;
 }
 .topics .flowItem p {
   margin: 12px auto 0;
@@ -2258,7 +2309,7 @@ fieldset legend {
   overflow: hidden;
 }
 .topics .slick-arrow {
-  top: calc(23.5vw - 28px);
+  top: calc(23.5vw - 18px);
 }
 .topics .slick-arrow.slick-prev {
   left: 6px;
@@ -2267,17 +2318,20 @@ fieldset legend {
   right: 6px;
 }
 @media screen and (min-width: 700px) {
+  .topics .flowItem {
+    margin: 10px 12px;
+  }
   .topics .flowItem img {
-    height: calc((94vw - 128px) / 3);
+    height: calc((94vw - 152px) / 3);
   }
   .topics .slick-arrow {
-    top: calc((94vw - 128px) / 6);
+    top: calc((94vw - 92px) / 6);
   }
 }
 @media screen and (min-width: 1000px) {
   .topics {
     position: relative;
-    padding: 30px 10px 30px 30px;
+    padding: 25px 10px 10px 30px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -2290,7 +2344,7 @@ fieldset legend {
     background-size: 100% auto;
   }
   .topics .flowItem {
-    margin: 0 20px;
+    margin: 10px 20px;
   }
   .topics .flowItem img {
     height: calc((94vw - 460px) / 3);
@@ -2299,7 +2353,7 @@ fieldset legend {
     font-size: 1.2rem;
   }
   .topics .slick-arrow {
-    top: calc((94vw - 460px) / 6);
+    top: calc((94vw - 400px) / 6);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -2307,7 +2361,7 @@ fieldset legend {
     height: 222.6666666667px;
   }
   .topics .slick-arrow {
-    top: 111.3333333333px;
+    top: 121.3333333333px;
   }
 }
 
@@ -2434,6 +2488,9 @@ fieldset legend {
 .news .tabItems button.active {
   background-color: rgba(0, 0, 0, 0.48);
 }
+.news .tabContent {
+  display: none;
+}
 .news .newsList {
   list-style: none;
   margin: 0 auto;
@@ -2473,12 +2530,10 @@ fieldset legend {
 }
 .news .more {
   --moreColor: #fff;
+  --hoverBg:#0005;
 }
 .news .more a {
   transition: background 0.3s;
-}
-.news .more a:hover, .news .more a:focus {
-  background-color: rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 1000px) {
   .news {
@@ -2706,9 +2761,10 @@ fieldset legend {
 }
 
 .videoFlow {
+  --bgc:#2b3e4f;
   padding: 90px 0 100px;
   margin: 0 auto;
-  background: #2b3e4f url(../images/bg_videoFlow.jpg) no-repeat center top;
+  background: var(--bgc) url(../images/bg_videoFlow.jpg) no-repeat center top;
   color: #fff;
 }
 .videoFlow .blockHeader .engSub {
@@ -2717,9 +2773,12 @@ fieldset legend {
   -webkit-text-fill-color: #fff;
 }
 .videoFlow .flowList {
-  margin-top: 30px;
+  margin-top: 25px;
   padding: 0 18vw;
   overflow: hidden;
+}
+.videoFlow .flowItem {
+  margin: 5px;
 }
 .videoFlow .flowItem a {
   position: relative;
@@ -2752,12 +2811,16 @@ fieldset legend {
   border-color: transparent transparent transparent #fff;
 }
 .videoFlow .flowItem a:hover::before, .videoFlow .flowItem a:focus::before {
-  background-color: rgba(180, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.videoFlow .flowItem a:hover img, .videoFlow .flowItem a:focus img {
+  box-shadow: var(--bgc) 0 0 0 1px, #fff 0 0 0 4px;
 }
 .videoFlow .flowItem img {
   display: block;
   width: 100%;
   height: 36vw;
+  transition: 0.3s;
 }
 .videoFlow .flowItem .title {
   margin: 15px 0 0;
@@ -2768,10 +2831,10 @@ fieldset legend {
 .videoFlow .slick-dots {
   --dotBgc: #81898c;
   --dotActive: #fff;
-  margin: 40px 0 0;
+  margin: 35px 0 0;
 }
 .videoFlow .slick-arrow {
-  top: 18vw;
+  top: calc(18vw + 5px);
 }
 .videoFlow .slick-arrow.slick-prev {
   left: 18px;
@@ -2779,16 +2842,20 @@ fieldset legend {
 .videoFlow .slick-arrow.slick-next {
   right: 18px;
 }
+.videoFlow .slick-arrow:hover, .videoFlow .slick-arrow:focus {
+  background-color: #018a9a;
+}
 .videoFlow .more {
   --moreColor: #fff;
-  margin-top: 1.5em;
+  --hoverBg: #018a9a;
+  margin-top: 2em;
 }
 @media screen and (min-width: 700px) {
   .videoFlow .flowList {
     padding: 0 10vw;
   }
   .videoFlow .flowItem {
-    margin: 0 2.4vw;
+    margin: 5px 2.4vw;
   }
   .videoFlow .flowItem img {
     height: 19.8vw;
@@ -2800,17 +2867,17 @@ fieldset legend {
     top: calc(9.9vw - 15px);
   }
   .videoFlow .slick-arrow {
-    top: 9.9vw;
+    top: calc(9.9vw + 5px);
   }
 }
 @media screen and (min-width: 1000px) {
   .videoFlow .flowList {
-    margin-top: 70px;
+    margin-top: 60px;
     padding-left: 6vw;
     padding-right: 6vw;
   }
   .videoFlow .flowItem {
-    margin: 0 24px;
+    margin: 5px 24px;
   }
   .videoFlow .flowItem img {
     height: calc(16.5vw - 27px);
@@ -2822,14 +2889,14 @@ fieldset legend {
     top: calc(8.25vw - 28px);
   }
   .videoFlow .slick-arrow {
-    top: calc(8.25vw - 13.5px);
+    top: calc(8.25vw - 8.5px);
   }
   .videoFlow .slick-dots {
-    margin-top: 60px;
+    margin-top: 50px;
   }
   .videoFlow .more {
     text-align: right;
-    margin: -32px 40px auto auto;
+    margin: -33px 40px auto auto;
   }
 }
 @media screen and (min-width: 1200px) {

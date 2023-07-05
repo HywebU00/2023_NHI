@@ -78,9 +78,18 @@
       border-bottom: 1px solid $borderColor;
       display: flex; justify-content: center; flex-flow: row wrap;
       li{
-        margin: 3px;
-        a{display: block;}
-        img{ display: block; margin:0 auto;width: 52px; height: 52px; border-radius: 50%;}
+        margin: 4px;
+        img{
+          display: block; margin:0 auto;width: 52px; height: 52px; 
+          border-radius: 50%; transition: .2s;
+        }
+        a{display: block;
+          &:hover, &:focus{
+            img{
+              box-shadow: $white 0 0 0 1px, $fontColorLight 0 0 0 4px;
+            }
+          }
+        }
       }
     }
     
@@ -92,9 +101,14 @@
       text-align: center;
       padding-top: 1em;
       li{
-        display: inline-block;
+        display: inline-block; margin-left: 3px;
         img{
           display: block; height: 46px;
+        }
+        a{
+          display: block;
+          &:hover{ box-shadow: $focus 0 0 0 1px;}
+          &:focus{ box-shadow: $fontColorLight 0 0 0 2px;}
         }
         &.egov img{}
       }
@@ -131,8 +145,8 @@
         font-size: .875rem;
       }
       .findUsHere{
-        flex: 1 1 32%;border: none;
-        // outline: 1px solid red;
+        flex: 1 1 32%;align-self: flex-end;
+        border: none; padding-bottom: 4px;
         justify-content: flex-end;
         li{
           img{ width: 46px; height: 46px;}

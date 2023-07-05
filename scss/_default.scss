@@ -32,7 +32,7 @@ body{
 }
 
 .blockHeader{
-  text-align: center; line-height: 1.2;
+  text-align: center; line-height: 1.2; margin:10px 0;
   display: flex; flex-flow: column nowrap; align-items: center;
   .major{
     display: block;position: relative;

@@ -156,6 +156,7 @@
   .smallFont{ font-size: .875rem;}
   .mediumFont{ font-size: 1rem;}
   .largeFont{ font-size: 1.25rem;}
-  &>.smallFont::after{content: '小'; font-size: .5em;}
-  &>.largeFont::after{content: '大';font-size: .5em;}
+  &>.smallFont::before{content: '小'; font-size: .4em;}
+  &>.mediumFont::before{content: '中'; font-size: .4em;}
+  &>.largeFont::before{content: '大';font-size: .4em;}
 }
