@@ -252,6 +252,7 @@ button.closeThis{
     &.slick-active{
       button{
         background-color: var(--dotActive); width: calc($dotDia * 4);
+        &:focus{box-shadow: var(--dotActive) 0 0 0 2px;}
       }
     }
   }

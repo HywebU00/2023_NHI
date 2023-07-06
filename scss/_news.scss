@@ -1,44 +1,53 @@
 // 首頁：最新消息（頁籤） //////////////////////////////////////////////////
 .news{
-  @extend %primSecWidth; margin-top: 40px;
+  margin: 40px auto 0; 
   a{color: $fontInvert; text-decoration: none;}
   .tabSet{
-    border-radius: 44px; padding: 50px 10px;
+    // border-radius: 44px; padding: 50px 10px;
     background: url(../images/bg_circle.png) no-repeat right -35px bottom -144px,
     url(../images/bg_tinyDots.png) repeat, linear-gradient( 180deg, #004f73 , #0094a0);
     color: $fontInvert;
   }
+  .tabSet{ padding: 40px 0 30px;}
   .tabItems{
-    display: flex; flex-flow: row nowrap;
+    display: flex; flex-flow: row nowrap; justify-content: center;
+    padding: 5px;
     button{
+      flex: 1 1 auto;
       height: auto; min-width: calc(2em + 16px); 
       font-size: 1rem;line-height: 1.3;word-break: break-all;
-      padding: 6px 8px 5px; margin:2px 2px 2px 1px; border-radius: 5px;
+      padding: 6px 6px 5px; margin:2px; border-radius: 6px;
       border: none; box-shadow: none;
-      background-color: rgba(255,255,255,.18);
-      &:hover, &:focus{
-        background-color: transparentize($btnBg2, .3);
+      background-color: rgba(0,0,0,.18); color: $assistant1;
+      &:hover{
+        box-shadow: rgba(255,255,255,.4) 0 0 0 2px;
       }
       &:focus{
-        box-shadow: rgba(255,255,255,.5) 0 0 0 3px;
+        box-shadow: rgba(255,255,255,1) 0 0 0 2px;
       }
-
       &.active{
-        background-color: rgba(0,0,0,.48);
+        background-color: $white; color: $fontColor;
       }
     }
   }
-  .tabContent{display: none;}
+  .tabContent{display: none;
+    // padding-bottom: 40px;
+  }
 
   .newsList{
-    list-style: none; margin: 0 auto; padding:1em 0; width: 95%;
+    list-style: none; margin: 0 auto; padding:15px 0; width: 94%;
     font-size: 1.15rem; line-height: 1.5;
     li{
       border-bottom: 1px solid rgba(255,255,255,.4);
       margin: 0; padding: 3px 0;
       time{ display: block; font-size: 1rem; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
       &.headLine{
-        display: none;
+        img{display: none;}
+        p{
+          margin: 0; line-height: inherit;
+          white-space: nowrap; text-overflow: ellipsis; 
+          overflow: hidden;
+        }
       }
       &:hover{z-index: 99; position: relative;}
       a{
@@ -58,7 +67,15 @@
     --hoverBg :#0005;
     a{
       transition: background .3s;
-      // &:hover, &:focus{ background-color: rgba(0,0,0,.2);}
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .tabItems{
+      width: 96%; margin: 0 auto;
+      button{
+        font-size: 1.125rem;padding: .6em .5em .5em;
+      }
     }
   }
 
@@ -83,8 +100,10 @@
        border-radius: $bigRadius 0 0 $bigRadius;
     }
     .tabItems{
+      width: calc(100% + 20px); margin-left: -5px;
       button{
-        flex: 1 1 auto;padding: .6em .5em .5em; margin: 3px;
+        flex: 1 1 auto;
+        padding: .6em .5em; margin: 3px;
         border-radius: 1.3em;
         font-size: 1.2rem;
       }
@@ -113,8 +132,10 @@
           }
           p{ 
             margin:6px 16px 20px; padding: 0;
-            display: -webkit-box; -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2; overflow: hidden;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
           }
           a{
             padding: 0; color: $fontColor; white-space: normal;
