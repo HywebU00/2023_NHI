@@ -401,7 +401,7 @@ $(function(){
 						_this.on('keydown', function (e) {
 							//頁籤第幾個按鈕觸發時無
 							if (e.which === 9 && !e.shiftKey) { // 按下 tab 時沒有按著 shift
-								// e.preventDefault();
+								e.preventDefault();
 								startTab(i); //啟動頁籤切換功能
 								if (_itemAllA.length) { // 如果 _itemAllA.length 不是 0（內容有至少一個 a 或 input）
 									_itemFirstA.focus(); // 內容的第一個 a 或是 input focus

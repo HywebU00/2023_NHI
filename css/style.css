@@ -1486,7 +1486,7 @@ kbd {
     padding: 30px 0 0;
     font-size: 0.875rem;
     line-height: 1.1;
-    border-top: 1px solid #434242;
+    border-top: 1px solid #c1c4c6;
   }
   .webFooter .base .otherLinks li {
     float: left;
@@ -2515,9 +2515,9 @@ fieldset legend {
   line-height: 1.5;
 }
 .news .newsList li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   margin: 0;
   padding: 3px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 .news .newsList li time {
   display: block;
@@ -2572,7 +2572,6 @@ fieldset legend {
     position: relative;
     width: auto;
     margin-top: 40px;
-    outline: 1px solid pink;
   }
   .news .blockHeader {
     margin-bottom: 40px;
