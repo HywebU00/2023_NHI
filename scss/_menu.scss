@@ -106,7 +106,7 @@
       a{display: block;}
       &>li{
         flex: 1 1 auto; margin: 0 ; padding-top: 6px;
-        font-size: 1.125rem; text-align: center;
+        font-size: 1.25rem; text-align: center;
         &>a{
           position: relative;
           height: 3em; line-height: 2.8; padding: 0 .3em;
@@ -125,7 +125,7 @@
           margin:0; padding:24px 0 10px;flex-flow: row wrap;
           position: absolute; left: 0; top: auto; z-index: 199;
           width: 100vw; overflow: hidden;
-          font-size: 1rem;text-align: left;
+          font-size: 1.125rem;text-align: left;
           background: rgba(255, 255, 255, .95);
           animation: none;
           &>li{
@@ -155,7 +155,6 @@
         }
 
         &.here{
-          // &>a{background-color: $white;}
           &>ul{display: flex;}
         }
 

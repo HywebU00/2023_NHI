@@ -770,7 +770,7 @@ kbd {
     flex: 1 1 auto;
     margin: 0;
     padding-top: 6px;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     text-align: center;
   }
   .webHeader .menu > ul > li > a {
@@ -800,7 +800,7 @@ kbd {
     z-index: 199;
     width: 100vw;
     overflow: hidden;
-    font-size: 1rem;
+    font-size: 1.125rem;
     text-align: left;
     background: rgba(255, 255, 255, 0.95);
     animation: none;

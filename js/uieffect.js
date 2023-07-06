@@ -312,6 +312,12 @@ $(function(){
     _optButton.add(_optLink).click(glideUp);
     _this.siblings().click(glideUp);
     _this.siblings().children('a, button').focus(glideUp);
+    _optItem.last().children('button').on('keydown', function(e){
+      if( e.which === 9 && !e.shiftKey ) {
+        glideUp();
+      }
+    });
+
   })
   
   /////////// font size 和 cookie /////////////////////////////////////////////
@@ -449,21 +455,6 @@ $(function(){
 	tabFun();
   // end //////////////////////////////////////////////////////////
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   // 可收合區
