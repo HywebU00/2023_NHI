@@ -750,8 +750,9 @@ kbd {
 }
 @media screen and (min-width: 1000px) {
   .webHeader .menu {
+    position: relative;
     display: block;
-    background: #fff;
+    background: #e9f1f3;
   }
   .webHeader .menu a {
     color: #081c36;
@@ -766,50 +767,43 @@ kbd {
     display: block;
   }
   .webHeader .menu > ul > li {
-    position: relative;
     flex: 1 1 auto;
     margin: 0;
+    padding-top: 6px;
     font-size: 1.125rem;
     text-align: center;
   }
-  .webHeader .menu > ul > li:hover > a::after {
-    height: 4px;
-  }
   .webHeader .menu > ul > li > a {
+    position: relative;
     height: 3em;
-    line-height: 3;
+    line-height: 2.8;
     padding: 0 0.3em;
     font-weight: bold;
+    border-radius: 12px 12px 0 0;
+    transition: background-color 0.2s;
   }
-  .webHeader .menu > ul > li > a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0;
-    background-image: linear-gradient(90deg, #0086cb 5%, #00c069 95%);
-    transition: height 0.15s;
+  .webHeader .menu > ul > li > a:focus, .webHeader .menu > ul > li > a.focused {
+    background-color: #fff;
   }
-  .webHeader .menu > ul > li > a:focus::after {
-    height: 4px;
+  .webHeader .menu > ul > li:hover > a {
+    background-color: #fff;
   }
   .webHeader .menu > ul > li > ul {
     display: none;
+    opacity: 0;
     margin: 0;
-    padding: 20px 0 10px;
+    padding: 24px 0 10px;
+    flex-flow: row wrap;
     position: absolute;
+    left: 0;
     top: auto;
     z-index: 199;
     width: 100vw;
+    overflow: hidden;
     font-size: 1rem;
     text-align: left;
-    background: rgba(240, 240, 240, 0.95);
-    box-shadow: rgba(0, 0, 0, 0.4) 0 5px 20px;
-    flex-flow: row wrap;
-  }
-  .webHeader .menu > ul > li > ul.show {
-    display: flex;
+    background: rgba(255, 255, 255, 0.95);
+    animation: none;
   }
   .webHeader .menu > ul > li > ul > li {
     flex: 0 0 22%;
@@ -853,6 +847,16 @@ kbd {
   .webHeader .menu > ul > li > ul > li + li {
     margin-top: 4px;
   }
+  .webHeader .menu > ul > li.here > ul {
+    display: flex;
+  }
+  .webHeader .menu > ul > li:not(.hasChild) > a {
+    border-radius: 12px;
+    height: calc(3em - 7px);
+  }
+  .webHeader .menu > ul > li:not(.hasChild) > a:hover, .webHeader .menu > ul > li:not(.hasChild) > a:focus {
+    background-color: #fff;
+  }
   .webHeader .menu > ul ul {
     font-size: 1.4rem;
   }
@@ -865,7 +869,9 @@ kbd {
     width: 1200px;
   }
   .webHeader .menu > ul > li > ul {
-    width: 1200px;
+    width: 100vw;
+    padding-left: calc(50vw - 600px);
+    padding-right: calc(50vw - 600px);
   }
 }
 

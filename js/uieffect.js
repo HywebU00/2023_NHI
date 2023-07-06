@@ -28,30 +28,41 @@ $(function(){
   _menu.find('li').has('ul').addClass('hasChild');
 
   // 寬版「主選單」/////////////////////////////////////////////
+  // 只顯示到第兩層
   var _mmHasChild = _menu.find('.hasChild');
+  // var _mmA = _mmHasChild.children('a');
   var _mmA = _menu.children('ul').children('li').children('a');
-
-  // hover
+  
+  // li hover
   _mmHasChild.on( 'mouseenter', function(){
-    let _thisLi = $(this);
-    let _childUl = _thisLi.children('ul');
-    // _childUl.fadeIn().offset({ left:_menu.children('ul').offset().left });
-    _childUl.addClass('show').offset({ left:_menu.children('ul').offset().left });
+    $(this).addClass('here').children('ul').stop().animate( {opacity: 1}, 300 );
+    $(this).siblings().children('a').blur().removeClass();
   }).on( 'mouseleave', function(){
-    $(this).children('ul').removeClass('show');
-    // $(this).children('ul').fadeOut();
+    $(this).children('ul').stop().animate( {opacity: 0}, 400, function(){
+      $(this).removeAttr('style').parent().removeClass('here');
+    });
+    $(this).children('a').blur().removeClass();
   })
 
   // focus
   _mmA.focus(function(){
-    $(this).parent().siblings().children('ul').removeClass('show');
-    $(this).next('ul').addClass('show').offset({ left:_menu.children('ul').offset().left });
+    let _this = $(this);
+    let _parentLi = _this.parent();
+    _parentLi.siblings().children('a').removeClass('focused');
+    _parentLi.siblings().children('ul').stop().animate( {opacity: 0}, 500, function(){
+      $(this).removeAttr('style').parent().removeClass('here');
+    });
+    if ( _parentLi.hasClass('hasChild') ) {
+      _this.addClass('focused');
+      _parentLi.addClass('here').children('ul').stop().animate( {opacity: 1}, 300 );
+    }
   });
 
   // 離開 _menu 隱藏所有次選單
   $('*').focus(function(){
     if( $(this).parents('.menu').length == 0 ){
-      _menu.find('.hasChild').removeClass('here').find('ul').removeClass('show').removeAttr('style');
+      _menu.find('.hasChild').removeClass('here').find('ul').removeAttr('style');
+      _mmA.removeClass('focused');
     }
   })
   /////////////// end ////////////////////////////////////////////////////////////

@@ -96,7 +96,8 @@
   display: none;
 
   @media screen and (min-width: $wwNormal){
-    display: block; background: $white;
+    position: relative;
+    display: block; background: #e9f1f3;
     a{ color: $fontColor;}
     
     &>ul{
@@ -104,33 +105,29 @@
       margin: 0 auto; width: 100%;
       a{display: block;}
       &>li{
-        position: relative;
-        flex: 1 1 auto; margin: 0;
+        flex: 1 1 auto; margin: 0 ; padding-top: 6px;
         font-size: 1.125rem; text-align: center;
-        &:hover>a{ &::after{ height: 4px;} }
-        &>a{ 
-          height: 3em; line-height: 3; padding: 0 .3em;
+        &>a{
+          position: relative;
+          height: 3em; line-height: 2.8; padding: 0 .3em;
           font-weight: bold;
-          &::after{
-            content: ''; position: absolute; left: 0; right: 0; bottom: 0;
-            height: 0;
-            @include grandient2(90deg);
-            transition: height .15s;
-          }
-          &:focus{ 
-            &::after{ height: 4px;}
-          }
+          border-radius: 12px 12px 0 0;
+          transition: background-color .2s;
+          &:focus, &.focused {background-color: $white;}
         }
-        // level2
+        &:hover{
+          &>a{ background-color: $white; }
+        }
+
+        // 第二層選單
         &>ul{
-          display: none;margin:0; padding: 20px 0 10px;
-          position: absolute; top: auto; z-index: 199;
-          width: 100vw;
+          display: none; opacity: 0;
+          margin:0; padding:24px 0 10px;flex-flow: row wrap;
+          position: absolute; left: 0; top: auto; z-index: 199;
+          width: 100vw; overflow: hidden;
           font-size: 1rem;text-align: left;
-          background: rgba(240, 240, 240, .95);
-          box-shadow: rgba(0,0,0,.4) 0 5px 20px;
-          flex-flow: row wrap;
-          &.show{ display: flex;}
+          background: rgba(255, 255, 255, .95);
+          animation: none;
           &>li{
             flex: 0 0 22%; margin: 8px 1.5% 20px;
             &>a{ 
@@ -156,6 +153,18 @@
             &+li{margin-top: 4px;}
           }
         }
+
+        &.here{
+          // &>a{background-color: $white;}
+          &>ul{display: flex;}
+        }
+
+        &:not(.hasChild){
+          &>a{
+            border-radius: 12px; height: calc(3em - 7px);
+            &:hover, &:focus { background-color: $white;}
+          }
+        }
   
       }
   
@@ -166,9 +175,12 @@
 
   @media screen and (min-width: $wwMaximum ){
    
-    &>ul{width: $wwMaximum;
+    &>ul{
+      width: $wwMaximum;
       &>li>ul{
-        width: $wwMaximum;
+        width: 100vw;
+        padding-left: calc(50vw - $wwMaximum*.5);
+        padding-right: calc(50vw - $wwMaximum*.5);
       }
     }
 
