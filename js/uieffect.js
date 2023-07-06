@@ -16,7 +16,7 @@ $(function(){
   var _menu = $('.webHeader .menu');
   var _sidebar = $('.sidebar');
   var _webHeader = $('.webHeader');
-  var _webFooter = $('.webFooter');
+  // var _webFooter = $('.webFooter');
 
   _html.removeClass('no-js');
 
@@ -30,7 +30,6 @@ $(function(){
   // 寬版「主選單」/////////////////////////////////////////////
   // 只顯示到第兩層
   var _mmHasChild = _menu.find('.hasChild');
-  // var _mmA = _mmHasChild.children('a');
   var _mmA = _menu.children('ul').children('li').children('a');
   
   // li hover
@@ -178,7 +177,7 @@ $(function(){
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     speed: 800,
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     dots: true,
     fade: false,
