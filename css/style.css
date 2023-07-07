@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul {
+.np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .preface, .pageHeader, .breadcrumb {
   width: 94%;
   margin: 30px auto;
 }
 @media screen and (min-width: 1200px) {
-  .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul {
+  .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .preface, .pageHeader, .breadcrumb {
     width: 1128px;
   }
 }
@@ -31,7 +31,9 @@ body * {
 }
 @media screen and (min-width: 1000px) {
   .main.inner {
-    padding-top: 30px;
+    padding-top: 200px;
+    background: url(../images/innerBg.jpg) no-repeat center top;
+    background-size: auto 200px;
   }
 }
 .blockHeader {
@@ -636,6 +638,445 @@ kbd {
   background: #fff;
 }
 
+.breadcrumb {
+  margin: 0 auto;
+  padding: 2px 0 2px 32px;
+  font-size: 1rem;
+  background: url(../images/icon_home.png) no-repeat 0 0;
+  background-size: 25px auto;
+}
+.breadcrumb ul, .breadcrumb li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb ul {
+  line-height: 1.2;
+  overflow: hidden;
+}
+.breadcrumb li {
+  float: left;
+  position: relative;
+  color: #081c36;
+}
+.breadcrumb li:nth-child(n+2) {
+  padding-left: 1.3em;
+}
+.breadcrumb li:nth-child(n+2)::before {
+  content: "";
+  position: absolute;
+  left: 0.6em;
+  top: 0.12em;
+  width: 1px;
+  height: 1em;
+  background: none;
+  border-left: 1px solid #374459;
+  transform: rotate(20deg);
+}
+.breadcrumb li:first-child {
+  padding-left: 0;
+}
+.breadcrumb li a {
+  display: block;
+  text-decoration: none;
+  color: #081c36;
+  border-bottom: 1px solid transparent;
+}
+.breadcrumb li a:hover, .breadcrumb li a:focus {
+  border-bottom-color: #081c36;
+  color: #081c36;
+}
+.breadcrumb li:last-child {
+  color: #005a7f;
+}
+.breadcrumb li:last-child a {
+  color: #005a7f;
+}
+
+.pageHeader {
+  margin: 2em auto 1em;
+  color: #000;
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+.pageHeader h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.funcBar {
+  font-size: 1rem;
+  z-index: 99;
+  position: relative;
+}
+.funcBar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.funcBar > ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+.funcBar > ul > li {
+  position: relative;
+  margin: 5px;
+  padding: 0;
+  text-indent: -20em;
+}
+.funcBar > ul > li a, .funcBar > ul > li button {
+  display: block;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #424344;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.funcBar > ul > li a:hover, .funcBar > ul > li a:focus, .funcBar > ul > li button:hover, .funcBar > ul > li button:focus {
+  box-shadow: #004f73 0 0 0 3px;
+  background-color: #004f73;
+}
+.funcBar > ul > li.back > a {
+  background-image: url(../images/icon_back.png);
+  background-size: 36px;
+}
+.funcBar > ul > li.print > a {
+  background-image: url(../images/icon_print.png);
+  background-size: 24px;
+}
+.funcBar > ul > li > ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 44px;
+  margin-top: -2px;
+}
+.funcBar > ul > li > ul > li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 4px 0;
+  padding: 0;
+}
+.funcBar > ul > li > ul > li a, .funcBar > ul > li > ul > li button {
+  background-color: #004f73;
+}
+.funcBar > ul > li > ul > li a:hover, .funcBar > ul > li > ul > li a:focus, .funcBar > ul > li > ul > li button:hover, .funcBar > ul > li > ul > li button:focus {
+  box-shadow: #fff 0 0 0 1px, #004f73 0 0 0 3px;
+  background-color: #004f73;
+}
+.funcBar > ul > li > ul > li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.funcBar > ul > li.compound > button {
+  position: relative;
+  z-index: 19;
+}
+.funcBar > ul > li.share > button {
+  background-image: url(../images/icon_share.png);
+  background-size: 24px;
+}
+.funcBar > ul > li.share li > a {
+  background-color: transparent;
+}
+
+.preface {
+  padding: 1em 2em;
+  margin: 2em auto;
+  line-height: 2;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 20px;
+}
+
+.fileType {
+  display: block;
+  position: relative;
+  margin: 0;
+  width: 2.4rem;
+  height: 2.7rem;
+  line-height: 3.8rem;
+  font-size: 0.92rem;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  background-color: #aaa;
+  transition: 0.2s;
+}
+.fileType::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(255, 255, 255, 0.7) 0 5px 0, rgba(255, 255, 255, 0.7) 0 10px 0;
+}
+.fileType.mp3::before, .fileType.mp4::before, .fileType.mov::before, .fileType.wmv::before {
+  width: 0;
+  height: 0;
+  top: 10px;
+  left: 16px;
+  right: auto;
+  background-color: transparent;
+  box-shadow: none;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
+}
+.fileType.jpg::before {
+  width: 10px;
+  height: 10px;
+  top: 9px;
+  right: auto;
+  left: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
+}
+.fileType.jpg::after {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  top: 8px;
+  right: 7px;
+  left: auto;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
+}
+.fileType.pdf {
+  background: #c00;
+}
+.fileType.pdf:hover, .fileType.pdf:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #c00 0 0 0 2px;
+}
+.fileType.doc, .fileType.docx, .fileType.odt {
+  background: #1b76cb;
+}
+.fileType.doc:hover, .fileType.doc:focus, .fileType.docx:hover, .fileType.docx:focus, .fileType.odt:hover, .fileType.odt:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1b76cb 0 0 0 2px;
+}
+.fileType.xls, .fileType.xlsx, .fileType.csv, .fileType.ods {
+  background: #48920f;
+}
+.fileType.xls:hover, .fileType.xls:focus, .fileType.xlsx:hover, .fileType.xlsx:focus, .fileType.csv:hover, .fileType.csv:focus, .fileType.ods:hover, .fileType.ods:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #48920f 0 0 0 2px;
+}
+.fileType.ppt, .fileType.pptx, .fileType.odp {
+  background: #c43e1c;
+}
+.fileType.ppt:hover, .fileType.ppt:focus, .fileType.pptx:hover, .fileType.pptx:focus, .fileType.odp:hover, .fileType.odp:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #c43e1c 0 0 0 2px;
+}
+.fileType.txt {
+  background: #1d98e4;
+}
+.fileType.txt:hover, .fileType.txt:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px;
+}
+.fileType.jpg {
+  background: #0b9fb2;
+}
+.fileType.jpg:hover, .fileType.jpg:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #0b9fb2 0 0 0 2px;
+}
+.fileType.mp3, .fileType.mp4 {
+  background: #9d3a89;
+}
+.fileType.mp3:hover, .fileType.mp3:focus, .fileType.mp4:hover, .fileType.mp4:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #9d3a89 0 0 0 2px;
+}
+.fileType.mov, .fileType.wmv {
+  background: #5843a9;
+}
+.fileType.mov:hover, .fileType.mov:focus, .fileType.wmv:hover, .fileType.wmv:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #5843a9 0 0 0 2px;
+}
+.fileType.zip {
+  background: #333;
+}
+.fileType.zip:hover, .fileType.zip:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #333 0 0 0 2px;
+}
+.fileType.other {
+  background: #555;
+}
+.fileType.other:hover, .fileType.other:focus {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #555 0 0 0 2px;
+}
+
+a .fileType {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover .fileType, a:focus .fileType {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover .fileType.pdf, a:focus .fileType.pdf {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #c00 0 0 0 2px;
+}
+a:hover .fileType.doc, a:hover .fileType.docx, a:hover .fileType.odt, a:focus .fileType.doc, a:focus .fileType.docx, a:focus .fileType.odt {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1b76cb 0 0 0 2px;
+}
+a:hover .fileType.xls, a:hover .fileType.xlsx, a:hover .fileType.csv, a:hover .fileType.ods, a:focus .fileType.xls, a:focus .fileType.xlsx, a:focus .fileType.csv, a:focus .fileType.ods {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #48920f 0 0 0 2px;
+}
+a:hover .fileType.ppt, a:hover .fileType.pptx, a:hover .fileType.odp, a:focus .fileType.ppt, a:focus .fileType.pptx, a:focus .fileType.odp {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #c43e1c 0 0 0 2px;
+}
+a:hover .fileType.txt, a:focus .fileType.txt {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px;
+}
+a:hover .fileType.jpg, a:focus .fileType.jpg {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #0b9fb2 0 0 0 2px;
+}
+a:hover .fileType.mp3, a:hover .fileType.mp4, a:focus .fileType.mp3, a:focus .fileType.mp4 {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #9d3a89 0 0 0 2px;
+}
+a:hover .fileType.mov, a:hover .fileType.wmv, a:focus .fileType.mov, a:focus .fileType.wmv {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #5843a9 0 0 0 2px;
+}
+a:hover .fileType.zip, a:focus .fileType.zip {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #333 0 0 0 2px;
+}
+a:hover .fileType.other, a:focus .fileType.other {
+  box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #555 0 0 0 2px;
+}
+
+.downloadFiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+}
+.downloadFiles li {
+  float: left;
+  margin: 3px;
+}
+.downloadFiles li a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.downloadFiles li .fileSize {
+  font-size: 0.9rem;
+  color: #081c36;
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.downloadHere {
+  border: 1px solid #424344;
+}
+.downloadHere h3 {
+  margin: 0;
+  padding: 20px;
+  line-height: 1;
+  background-color: #424344;
+  color: #fff;
+}
+.downloadHere ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  line-height: 1.1;
+}
+.downloadHere li {
+  float: left;
+  margin: 3px 25px 2px 0;
+  padding: 0;
+}
+.downloadHere li a {
+  display: block;
+  position: relative;
+  padding: 2px 0 3px 46px;
+  min-height: 38px;
+  text-decoration: none;
+  color: #081c36;
+}
+.downloadHere li a .fileType {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.downloadHere li a .fileSize, .downloadHere li a .fileName {
+  display: block;
+  margin: 0 0 3px 0;
+}
+.downloadHere li a .fileSize {
+  font-size: 0.92em;
+}
+.downloadHere li a:hover .fileSize, .downloadHere li a:hover .fileName {
+  text-decoration: underline;
+}
+@media screen and (min-width: 700px) {
+  .downloadHere {
+    display: flex;
+    align-content: center;
+  }
+  .downloadHere h3 {
+    flex: 1 0 5em;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    line-height: 2.2em;
+    text-align: center;
+  }
+  .downloadHere ul {
+    flex: 1 1 70%;
+    padding: 15px 20px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .downloadHere {
+    margin-left: -5vw;
+    margin-right: -5vw;
+  }
+}
+
+.pubInfo {
+  padding: 12px;
+  margin: 4em auto 0;
+  background-color: #f1f0ed;
+  display: flex;
+  justify-content: space-between;
+}
+.pubInfo time[title], .pubInfo .visitCount[title], .pubInfo .from[title] {
+  display: inline-block;
+  margin: 5px;
+  text-decoration: none;
+}
+.pubInfo time[title]::before, .pubInfo .visitCount[title]::before, .pubInfo .from[title]::before {
+  content: attr(title) ": ";
+  display: inline-block;
+  color: #374459;
+  font-size: 0.92rem;
+}
+.pubInfo time[title] + time, .pubInfo time[title] + .visitCount, .pubInfo time[title] + .from, .pubInfo .visitCount[title] + time, .pubInfo .visitCount[title] + .visitCount, .pubInfo .visitCount[title] + .from, .pubInfo .from[title] + time, .pubInfo .from[title] + .visitCount, .pubInfo .from[title] + .from {
+  margin-left: 1em;
+}
+
 .menu ul {
   list-style: none;
   margin: 0;
@@ -805,7 +1246,7 @@ kbd {
     overflow: hidden;
     font-size: 1.125rem;
     text-align: left;
-    background: rgba(255, 255, 255, 0.95);
+    background: #fff;
     animation: none;
   }
   .webHeader .menu > ul > li > ul > li {
@@ -3043,11 +3484,12 @@ fieldset legend {
   margin: 0;
   padding: 0;
   height: 1.6em;
-  line-height: 1.6;
+  line-height: 1.5;
   white-space: nowrap;
   font-size: 1.25rem;
   font-weight: bold;
-  border-radius: 3px;
+  border-radius: 0;
+  box-shadow: none;
   background-color: transparent;
   color: #374459;
 }
@@ -3065,6 +3507,9 @@ fieldset legend {
 }
 .contactUs .cardBox .slick-dots li.slick-active button::after {
   background-color: #018a9a;
+}
+.contactUs .cardBox .slick-dots li.slick-active button:focus {
+  outline: 1px solid #07b4b1;
 }
 .contactUs .cardBox .base {
   padding: 15px 15px 13px 100px;
@@ -3179,4 +3624,176 @@ fieldset legend {
 
 .videoFlow + .contactUs .blockHeader {
   margin-top: -4rem;
+}
+
+.np, .npTree {
+  margin: 0 auto;
+  padding: 0 0 30px;
+}
+.np ul, .npTree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+.np li, .npTree li {
+  padding: 2px 0;
+}
+.np li a, .npTree li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #081c36;
+}
+
+.np > ul > li > a {
+  padding-left: 30px;
+  background-color: #fff;
+}
+.np > ul {
+  margin: 15px 0;
+  font-size: 1.25em;
+}
+.np > ul > li {
+  margin: 5px 0 10px;
+  padding: 0;
+}
+.np > ul > li > a {
+  padding: 0.9em 0.5em 0.8em 24px;
+  height: 100%;
+  box-shadow: #c1c4c6 0 0 0 1px;
+}
+.np > ul > li > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: #004f73;
+}
+.np > ul > li > a:hover, .np > ul > li > a:focus {
+  background-image: linear-gradient(20deg, #00486a, #018e9f);
+  box-shadow: #c1c4c6 0 6px 24px -3px;
+  color: #fff;
+  z-index: 9;
+}
+.np > ul > li > a:hover::before, .np > ul > li > a:focus::before {
+  background-color: #018a9a;
+}
+@media screen and (min-width: 700px) {
+  .np > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .np > ul > li {
+    flex: 0 0 calc(50% - 5px);
+    margin: 5px;
+  }
+  .np > ul > li:nth-child(odd) {
+    margin-left: 0;
+  }
+  .np > ul > li:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+.npTree > ul {
+  font-size: 1.25rem;
+}
+.npTree > ul > li {
+  margin: 12px 0;
+  padding: 15px 12px 8px 12px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 6px;
+  background: #fff;
+}
+.npTree > ul > li > a, .npTree > ul > li .title {
+  display: block;
+  padding: 0 0 0 32px;
+  position: relative;
+}
+.npTree > ul > li > a::before, .npTree > ul > li .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 6px solid #018a9a;
+}
+.npTree > ul > li > a {
+  color: #045688;
+  text-decoration: underline;
+}
+.npTree > ul > li .downloadFiles {
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+.npTree > ul > li > ul {
+  margin: 12px 0 0;
+  padding: 0;
+  font-size: 1.125rem;
+}
+.npTree > ul > li > ul > li {
+  margin: 7px 0;
+  padding: 0;
+}
+.npTree > ul > li > ul > li > a {
+  position: relative;
+  display: block;
+  padding: 8px 8px 7px 28px;
+  border-radius: 8px;
+  box-shadow: #c1c4c6 0 0 0 1px;
+  transition: 0.2s;
+}
+.npTree > ul > li > ul > li > a::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  width: 1px;
+  height: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 7px 0 7px 11px;
+  border-color: transparent transparent transparent #018a9a;
+  transition: 0.15s;
+}
+.npTree > ul > li > ul > li > a:hover, .npTree > ul > li > ul > li > a:focus {
+  box-shadow: #07b4b1 0 0 0 1px;
+}
+.npTree > ul > li > ul > li > a:hover::before, .npTree > ul > li > ul > li > a:focus::before {
+  transform: scale(1.25);
+}
+.npTree > ul > li > ul > li > a:focus {
+  box-shadow: #07b4b1 0 0 0 3px;
+}
+@media screen and (min-width: 700px) {
+  .npTree > ul > li {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+  .npTree > ul > li .downloadFiles {
+    flex: 1 1 20%;
+  }
+  .npTree > ul > li .title {
+    padding-bottom: 12px;
+  }
+  .npTree > ul > li > ul {
+    flex: 1 0 calc(100% - 20px);
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5px 0 0 20px;
+    font-size: 1.125rem;
+  }
+  .npTree > ul > li > ul > li {
+    flex: 0 1 calc(50% - 8px);
+    margin: 4px;
+  }
 }/*# sourceMappingURL=style.css.map */
