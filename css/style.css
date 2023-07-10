@@ -243,17 +243,20 @@ a:focus {
   overflow: hidden;
 }
 .searchCtrl:hover, .sidebarCtrl:hover {
-  background-color: #07b4b1;
+  background-color: #004f73;
   box-shadow: none;
 }
 .searchCtrl:focus, .sidebarCtrl:focus {
-  background-color: #07b4b1;
-  box-shadow: #07b4b1 0 0 0 3px;
+  background-color: #004f73;
+  box-shadow: #004f73 0 0 0 3px;
 }
 
 .searchCtrl {
   --tinge: #000;
   transition: background-color 0.2s, box-shadow 0.2s;
+}
+.searchCtrl:hover, .searchCtrl:focus {
+  --tinge: #fff;
 }
 .searchCtrl::before, .searchCtrl::after {
   content: "";
@@ -312,8 +315,13 @@ a:focus {
   width: 6px;
   box-shadow: var(--tinge) 4px 0 0, var(--tinge) 8px 0 0, var(--tinge) 12px 0 0, var(--tinge) 22px 0;
 }
+.sidebarCtrl:hover, .sidebarCtrl:focus {
+  --tinge: #fff;
+}
 .sidebarCtrl.closeIt {
   --tinge: #fff;
+  border-radius: 0 4px 4px 0;
+  background-color: #004f73;
 }
 .sidebarCtrl.closeIt::before, .sidebarCtrl.closeIt::after {
   background-color: var(--tinge);
@@ -1175,7 +1183,6 @@ a:hover .fileType.other, a:focus .fileType.other {
   position: fixed;
   z-index: 990;
   width: 300px;
-  padding-top: 70px;
   margin-left: -300px;
   top: 0;
   bottom: 0;
@@ -1419,7 +1426,7 @@ a:hover .fileType.other, a:focus .fileType.other {
   line-height: 1.3;
 }
 .sidebar .topLinks ul.text > li {
-  flex: 0 0 calc(50% - 10px);
+  flex: 0 0 calc(50% - 8px);
   margin: 4px;
 }
 .sidebar .topLinks ul.text > li a {
@@ -1435,6 +1442,9 @@ a:hover .fileType.other, a:focus .fileType.other {
   background-color: #fff;
   color: #081c36;
   box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 3px;
+}
+.sidebar .topLinks ul.text > li:last-child:nth-child(odd) {
+  flex-basis: calc(100% - 8px);
 }
 .sidebar .topLinks ul.disks {
   display: flex;
@@ -1764,9 +1774,22 @@ a:hover .fileType.other, a:focus .fileType.other {
 }
 .webHeader .sidebarCtrl {
   left: 7px;
+  transition: left 0.5s;
+}
+.webHeader .sidebarCtrl.closeIt {
+  left: 300px;
 }
 .webHeader .searchCtrl {
   right: 7px;
+}
+.webHeader.fixed {
+  z-index: 990;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 16px;
 }
 @media screen and (min-width: 1000px) {
   .webHeader {
@@ -1792,6 +1815,9 @@ a:hover .fileType.other, a:focus .fileType.other {
     border-radius: 50%;
   }
   .webHeader .sidebarCtrl {
+    display: none;
+  }
+  .webHeader.fixed h1, .webHeader.fixed .topLinks, .webHeader.fixed .search, .webHeader.fixed .searchCtrl, .webHeader.fixed .goCenter {
     display: none;
   }
 }

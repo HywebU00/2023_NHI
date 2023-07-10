@@ -10,19 +10,57 @@ $(function(){
 
   const wwSlim = 480;
   const wwMedium = 700; //此值以下是手機
-  const wwNormal = 960;  //此值以上是電腦
+  const wwNormal = 1000; //此值以上是電腦
   const wwMaximum = 1200;
 
   var _menu = $('.webHeader .menu');
   var _sidebar = $('.sidebar');
   var _webHeader = $('.webHeader');
   // var _webFooter = $('.webFooter');
-
+  var _goTop = $('.goTop');
   _html.removeClass('no-js');
 
   // 製作側欄選單遮罩 ///////////////
   _body.append('<div class="sidebarMask"></div>');
   var _sidebarMask = $('.sidebarMask');
+
+  // 固定版頭 //////////////////////////////
+  var fixHeadThreshold;
+  var hh = _webHeader.outerHeight();
+  if ( ww >= wwNormal) {
+    fixHeadThreshold =  hh - _menu.outerHeight();
+  } else {
+    fixHeadThreshold = 0;
+  }
+
+  _window.scroll(function(){
+    if (_window.scrollTop() > fixHeadThreshold ) {
+      _webHeader.addClass('fixed');
+      _body.offset({top: hh});
+    } else {
+      _webHeader.removeClass('fixed');
+      _body.removeAttr('style');
+    }
+
+    // goTop button 顯示、隱藏
+    if (_window.scrollTop() > 200) {
+      _goTop.addClass('show');
+    } else {
+      _goTop.removeClass('show');
+    }
+  })
+  _window.trigger('scroll');
+  // 固定版頭 end //////////////////////////////
+
+  // 向上捲動箭頭 //////////////////////////////
+  _goTop.click(function(){
+    _html.stop(true,false).animate({scrollTop: 0}, 800, function(){
+      $('.goCenter').focus();
+    });
+  });
+  // 向上捲動箭頭 end //////////////////////////////
+  
+  
 
   // 找出_menu中有次選單的li ///////////////
   _menu.find('li').has('ul').addClass('hasChild');
@@ -122,23 +160,66 @@ $(function(){
   
   
   
-  let winResizeTimer0;
+  // var winResizeTimer;
+  // var wwNew;
+  // _window.resize(function () {
+  //   clearTimeout(winResizeTimer);
+  //   ww = _window.width();
+  //   winResizeTimer = setTimeout(function () {
+  //     wwNew = _window.width();
+
+  //     if(ww >= wwNormal) {
+  //       _sidebarMask.hide();
+  //       _body.removeClass('noScroll');
+  //       _sidebar.removeClass('reveal');
+  //       _sidebarCtrl.removeClass('closeIt');
+  //     } else {
+  //       _menu.hide().removeAttr('style');
+  //     }
+  //   }, 200);
+  // });
+
+
+  // 改變視窗寬度  window resize 
+  var winResizeTimer;
+  var wwNew;
   _window.resize(function () {
-    clearTimeout(winResizeTimer0);
-    ww = _window.width();
-    winResizeTimer = setTimeout(function () {
-      if(ww >= wwNormal) {
-        _sidebarMask.hide();
-        _body.removeClass('noScroll');
-        _sidebar.removeClass('reveal');
-        _sidebarCtrl.removeClass('closeIt');
-      } else {
-        _menu.hide().removeAttr('style');
+    clearTimeout(winResizeTimer);
+    winResizeTimer = setTimeout( function () {
+
+      wwNew = _window.width();
+      
+      // 由小螢幕到寬螢幕
+      if( ww < wwNormal && wwNew >= wwNormal ) {
+        if (_sidebar.hasClass('reveal')) {
+          _sidebar.removeClass('reveal');
+          _sidebarCtrl.removeClass('closeIt');
+          _sidebarMask.hide();
+          _body.removeClass('noScroll');
+        }
+        _body.removeAttr('style');
+        _webHeader.removeClass('fixed');
+        _search.removeClass('reveal').removeAttr('style')
+        hh = _webHeader.outerHeight();
+        fixHeadThreshold =  hh - _menu.outerHeight();
+        _window.trigger('scroll');
       }
+
+      // 由寬螢幕到小螢幕
+      if( ww >= wwNormal && wwNew < wwNormal ){
+        hh = _webHeader.outerHeight();
+        fixHeadThreshold = 0;
+        _body.removeAttr('style');
+        _window.trigger('scroll');
+      }
+      ww = wwNew;
     }, 200);
   });
+  
   /////////////// end /////////////////////////////////////////////
   
+
+
   
   // 版頭查詢區開合 /////////////////////////////////////////////
   var _searchCtrl = $('.searchCtrl');
@@ -843,23 +924,7 @@ $(function(){
   })
 
 
-  // 向上捲動箭頭 //////////////////////////////
-  var _goTop = $('.goTop');
 
-  _goTop.click(function(){
-    _html.stop(true,false).animate({scrollTop: 0}, 800, function(){
-      $('.goCenter').focus();
-    });
-  });
-
-  _window.scroll(function () {
-    if (_window.scrollTop() > 200) {
-      _goTop.addClass('show');
-    } else {
-      _goTop.removeClass('show');
-    }
-  });
-  // --end of-- 向上捲動箭頭 //////////////////////////////
 
 
 })

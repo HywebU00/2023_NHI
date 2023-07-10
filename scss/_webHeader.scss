@@ -17,8 +17,19 @@
   .sidebarCtrl, .searchCtrl { 
     position: absolute; top: 16px; z-index: 992;
   }
-  .sidebarCtrl { left: 7px;}
+  .sidebarCtrl { 
+    left: 7px;
+    transition: left .5s;
+    &.closeIt{ left: $sideBarWidth;}
+  }
   .searchCtrl { right: 7px; }
+
+  &.fixed{
+    z-index: 990;
+    position: fixed; top: 0; left: 0; right: 0;
+    background-color: #fff;
+    box-shadow: rgba(0,0,0,.3) 0 2px 16px;
+  }
 
 
   @media screen and (min-width: $wwNormal){
@@ -34,6 +45,12 @@
       top: 36px; right: 20px; border-radius: 50%;
     }
     .sidebarCtrl{display: none;}
+
+    // 固定版頭
+    &.fixed {
+      
+      h1, .topLinks, .search, .searchCtrl, .goCenter{ display: none; }
+    }
   }
 
   @media screen and (min-width: $wwMaximum){

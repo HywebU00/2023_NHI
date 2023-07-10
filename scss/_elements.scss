@@ -86,11 +86,11 @@ a:focus{outline: none;}
   border: none; box-shadow: none;background-color: transparent;
   text-indent: -20em; overflow: hidden;
   &:hover{ 
-    background-color: $focus; box-shadow: none;
+    background-color: $primaryColor; box-shadow: none;
   }
   &:focus{
-    background-color: $focus;
-    box-shadow: $focus 0 0 0 3px;
+    background-color: $primaryColor;
+    box-shadow: $primaryColor 0 0 0 3px;
   }
 }
 
@@ -98,7 +98,9 @@ a:focus{outline: none;}
 .searchCtrl{ 
   --tinge : #000;
   transition: background-color .2s, box-shadow .2s;
-
+  &:hover, &:focus{
+    --tinge : #fff;
+  }
   &::before, &::after{
     content: ''; position: absolute;
   }
@@ -145,8 +147,14 @@ a:focus{outline: none;}
     box-shadow: var(--tinge) 4px 0 0, var(--tinge) 8px 0 0, var(--tinge) 12px 0 0 , var(--tinge) 22px 0;
   }
 
+  &:hover, &:focus{
+    --tinge : #fff;
+  }
+
   &.closeIt{
     --tinge : #fff;
+    border-radius: 0 4px 4px 0;
+    background-color: $primaryColor;
     &::before, &::after{ background-color: var(--tinge); height: 4px;}
     &::before{ 
       box-shadow: none;
@@ -157,6 +165,8 @@ a:focus{outline: none;}
       width: 28px; transform: rotate(-45deg);
     }
   }
+
+
 }
 
 
