@@ -6,8 +6,8 @@
   &>table{
     border-collapse: collapse; margin: 0 auto; width: 100%;
     line-height: 1.8;
-    border-top: 2px solid $borderColorDark;
-    border-bottom: 2px solid $borderColorDark;
+    border-top: 1px solid $borderColor;
+    // border-bottom: 3px solid $borderColor;
     td, th {
       padding: .7em .8em .6em;
       border-bottom: 1px solid $borderColor;
@@ -15,8 +15,7 @@
     thead{
       text-align: center;
       th{
-        background: $secondaryColor; color: $fontInvert;
-      
+        border-bottom: 2px solid $borderColorDark; color: $fontColorDark;
         &:first-child{
           position: relative;
           &::after{
@@ -32,7 +31,7 @@
   
       th{
         position: relative; 
-        padding-left: 3px; width: 15%; text-align: right;
+        padding-left: 3px; width: 15%; text-align: center;
         vertical-align: top; 
         font-weight: bold; color: $fontColorDark;
         &::after{
@@ -49,6 +48,10 @@
           &+ul, &+ol{margin-top: 1.5em;}
         }
         li+li{margin-top: .8em;}
+        p{
+          margin: 0;
+          &+p{margin-top: .8em;}
+        }
       }
     }
   }

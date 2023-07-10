@@ -625,8 +625,9 @@ $(function(){
   var _photoflow = $('.photoflow');
   var _cpBigPhoto = $('.lightbox.bigPhotos');
   var photoIndex;
-  
-  _photoflow.each(function () {
+  var _keptFlowItem;
+
+  _photoflow.each( function(){
     let _this = $(this);
     let _floxBox = _this.find('.flowBox');
     let _flowList = _floxBox.find('.flowList');
@@ -663,7 +664,6 @@ $(function(){
     function indicatReady() {
       _indicatItem.removeClass(actClassName);
       _indicatItem.eq(i).addClass(actClassName);
-      // _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
       if (ww < wwMedium) {
         if (slideCount > 1) {
           flownavShow();
@@ -677,7 +677,6 @@ $(function(){
         } else {
           flownavShow();
           _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
-          // _indicatItem.eq((i + 2) % slideCount).addClass(actClassName);
         }
       }
       if (ww >= wwNormal) {
@@ -748,15 +747,17 @@ $(function(){
 
 
 
-    /////////////////************************** *//
-    // 點擊.photoflow的圖片，開燈箱顯示大圖
+    ///////////////////////////////////////////////////////
+    // 點擊.photoflow的圖片，開燈箱顯示大圖 ***
     _flowItem.children('a').click(function(){
-      photoIndex = $(this).parent().attr('data-index');
+      _keptFlowItem = $(this);
+      photoIndex = _keptFlowItem.parent().attr('data-index');
       _cpBigPhoto.stop(true, false).fadeIn().find('.flowList').find('li').filter( function(){
         return $(this).attr('data-index') == photoIndex;
       }).show();
       _hideLightbox.focus();
       _cover.stop(true, false).fadeIn();
+      _body.addClass('noScroll');
     })
 
     let winResizeTimer;
@@ -773,7 +774,7 @@ $(function(){
 
 
 
-  // cp 頁大圖燈箱
+  // cp 頁大圖燈箱 *** ////////////////////////////
   _cpBigPhoto.each(function(){
     let _this = $(this);
     let _photoBox = _this.find('.flowBox');
@@ -782,10 +783,13 @@ $(function(){
     let photoCount = _photoItem.length;
     let _btnRight = _this.find('.diskBtn.next');
     let _btnLeft = _this.find('.diskBtn.prev');
+    let _hideBigPhoto = _this.find('.closeThis');
+
     const speed = 400;
     let i, j;
 
-    _photoItem.hide();
+    // _photoItem.hide();
+    _photoItem.find('img').unwrap('a');
 
     // 點擊向右箭頭
     _btnRight.click(function(){
@@ -816,7 +820,14 @@ $(function(){
         return $(this).attr('data-index') == j;
       }).stop(true, false).fadeIn(speed);
     })
+
+    // 關閉大圖燈箱
+    _hideBigPhoto.add(_cover).click(function(){
+      _photoItem.hide();
+      _keptFlowItem.focus();
+    })
   })
+  //////////////////////////////////////
 
 
 

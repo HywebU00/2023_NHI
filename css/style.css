@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
+.fileDownload, .seeAlso, .photoflow, .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
   width: 94%;
   margin: 30px auto;
 }
 @media screen and (min-width: 1200px) {
-  .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
+  .fileDownload, .seeAlso, .photoflow, .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
     width: 1128px;
   }
 }
@@ -4435,8 +4435,7 @@ table.formLayout td:nth-child(even) {
   margin: 0 auto;
   width: 100%;
   line-height: 1.8;
-  border-top: 2px solid #434242;
-  border-bottom: 2px solid #434242;
+  border-top: 1px solid #c1c4c6;
 }
 .cpMeta > table td, .cpMeta > table th {
   padding: 0.7em 0.8em 0.6em;
@@ -4446,8 +4445,8 @@ table.formLayout td:nth-child(even) {
   text-align: center;
 }
 .cpMeta > table thead th {
-  background: #018a9a;
-  color: #fff;
+  border-bottom: 2px solid #434242;
+  color: #000;
 }
 .cpMeta > table thead th:first-child {
   position: relative;
@@ -4465,7 +4464,7 @@ table.formLayout td:nth-child(even) {
   position: relative;
   padding-left: 3px;
   width: 15%;
-  text-align: right;
+  text-align: center;
   vertical-align: top;
   font-weight: bold;
   color: #000;
@@ -4490,6 +4489,12 @@ table.formLayout td:nth-child(even) {
   margin-top: 1.5em;
 }
 .cpMeta > table tbody td li + li {
+  margin-top: 0.8em;
+}
+.cpMeta > table tbody td p {
+  margin: 0;
+}
+.cpMeta > table tbody td p + p {
   margin-top: 0.8em;
 }
 @media screen and (max-width: 699px) {
@@ -4528,4 +4533,411 @@ table.formLayout td:nth-child(even) {
     border: none;
     display: inline-block;
   }
+}
+
+.photoflow {
+  margin-bottom: 50px;
+}
+.photoflow ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.photoflow a {
+  text-decoration: none;
+}
+.photoflow h3 {
+  font-size: 1.4em;
+  margin: 0 0 0.5em;
+  padding: 0 0 0.5em;
+  line-height: 1.1;
+  border-bottom: 3px solid #c1c4c6;
+}
+.photoflow .flowBox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.photoflow .flowList {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.photoflow .flowList > li {
+  flex: 0 0 94vw;
+  margin: 0 10px 0 0;
+  padding: 0;
+  background-color: #fff;
+}
+.photoflow .flowList > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.photoflow .flowList > li > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: #c1c4c6 0 0 0 1px inset;
+  z-index: 9;
+}
+.photoflow .flowList > li > a:hover p, .photoflow .flowList > li > a:focus p {
+  transform: translateY(0);
+}
+.photoflow .flowList > li > a:hover img, .photoflow .flowList > li > a:focus img {
+  transform: scale(1.1);
+}
+.photoflow .flowList > li > a:focus p {
+  transition: none;
+}
+.photoflow .flowList > li > a:focus:before {
+  box-shadow: #07b4b1 0 0 0 2px inset;
+}
+.photoflow .flowList > li img {
+  display: block;
+  width: 100%;
+  height: 94vw;
+  object-fit: contain;
+  transition: 0.3s;
+}
+.photoflow .flowList > li p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0;
+  transform: translateY(110%);
+  transition: 0.5s;
+}
+.photoflow .flowNav {
+  margin: 25px 55px 5px;
+}
+.photoflow .flowNav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.photoflow .flowNav li {
+  flex: 0 1 8px;
+  margin: 0 8px;
+  padding: 0;
+}
+.photoflow .flowNav li::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: default;
+  background: #d3d5d6;
+  border: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.2s;
+}
+.photoflow .flowNav li.active::before {
+  box-shadow: #b5e7e4 0 0 0 2px;
+  background: #b5e7e4;
+}
+.photoflow .diskBtn {
+  top: auto;
+  bottom: 8px;
+  transform: translateY(0);
+  margin: 0 5px;
+  z-index: 99;
+}
+@media screen and (min-width: 700px) {
+  .photoflow .flowList > li {
+    margin-right: 20px;
+    flex-basis: calc(94vw/2 - 10px);
+  }
+  .photoflow .flowList > li img {
+    height: calc(94vw/2 - 10px);
+  }
+  .photoflow .flowNav li {
+    margin: 0 10px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .photoflow .flowList > li {
+    margin: 0 12px 0 0;
+    flex-basis: calc(23.5vw - 9px);
+  }
+  .photoflow .flowList > li img {
+    height: calc(23.5vw - 9px);
+    object-fit: cover;
+  }
+  .photoflow .flowNav {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .photoflow .diskBtn {
+    top: calc(11.75vw - 4px);
+    transform: translateY(-50%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .photoflow .flowList > li {
+    flex-basis: 273px;
+  }
+  .photoflow .flowList > li img {
+    height: 273px;
+  }
+  .photoflow .diskBtn {
+    top: 128px;
+  }
+}
+
+.bigPhotos.lightbox {
+  padding: 0;
+}
+.bigPhotos .flowBox {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.bigPhotos .flowList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bigPhotos .flowList > li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.bigPhotos .flowList > li img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.bigPhotos .flowList > li p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 4em 20px 1em;
+  margin: 0;
+  line-height: 1.1;
+  color: #fff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 70%);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.bigPhotos .flowNav {
+  display: none;
+}
+.bigPhotos .diskBtn {
+  position: absolute;
+  margin: 0 5px auto;
+}
+.bigPhotos .diskBtn.next {
+  left: auto;
+  right: 0;
+}
+@media screen and (min-width: 1000px) {
+  .bigPhotos .flowBox {
+    height: calc(100vh - 1000px*.06);
+  }
+}
+
+.fileDownload, .seeAlso {
+  margin-bottom: 50px;
+}
+.fileDownload h3, .seeAlso h3 {
+  font-size: 1.4em;
+  margin: 0 0 0.5em;
+  line-height: 1.1;
+}
+.fileDownload ul, .fileDownload ol, .seeAlso ul, .seeAlso ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+.fileDownload a, .seeAlso a {
+  text-decoration: none;
+}
+
+.seeAlso > ol {
+  border-top: 3px solid #c1c4c6;
+  border-bottom: 3px solid #c1c4c6;
+}
+.seeAlso li {
+  margin: 3px 0 0;
+  padding: 0 0 3px;
+  border-bottom: 1px solid #c1c4c6;
+}
+.seeAlso li a {
+  position: relative;
+  display: block;
+  padding: 0.7em 10px 0.6em 14px;
+  color: #081c36;
+  transition: 0.2s;
+}
+.seeAlso li a::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 1.25em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 3px;
+  border-color: #000;
+  transition: border-left-width 0.15s;
+}
+.seeAlso li a:hover, .seeAlso li a:focus {
+  padding-left: 22px;
+  padding-right: 2px;
+  outline: none;
+}
+.seeAlso li a:hover::before, .seeAlso li a:focus::before {
+  border-color: transparent;
+  border-left-color: #000;
+  border-width: 6px 0 6px 9px;
+}
+.seeAlso li a:focus {
+  box-shadow: #004c7c 0 0 0 1px inset;
+}
+
+.fileDownload > ul {
+  border-top: 3px solid #c1c4c6;
+  border-bottom: 2px solid #c1c4c6;
+}
+.fileDownload > ul > li {
+  margin: 0;
+  padding: 0 0 0 3px;
+  border-bottom: 1px solid #c1c4c6;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.fileDownload .fileName {
+  margin: 6px 0 3px;
+  flex: 1 1 auto;
+}
+.fileDownload .downloadFiles {
+  flex: 0 1 auto;
+}
+.fileDownload .downloadFiles li {
+  margin: 0 0 0 12px;
+  padding: 3px 0;
+}
+.fileDownload .downloadFiles a {
+  padding: 5px;
+  display: block;
+}
+.fileDownload .downloadFiles a:hover, .fileDownload .downloadFiles a:focus {
+  outline: none;
+}
+.fileDownload .downloadFiles a:hover .fileSize, .fileDownload .downloadFiles a:focus .fileSize {
+  text-decoration: underline;
+}
+.fileDownload .downloadFiles a:focus {
+  box-shadow: #004c7c 0 0 0 1px inset;
+  outline: none;
+}
+.fileDownload .fileType {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 3vw;
+  left: 3vw;
+  width: 94vw;
+  height: calc(100vh - 6vw);
+  z-index: 999;
+  padding: 50px 0 0;
+  margin: 0 auto;
+  overflow: auto;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 28px;
+}
+.lightbox.lbSearch {
+  background-color: #fff;
+}
+.lightbox.bigPhotos {
+  background-color: #000;
+}
+.lightbox .closeThis {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.lightbox .header {
+  padding: 0 0 0.2em;
+  margin: 0 auto 15px;
+  width: 90%;
+  font-size: 1.5rem;
+  border-bottom: 3px solid #d2d2d2;
+  color: #081c36;
+}
+.lightbox .skip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+@media screen and (min-width: 1000px) {
+  .lightbox {
+    top: 30px;
+    height: auto;
+    max-height: calc(100vh - 1000px*.06);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .lightbox {
+    width: 1128px;
+    left: calc(50vw - 1200px*.47);
+  }
+}
+
+.coverAll {
+  display: none;
+  z-index: 995;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
 }/*# sourceMappingURL=style.css.map */
