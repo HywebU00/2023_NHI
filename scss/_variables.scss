@@ -5,6 +5,8 @@ $sideBarWidth: 300px;  // 窄版側欄選單
 // $normalWidth: 82vw; // 寬螢幕寬度
 
 $bigRadius: 32px; // 圓角半徑
+$radius: 16px; // 圓角半徑
+
 // ---------- 長度常數 ---------- //
 
 
@@ -14,20 +16,6 @@ $wwMedium: 700px;
 $wwNormal: 1000px;
 $wwMaximum: 1200px;
 // ---------- RWD 斷點 ----------- //
-
-
-// ---------- 主要內容寬度設定 ----------- //
-// %mainWidth {
-//   width: $mobileWidth; margin: 0 auto;
-//   @media screen and (min-width: $wwNormal){
-//     width: $normalWidth;
-//   }
-//   @media screen and (min-width: $wwMaximum){
-//     width: $wwMaximum*.82;
-//   }
-// }
-// ---------- 主要內容寬度設定 ----------- //
-
 
 // ---------- 首頁主要區塊寬度 ----------- //
 %primSecWidth {
@@ -52,13 +40,13 @@ $fontColorLight: #374459;
 $fontColorPale: #778393;
 $fontColorDark: #000;
 $fontInvert: #fff;
-$linkColor: #045688;
+$linkColor: #004c7c;
 $mainBg: #fff;
 
 $borderColor: #c1c4c6;
 $borderColorLight: #d2d2d2;
 $borderColorDark:#434242;
-$shadow:rgba(0, 0, 0, 0.2);
+$shadow1:rgba(0, 0, 0, 0.2);
 $shadow2:rgba(0, 0, 0, 0.5);
 
 $white: #fff;
@@ -75,6 +63,12 @@ $sidebarBg: $grayDark;
 
 // ---------- 顏色變數 ----------- //
 
+
+@mixin blockStyle1 {
+  box-shadow: rgba(57, 120, 132, .3) 0 0 20px;
+  border-radius: $bigRadius;
+  background-color: $white;
+}
 
 // ---------- 漸層 ----------- //
 @mixin grandient1($degree: 0deg) {

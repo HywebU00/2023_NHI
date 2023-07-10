@@ -1,0 +1,341 @@
+// 現在位置（麵包屑） //
+.breadcrumb {
+  @extend %primSecWidth; margin: 20px auto; padding: 3px 0 2px 32px;
+  font-size: 1rem;
+  background: url(../images/icon_home.png) no-repeat 0 0;
+  background-size: 25px auto;
+  ul, li{ list-style: none; margin: 0;padding: 0;}
+  ul{line-height: 1.2; overflow: hidden;}
+  li{
+    float: left; position: relative;color: $fontColor;
+    &:nth-child(n+2){
+      padding-left: 1.3em;
+      &::before{ content: '';position: absolute; left: .6em; top: .12em; 
+        width: 1px; height: 1em;
+        background: none; border-left: 1px solid $fontColorLight;
+        transform: rotate(20deg);
+      }
+    }
+    &:first-child{padding-left: 0;}
+    a{
+      display: block; text-decoration: none; color: $fontColor;
+      border-bottom: 1px solid transparent;
+        &:hover, &:focus{  border-bottom-color: $fontColor; color: $fontColor;}
+    }
+    &:last-child{
+      color: #005a7f;
+      a{color: #005a7f;}
+    }
+  }
+}
+
+// 內頁標題 //
+.pageHeader{
+  @extend %primSecWidth;margin: 2em auto 1em;
+  color: $fontColorDark; font-size: 1.5em; line-height: 1.5;
+  h2{
+    padding: 0; margin: 0;
+  }
+}
+
+// 列印、分享、返回 等功能圖示 //
+.funcBar{
+  font-size: 1rem; z-index: 99; position: relative;
+  ul{ list-style: none; margin: 0;padding: 0; text-align: center;}
+  &>ul{
+    display: flex; flex-flow: row wrap; justify-content: flex-end;
+    &>li{
+      position: relative; margin:5px;padding:0;
+      &>a, &>button{
+        display: block;
+        margin:0; padding:0 0 44px ;width: 44px;height:1.5em; line-height:1.5;
+        font-size: .92rem; text-decoration: none; color: transparent;
+        border: none;background: none; box-shadow: none; white-space: nowrap;
+        transition: .3s;
+        &::after{
+          position: absolute; left: 0; bottom: 0;
+          content: ''; width: 44px; height: 44px;
+          background-color: $grayDark; background-repeat: no-repeat; background-position: center center;
+          color: $fontInvert; border: none; border-radius: 50%;
+          transition: .2s;
+        }
+        &:hover, &:focus{
+          padding-bottom: 68px; margin-top: -24px;
+          color: $fontColor;
+          &::after{
+            box-shadow: $primaryColor 0 0 0 3px;
+            background-color: $primaryColor;
+          }
+        }
+      }
+      &.back>a::after{
+        background-image: url(../images/icon_back.png);
+        background-size: 36px;
+      }
+      &.print>button::after{
+        background-image: url(../images/icon_print.png);
+        background-size: 24px;
+      }
+      &.share>button::after{
+        background-image: url(../images/icon_share.png);
+        background-size: 24px;
+      }
+
+      // 第二層
+      &.compound ul{ 
+        position: absolute; top: 0; left: 0; display: none;
+        width: 44px; margin-top: -2px;
+        &>li{
+          position: absolute; top: 0; left: 0; margin: 4px 0; padding: 0;
+          &>a{
+            display: block;width: 44px; height: 44px;border-radius: 50%;
+            text-indent: -15em; overflow: hidden;
+            background-color: transparent;
+            transition: .2s;
+            &:hover, &:focus{
+              box-shadow:$white 0 0 0 1px, $borderColorDark 0 0 0 4px;
+              background-color: transparent;
+            }
+          }
+          img{
+            display: block; width: 100%; height: 100%; 
+            margin: 0 auto;border-radius: 50%;
+          }
+        }
+      }
+
+      &.compound>button{position: relative; z-index: 19;}
+  
+      // &.share{
+      //   &>button{
+      //     background-image: url(../images/icon_share.png);
+      //     background-size: 24px;
+      //   }
+      //   li{
+      //     &>a{ background-color: transparent;}
+      //   }
+      // }
+    }
+  }
+}
+
+
+
+
+
+// 列表上方的文字 //
+.preface{
+  @extend %primSecWidth;
+  @include blockStyle1;
+  padding:40px 30px; margin: 2em auto; line-height: 2;
+  a{ color: $linkColor;}
+}
+
+// 檔案類型圖示 //
+.fileType{
+  display: block; position: relative; 
+  margin: 0; width: 2.4rem; height: 2.7rem; line-height:3.8rem;
+  font-size: .92rem; text-decoration: none; text-align: center;
+  color: $fontInvert; background-color: #aaa; transition: .2s;
+
+  &::before{
+    content: ''; position: absolute; top: 8px; left: 8px; right: 8px; height: 1px;
+    background-color: rgba(255,255,255,.7);
+    box-shadow: rgba(255,255,255,.7) 0 5px 0, rgba(255,255,255,.7) 0 10px 0;
+  }
+
+  &.mp3, &.mp4, &.mov, &.wmv{
+    &::before{
+      width: 0; height: 0; top: 10px; left: 16px; right: auto;
+      background-color: transparent;box-shadow: none;
+      border-style: solid;border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent rgba(255,255,255,.8);
+    }
+  }
+  &.jpg{
+    &::before{
+      width: 10px; height: 10px; top: 9px; right: auto; left: 8px;
+      background-color: rgba(255,255,255,.8);box-shadow: none;
+    }
+    &::after{
+      position: absolute; content: '';
+      width: 12px; height: 12px; top: 8px; right: 7px; left: auto;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,.8);box-shadow: none;
+    }
+  }
+
+  &.pdf {background:#c00;
+    &:hover, &:focus{box-shadow:rgba(255,255,255,.6) 0 0 0 1px inset, #c00 0 0 0 2px;}
+  }
+  &.doc , &.docx, &.odt{
+    background:#1b76cb;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #1b76cb 0 0 0 2px;}
+  }
+  &.xls, &.xlsx, &.csv, &.ods {
+    background:#48920f;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset,  #48920f 0 0 0 2px;}
+  }
+  &.ppt, &.pptx, &.odp{
+    background:#c43e1c;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #c43e1c 0 0 0 2px;}
+  }
+  &.txt {
+    background:#1d98e4;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px;}
+  }
+  &.jpg {
+    background:#0b9fb2;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #0b9fb2 0 0 0 2px;}
+  }
+  &.mp3, &.mp4 {
+    background:#9d3a89;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #9d3a89 0 0 0 2px;}
+  }
+  &.mov, &.wmv{
+    background:#5843a9;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #5843a9 0 0 0 2px;}
+  }
+  &.zip {
+    background:#333;
+    &:hover, &:focus{box-shadow:rgba(255,255,255,.6) 0 0 0 1px inset, #333 0 0 0 2px;}
+  }
+  &.other {background:#555;
+    &:hover, &:focus{box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #555 0 0 0 2px;}
+  }
+}
+a .fileType{ color: $fontInvert;text-decoration: none; }
+a:hover, a:focus {
+  .fileType {
+    color: $fontInvert;text-decoration: none;
+    &.pdf {
+      box-shadow:rgba(255,255,255,.6) 0 0 0 1px inset, #c00 0 0 0 2px; }
+    &.doc , &.docx, &.odt{
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #1b76cb 0 0 0 2px; }
+    &.xls, &.xlsx, &.csv, &.ods {
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset,  #48920f 0 0 0 2px; }
+    &.ppt, &.pptx, &.odp{
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #c43e1c 0 0 0 2px; }
+    &.txt {
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px; }
+    &.jpg {
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #0b9fb2 0 0 0 2px; }
+    &.mp3, &.mp4 {
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #9d3a89 0 0 0 2px; }
+    &.mov, &.wmv{
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #5843a9 0 0 0 2px; }
+    &.zip {
+      box-shadow:rgba(255,255,255,.6) 0 0 0 1px inset, #333 0 0 0 2px; }
+    &.other {
+      box-shadow: rgba(255,255,255,.6) 0 0 0 1px inset, #555 0 0 0 2px; }
+  }
+}
+
+
+.downloadFiles{
+  list-style: none; margin: 0; padding: 0; overflow: hidden;
+  display: flex; flex-flow: row wrap;
+  li{
+    float: left; margin: 3px;
+    a{ display: block;  margin: 0; padding: 0; text-decoration: none;}
+    .fileSize{font-size: .9rem; color: $fontColor; display: inline-block; margin-left: 3px;}
+  }
+}
+
+
+.downloadHere{
+  border: 1px solid $grayDark;
+  h3{
+    margin: 0; padding: 20px; line-height: 1;
+    background-color: $grayDark; color: $fontInvert;}
+  ul{
+    list-style: none; margin: 0; padding: 20px;
+    overflow: hidden; line-height: 1.1;
+  }
+  li{
+    float: left; margin: 3px 25px 2px 0; padding: 0; 
+    a{
+      display: block; position: relative; padding: 2px 0 3px 46px; min-height: 38px;
+      text-decoration: none; color: $fontColor;
+      .fileType{
+        position: absolute; left: 0; top: 0;
+      }
+      .fileSize, .fileName{
+        display: block; margin: 0 0 3px 0;
+      }
+      .fileSize{ font-size: .92em;}
+      &:hover{
+        .fileSize, .fileName{ text-decoration: underline;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    display: flex; align-content: center; 
+    h3 {
+      flex: 1 0 5em; margin-right: 10px; 
+      font-size: 1.2rem; line-height: 2.2em; text-align: center;}
+    ul{
+      flex: 1 1 70%; padding: 15px 20px;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    margin-left: -5vw; margin-right: -5vw;
+  }
+  
+}
+
+
+// cp 頁的瀏覽人次與發布日期容器
+// .pubInfo{ 
+//   padding: 12px; margin: 4em auto 0;
+//   // border-bottom: 3px solid $borderColorDark;
+//   background-color: $grayLight;
+
+//   display: flex; justify-content: space-between ;
+  
+//   time[title], .visitCount[title], .from[title]{
+//     display: inline-block; margin: 5px; text-decoration: none;
+//     &::before{
+//       content: attr(title) ": " ; display: inline-block;
+//       color: $fontColorLight;  font-size: .92rem;
+//     }
+//     &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
+//   }
+// }
+
+// cp 頁的瀏覽人次與發布日期容器
+.pubInfo{ 
+  @extend %primSecWidth; margin: 10px auto 0;
+  padding: .7em 3vw .7em;  border-radius: $radius;
+  border: 1px solid $borderColorLight;
+  background-color: $white;
+
+  dl{
+    line-height: 1.5; margin: 0; padding: 0;
+    display: flex; justify-content: space-between ;
+    &>div{
+      flex: 1 1 auto;
+      &+div { margin-left: 15px;}
+    }
+
+    dt, dd{ display: inline-block; margin: 0;}
+    dt{
+      color: $fontColorLight; font-size: .9em;
+      &::after{content: '：';}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    margin-bottom: 20px;
+    padding-left: 25px; padding-right: 25px;
+    dl{
+      &>div{
+        &:nth-child(n+2){text-align: center;}
+        &:last-child{ text-align: right;}
+      }
+    }
+  }
+
+}

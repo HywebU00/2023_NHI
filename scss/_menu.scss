@@ -126,7 +126,7 @@
           position: absolute; left: 0; top: auto; z-index: 199;
           width: 100vw; overflow: hidden;
           font-size: 1.125rem;text-align: left;
-          background: rgba(255, 255, 255, .95);
+          background: $white;
           animation: none;
           &>li{
             flex: 0 0 22%; margin: 8px 1.5% 20px;

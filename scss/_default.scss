@@ -15,19 +15,32 @@ body{
   url(../images/bg+left.jpg) no-repeat left 0 top 400px,
   url(../images/bg+right.jpg) no-repeat right 0 top 1110px;
   background-color: #fff;
-  // &.inner{
-  //   padding: 16px 0 120px;
-  //   @extend %mainWidth;
-
-  //   &.smallFont{ font-size: .9375em;}
-  //   &.largeFont{ font-size: 1.25em;}
-  // }
+  &.inner{
+    padding: 12px 0 120px;
+    &.smallFont{ font-size: .9375em;}
+    &.largeFont{ font-size: 1.25em;}
+  }
 
   @media screen and (min-width: $wwNormal){
-    &.inner{padding-top: 30px;}
+    &.inner{
+      position: relative;padding-top: 16.67vw;
+      &::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0;
+        height: 16.67vw;
+        // z-index: -1;
+        background:url(../images/innerBg.jpg) no-repeat center top, linear-gradient(90deg, #b3e5e8 49%, #70a7b1 50%);
+        background-size: auto 16.67vw, 100% 16.67vw;
+      }
+    }
   }
   @media screen and (min-width: $wwMaximum){
-    // width: $wwMaximum;
+    &.inner{
+      padding-top: 200px;
+      &::before{
+        height: 200px;
+        background-size: auto 200px, 100% 200px;
+      }
+    }
   }
 }
 

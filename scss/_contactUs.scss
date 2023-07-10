@@ -45,22 +45,23 @@
         flex: 0 1 auto; margin: 0;
         button{
           position: relative;
-          display: block; width: 100%;margin: 0; padding: 0; 
-          height: 1.6em; line-height: 1.6; white-space: nowrap;
-          font-size: 1.25rem; font-weight: bold; border-radius: 3px;
+          display: block; width: 100%;margin: 0; padding: 0;
+          height: 1.6em; line-height: 1.5; white-space: nowrap;
+          font-size: 1.25rem; font-weight: bold; border-radius: 0;
+          box-shadow: none;
           background-color: transparent; color: $fontColorLight;
           &::after{
             content: ''; position: absolute; left: 0;right: 0;bottom: 0;
             height: 3px; transition: .2s;
-          }
-          // &:focus{
-          //  &::after{ background-color: #c00;}
-          // }       
+          }    
         }
         &.slick-active{
           button{
             color: #005a7f;
-            &::after{background-color: $secondaryColor;}
+            &::after{background-color: $secondaryColor; }
+            &:focus{
+              outline: 1px solid $focus;
+            }
           }
         }
       }

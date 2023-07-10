@@ -13,7 +13,7 @@ table.formLayout {
 
 
 
-  @media screen and (max-width: $wwMedium - 1) {
+  @media screen and (max-width: calc( $wwMedium - 1px)) {
     display: block; width: auto;
     tbody {display: block;}
     tr, td, th {display: block; width: 100%;}
@@ -29,9 +29,9 @@ table.formLayout {
 
 // 送出、清除等按鈕
 .btnDv{
-  text-align: center; margin: 1em auto; padding: 0 0 1em;
-  input{ min-width: 10em;}
-  @media screen and (max-width: $wwMedium - 1) {
+  text-align: center; margin: 0 auto; padding: 1em 0 1.5em;
+  input, button{ min-width: 10em; border-radius: 2em;}
+  @media screen and (max-width: calc($wwMedium - 1px)) {
     input{ min-width: 7em;}
   }
 }
@@ -68,16 +68,16 @@ table.formLayout {
 
 // 表單樣式
 .formA{
-  margin-bottom: 3em;
+  @extend %primSecWidth;margin-bottom: 30px;
   .formLayout{
-    width: 90%; margin: 30px auto;
+    width: 90%; margin: 0 auto;
   }
   h3{ 
     width: 90%;margin: 0 auto -4px; padding: 0; overflow: hidden; 
     font-size: 1.3rem; 
     .handle{float: right; font-weight: bold; }
   }
-  @media screen and (max-width: $wwMedium - 1) {
+  @media screen and (max-width: calc($wwMedium - 1px)) {
     .formLayout{width: 94%;}
     h3{ width: 100%;}
     .handle{margin-right: 16px;}
@@ -118,12 +118,13 @@ table.formLayout {
     }
   }
 
+  .formLayout{ margin-top: 35px;}
+  .btnDv{margin-bottom: 20px;}
   .tray {
     clear: both; position: relative;
-    border: 1px solid  $borderColorLight;
-    background: #fff;
-    box-shadow: rgba(0,0,0,.2) 0 0 8px inset;
-    // background: #fff;
-    border-radius: 15px;
+    padding: 1px 0;
+    background: $white;
+    border-radius: $bigRadius;
+    box-shadow: $shadow1 0 0 6px;
   }
 }

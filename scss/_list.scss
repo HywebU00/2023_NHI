@@ -1,0 +1,44 @@
+// 項目 ul, li 條列 //
+.list{
+  @extend %primSecWidth; margin: 20px auto 0;  
+  position: relative;background: $white;
+  &>ul{
+    list-style: none; margin: 0; padding: 0;
+    line-height: 1.5; 
+    border-top: 3px solid $borderColor; border-bottom: 3px solid $borderColor;
+    &>li{
+      border-bottom: 1px solid $borderColorLight; margin: 0; padding: 3px 0;
+      clear: both;
+      a{
+        display: flex; flex-flow: row nowrap;padding: .8em 5px .8em;
+        border-radius: 6px;text-decoration: none; color: $fontColor; 
+        transition: .2s;
+        &:hover{ background-color: $focus;}
+      }
+      .numb{
+        flex: 0 0 1.8em; margin-right: .8em; text-align: right;
+        &::after{content: '.';}
+      }
+      .title{ 
+        flex: 1 1 calc(100% - 12rem); display: block;font-size: 1.125em;
+      }
+      time{
+        flex: 0 0 5.5em; text-align: right;
+      }
+      &:last-child{border-bottom: none;}
+    }
+
+  }
+
+  @media screen and (min-width: $wwNormal){
+    @include blockStyle1;
+    padding: 40px 25px;
+    &>ul{
+      &>li{
+        .numb{ flex-basis: 2.2em;}
+  
+      }
+    }
+  }
+
+}
