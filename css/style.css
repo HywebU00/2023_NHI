@@ -4425,7 +4425,7 @@ table.formLayout td:nth-child(even) {
 }
 
 .cpMeta {
-  padding: 40px 25px;
+  padding: 40px 20px;
   box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
   border-radius: 32px;
   background-color: #fff;
@@ -4435,7 +4435,8 @@ table.formLayout td:nth-child(even) {
   margin: 0 auto;
   width: 100%;
   line-height: 1.8;
-  border-top: 1px solid #c1c4c6;
+  border-top: 2px solid #c1c4c6;
+  border-bottom: 2px solid #c1c4c6;
 }
 .cpMeta > table td, .cpMeta > table th {
   padding: 0.7em 0.8em 0.6em;
@@ -4445,7 +4446,7 @@ table.formLayout td:nth-child(even) {
   text-align: center;
 }
 .cpMeta > table thead th {
-  border-bottom: 2px solid #434242;
+  border-bottom: 1px solid #434242;
   color: #000;
 }
 .cpMeta > table thead th:first-child {
@@ -4498,11 +4499,14 @@ table.formLayout td:nth-child(even) {
   margin-top: 0.8em;
 }
 @media screen and (max-width: 699px) {
+  .cpMeta {
+    padding: 20px;
+  }
   .cpMeta thead {
     display: none;
   }
   .cpMeta > table {
-    border-width: 1px;
+    border: none;
   }
   .cpMeta > table tbody tr {
     display: block;

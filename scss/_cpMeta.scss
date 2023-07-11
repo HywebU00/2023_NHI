@@ -1,13 +1,13 @@
 // 表格形式內容頁 //////////////////////////////////////////////////
 .cpMeta{
-  @extend %primSecWidth; padding:40px 25px;
+  @extend %primSecWidth; padding:40px 20px;
   @include blockStyle1;
 
   &>table{
     border-collapse: collapse; margin: 0 auto; width: 100%;
     line-height: 1.8;
-    border-top: 1px solid $borderColor;
-    // border-bottom: 3px solid $borderColor;
+    border-top: 2px solid $borderColor;
+    border-bottom: 2px solid $borderColor;
     td, th {
       padding: .7em .8em .6em;
       border-bottom: 1px solid $borderColor;
@@ -15,7 +15,7 @@
     thead{
       text-align: center;
       th{
-        border-bottom: 2px solid $borderColorDark; color: $fontColorDark;
+        border-bottom: 1px solid $borderColorDark; color: $fontColorDark;
         &:first-child{
           position: relative;
           &::after{
@@ -28,7 +28,6 @@
       }
     }
     tbody{
-  
       th{
         position: relative; 
         padding-left: 3px; width: 15%; text-align: center;
@@ -56,14 +55,12 @@
     }
   }
 
-  @media screen and (max-width: calc($wwNormal - 1px)){
-    // margin-bottom: 20px;padding:25px 3vw; 
-  }
   
   @media screen and (max-width: calc($wwMedium - 1px)){
+    padding:20px;
     thead{display: none;}
     &>table{
-      border-width: 1px;
+      border: none;
       tbody {
         tr{
           display: block; overflow: hidden; clear: both;
