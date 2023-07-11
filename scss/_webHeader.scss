@@ -29,6 +29,13 @@
     position: fixed; top: 0; left: 0; right: 0;
     background-color: #fff;
     box-shadow: rgba(0,0,0,.3) 0 2px 16px;
+    .menu{
+      background-color: $primaryColor;
+      transition:background-color .3s;
+      &>ul>li{
+        &>a{ color:$fontInvert; transition:color .3s;}
+      }
+    }
   }
 
 

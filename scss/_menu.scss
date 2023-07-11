@@ -92,7 +92,7 @@
 
 
 ////////////////////////////////////////////////////////////
-// 寬版主選單
+// 寬版主選單 //////////////////////////////////////////////
 .webHeader .menu{
   display: none;
 
@@ -117,7 +117,7 @@
           &:focus, &.focused {background-color: $white;}
         }
         &:hover{
-          &>a{ background-color: $white; }
+          &>a{ background-color: $white; color: $fontColor !important; }
         }
 
         // 第二層選單
@@ -128,7 +128,7 @@
           width: 100vw; overflow: hidden;
           font-size: 1.125rem;text-align: left;
           background: $white;
-          animation: none;
+          box-shadow: $shadow2 0 16px 24px -12px;
           &>li{
             flex: 0 0 22%; margin: 8px 1.5% 20px;
             &>a{ 

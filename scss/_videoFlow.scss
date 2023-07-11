@@ -1,10 +1,12 @@
 // 即時影音
 .videoFlow{
-  --bgc:#2b3e4f;
+  --bgc:#2a3d4f;
 
   padding: 90px 0 100px;margin: 0 auto;
-  background:var(--bgc) url(../images/bg_videoFlow.jpg) no-repeat center top;
   color: $fontInvert;
+  background:var(--bgc) url(../images/bg_videoFlow.jpg) no-repeat center center;
+  background-size:cover ;
+  background-attachment: fixed;
 
   .blockHeader{
     .engSub{ 
