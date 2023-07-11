@@ -1865,38 +1865,44 @@ a:hover .fileType.other, a:focus .fileType.other {
 .webFooter .middle {
   padding: 30px 3%;
   line-height: 1.5;
+  font-size: 1.125rem;
   background: #e5e5e5 url(../images/bg_dot.png) repeat 0 0;
 }
 .webFooter .phones {
   color: #042047;
+  font-size: 1.25rem;
 }
 .webFooter .phones p {
-  margin: 0.6em 0;
+  margin: 0.4em 0;
 }
 .webFooter .phones p em {
+  display: inline-block;
   font-style: normal;
-  font-size: 1.25rem;
+  font-weight: bold;
+  font-size: 1.12em;
 }
 .webFooter .phones p.highlight {
   margin: 1em auto;
-  padding: 5px 1em 3px;
+  padding: 5px 0.8em 3px;
   text-align: center;
   border-radius: 1em;
+  font-weight: normal;
   background-color: #042047;
   color: #fff;
 }
-.webFooter .regDivisions {
-  font-size: 0.94rem;
-}
 .webFooter .regDivisions li {
-  margin: 0.5em 0;
-  padding: 0;
+  margin: 0.6em 0 0;
+  padding: 0 0 0.6em;
+  border-bottom: 1px solid #fff;
 }
 .webFooter .regDivisions li .tel {
   display: inline-block;
   white-space: nowrap;
   width: 7em;
   margin: 0 0.5em;
+}
+.webFooter .regDivisions li .address {
+  display: block;
 }
 .webFooter .base {
   position: relative;
@@ -1917,6 +1923,7 @@ a:hover .fileType.other, a:focus .fileType.other {
 }
 .webFooter .base .phoneAddress {
   margin: 1.2em auto;
+  font-size: 1.06rem;
 }
 .webFooter .base .phoneAddress p {
   margin: 0.5em 0;
@@ -1978,6 +1985,12 @@ a:hover .fileType.other, a:focus .fileType.other {
     height: 435px;
     bottom: -50px;
   }
+  .webFooter .regDivisions li {
+    border: none;
+  }
+  .webFooter .regDivisions li .address {
+    display: inline-block;
+  }
 }
 @media screen and (min-width: 1000px) {
   .webFooter .middle {
@@ -1995,29 +2008,36 @@ a:hover .fileType.other, a:focus .fileType.other {
     width: 100%;
     float: left;
   }
+  .webFooter .regDivisions {
+    font-size: 1.125rem;
+  }
+  .webFooter .regDivisions li {
+    padding-bottom: 0.2em;
+  }
   .webFooter .base {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
+    justify-content: space-between;
   }
   .webFooter .base .logo {
-    flex: 1 1 20%;
-    width: auto;
-    height: 68px;
-    max-width: 300px;
+    flex: 0 0 294px;
+    width: 294px;
+    height: auto;
     margin: 0;
     padding: 0;
   }
   .webFooter .base .phoneAddress {
-    flex: 0 1 30%;
-    margin: 0 2.5%;
-    font-size: 0.875rem;
+    flex: 0 0 calc(96% - 630px);
+    margin: 0 2%;
   }
   .webFooter .base .findUsHere {
-    flex: 1 1 32%;
+    flex: 0 0 330px;
+    width: 330px;
     align-self: flex-end;
     border: none;
     padding-bottom: 4px;
+    margin: 0;
     justify-content: flex-end;
   }
   .webFooter .base .findUsHere li img {
@@ -2795,6 +2815,16 @@ fieldset legend {
   font-weight: bold;
   line-height: 1.6;
 }
+.bulletin .subject a {
+  display: block;
+  color: #081c36;
+}
+.bulletin .subject a:focus, .bulletin .subject a:hover {
+  text-decoration: none;
+}
+.bulletin .subject a:focus {
+  outline: 1px solid #07b4b1;
+}
 @media screen and (min-width: 1000px) {
   .bulletin .blockHeader {
     float: left;
@@ -3030,7 +3060,7 @@ fieldset legend {
   font-size: 1rem;
   line-height: 1.3;
   word-break: break-all;
-  padding: 6px 6px 5px;
+  padding: 8px calc((100vw - 40px - 14em) / 14) 5px;
   margin: 2px;
   border-radius: 6px;
   border: none;
@@ -3110,6 +3140,7 @@ fieldset legend {
   .news .tabItems button {
     font-size: 1.125rem;
     padding: 0.6em 0.5em 0.5em;
+    border-radius: 1.5em;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -3147,7 +3178,6 @@ fieldset legend {
     flex: 1 1 auto;
     padding: 0.6em 0.5em;
     margin: 3px;
-    border-radius: 1.3em;
     font-size: 1.2rem;
   }
   .news .newsList {
