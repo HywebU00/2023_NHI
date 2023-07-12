@@ -1,59 +1,112 @@
-.cpArticle{
-  @extend %primSecWidth; padding:40px 20px; margin-bottom: 60px;
+.cpArticle {
+  @extend %primSecWidth;
+  padding: 40px 20px;
+  margin-bottom: 60px;
   @include blockStyle1;
 
-  line-height: 1.9; font-size: 1.125rem;
-  a{
+  line-height: 1.9;
+  font-size: 1.125rem;
+  a {
     color: $linkColor;
-    &:hover{ text-decoration: none;}
+    &:hover {
+      text-decoration: none;
+    }
   }
 
-
-  p{ margin: 1em 0 3em;}
-
-  h3, h4, h5, h6{ 
-    font-weight: bold; margin: 30px 0 10px;
-    &:first-child{ margin-top: 0;}
-    & + p{margin-top: .5rem;}
+  p {
+    margin: 1em 0 3em;
   }
-  h3{ font-size: 1.3em;}
-  h4{ font-size: 1.2em;}
-  h5{ font-size: 1.15em;}
-  h6{ font-size: 1em;}
 
-  blockquote{
-    position: relative; font-style: italic;
-    padding:1em 1.5em 1em; margin-left: 2.5em; margin-right: 1em; margin-bottom: 2.5em;
-    &::before, &::after{ content: ''; position: absolute; top: -5px; bottom: -5px; width: 15px;
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    margin: 30px 0 10px;
+    color: green;
+    &:first-child {
+      margin-top: 0;
+    }
+    & + p {
+      margin-top: 0.5rem;
+    }
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  h4 {
+    font-size: 1.2em;
+  }
+  h5 {
+    font-size: 1.15em;
+  }
+  h6 {
+    font-size: 1em;
+  }
+
+  blockquote {
+    position: relative;
+    font-style: italic;
+    padding: 1em 1.5em 1em;
+    margin-left: 2.5em;
+    margin-right: 1em;
+    margin-bottom: 2.5em;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      width: 15px;
       border: 5px solid $assistant1;
     }
-    &::before{ left: 0; border-right:none;}
-    &::after{ right: 0; border-left:none;}
-  }
-
-
-  table{
-    border-collapse: collapse; margin:2em 0; width: 100%;
-    border: 2px solid $borderColor; background-color: $mainBg;
-    line-height: 1.5; font-size: 1.125em;
-    th, td{ padding: .5em; border: 1px solid $borderColorLight;}
-    th{
-      background-color: $primaryColor; color: $fontInvert; 
-      &:first-child{ border-right-color: $borderColor;}
-      &:only-of-type:first-child{ background: lighten($primaryColor, 40%); color: $fontColorDark;}
+    &::before {
+      left: 0;
+      border-right: none;
     }
-    tr:first-child th{border-bottom-color: $borderColor;}
+    &::after {
+      right: 0;
+      border-left: none;
+    }
   }
 
-
-  @media screen and (min-width: $wwMedium){
-
+  table {
+    border-collapse: collapse;
+    margin: 2em 0;
+    width: 100%;
+    border: 2px solid $borderColor;
+    background-color: $mainBg;
+    line-height: 1.5;
+    font-size: 1.125em;
+    th,
+    td {
+      padding: 0.5em;
+      border: 1px solid $borderColorLight;
+    }
+    th {
+      background-color: $primaryColor;
+      color: $fontInvert;
+      &:first-child {
+        border-right-color: $borderColor;
+      }
+      &:only-of-type:first-child {
+        background: lighten($primaryColor, 40%);
+        color: $fontColorDark;
+      }
+    }
+    tr:first-child th {
+      border-bottom-color: $borderColor;
+    }
   }
 
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwMedium) {
+  }
+
+  @media screen and (min-width: $wwNormal) {
     padding: 40px;
     font-size: 1.125em;
-    blockquote{margin-left: 4em;}
+    blockquote {
+      margin-left: 4em;
+    }
   }
-
 }
