@@ -1967,8 +1967,7 @@ a:hover .fileType.other, a:focus .fileType.other {
   margin: 0 auto;
   height: 80px;
   width: 94%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .webFooter .base .phoneAddress {
   margin: 1.2em auto;
@@ -3096,8 +3095,7 @@ fieldset legend {
   .services .servList > li img {
     width: 80px;
     height: 80px;
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 }
 
@@ -3277,8 +3275,7 @@ fieldset legend {
     margin: 0 0 -1.3em;
     width: 100%;
     height: 170px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .news .newsList li.headLine time {
     display: inline-block;
@@ -3762,10 +3759,8 @@ fieldset legend {
   display: block;
   width: 100%;
   height: 1280px;
-  -o-object-position: 72% 0%;
-     object-position: 72% 0%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-position: 72% 0%;
+  object-fit: cover;
 }
 .contactUs .mapList .map a {
   display: block;
@@ -3829,8 +3824,7 @@ fieldset legend {
   }
   .contactUs .mapList .map img {
     height: 900px;
-    -o-object-position: 50% 50%;
-       object-position: 50% 50%;
+    object-position: 50% 50%;
   }
 }
 @media screen and (min-width: 1320px) {
@@ -4065,8 +4059,7 @@ fieldset legend {
   margin: 0 auto;
   width: 100%;
   height: calc(47vw - 148px);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   transition: 0.25s;
 }
 .npImages > ul > li p {
@@ -4706,7 +4699,6 @@ table.formLayout td:nth-child(even) {
 .cpArticle h6 {
   font-weight: bold;
   margin: 30px 0 10px;
-  color: green;
 }
 .cpArticle h3:first-child,
 .cpArticle h4:first-child,
@@ -4864,8 +4856,7 @@ table.formLayout td:nth-child(even) {
   display: block;
   width: 100%;
   height: 94vw;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   transition: 0.3s;
 }
 .photoflow .flowList > li p {
@@ -4938,8 +4929,7 @@ table.formLayout td:nth-child(even) {
   }
   .photoflow .flowList > li img {
     height: calc(23.5vw - 9px);
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .photoflow .flowNav {
     margin-left: 0;
@@ -4990,8 +4980,7 @@ table.formLayout td:nth-child(even) {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .bigPhotos .flowList > li p {
   position: absolute;
