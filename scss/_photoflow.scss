@@ -1,8 +1,6 @@
 // cp 頁 相關圖檔
 //（點擊左右箭頭滑動）photoflow
 .photoflow{ 
-  $dotDia : 8px; // 點點直徑
-
   @extend %primSecWidth; margin-bottom: 50px;
   ul{margin: 0; padding: 0; list-style: none;}
   a{text-decoration: none; }
@@ -54,28 +52,13 @@
   }
 
   // 點點
-  .flowNav{ 
-    margin: 25px 55px 5px;
-    ul{
-      list-style: none; margin: 0; padding: 0;
-      display: flex; justify-content: center;
-    }
-    li{
-      flex: 0 1 $dotDia;
-      margin: 0 8px; padding: 0;
-      &::before{ content: ''; display: block;
-        width: $dotDia; height: $dotDia; border-radius: 50%; cursor: default;
-        background: $gray; border: none; margin: 0; padding: 0;
-        transition: .2s;
-      }
-      &.active{
-        &::before{ box-shadow: $assistant1 0 0 0 2px;background:$assistant1}
-      }
-    }
+  .flowNav{
   }
 
   // 左右箭頭 button
-  .diskBtn{top: auto; bottom: 8px;transform: translateY(0); margin: 0 5px; z-index: 99;}
+  .diskBtn{
+    top: $mobileWidth*.5; z-index: 99;
+  }
 
   @media screen and (min-width: $wwMedium){
     .flowList{
@@ -85,8 +68,9 @@
         img{height: calc(#{$mobileWidth}/2 - 10px);}
       }
     }
-    .flowNav{
-      li{margin: 0 10px;}
+
+    .diskBtn{
+      top: calc(#{$mobileWidth}/4 - 5px); 
     }
   }
 
@@ -102,7 +86,7 @@
     .flowNav{ margin-left: 0;margin-right: 0;}
 
     // 左右箭頭 button
-    .diskBtn{top: calc(94vw/8 - 4px); transform: translateY(-50%);}
+    .diskBtn{top: calc(94vw/8 - 4px); }
 
   }
 
@@ -114,7 +98,7 @@
       }
     }
     .diskBtn{
-      top:calc($wwMaximum*.11 - 4px);
+      top:calc($wwMaximum*.1175 - 4px);
     }
   }
 

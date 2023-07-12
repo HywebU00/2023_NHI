@@ -173,17 +173,12 @@ a:focus{outline: none;}
 
 }
 
-
-
 // 側欄遮罩 ///////////////////////////////////////////////
 .sidebarMask {
   display: none;z-index: 980;
   position: fixed;left: 0;right: 0;top: 0;bottom: 0;
   background-color: rgba(0,0,0,.8);
 }
-
-
-
 
 // 關閉 「X」///////////////////////////////////////////////
 button.closeThis{
@@ -211,10 +206,7 @@ button.closeThis{
   &:focus{ background-color: var(--focus); box-shadow: var(--focus) 0 0 0 3px}
 }
 
-
-
-
-// slick套件 ----------------------------------------------
+// slick套件樣式設定 ///////////////////////////////////////////////
 // slick套件: 左右箭頭
 .slick-arrow{
   position: absolute; top: 50%; margin: -30px 0 0; z-index: 9;
@@ -273,8 +265,10 @@ button.closeThis{
 }
 
 
-// 自製 photoflow 配件----------------------------------------------
+// 自製 photoflow 配件 ///////////////////////////////////////////////
 // photoflow: 左右箭頭
+
+/* 
 .diskBtn{
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 9;
   width: 64px; height: 64px; border-radius: 50%; 
@@ -300,6 +294,85 @@ button.closeThis{
   }
   &:focus{
     box-shadow: #fff 0 0 0 1px, $secondaryColor 0 0 0 4px;
+  }
+}
+ */
+
+.diskBtn{
+  position: absolute; top: 50%; margin: -30px 0 0; z-index: 9;
+  width: 60px; height: 60px; border-radius: 50%; 
+  text-indent: -20em; overflow: hidden; border: none;
+  background-color: transparent; box-shadow: none;
+  transition: background-color .3s;
+
+  &::before, &::after{
+    content: ''; position: absolute;left: calc(50% - 14px);
+    width: 24px; height: 6px;border-radius: 3px;
+    background-color: #c3c3c3;
+    transition: .2s;
+  }
+  &::before{
+    bottom: calc(50% + 4px);
+    transform: rotate(-45deg);
+  }
+  &::after{
+    top:calc(50% + 4px);
+    transform: rotate(45deg);
+  }
+  &.prev{left: 4px;}
+  &.next{ transform:rotate(180deg);right: 4px;}
+
+  &:hover, &:focus{
+    background-color: rgba(0,0,0,.7);box-shadow: none;
+    &::before, &::after{ background-color: #fff;}
+  }
+}
+// 點點
+// .flowNav{ 
+//   $dotDia : 8px; // 點點直徑
+//   margin: 25px 55px 5px;
+//   ul{
+//     list-style: none; margin: 0; padding: 0;
+//     display: flex; justify-content: center;
+//   }
+//   li{
+//     flex: 0 1 $dotDia;
+//     margin: 0 8px; padding: 0;
+//     &::before{ content: ''; display: block;
+//       width: $dotDia; height: $dotDia; border-radius: 50%; cursor: default;
+//       background: $gray; border: none; margin: 0; padding: 0;
+//       transition: .2s;
+//     }
+//     &.active{
+//       &::before{ box-shadow: $assistant1 0 0 0 2px;background:$assistant1}
+//     }
+//   }
+// }
+
+
+.flowNav{
+  --dotBgc: #cad9e4;
+  --dotActive: #06689a;
+  $dotDia: 9px; // 圓點直徑
+
+  margin: 20px auto 5px; z-index: 19;
+  ul{
+    display: flex; flex-flow: row nowrap; justify-content: center;
+    list-style: none; margin: 0 auto; padding: 0;
+  }
+  li{ 
+    flex: 0 0 $dotDia; margin: 0 8px; padding: 0;
+    height: $dotDia; border-radius: $dotDia;
+    font-size: 0; border: none; box-shadow: none;
+    background: var(--dotBgc);
+    transition: .2s;
+    &:hover {background-color: var(--dotActive); }
+
+    &.active{
+      // flex-basis: calc($dotDia * 4);
+      background-color: var(--dotActive);
+      box-shadow: var(--dotActive) 0 0 0 2px;
+    }
   }
 }
 
