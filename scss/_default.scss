@@ -10,6 +10,7 @@ body{
   @media screen and (min-width: $wwNormal){
     &.smallFont{ 
       .webHeader .topLinks ul.text,
+      .divisions,
       .bulletin,
       .topics, .services,
       .news,
@@ -21,6 +22,7 @@ body{
     }
     &.largeFont{ 
       .webHeader .topLinks ul.text,
+      .divisions,
       .bulletin,
       .topics, .services,
       .news,
