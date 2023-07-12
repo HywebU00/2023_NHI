@@ -704,7 +704,8 @@ kbd {
   background: url(../images/icon_home.png) no-repeat 0 0;
   background-size: 25px auto;
 }
-.breadcrumb ul, .breadcrumb li {
+.breadcrumb ul,
+.breadcrumb li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1028,38 +1029,58 @@ a .fileType {
   text-decoration: none;
 }
 
-a:hover .fileType, a:focus .fileType {
+a:hover .fileType,
+a:focus .fileType {
   color: #fff;
   text-decoration: none;
 }
-a:hover .fileType.pdf, a:focus .fileType.pdf {
+a:hover .fileType.pdf,
+a:focus .fileType.pdf {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #c00 0 0 0 2px;
 }
-a:hover .fileType.doc, a:hover .fileType.docx, a:hover .fileType.odt, a:focus .fileType.doc, a:focus .fileType.docx, a:focus .fileType.odt {
+a:hover .fileType.doc, a:hover .fileType.docx, a:hover .fileType.odt,
+a:focus .fileType.doc,
+a:focus .fileType.docx,
+a:focus .fileType.odt {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1b76cb 0 0 0 2px;
 }
-a:hover .fileType.xls, a:hover .fileType.xlsx, a:hover .fileType.csv, a:hover .fileType.ods, a:focus .fileType.xls, a:focus .fileType.xlsx, a:focus .fileType.csv, a:focus .fileType.ods {
+a:hover .fileType.xls, a:hover .fileType.xlsx, a:hover .fileType.csv, a:hover .fileType.ods,
+a:focus .fileType.xls,
+a:focus .fileType.xlsx,
+a:focus .fileType.csv,
+a:focus .fileType.ods {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #48920f 0 0 0 2px;
 }
-a:hover .fileType.ppt, a:hover .fileType.pptx, a:hover .fileType.odp, a:focus .fileType.ppt, a:focus .fileType.pptx, a:focus .fileType.odp {
+a:hover .fileType.ppt, a:hover .fileType.pptx, a:hover .fileType.odp,
+a:focus .fileType.ppt,
+a:focus .fileType.pptx,
+a:focus .fileType.odp {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #c43e1c 0 0 0 2px;
 }
-a:hover .fileType.txt, a:focus .fileType.txt {
+a:hover .fileType.txt,
+a:focus .fileType.txt {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px;
 }
-a:hover .fileType.jpg, a:focus .fileType.jpg {
+a:hover .fileType.jpg,
+a:focus .fileType.jpg {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #0b9fb2 0 0 0 2px;
 }
-a:hover .fileType.mp3, a:hover .fileType.mp4, a:focus .fileType.mp3, a:focus .fileType.mp4 {
+a:hover .fileType.mp3, a:hover .fileType.mp4,
+a:focus .fileType.mp3,
+a:focus .fileType.mp4 {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #9d3a89 0 0 0 2px;
 }
-a:hover .fileType.mov, a:hover .fileType.wmv, a:focus .fileType.mov, a:focus .fileType.wmv {
+a:hover .fileType.mov, a:hover .fileType.wmv,
+a:focus .fileType.mov,
+a:focus .fileType.wmv {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #5843a9 0 0 0 2px;
 }
-a:hover .fileType.zip, a:focus .fileType.zip {
+a:hover .fileType.zip,
+a:focus .fileType.zip {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #333 0 0 0 2px;
 }
-a:hover .fileType.other, a:focus .fileType.other {
+a:hover .fileType.other,
+a:focus .fileType.other {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #555 0 0 0 2px;
 }
 
@@ -1123,14 +1144,16 @@ a:hover .fileType.other, a:focus .fileType.other {
   left: 0;
   top: 0;
 }
-.downloadHere li a .fileSize, .downloadHere li a .fileName {
+.downloadHere li a .fileSize,
+.downloadHere li a .fileName {
   display: block;
   margin: 0 0 3px 0;
 }
 .downloadHere li a .fileSize {
   font-size: 0.92em;
 }
-.downloadHere li a:hover .fileSize, .downloadHere li a:hover .fileName {
+.downloadHere li a:hover .fileSize,
+.downloadHere li a:hover .fileName {
   text-decoration: underline;
 }
 @media screen and (min-width: 700px) {
@@ -1177,7 +1200,8 @@ a:hover .fileType.other, a:focus .fileType.other {
 .pubInfo dl > div + div {
   margin-left: 15px;
 }
-.pubInfo dl dt, .pubInfo dl dd {
+.pubInfo dl dt,
+.pubInfo dl dd {
   display: inline-block;
   margin: 0;
 }
@@ -1967,7 +1991,8 @@ a:hover .fileType.other, a:focus .fileType.other {
   margin: 0 auto;
   height: 80px;
   width: 94%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .webFooter .base .phoneAddress {
   margin: 1.2em auto;
@@ -3095,7 +3120,8 @@ fieldset legend {
   .services .servList > li img {
     width: 80px;
     height: 80px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 
@@ -3275,7 +3301,8 @@ fieldset legend {
     margin: 0 0 -1.3em;
     width: 100%;
     height: 170px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .news .newsList li.headLine time {
     display: inline-block;
@@ -3759,8 +3786,10 @@ fieldset legend {
   display: block;
   width: 100%;
   height: 1280px;
-  object-position: 72% 0%;
-  object-fit: cover;
+  -o-object-position: 72% 0%;
+     object-position: 72% 0%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contactUs .mapList .map a {
   display: block;
@@ -3824,7 +3853,8 @@ fieldset legend {
   }
   .contactUs .mapList .map img {
     height: 900px;
-    object-position: 50% 50%;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
   }
 }
 @media screen and (min-width: 1320px) {
@@ -4059,7 +4089,8 @@ fieldset legend {
   margin: 0 auto;
   width: 100%;
   height: calc(47vw - 148px);
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: 0.25s;
 }
 .npImages > ul > li p {
@@ -4693,14 +4724,24 @@ table.formLayout td:nth-child(even) {
 .cpArticle p {
   margin: 1em 0 3em;
 }
-.cpArticle h3, .cpArticle h4, .cpArticle h5, .cpArticle h6 {
+.cpArticle h3,
+.cpArticle h4,
+.cpArticle h5,
+.cpArticle h6 {
   font-weight: bold;
   margin: 30px 0 10px;
+  color: red;
 }
-.cpArticle h3:first-child, .cpArticle h4:first-child, .cpArticle h5:first-child, .cpArticle h6:first-child {
+.cpArticle h3:first-child,
+.cpArticle h4:first-child,
+.cpArticle h5:first-child,
+.cpArticle h6:first-child {
   margin-top: 0;
 }
-.cpArticle h3 + p, .cpArticle h4 + p, .cpArticle h5 + p, .cpArticle h6 + p {
+.cpArticle h3 + p,
+.cpArticle h4 + p,
+.cpArticle h5 + p,
+.cpArticle h6 + p {
   margin-top: 0.5rem;
 }
 .cpArticle h3 {
@@ -4748,7 +4789,8 @@ table.formLayout td:nth-child(even) {
   line-height: 1.5;
   font-size: 1.125em;
 }
-.cpArticle table th, .cpArticle table td {
+.cpArticle table th,
+.cpArticle table td {
   padding: 0.5em;
   border: 1px solid #d2d2d2;
 }
@@ -4846,7 +4888,8 @@ table.formLayout td:nth-child(even) {
   display: block;
   width: 100%;
   height: 94vw;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: 0.3s;
 }
 .photoflow .flowList > li p {
@@ -4919,7 +4962,8 @@ table.formLayout td:nth-child(even) {
   }
   .photoflow .flowList > li img {
     height: calc(23.5vw - 9px);
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .photoflow .flowNav {
     margin-left: 0;
@@ -4970,7 +5014,8 @@ table.formLayout td:nth-child(even) {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .bigPhotos .flowList > li p {
   position: absolute;
