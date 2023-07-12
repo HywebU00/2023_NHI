@@ -13,7 +13,8 @@
         display: flex; flex-flow: row nowrap;padding: .8em 5px .8em;
         border-radius: 6px;text-decoration: none; color: $fontColor; 
         transition: .2s;
-        &:hover{ background-color: $focus;}
+        &:hover, &:focus{ background-color: $hover;}
+        &:focus{ box-shadow: $focus 0 0 0 2px inset;}
       }
       .numb{
         flex: 0 0 1.8em; margin-right: .8em; text-align: right;
@@ -36,7 +37,6 @@
     &>ul{
       &>li{
         .numb{ flex-basis: 2.2em;}
-  
       }
     }
   }

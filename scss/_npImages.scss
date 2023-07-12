@@ -23,9 +23,13 @@
         transition: .25s;
       }
       p {
-        margin: 0;padding: 8px;
+        margin: 8px;padding: 0;
         line-height: 1.3;text-align: center;
         font-size: 1.25em;font-weight: bold;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
       }
 
       &:nth-child(4n+2), &:nth-child(4n+3){

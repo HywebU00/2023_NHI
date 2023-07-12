@@ -1,10 +1,10 @@
 @charset "UTF-8";
-.fileDownload, .seeAlso, .photoflow, .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
+.fileDownload, .seeAlso, .photoflow, .cpArticle, .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
   width: 94%;
   margin: 30px auto;
 }
 @media screen and (min-width: 1200px) {
-  .fileDownload, .seeAlso, .photoflow, .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
+  .fileDownload, .seeAlso, .photoflow, .cpArticle, .cpMeta, .formA, .category, .pagination, .list, .npImages, .np, .npTree, .appAndSocialMedia, .topics, .services, .bulletin, .siteTree > ul, .pubInfo, .preface, .pageHeader, .breadcrumb {
     width: 1128px;
   }
 }
@@ -22,6 +22,30 @@ body.noScroll {
 body * {
   box-sizing: border-box;
 }
+@media screen and (min-width: 1000px) {
+  body.smallFont .webHeader .topLinks ul.text,
+  body.smallFont .bulletin,
+  body.smallFont .topics, body.smallFont .services,
+  body.smallFont .news,
+  body.smallFont .appAndSocialMedia,
+  body.smallFont .videoFlow,
+  body.smallFont .contactUs,
+  body.smallFont .webFooter,
+  body.smallFont .main.inner {
+    font-size: 0.875em;
+  }
+  body.largeFont .webHeader .topLinks ul.text,
+  body.largeFont .bulletin,
+  body.largeFont .topics, body.largeFont .services,
+  body.largeFont .news,
+  body.largeFont .appAndSocialMedia,
+  body.largeFont .videoFlow,
+  body.largeFont .contactUs,
+  body.largeFont .webFooter,
+  body.largeFont .main.inner {
+    font-size: 1.25em;
+  }
+}
 
 .main {
   position: relative;
@@ -31,12 +55,6 @@ body * {
 }
 .main.inner {
   padding: 12px 0 120px;
-}
-.main.inner.smallFont {
-  font-size: 0.9375em;
-}
-.main.inner.largeFont {
-  font-size: 1.25em;
 }
 @media screen and (min-width: 1000px) {
   .main.inner {
@@ -189,6 +207,11 @@ a:focus {
 .more a:hover::after, .more a:focus::after {
   width: 6px;
   right: 17px;
+}
+@media screen and (min-width: 1000px) {
+  .more {
+    font-size: 1.125em;
+  }
 }
 
 .goCenter {
@@ -352,7 +375,7 @@ a:focus {
 button.closeThis {
   --bc: rgba(0,0,0,.8);
   --fc: #fff;
-  --focus: #e40;
+  --focus: #e81158;
   position: relative;
   height: 44px;
   width: 44px;
@@ -676,7 +699,7 @@ kbd {
 
 .breadcrumb {
   margin: 20px auto;
-  padding: 3px 0 2px 32px;
+  padding: 4px 0 3px 32px;
   font-size: 1em;
   background: url(../images/icon_home.png) no-repeat 0 0;
   background-size: 25px auto;
@@ -1603,7 +1626,7 @@ a:hover .fileType.other, a:focus .fileType.other {
   }
   .webHeader .topLinks ul.disks > li.compound ul {
     display: none;
-    z-index: 99;
+    z-index: 299;
     position: absolute;
     top: 0;
     left: 0;
@@ -1924,7 +1947,7 @@ a:hover .fileType.other, a:focus .fileType.other {
   display: inline-block;
   white-space: nowrap;
   width: 7em;
-  margin: 0 0.5em;
+  margin: 0 0.3em;
 }
 .webFooter .regDivisions li .address {
   display: block;
@@ -2020,21 +2043,26 @@ a:hover .fileType.other, a:focus .fileType.other {
 @media screen and (min-width: 1000px) {
   .webFooter .middle {
     display: flex;
+    font-size: 1em;
   }
   .webFooter .middle .phones {
-    flex: 0 1 45%;
-    margin-right: 3%;
+    flex: 0 1 46%;
   }
   .webFooter .middle .regDivisions {
-    flex: 0 0 49%;
+    flex: 0 1 52%;
+    margin-left: 2%;
+  }
+  .webFooter .phones {
+    font-size: 1.125em;
   }
   .webFooter .phones p.highlight {
-    max-width: 25em;
+    max-width: 24em;
     width: 100%;
+    padding-bottom: 0.25em;
     float: left;
   }
   .webFooter .regDivisions {
-    font-size: 1.125rem;
+    font-size: 1em;
   }
   .webFooter .regDivisions li {
     padding-bottom: 0.2em;
@@ -2053,6 +2081,7 @@ a:hover .fileType.other, a:focus .fileType.other {
     padding: 0;
   }
   .webFooter .base .phoneAddress {
+    font-size: 1.06em;
     flex: 0 0 calc(96% - 630px);
     margin: 0 2%;
   }
@@ -2073,8 +2102,8 @@ a:hover .fileType.other, a:focus .fileType.other {
     display: block;
     flex: 0 0 100%;
     margin: 20px 0 0;
-    padding: 30px 0 0;
-    font-size: 0.875rem;
+    padding: 30px 188px 0 0;
+    font-size: 0.875em;
     line-height: 1.1;
     border-top: 1px solid #c1c4c6;
   }
@@ -2101,6 +2130,9 @@ a:hover .fileType.other, a:focus .fileType.other {
   .webFooter .base .otherLinks li a:hover, .webFooter .base .otherLinks li a:focus {
     border-bottom-color: #081c36;
   }
+  .webFooter .base .otherLinks li:last-child::after {
+    display: none;
+  }
   .webFooter .base .others {
     position: absolute;
     right: 3%;
@@ -2117,11 +2149,11 @@ a:hover .fileType.other, a:focus .fileType.other {
     padding-left: calc(50% - 564px);
   }
   .webFooter .middle .phones {
-    flex-basis: 540px;
-    right: 36px;
+    flex-basis: 528px;
   }
   .webFooter .middle .regDivisions {
-    flex-basis: 588px;
+    flex-basis: 600px;
+    margin-left: 24px;
   }
 }
 
@@ -2185,7 +2217,7 @@ a:hover .fileType.other, a:focus .fileType.other {
   overflow: hidden;
   margin: 0 auto;
   padding: 80px 0 60px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #fff;
 }
 .siteTree ul {
@@ -2210,12 +2242,13 @@ a:hover .fileType.other, a:focus .fileType.other {
 .siteTree > ul > li > a {
   color: #8affdf;
   border-bottom-width: 2px;
+  font-size: 1.25em;
 }
 .siteTree > ul > li > a:hover, .siteTree > ul > li > a:focus {
   border-bottom-color: #b5e7e4;
 }
 .siteTree > ul > li > ul {
-  font-size: 0.95rem;
+  font-size: 1em;
 }
 .siteTree > ul > li > ul > li {
   margin: 1em 0;
@@ -2255,6 +2288,9 @@ a:hover .fileType.other, a:focus .fileType.other {
   }
 }
 @media screen and (min-width: 1000px) {
+  .siteTree {
+    font-size: 1em;
+  }
   .siteTree > ul > li {
     flex-basis: 21%;
   }
@@ -2558,7 +2594,7 @@ fieldset legend {
   line-height: 0.6;
   margin-right: 3px;
   text-decoration: none;
-  color: #d00;
+  color: #e81158;
 }
 
 .divisions {
@@ -2687,7 +2723,7 @@ fieldset legend {
   transition: 0.1s;
 }
 .divisions .offices .info .toGmap:hover, .divisions .offices .info .toGmap:focus {
-  box-shadow: #004f73 0 0 0 1px, rgba(255, 255, 255, 0.7) 0 0 0 3px;
+  box-shadow: #e81158 0 0 0 3px, #fff 0 0 0 4px;
 }
 @media screen and (min-width: 700px) {
   .divisions .offices {
@@ -2815,15 +2851,19 @@ fieldset legend {
   }
 }
 
+.bulletin {
+  font-size: 1.125rem;
+}
 .bulletin .blockHeader {
   margin: 0;
   align-items: flex-start;
+  font-size: 1em;
 }
 .bulletin .blockHeader .major {
   padding: 0 1em;
   height: 2em;
   line-height: 2.1;
-  font-size: 1.125rem;
+  font-size: inherit;
   display: inline-block;
   width: auto;
   letter-spacing: 1px;
@@ -2836,7 +2876,6 @@ fieldset legend {
 }
 .bulletin .subject {
   margin: 0.8em 0 0;
-  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.6;
 }
@@ -2851,12 +2890,17 @@ fieldset legend {
   outline: 1px solid #07b4b1;
 }
 @media screen and (min-width: 1000px) {
+  .bulletin {
+    font-size: 1.125em;
+  }
   .bulletin .blockHeader {
-    float: left;
+    display: inline-block;
+    margin-right: 10px;
   }
   .bulletin .subject {
+    display: inline-block;
     padding-top: 0.25em;
-    margin-left: 7.2em;
+    font-size: 1.125em;
   }
 }
 
@@ -2909,9 +2953,9 @@ fieldset legend {
 .topics .flowItem p {
   margin: 12px auto 0;
   text-align: left;
-  font-size: 1.25rem;
   font-weight: bold;
   line-height: 1.3;
+  font-size: 1.2em;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -2958,9 +3002,6 @@ fieldset legend {
   .topics .flowItem img {
     height: calc((94vw - 460px) / 3);
   }
-  .topics .flowItem p {
-    font-size: 1.2rem;
-  }
   .topics .slick-arrow {
     top: calc((94vw - 400px) / 6);
   }
@@ -2986,7 +3027,7 @@ fieldset legend {
   flex-flow: row wrap;
   justify-content: center;
   text-align: center;
-  font-size: 1.125rem;
+  font-size: 1.125em;
   line-height: 1.3;
 }
 .services .servList > li {
@@ -3201,13 +3242,13 @@ fieldset legend {
   }
   .news .tabItems button {
     flex: 1 1 auto;
-    padding: 0.6em 0.5em;
+    padding: 0.65em 0.5em 0.5em;
     margin: 3px;
     font-size: 1.2rem;
   }
   .news .newsList {
     width: auto;
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
   .news .newsList li time {
     display: inline-block;
@@ -3274,12 +3315,15 @@ fieldset legend {
   }
 }
 
+.appAndSocialMedia {
+  font-size: 1.125em;
+}
 .appAndSocialMedia ul {
   list-style: none;
   margin: 0 auto;
   padding: 0;
   line-height: 1.4;
-  font-size: 1.125rem;
+  font-size: inherit;
 }
 .appAndSocialMedia ul li {
   margin: 20px 0;
@@ -3332,7 +3376,6 @@ fieldset legend {
   position: relative;
   display: inline-block;
   padding-right: 64px;
-  font-size: 1rem;
   color: var(--color);
 }
 .appAndSocialMedia ul li .hilight::before, .appAndSocialMedia ul li .hilight::after {
@@ -3360,6 +3403,9 @@ fieldset legend {
   box-shadow: var(--color) -1px 0 0, var(--color) -2px 0 0, var(--color) -3px 0 0, var(--color) -4px 0 0, var(--color) -5px 0 0, var(--color) -6px 0 0, var(--color) -7px 0 0, var(--color) -8px 0 0, var(--color) -13px 0 0, var(--color) -18px 0 0, var(--color) -23px 0 0, var(--color) -28px 0 0, var(--color) -33px 0 0, var(--color) -38px 0 0;
 }
 @media screen and (min-width: 1000px) {
+  .appAndSocialMedia {
+    font-size: 1.125em;
+  }
   .appAndSocialMedia ul {
     display: flex;
     flex-flow: row wrap;
@@ -3464,7 +3510,7 @@ fieldset legend {
 }
 .videoFlow .flowItem .title {
   margin: 15px 0 0;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   text-align: center;
   font-weight: bold;
 }
@@ -3511,6 +3557,9 @@ fieldset legend {
   }
 }
 @media screen and (min-width: 1000px) {
+  .videoFlow {
+    background-size: 1920px auto;
+  }
   .videoFlow .flowList {
     margin-top: 60px;
     padding-left: 6vw;
@@ -3754,6 +3803,7 @@ fieldset legend {
     bottom: 0;
     border-radius: 32px 32px 0 0;
     margin: 0;
+    font-size: 1.125em;
   }
   .contactUs .cardBox .cardList {
     margin: 0 46px;
@@ -4013,12 +4063,16 @@ fieldset legend {
   transition: 0.25s;
 }
 .npImages > ul > li p {
-  margin: 0;
-  padding: 8px;
+  margin: 8px;
+  padding: 0;
   line-height: 1.3;
   text-align: center;
   font-size: 1.25em;
   font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .npImages > ul > li:nth-child(4n+2) .image, .npImages > ul > li:nth-child(4n+3) .image {
   background-color: #d6f1eb;
@@ -4112,8 +4166,11 @@ fieldset legend {
   color: #081c36;
   transition: 0.2s;
 }
-.list > ul > li a:hover {
-  background-color: #07b4b1;
+.list > ul > li a:hover, .list > ul > li a:focus {
+  background-color: #e1f8f2;
+}
+.list > ul > li a:focus {
+  box-shadow: #07b4b1 0 0 0 2px inset;
 }
 .list > ul > li .numb {
   flex: 0 0 1.8em;
@@ -4503,6 +4560,7 @@ table.formLayout td:nth-child(even) {
 
 .cpMeta {
   padding: 40px 20px;
+  margin-bottom: 60px;
   box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
   border-radius: 32px;
   background-color: #fff;
@@ -4512,6 +4570,7 @@ table.formLayout td:nth-child(even) {
   margin: 0 auto;
   width: 100%;
   line-height: 1.8;
+  font-size: 1.125em;
   border-top: 2px solid #c1c4c6;
   border-bottom: 2px solid #c1c4c6;
 }
@@ -4613,6 +4672,107 @@ table.formLayout td:nth-child(even) {
   .cpMeta > table tbody td {
     border: none;
     display: inline-block;
+  }
+}
+
+.cpArticle {
+  padding: 40px 20px;
+  margin-bottom: 60px;
+  box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
+  border-radius: 32px;
+  background-color: #fff;
+  line-height: 1.9;
+  font-size: 1.125rem;
+}
+.cpArticle a {
+  color: #004c7c;
+}
+.cpArticle a:hover {
+  text-decoration: none;
+}
+.cpArticle p {
+  margin: 1em 0 3em;
+}
+.cpArticle h3, .cpArticle h4, .cpArticle h5, .cpArticle h6 {
+  font-weight: bold;
+  margin: 30px 0 10px;
+}
+.cpArticle h3:first-child, .cpArticle h4:first-child, .cpArticle h5:first-child, .cpArticle h6:first-child {
+  margin-top: 0;
+}
+.cpArticle h3 + p, .cpArticle h4 + p, .cpArticle h5 + p, .cpArticle h6 + p {
+  margin-top: 0.5rem;
+}
+.cpArticle h3 {
+  font-size: 1.3em;
+}
+.cpArticle h4 {
+  font-size: 1.2em;
+}
+.cpArticle h5 {
+  font-size: 1.15em;
+}
+.cpArticle h6 {
+  font-size: 1em;
+}
+.cpArticle blockquote {
+  position: relative;
+  font-style: italic;
+  padding: 1em 1.5em 1em;
+  margin-left: 2.5em;
+  margin-right: 1em;
+  margin-bottom: 2.5em;
+}
+.cpArticle blockquote::before, .cpArticle blockquote::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 15px;
+  border: 5px solid #b5e7e4;
+}
+.cpArticle blockquote::before {
+  left: 0;
+  border-right: none;
+}
+.cpArticle blockquote::after {
+  right: 0;
+  border-left: none;
+}
+.cpArticle table {
+  border-collapse: collapse;
+  margin: 2em 0;
+  width: 100%;
+  border: 2px solid #c1c4c6;
+  background-color: #fff;
+  line-height: 1.5;
+  font-size: 1.125em;
+}
+.cpArticle table th, .cpArticle table td {
+  padding: 0.5em;
+  border: 1px solid #d2d2d2;
+}
+.cpArticle table th {
+  background-color: #004f73;
+  color: #fff;
+}
+.cpArticle table th:first-child {
+  border-right-color: #c1c4c6;
+}
+.cpArticle table th:only-of-type:first-child {
+  background: #40c3ff;
+  color: #000;
+}
+.cpArticle table tr:first-child th {
+  border-bottom-color: #c1c4c6;
+}
+@media screen and (min-width: 1000px) {
+  .cpArticle {
+    padding: 40px;
+    font-size: 1.125em;
+  }
+  .cpArticle blockquote {
+    margin-left: 4em;
   }
 }
 

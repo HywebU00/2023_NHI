@@ -13,11 +13,11 @@ $(function(){
   const wwNormal = 1000; //此值以上是電腦
   const wwMaximum = 1200;
 
-  var _menu = $('.webHeader .menu');
-  var _sidebar = $('.sidebar');
   var _webHeader = $('.webHeader');
-  // var _webFooter = $('.webFooter');
+  var _menu = _webHeader.find('.menu');
+  var _sidebar = $('.sidebar');
   var _goTop = $('.goTop');
+
   _html.removeClass('no-js');
 
   // 製作側欄選單遮罩 ///////////////
@@ -61,12 +61,12 @@ $(function(){
   // 向上捲動箭頭 end //////////////////////////////
   
   
-
-  // 找出_menu中有次選單的li ///////////////
+  // 主選單 hover a 顯示次選單 /////////////////////////////////////////////
+  // 找出_menu中有次選單的li ----------
   _menu.find('li').has('ul').addClass('hasChild');
 
   // 寬版「主選單」/////////////////////////////////////////////
-  // 只顯示到第兩層
+  // 只顯示到第兩層 ----------
   var _mmHasChild = _menu.find('.hasChild');
   var _mmA = _menu.children('ul').children('li').children('a');
   
@@ -102,7 +102,7 @@ $(function(){
       _mmA.removeClass('focused');
     }
   })
-  /////////////// end ////////////////////////////////////////////////////////////
+  // 主選單 end ////////////////////////////////////////////////////////////
   
 
   // 行動版側欄主選單 /////////////////////////////////////////////
@@ -158,29 +158,38 @@ $(function(){
     _sidebarCtrl.focus();
   })
   
+
+
   
+
+
   
-  // var winResizeTimer;
-  // var wwNew;
-  // _window.resize(function () {
-  //   clearTimeout(winResizeTimer);
-  //   ww = _window.width();
-  //   winResizeTimer = setTimeout(function () {
-  //     wwNew = _window.width();
+  // 版頭查詢區開合 /////////////////////////////////////////////
+  var _searchCtrl = $('.searchCtrl');
+  var _search = $('.search');
+  _search.append('<button class="skip" type="button">回到控制開關</button>');
+  var _skipSearch = _search.find('.skip');
+  const srSpeed = 510;
+  _searchCtrl.click(function(){
+    if( _search.hasClass('reveal')) {
+      _search.removeClass('reveal');
+      setTimeout(function(){_search.hide()}, srSpeed);
+    } else {
+      _search.show(0, function(){
+        _search.addClass('reveal');
+        setTimeout (function(){_search.find('input[type="text"]').focus()}, srSpeed);
+      });
+    }
+  })
+  _skipSearch.focus(function(){
+    _search.removeClass('reveal');
+    setTimeout(function(){_search.hide()}, srSpeed);
+    _searchCtrl.focus();
+  })
+  // 版頭查詢區開合 end /////////////////////////////////////////////
 
-  //     if(ww >= wwNormal) {
-  //       _sidebarMask.hide();
-  //       _body.removeClass('noScroll');
-  //       _sidebar.removeClass('reveal');
-  //       _sidebarCtrl.removeClass('closeIt');
-  //     } else {
-  //       _menu.hide().removeAttr('style');
-  //     }
-  //   }, 200);
-  // });
-
-
-  // 改變視窗寬度  window resize 
+  
+  // window resize /////////////////////////////////////////////
   var winResizeTimer;
   var wwNew;
   _window.resize(function () {
@@ -215,38 +224,7 @@ $(function(){
       ww = wwNew;
     }, 200);
   });
-  
-  /////////////// end /////////////////////////////////////////////
-  
-
-
-  
-  // 版頭查詢區開合 /////////////////////////////////////////////
-  var _searchCtrl = $('.searchCtrl');
-  var _search = $('.search');
-  _search.append('<button class="skip" type="button">回到控制開關</button>');
-  var _skipSearch = _search.find('.skip');
-  const srSpeed = 510;
-  _searchCtrl.click(function(){
-    if( _search.hasClass('reveal')) {
-      _search.removeClass('reveal');
-      setTimeout(function(){_search.hide()}, srSpeed);
-    } else {
-      _search.show(0, function(){
-        _search.addClass('reveal');
-        setTimeout (function(){_search.find('input[type="text"]').focus()}, srSpeed);
-      });
-    }
-  })
-  _skipSearch.focus(function(){
-    _search.removeClass('reveal');
-    setTimeout(function(){_search.hide()}, srSpeed);
-    _searchCtrl.focus();
-  })
-
-  /////////////// end /////////////////////////////////////////////
-
-  
+  // window resize  end /////////////////////////////////////////////
 
 
   // ------------------------------------------ //
@@ -331,7 +309,6 @@ $(function(){
   // ---------- slick 參數設定：結束 --------- //
   // ------------------------------------------ //
 
-
   // 首頁《Contact Us》地圖與聯絡資訊切換：補上方區域名稱切換 //////////////////////////////
   var _navMapDots = $('.contactUs').find('.cardBox').find('.slick-dots');
   var _navMapLi = _navMapDots.find('li');
@@ -341,11 +318,11 @@ $(function(){
   }
   _navMapDots.prependTo('.cardBox .cardList');
   _navMapLi.find('button').focus( function(){$(this).trigger('click');} )
-  //////////////////////////////////////////////////////////////////////////////////////////
+  // 首頁《Contact Us》 end /////////////////////////////////////////////////////////////////
 
 
 
-  // 複合功能圖示 /////////////////////////////////////////////
+  // 複合功能圖示 ///////////////////////////////////////////////////////////
   // 文字大小和分享
   var _compIcon = $('.compound'); //li
   _compIcon.each(function(){
@@ -397,20 +374,21 @@ $(function(){
         glideUp();
       }
     });
-
   })
+  // 複合功能圖示 end ///////////////////////////////////////////////////////////
+
   
-  /////////// font size 和 cookie /////////////////////////////////////////////
+  // font size 和 cookie /////////////////////////////////////////////
   // font size：顯示所選項目
   var _fontSize = $('.fontSize');
   var _fontSizeBtn = _fontSize.children('button');
   var _fsOption = _fontSize.find('ul>li>button');
-  var _innerMain = $('.main.inner');
+  // var _innerMain = $('.main.inner');
 
   _fsOption.click(function(){
     let fontClass = $(this).attr('class');
     _fontSizeBtn.removeClass().addClass(fontClass);
-    _innerMain.removeClass('largeFont mediumFont smallFont').addClass(fontClass);
+    _body.removeClass('largeFont mediumFont smallFont').addClass(fontClass);
     createCookie('FontSize', fontClass , 365);
   })
 
@@ -439,11 +417,10 @@ $(function(){
   window.onload = function () {
     var cookie = readCookie('FontSize');
 
-    _innerMain.removeClass('largeFont mediumFont smallFont').addClass(cookie);
+    _body.removeClass('largeFont mediumFont smallFont').addClass(cookie);
     _fontSizeBtn.removeClass().addClass(cookie);
   }
-
-  // end ////////////////////////////////////////////////////////////
+  // font size 和 cookie end ////////////////////////////////////////////////////////////
 
 
 

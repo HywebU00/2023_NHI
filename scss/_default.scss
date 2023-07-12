@@ -5,7 +5,36 @@ body{
   &.noScroll{ overflow: hidden; overflow-y:hidden; }
 
   *{box-sizing: border-box;}
+  
+  
+  @media screen and (min-width: $wwNormal){
+    &.smallFont{ 
+      .webHeader .topLinks ul.text,
+      .bulletin,
+      .topics, .services,
+      .news,
+      .appAndSocialMedia,
+      .videoFlow,
+      .contactUs,
+      .webFooter,
+      .main.inner {font-size: .875em;}
+    }
+    &.largeFont{ 
+      .webHeader .topLinks ul.text,
+      .bulletin,
+      .topics, .services,
+      .news,
+      .appAndSocialMedia,
+      .videoFlow,
+      .contactUs,
+      .webFooter,
+      .main.inner {font-size: 1.25em;}
+    }
+  
+  }
 
+  // &.smallFont{ font-size: .9375em;}
+  // &.largeFont{ font-size: 1.25em;}
 }
 
 .main{
@@ -15,10 +44,9 @@ body{
   url(../images/bg+left.jpg) no-repeat left 0 top 400px,
   url(../images/bg+right.jpg) no-repeat right 0 top 1110px;
   background-color: #fff;
+
   &.inner{
     padding: 12px 0 120px;
-    &.smallFont{ font-size: .9375em;}
-    &.largeFont{ font-size: 1.25em;}
   }
 
   @media screen and (min-width: $wwNormal){
@@ -44,6 +72,7 @@ body{
   }
 }
 
+// 首頁區塊標題字
 .blockHeader{
   text-align: center; line-height: 1.2; margin:10px 0;
   display: flex; flex-flow: column nowrap; align-items: center;
@@ -63,5 +92,4 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
 }

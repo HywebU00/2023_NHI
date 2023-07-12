@@ -76,7 +76,7 @@
         text-indent: -12em; overflow: hidden;
         transition: .1s;
         &:hover, &:focus{
-          box-shadow: $primaryColor 0 0 0 1px, rgba(255,255,255, .7) 0 0 0 3px;
+          box-shadow:$hilight 0 0 0 3px, $white 0 0 0 4px;
         }
       }
     }

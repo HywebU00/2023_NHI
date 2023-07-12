@@ -1,9 +1,9 @@
 // 首頁：APP 和 社群平台 //////////////////////////////////////////////////
 .appAndSocialMedia{
-  @extend %primSecWidth;
+  @extend %primSecWidth;font-size: 1.125em;
   ul{
     list-style: none; margin: 0 auto; padding: 0;
-    line-height: 1.4; font-size: 1.125rem;
+    line-height: 1.4;  font-size: inherit; 
     li{
       margin: 20px 0;
       a{
@@ -40,9 +40,9 @@
         }
       }
       .hilight{ 
-        --color : #e81158;
+        --color : #{$hilight};
         position: relative; display: inline-block; padding-right: 64px;
-        font-size: 1rem; color: var(--color);
+        color: var(--color);
 
         &::before, &::after{
           content: ''; position: absolute;
@@ -64,11 +64,11 @@
   }
 
   @media screen and (min-width: $wwNormal){
+    font-size: 1.125em;
     ul{
       display: flex; flex-flow: row wrap;
       li{
-        flex: 0 0 calc(50% - 12px);
-        margin: 12px 0;
+        flex: 0 0 calc(50% - 12px); margin: 12px 0;
         &:nth-child(even){ margin-left: 24px;}
         a{height: 100%;}
         img{
@@ -83,7 +83,7 @@
         .text{
           &:nth-last-child(2){ margin-right: 2%;}
           p{
-            display: block; 
+            display: block;
             &.title{ font-size: 1.5rem;}
           }
         }

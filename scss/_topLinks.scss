@@ -128,7 +128,7 @@
           position: relative; 
           // 第二層：選文字大小
           ul{
-            display: none;z-index: 99;
+            display: none;z-index: 299;
             position: absolute; top: 0; left: 0; 
             width: 44px; margin-top: -2px; top: auto;
             &>li{

@@ -47,7 +47,7 @@
       margin: .6em 0 0; padding: 0 0 .6em;
       border-bottom: 1px solid $white;
       .tel{
-        display: inline-block;white-space: nowrap; width: 7em; margin: 0 .5em;
+        display: inline-block;white-space: nowrap; width: 7em; margin: 0 .3em;
       }
       .address{ display: block;}
     }
@@ -131,17 +131,20 @@
   }
 
   @media screen and (min-width: $wwNormal){
+
     .middle{
-      display: flex;
-      .phones{ flex: 0 1 45%; margin-right: 3%;}
-      .regDivisions{flex: 0 0 49%;}
+      display: flex; font-size: 1em;
+      // &>*{ outline: 1px solid #c003;}
+      .phones{ flex: 0 1 46%; }
+      .regDivisions{flex: 0 1 52%; margin-left: 2%;}
     }
     .phones{
-      p.highlight{max-width: 25em; width: 100%; float: left;}
+      font-size: 1.125em;
+      p.highlight{max-width: 24em; width: 100%; padding-bottom: .25em;float: left;}
     }
 
     .regDivisions{
-      font-size: 1.125rem;
+      font-size: 1em;
       li {padding-bottom: .2em;}
     }
 
@@ -152,6 +155,7 @@
         flex: 0 0 294px; width: 294px; height: auto;margin: 0; padding: 0;
       }
       .phoneAddress{
+        font-size: 1.06em;
         flex: 0 0 calc(96% - 630px); margin: 0 2%;
       }
       .findUsHere{
@@ -163,8 +167,8 @@
         }
       }
       .otherLinks{
-        display: block; flex: 0 0 100%; margin: 20px 0 0; padding:30px 0 0;
-        font-size: .875rem; line-height: 1.1;
+        display: block; flex: 0 0 100%; margin: 20px 0 0; padding:30px 188px 0 0;
+        font-size: .875em; line-height: 1.1;
         border-top: 1px solid $borderColor;
         li{
           float: left; position: relative;
@@ -179,6 +183,9 @@
             &:hover, &:focus {
               border-bottom-color: $fontColor;
             }
+          }
+          &:last-child{
+            &::after{display: none;}
           }
         }
       }
@@ -196,8 +203,8 @@
     }
     .middle{
       padding-left:calc(50% - $wwMaximum*.47);
-      .phones{ flex-basis: $wwMaximum*.45; right: $wwMaximum*.03;}
-      .regDivisions{flex-basis: $wwMaximum*.49;}
+      .phones{ flex-basis: $wwMaximum*.44;}
+      .regDivisions{flex-basis: $wwMaximum*.5; margin-left: $wwMaximum*.02;}
     }
   }
 
@@ -251,31 +258,27 @@
 // 頁腳的選單 ////////////////////////////////////////////////////////////
 .siteTree{
   position: relative; z-index: 2; overflow: hidden;
-  margin: 0 auto; padding: 80px 0 60px; font-size: 1.2rem;
+  margin: 0 auto; padding: 80px 0 60px; font-size: 1rem;
   color: $fontInvert;
   ul{list-style: none; margin: 0 auto; padding: 0; line-height: 1.2;}
   
   &>ul{
     @extend %primSecWidth; margin: 0 auto;
-    &>li{ padding:0; margin: 0 auto 2em;
+    &>li{ padding:0; margin: 0 auto 2em; 
       a{
         display: block; position: relative;
         border-bottom: 1px solid transparent; transition: .2s;
       }
       &>a{
-        color: #8affdf; border-bottom-width: 2px;
+        color: #8affdf; border-bottom-width: 2px;font-size: 1.25em;
         &:hover, &:focus{border-bottom-color: $assistant1;}
       }
-      &>ul{ font-size: .95rem;
+      &>ul{ 
+        font-size: 1em;
         &>li{margin: 1em 0;
           &>a{ 
             color: $fontInvert;
             &:hover, &:focus{border-bottom-color: $fontInvert;}
-            // position: relative;
-            // &::before{content: ''; width: 5px; height: 1px; 
-            //   background: $fontInvert;
-            //   position: absolute; left: .2em; top: .6em;
-            // }
           }
         }
         ul{display: none;} // 第三層開始不顯示
@@ -304,6 +307,7 @@
   }
 
   @media screen and (min-width: $wwNormal){
+    font-size: 1em;
     &>ul{
       &>li {
         flex-basis: 21%;

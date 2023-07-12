@@ -101,13 +101,13 @@
       width: calc(100% + 20px); margin-left: -5px;
       button{
         flex: 1 1 auto;
-        padding: .6em .5em; margin: 3px;
+        padding: .65em .5em .5em; margin: 3px;
         font-size: 1.2rem;
       }
     }
 
     .newsList{
-      width: auto;font-size: 1.2rem;
+      width: auto;font-size: 1.2em;
       li{
         time{display: inline-block; margin-right: .9em; font-size: inherit;}
         a{padding: .7em 6px;}
