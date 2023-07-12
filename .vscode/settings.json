@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "2023_NHIc"
+    }
+  ],
+  "settings": {
+    "liveSassCompile.settings.formats": [
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "/css"
+      }
+    ],
+    "liveSassCompile.settings.showOutputWindowOn": "Warning"
+  }
+}

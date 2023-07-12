@@ -4706,7 +4706,7 @@ table.formLayout td:nth-child(even) {
 .cpArticle h6 {
   font-weight: bold;
   margin: 30px 0 10px;
-  color: red;
+  color: green;
 }
 .cpArticle h3:first-child,
 .cpArticle h4:first-child,
