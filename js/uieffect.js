@@ -383,7 +383,6 @@ $(function(){
   var _fontSize = $('.fontSize');
   var _fontSizeBtn = _fontSize.children('button');
   var _fsOption = _fontSize.find('ul>li>button');
-  // var _innerMain = $('.main.inner');
 
   _fsOption.click(function(){
     let fontClass = $(this).attr('class');
@@ -510,11 +509,53 @@ $(function(){
 		});
 	}
 	tabFun();
-  // end //////////////////////////////////////////////////////////
+  // 頁籤功能 end //////////////////////////////////////////////////////////
   
 
 
-  // 可收合區
+
+  // 內文區塊展開／收合 //////////////////////////////////////////////////////////
+  $('.showHideList').each( function () {
+    let _showHideList = $(this);
+    let _ctrlBtn = _showHideList.find('.ctrlBtn');
+    let _showHideItems = _showHideList.children('ul').children('li');
+    let _title = _showHideItems.find('.title');
+    let _content = _showHideItems.find('.content');
+    const textOpen = _ctrlBtn.text();
+    const textClose = _ctrlBtn.attr('data-altitle');
+
+    console.log(_showHideItems);
+
+    _title.click(function () {
+      let _this = $(this);
+      console.log(_this);
+      if ( _this.parent().hasClass('show')) {
+        _this.next().slideUp(400);
+        _this.parent().removeClass('show');
+      } else {
+        _this.next().slideDown(400);
+        _this.parent().addClass('show').siblings().find('.content').slideUp(400).parent().removeClass('show');
+      }
+    });
+
+    _ctrlBtn.click(function () {
+      let _this = $(this);
+      if (_this.hasClass('closeAll')) {
+        _content.slideUp(400);
+        _showHideItems.removeClass('show');
+        _this.removeClass('closeAll').text(textOpen);
+      } else {
+        _content.slideDown(400);
+        _showHideItems.addClass('show');
+        _this.addClass('closeAll').text(textClose);
+      }
+    });
+  });
+  // 內文區塊展開／收合 end //////////////////////////////////////////////////////////
+
+
+
+  // 可收合區 //////////////////////////////////////////////////////////
   _drawer = $('.drawer');
   _drawer.each(function () {
     let _this = $(this);
@@ -533,9 +574,10 @@ $(function(){
       }
     })
   })
+  // 可收合區 end //////////////////////////////////////////////////////////
 
 
-  // rwd Table
+  // rwd Table //////////////////////////////////////////////////////////
   // 把 th 的內容複製到對應的td的 data-th 屬性值
   _rwdTable = $('.rwdTable');
   _rwdTable.each( function(){
@@ -552,13 +594,12 @@ $(function(){
       })
   })
 
-
-
+  // rwd Table *end* //////////////////////////////////////////////////////////
 
 
 
   //////////////////////////////////////////////
-  // 燈箱 ---------------------------------------
+  // 燈箱 //////////////////////////////////////////////
   var _lightbox = $('.lightbox');
   var _hideLightbox = _lightbox.find('.closeThis');
   const lbxSpeed = 400;
@@ -594,10 +635,11 @@ $(function(){
       }
     );
   })
+  // 燈箱 end //////////////////////////////////////////////
 
 
-  //////////////////////////////////////
-  // .photoflow：cp頁的相關圖片（Related Photos）
+  
+  // .photoflow：cp頁的相關圖片（Related Photos）//////////////////////////////////////
   // 點擊圖片要開燈箱並顯示大圖
   var _photoflow = $('.photoflow');
   var _cpBigPhoto = $('.lightbox.bigPhotos');
@@ -765,7 +807,6 @@ $(function(){
     const speed = 400;
     let i, j;
 
-    // _photoItem.hide();
     _photoItem.find('img').unwrap('a');
 
     // 點擊向右箭頭
@@ -804,11 +845,11 @@ $(function(){
       _keptFlowItem.focus();
     })
   })
-  //////////////////////////////////////
+  // cp 頁大圖燈箱 *** end ////////////////////////////////////
 
 
 
-  // 計算照片張數
+  // 計算照片張數 ////////////////////////////////////
   var _countPhoto = $('.imgSlick').filter('.count');
   _countPhoto.each(function(){
     let _this = $(this);
@@ -825,28 +866,10 @@ $(function(){
       _current.text( _countThis.find('.slick-current').index()+1);
     })
   })
-  
+    // 計算照片張數 end ////////////////////////////////////
 
 
 
-  _body.keydown(function(e){
-    // 未完成
-    // // --- if mac
-    // if ( (e.ctrlKey) && ( e.altKey ) && (e.keyCode != 17) && (e.keyCode != 18)  ) {
-    //   if ( e.keyCode == 83 ) {
-    //      _search.show().addClass('reveal');
-    //   }
-    // }
-
-    // --- if windows
-    if ( ( e.altKey ) && (e.keyCode != 18) ) {
-      if ( e.keyCode == 83 ) {
-        _search.show().addClass('reveal').find('input[type="text"]').focus();
-      }
-    }
-  })
-
-  // --end of-- 查詢區 -----------------------------------------------------
 
 
   // 分區業務組  ----------------------------------------------------20230619

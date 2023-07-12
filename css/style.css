@@ -5181,4 +5181,121 @@ table.formLayout td:nth-child(even) {
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
+}
+
+.showHideList {
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+  font-size: 1.125em;
+  background-color: #fff;
+}
+.showHideList button.ctrlBtn {
+  display: none;
+}
+.showHideList > ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 94%;
+}
+.showHideList > ul > li {
+  margin: 10px 0;
+  padding: 0;
+  line-height: 1.7;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: #c1c4c6 0 0 0 1px;
+  transition: 0.15s;
+}
+.showHideList > ul > li:hover .title::after {
+  border-color: #000;
+}
+.showHideList > ul > li button {
+  width: 100%;
+  position: relative;
+  padding: 15px 46px 12px 15px;
+  margin: 0;
+  text-align: left;
+  height: auto;
+  line-height: 1.5;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #000;
+}
+.showHideList > ul > li button:hover, .showHideList > ul > li button:focus {
+  background: #e1f8f2;
+}
+.showHideList > ul > li button::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 21px;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #434242;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+  transition: 0.25s;
+}
+.showHideList > ul > li .content {
+  display: none;
+  padding: 16px;
+}
+.showHideList > ul > li .image {
+  margin: 20px 0;
+}
+.showHideList > ul > li .image img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.showHideList > ul > li.show {
+  box-shadow: #018a9a 0 0 0 2px;
+}
+.showHideList > ul > li.show .title {
+  background-color: #018a9a;
+  color: #fff;
+  transition: 0.2s;
+}
+.showHideList > ul > li.show .title::after {
+  transform: rotate(-135deg);
+  top: 25px;
+  border-color: #fff;
+}
+@media screen and (min-width: 700px) {
+  .showHideList {
+    box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
+    border-radius: 32px;
+    background-color: #fff;
+    width: 94%;
+    padding: 30px 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .showHideList {
+    padding: 64px 20px 20px;
+  }
+  .showHideList button.ctrlBtn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 2.4em;
+    line-height: 2.4;
+    border-radius: 2em;
+  }
+  .showHideList > ul {
+    width: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .showHideList {
+    width: 1128px;
+  }
 }/*# sourceMappingURL=style.css.map */

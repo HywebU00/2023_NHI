@@ -73,8 +73,6 @@ $sidebarBg: $grayDark;
 // ---------- 漸層 ----------- //
 @mixin grandient1($degree: 0deg) {
   background-image: linear-gradient( $degree, #00486a , #018e9f);
-  // background-image: linear-gradient( $degree, hwb(199 0% 58%) , hwb(186 0% 38%));
-
 }
 @mixin grandient2($degree: 0deg) {
   background-image: linear-gradient( $degree, #0086cb 5%, #00c069 95%);
