@@ -1,69 +1,112 @@
-.webHeader{
+.webHeader {
   position: relative;
   // background: linear-gradient(90deg, $primaryColor 10%, $secondaryColor 90%);
   background: url(../images/bg_dot.png) repeat 0 0;
-  
-  h1{
-    margin: 0 60px;padding:10px 0; height: 80px;
+
+  h1 {
+    margin: 0 60px;
+    padding: 10px 0;
+    height: 80px;
     background: url(../images/h1_mobile.png) no-repeat center center;
     background-size: auto 60px;
-    a{ 
+    a {
       display: block;
-      &:focus{box-shadow: $focus 0 0 0 1px;}
+      height: 100%;
+      &:focus {
+        box-shadow: $focus 0 0 0 1px;
+      }
     }
-    img{display: none;}
+    img {
+      display: none;
+    }
   }
 
-  .sidebarCtrl, .searchCtrl { 
-    position: absolute; top: 16px; z-index: 992;
+  .sidebarCtrl,
+  .searchCtrl {
+    position: absolute;
+    top: 16px;
+    z-index: 992;
   }
-  .sidebarCtrl { 
+  .sidebarCtrl {
     left: 7px;
-    transition: left .5s;
-    &.closeIt{ left: $sideBarWidth;}
+    transition: left 0.5s;
+    &.closeIt {
+      left: $sideBarWidth;
+    }
   }
-  .searchCtrl { right: 7px; }
+  .searchCtrl {
+    right: 7px;
+  }
 
-  &.fixed{
+  &.fixed {
     z-index: 990;
-    position: fixed; top: 0; left: 0; right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: #fff;
-    box-shadow: rgba(0,0,0,.3) 0 2px 16px;
-    .menu{
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 16px;
+    .menu {
       background-color: $primaryColor;
-      transition:background-color .3s;
-      &>ul>li{
-        &>a{ color:$fontInvert; transition:color .3s;}
+      transition: background-color 0.3s;
+      & > ul > li {
+        & > a {
+          color: $fontInvert;
+          transition: color 0.3s;
+        }
       }
     }
   }
 
-
-  @media screen and (min-width: $wwNormal){
-    background:url(../images/bg_tinyDots.png) repeat, linear-gradient( 90deg, #004f73 , #0094a0);
-    padding:0; margin: 0;
-    h1{
-      background: none; height: auto;
-      margin: 0 0 0 24px; padding: 24px 0; width: $wwMaximum*.4;
-      img{display: block; height: 72px; margin: 0;}
+  @media screen and (min-width: $wwNormal) {
+    background: url(../images/bg_tinyDots.png) repeat, linear-gradient(90deg, #004f73, #0094a0);
+    padding: 0;
+    margin: 0;
+    h1 {
+      background: none;
+      height: auto;
+      margin: 0 0 0 24px;
+      padding: 24px 0;
+      width: $wwMaximum * 0.4;
+      img {
+        display: block;
+        height: 72px;
+        margin: 0;
+      }
     }
 
-    .searchCtrl{ 
-      top: 36px; right: 20px; border-radius: 50%;
+    .searchCtrl {
+      top: 36px;
+      right: 20px;
+      border-radius: 50%;
+      background-image: none;
     }
-    .sidebarCtrl{display: none;}
+    .sidebarCtrl {
+      display: none;
+    }
 
     // 固定版頭
     &.fixed {
-      
-      h1, .topLinks, .search, .searchCtrl, .goCenter{ display: none; }
+      h1,
+      .topLinks,
+      .search,
+      .searchCtrl,
+      .goCenter {
+        display: none;
+      }
     }
   }
 
-  @media screen and (min-width: $wwMaximum){
-    h1 {position: relative; left: calc( 50% - $wwMaximum*.5);}
-    .topLinks{right: calc( 50% - $wwMaximum*.5);}
-    .searchCtrl{ right: calc( 50% - $wwMaximum*.5 + 20px); }
+  @media screen and (min-width: $wwMaximum) {
+    h1 {
+      position: relative;
+      left: calc(50% - $wwMaximum * 0.5);
+    }
+    .topLinks {
+      right: calc(50% - $wwMaximum * 0.5);
+    }
+    .searchCtrl {
+      right: calc(50% - $wwMaximum * 0.5 + 20px);
+    }
   }
-  
 }

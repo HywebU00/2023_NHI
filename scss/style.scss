@@ -1,34 +1,36 @@
 // 健保署中文網 2023 ///////////////////////////////////////
-@import "_variables";
-@import "default";
-@import "_elements";
-@import "_modules";
-@import "_menu";
-@import "_topLinks";
-@import "_search"; // 版頭快速查詢
-@import "_webHeader";
-@import "_webFooter";
-@import "_form";
-@import "_divisions"; // 分區業務組
+@import '_variables';
+@import 'default';
+@import '_elements';
+@import '_modules';
+@import '_menu';
+@import '_topLinks';
+@import '_search'; // 版頭快速查詢
+@import '_webHeader';
+@import '_webFooter';
+@import '_form';
+@import '_divisions'; // 分區業務組
 // @import "_mp";
-@import "_bigBanner"; // 首頁：大圖輪播
-@import "_bulletin"; // 首頁：系統公告
-@import "_topics"; // 首頁：主題專區＋常用服務
-@import "_news"; // 首頁：最新消息（頁籤）
-@import "_appAndSocialMedia"; // 首頁：APP 和 社群平台
-@import "_videoFlow"; // 首頁：即時影音
-@import "_contactUs"; // 首頁：聯絡我們
+@import '_bigBanner'; // 首頁：大圖輪播
+@import '_bulletin'; // 首頁：系統公告
+@import '_topics'; // 首頁：主題專區＋常用服務
+@import '_news'; // 首頁：最新消息（頁籤）
+@import '_appAndSocialMedia'; // 首頁：APP 和 社群平台
+@import '_videoFlow'; // 首頁：即時影音
+@import '_contactUs'; // 首頁：聯絡我們
 // --- 內頁
-@import "_np"; // 節點頁
-@import "_npTree"; // 展開兩層節點頁，含附件下載
-@import "_npImages"; // 圖檔節點頁
-@import "_list";
-@import "_pagination";
-@import "_category";
-@import "_formLayout";
-@import "_cpMeta"; // 表格形式內容頁
-@import "_cpArticle"; // 一般內容頁
-@import "_photoflow"; // cp 頁：相關圖檔
-@import "_seeAlso"; // cp 頁：附件下載＋相關連結
-@import "_lightbox"; // 燈箱
-@import "_showHideList"; // 內文區塊展開/收合
+@import '_np'; // 節點頁
+@import '_npTree'; // 展開兩層節點頁，含附件下載
+@import '_npImages'; // 圖檔節點頁
+@import '_list'; // ul條列頁
+@import '_pagination';
+@import '_category';
+@import '_formLayout';
+@import '_cpMeta'; // 表格形式內容頁
+@import '_cpArticle'; // 一般內容頁
+@import '_photoflow'; // cp 頁：相關圖檔
+@import '_seeAlso'; // cp 頁：附件下載＋相關連結
+@import '_lightbox'; // 燈箱
+@import '_showHideList'; // 內文區塊展開/收合
+@import '_lp'; //table條列頁
+@import '_thumbnail'; // 縮圖條列

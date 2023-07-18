@@ -1,44 +1,66 @@
 // 附件下載, 相關連結 ////////////////////////////////////////////////////
-.fileDownload, .seeAlso{
-  @extend %primSecWidth; margin-bottom: 50px;
-  
-  h3{font-size: 1.4em; margin: 0 0 .5em; line-height: 1.1;}
-  ul, ol{margin: 0; padding: 0; list-style: none; line-height: 1.8;}
-  a{text-decoration: none; }
+.fileDownload,
+.seeAlso {
+  margin-bottom: 50px;
+
+  h3 {
+    font-size: 1.4em;
+    margin: 0 0 0.5em;
+    line-height: 1.1;
+  }
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1.8;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 // -----------------------------------------------------------------
 
-
 // 相關連結 ////////////////////////////////////////////////////
-.seeAlso{
-  &>ol{
+.seeAlso {
+  & > ol {
     border-top: 3px solid $borderColor;
     border-bottom: 3px solid $borderColor;
   }
-  li{
-    margin: 3px 0 0; padding: 0 0 3px;
+  li {
+    margin: 3px 0 0;
+    padding: 0 0 3px;
     border-bottom: 1px solid $borderColor;
-    a{
-      position: relative; display: block; padding: .7em 10px .6em 14px;
+    a {
+      position: relative;
+      display: block;
+      padding: 0.7em 10px 0.6em 14px;
       color: $fontColor;
-      transition: .2s;
-      &::before{
+      transition: 0.2s;
+      &::before {
         content: '';
-        position: absolute; left: 2px; top: 1.25em; width: 0; height: 0;
-        border-style: solid; 
-        border-width: 6px 0 6px 3px; border-color: $fontColorDark;
-        transition:border-left-width .15s;
+        position: absolute;
+        left: 2px;
+        top: 1.25em;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 0 6px 3px;
+        border-color: $fontColorDark;
+        transition: border-left-width 0.15s;
       }
-      &:hover, &:focus{
-        padding-left: 22px; padding-right: 2px;
+      &:hover,
+      &:focus {
+        padding-left: 22px;
+        padding-right: 2px;
         outline: none;
-        &::before{
+        &::before {
           border-color: transparent;
-          border-left-color: $fontColorDark; 
-          border-width: 6px 0 6px 9px; 
+          border-left-color: $fontColorDark;
+          border-width: 6px 0 6px 9px;
         }
       }
-      &:focus{
+      &:focus {
         box-shadow: $linkColor 0 0 0 1px inset;
       }
     }
@@ -46,36 +68,53 @@
 }
 // -----------------------------------------------------------------
 
-
 // 附件下載 ////////////////////////////////////////////////////
-.fileDownload{
-  &>ul{
+.fileDownload {
+  & > ul {
     border-top: 3px solid $borderColor;
     border-bottom: 2px solid $borderColor;
-    &>li{
-      margin: 0; padding: 0 0 0 3px;
+    & > li {
+      margin: 0;
+      padding: 0 0 0 3px;
       border-bottom: 1px solid $borderColor;
-      display: flex; flex-flow: row wrap;
-      align-items: center; justify-content: flex-end;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
-  .fileName{ margin: 6px 0 3px; flex: 1 1 auto; }
+  .fileName {
+    margin: 6px 0 3px;
+    flex: 1 1 auto;
+  }
 
-  .downloadFiles{
+  .downloadFiles {
     flex: 0 1 auto;
-    li{margin:0 0 0 12px; padding:3px 0;}
-    a{
-      padding: 5px;display: block; 
-      &:hover, &:focus {
+    li {
+      margin: 0 0 0 12px;
+      padding: 3px 0;
+    }
+    a {
+      padding: 5px;
+      display: block;
+      &:hover,
+      &:focus {
         outline: none;
-        .fileSize{text-decoration: underline;}
+        .fileSize {
+          text-decoration: underline;
+        }
       }
-      &:focus{
-        box-shadow: $linkColor 0 0 0 1px inset;outline: none;
+      &:focus {
+        box-shadow: $linkColor 0 0 0 1px inset;
+        outline: none;
       }
     }
   }
 
-  .fileType{ display: inline-block; vertical-align: middle; margin-right: 5px;}
+  .fileType {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
 }
 // -----------------------------------------------------------------

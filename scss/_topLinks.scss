@@ -1,27 +1,45 @@
-.topLinks{
-  ul{list-style: none; margin: 0;padding: 0;}
-  a{text-decoration: none;display: block;}
+.topLinks {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+  }
 }
 
-
 // 在行動版側欄中
-.sidebar .topLinks{
-  .searchCtrl, .fontSize{ display: none;}
-  ul.text{
-    display: flex; flex-flow: row wrap; justify-content: center;
-    width: calc(100% - 20px); margin: 15px auto 10px;
+.sidebar .topLinks {
+  .searchCtrl,
+  .fontSize {
+    display: none;
+  }
+  ul.text {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: calc(100% - 20px);
+    margin: 15px auto 10px;
     line-height: 1.3;
-    &>li{
-      flex: 0 0 calc( 50% - 8px); margin:4px;
-      a{
-        display: block;  text-align: center; padding:.8em .6em .7em;
+    & > li {
+      flex: 0 0 calc(50% - 8px);
+      margin: 4px;
+      a {
+        display: block;
+        text-align: center;
+        padding: 0.8em 0.6em 0.7em;
         border-radius: 2em;
-        color: $fontInvert; background-color: rgba(0,40,50,.8);
-        transition: .2s;
+        color: $fontInvert;
+        background-color: rgba(0, 40, 50, 0.8);
+        transition: 0.2s;
 
-        &:hover, &:focus {
-          background-color: $white; color: $fontColor;
-          box-shadow:rgba(255,255,255,.5) 0 0 0 3px;
+        &:hover,
+        &:focus {
+          background-color: $white;
+          color: $fontColor;
+          box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 3px;
         }
       }
 
@@ -31,25 +49,40 @@
     }
   }
 
-  ul.disks{
-    display: flex; justify-content: center;
+  ul.disks {
+    display: flex;
+    justify-content: center;
     margin: 12px auto 0;
-    &>li{
+    & > li {
       margin: 6px;
-      button, &>a {
-        width: 52px; height: 52px; padding: 0; border-radius: 50%;
-        background-color: $white; border: none; box-shadow: none;
-        transition: .2s;
-        &:hover, &:focus{
-          box-shadow:$white 0 0 0 2px, rgba(255,255,255,.5) 0 0 0 6px;
+      button,
+      & > a {
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        border-radius: 50%;
+        background-color: $white;
+        border: none;
+        box-shadow: none;
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+          box-shadow: $white 0 0 0 2px, rgba(255, 255, 255, 0.5) 0 0 0 6px;
         }
       }
-      button{ text-indent: -15em; overflow: hidden; margin: 0;}
-      &>a {
-        line-height: 54px; text-align: center; color: $secondaryColor; font-weight: bold;
+      button {
+        text-indent: -15em;
+        overflow: hidden;
+        margin: 0;
+      }
+      & > a {
+        line-height: 54px;
+        text-align: center;
+        color: $secondaryColor;
+        font-weight: bold;
         font-size: 1.2rem;
       }
-      &.showDivs button{
+      &.showDivs button {
         background-image: url(../images/icon_mapPin_b.png);
         background-size: 40% auto;
         background-position: center 52%;
@@ -57,110 +90,194 @@
       }
     }
   }
-
 }
 
 // 寬版 在版頭中
-.webHeader .topLinks{
+.webHeader .topLinks {
   display: none;
-  
-  @media screen and (min-width: $wwNormal){
-    display: flex;align-items: center;
-    position: absolute; right: 0; top: 36px; margin-right: 64px;
+
+  @media screen and (min-width: $wwNormal) {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 36px;
+    margin-right: 64px;
     // outline: 1px solid #fff3;
 
-    ul.text{
-      display: flex;align-items: center;
-      font-size: 1rem; line-height: 1.1; text-align: center;
-      &>li{
-        position: relative; margin: 0 4px;
-        padding: 0 0 0 .6em ; margin: 0 .6em 0 0;
-        &::before{
-          position: absolute; left: 0; top: .36em;
-          content: ''; width: 1px; height: .85em; line-height: 1;
+    ul.text {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      line-height: 1.1;
+      text-align: center;
+      & > li {
+        position: relative;
+        margin: 0 4px;
+        padding: 0 0 0 0.6em;
+        margin: 0 0.6em 0 0;
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0.36em;
+          content: '';
+          width: 1px;
+          height: 0.85em;
+          line-height: 1;
           background-color: $fontInvert;
         }
-        &:first-child::before{ display: none;}
-      
-        &>a{
-          position: relative; padding: 5px 0 4px;
+        &:first-child::before {
+          display: none;
+        }
+
+        & > a {
+          position: relative;
+          padding: 5px 0 4px;
           color: $fontInvert;
           &::after {
-            content: ""; position: absolute; left: 50%; right: 50%; bottom: 0;
-            height: 3px; background-color: $fontInvert;
-            transition: .2s;
+            content: '';
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            bottom: 0;
+            height: 3px;
+            background-color: $fontInvert;
+            transition: 0.2s;
           }
-          &:hover, &:focus {
-            &::after{left: 0; right: 0;}
+          &:hover,
+          &:focus {
+            &::after {
+              left: 0;
+              right: 0;
+            }
           }
         }
       }
     }
 
-    ul.disks{
-      display: flex; margin: 0 8px;
-      &>li{
-        margin: 0 3px; padding: 0;
-        a, button {
-          width: 44px; height: 44px;line-height: 44px; border-radius: 50%;
-          margin: 0; padding: 0;
-          background-color: $primaryColor; color: $fontInvert;
-          border: none; box-shadow: none;
-          transition: .2s;
-          &:hover { 
-            box-shadow:$primaryColor 0 0 0 2px;
+    ul.disks {
+      display: flex;
+      margin: 0 8px;
+      & > li {
+        margin: 0 3px;
+        padding: 0;
+        a,
+        button {
+          width: 44px;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 50%;
+          margin: 0;
+          padding: 0;
+          background-color: $primaryColor;
+          color: $fontInvert;
+          border: none;
+          box-shadow: none;
+          transition: 0.2s;
+          &:hover {
+            box-shadow: $primaryColor 0 0 0 2px;
           }
-          &:focus{
+          &:focus {
             box-shadow: $focus 0 0 0 3px;
           }
         }
-        &.langEN>a{
+        &.langEN > a {
           text-align: center;
         }
-        &.showDivs button{
-          text-indent: -15em; overflow: hidden;
+        &.showDivs button {
+          text-indent: -15em;
+          overflow: hidden;
           background-image: url(../images/icon_mapPin_w.png);
           background-repeat: no-repeat;
           background-position: center center;
           background-size: 16px;
         }
         &.compound {
-          position: relative; 
+          position: relative;
           // 第二層：選文字大小
-          ul{
-            display: none;z-index: 299;
-            position: absolute; top: 0; left: 0; 
-            width: 44px; margin-top: -2px; top: auto;
-            &>li{
-              position: absolute; top: 0; left: 0; 
-              margin: 4px 0; padding: 0;
-              a, button{
+          button {
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 50%;
+            margin: 0;
+            padding: 0;
+            background-color: $primaryColor;
+            color: $fontInvert;
+            border: none;
+            box-shadow: none;
+            transition: 0.2s;
+            background-image: none;
+            &:hover {
+              box-shadow: $primaryColor 0 0 0 2px;
+            }
+            &:focus {
+              box-shadow: $focus 0 0 0 3px;
+            }
+          }
+          ul {
+            display: none;
+            z-index: 299;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 44px;
+            margin-top: -2px;
+            top: auto;
+            & > li {
+              position: absolute;
+              top: 0;
+              left: 0;
+              margin: 4px 0;
+              padding: 0;
+              a,
+              button {
                 background-color: $primaryColor;
-                &:hover{
+                &:hover {
                   background-color: $primaryColor;
-                  box-shadow:$primaryColor 0 0 0 2px;
+                  box-shadow: $primaryColor 0 0 0 2px;
                 }
-                &:focus{box-shadow:$focus 0 0 0 3px;}
+                &:focus {
+                  box-shadow: $focus 0 0 0 3px;
+                }
               }
-              img{ display: block; width: 100%; height: 100%; margin: 0 auto;border-radius: 50%; }
+              img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                border-radius: 50%;
+              }
             }
           }
         }
-
       }
-
     }
   }
 }
 
-
 // 文字大小 //
-.fontSize{
+.fontSize {
   // button{ line-height: 44px;}
-  .smallFont{ font-size: .875rem;}
-  .mediumFont{ font-size: 1rem;}
-  .largeFont{ font-size: 1.25rem;}
-  &>.smallFont::before{content: '小'; font-size: .4em;}
-  &>.mediumFont::before{content: '中'; font-size: .4em;}
-  &>.largeFont::before{content: '大';font-size: .4em;}
+  .smallFont {
+    font-size: 0.875rem;
+  }
+  .mediumFont {
+    font-size: 1rem;
+  }
+  .largeFont {
+    font-size: 1.25rem;
+  }
+  & > .smallFont::before {
+    content: '小';
+    font-size: 0.4em;
+  }
+  & > .mediumFont::before {
+    content: '中';
+    font-size: 0.4em;
+  }
+  & > .largeFont::before {
+    content: '大';
+    font-size: 0.4em;
+  }
 }

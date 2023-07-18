@@ -1,17 +1,31 @@
 ////////// 表單元件基本樣式 //////////
-form {margin: 0;padding: 0;}
+form {
+  margin: 0;
+  padding: 0;
+}
 
-label { display: inline-block; font-weight: normal; cursor: pointer;}
+label {
+  display: inline-block;
+  font-weight: normal;
+  cursor: pointer;
+}
 
-input, textarea, select, button {
-  font-size: inherit; font-family: inherit;
-  box-sizing: border-box; outline: none;
-  &:focus{ outline: none;}
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 // 顏色
 $disabledColor: #777;
-$inputBg:#fff;
+$inputBg: #fff;
 $focused: $assistant1;
 
 // 文字的input樣式
@@ -20,15 +34,22 @@ $focused: $assistant1;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  height: 2.8em; line-height: 2.8;
-  padding: 0 .8em; margin: 3px;
+  height: 2.8em;
+  line-height: 2.8;
+  padding: 0 0.8em;
+  margin: 3px;
   vertical-align: middle;
   border: 1px solid $borderColorLight;
   background-color: $inputBg;
   border-radius: 0;
 
-  &:hover{border-color: $focused;}
-  &:focus{border-color: $focused; box-shadow: $focused 0 0 0 1px;}
+  &:hover {
+    border-color: $focused;
+  }
+  &:focus {
+    border-color: $focused;
+    box-shadow: $focused 0 0 0 1px;
+  }
 }
 
 // 下拉選單樣式
@@ -36,119 +57,158 @@ $focused: $assistant1;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  
-  height: 2.8em; line-height: 2.8;
-  padding: 0 32px 0 .8em; margin: 3px;
+
+  height: 2.8em;
+  line-height: 2.8;
+  padding: 0 32px 0 0.8em;
+  margin: 3px;
   vertical-align: middle;
   border: 1px solid $borderColorLight;
-  background: $inputBg url(../images/selectArrow.svg) no-repeat right 6px top .7em;
+  background: $inputBg url(../images/selectArrow.svg) no-repeat right 6px top 0.7em;
   background-size: 24px auto;
-  border-radius: 0; cursor: pointer;
+  border-radius: 0;
+  cursor: pointer;
 
-  &:hover{border-color: $borderColor;}
-  &:focus{border-color: $focused; box-shadow: $focused 0 0 0 1px;}
-
+  &:hover {
+    border-color: $borderColor;
+  }
+  &:focus {
+    border-color: $focused;
+    box-shadow: $focused 0 0 0 1px;
+  }
 }
-
-
-
 
 // 文字、數字型態的 input 樣式
-input[type="text"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="file"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-input[type="week"] { @extend %textInput; 
-  &.fullWidth{ width: calc(100% - 6px);}
+input[type='text'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='file'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='week'] {
+  @extend %textInput;
+  &.fullWidth {
+    width: calc(100% - 6px);
+  }
 }
-
 
 // 下拉選單
 select {
   @extend %selectStyle;
-  &.fullWidth{ width: calc(100% - 6px);}
+  &.fullWidth {
+    width: calc(100% - 6px);
+  }
 }
 
 // 按鈕樣式
-.button>a, button,
-input[type="submit"], input[type="reset"], input[type="button"] {
+.button > a,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  height: 3.2em; line-height: 3.1em;
-  padding: 0 1em; margin: 3px;
+  height: 3.2em;
+  line-height: 3.1em;
+  padding: 0 1em;
+  margin: 3px;
   vertical-align: middle;
   border: 1px solid $btnBg1;
-  background-color: $btnBg1; color: $fontInvert;
+  @include grandient1(0deg);
+  color: $fontInvert;
   border-radius: 3px;
-  cursor: pointer; transition: .2s;
+  cursor: pointer;
+  transition: 0.2s;
 
-  &:hover, &:focus {
-    background-color: $btnBg2; 
+  &:hover,
+  &:focus {
+    background-color: $btnBg2;
     border-color: transparent;
     box-shadow: $btnBg2 0 0 0 2px;
   }
 }
 
-input[type="reset"]{
-  background-color: $inputBg; color: $fontColor;
+input[type='reset'] {
+  @include grandient3(0deg);
+  color: #fff;
   border-color: $borderColor;
-  &:hover, &:focus{
+  &:hover,
+  &:focus {
     background-color: $inputBg;
   }
 }
 
-.button{
-  display: inline-block; vertical-align: middle;
-  &>a{display: block; text-decoration: none; text-align: center; white-space: nowrap; }
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  & > a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 
 textarea {
   @extend %textInput;
-  resize: vertical;line-height: 1.6;height: 8em;
+  resize: vertical;
+  line-height: 1.6;
+  height: 8em;
   width: calc(100% - 6px);
 }
 
 // radio 和 checkbox
-input[type="radio"],
-input[type="checkbox"] {
-  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+input[type='radio'],
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
-  margin:1px 10px 0 4px; 
-  width: 1em; height: 1em; line-height: 1; 
+  margin: 1px 10px 0 4px;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
   border: 1px solid $borderColorDark;
   vertical-align: middle;
-  transition: .1s;
+  transition: 0.1s;
 }
-input[type="radio"] {
+input[type='radio'] {
   border-radius: 50%;
-  &:focus, &:checked{
+  &:focus,
+  &:checked {
     border-width: 2px;
     border-color: $fontInvert;
-    box-shadow:$btnBg2 0 0 0 3px;
+    box-shadow: $btnBg2 0 0 0 3px;
     background-color: $btnBg2;
   }
-  &:checked{
-    &:focus{box-shadow:$fontInvert 0 0 0 1px,$btnBg2 0 0 0 4px;}
+  &:checked {
+    &:focus {
+      box-shadow: $fontInvert 0 0 0 1px, $btnBg2 0 0 0 4px;
+    }
   }
 }
-input[type="checkbox"]{ 
+input[type='checkbox'] {
   border-radius: 3px;
-  &:focus{box-shadow: $btnBg2 0 0 0 2px; border-color: $fontInvert;}
-  &:checked{
-    background: $btnBg2 url(../images/icon_check.svg) no-repeat center .05em;
+  &:focus {
+    box-shadow: $btnBg2 0 0 0 2px;
+    border-color: $fontInvert;
+  }
+  &:checked {
+    background: $btnBg2 url(../images/icon_check.svg) no-repeat center 0.05em;
     background-size: 96%;
-    box-shadow: $btnBg2 0 0 0 2px; border-color: transparent;
-    &:focus{box-shadow: $fontInvert 0 0 0 2px, $btnBg2 0 0 0 4px;}
+    box-shadow: $btnBg2 0 0 0 2px;
+    border-color: transparent;
+    &:focus {
+      box-shadow: $fontInvert 0 0 0 2px, $btnBg2 0 0 0 4px;
+    }
   }
 }
 
@@ -166,7 +226,6 @@ input[disabled]:focus {
   color: $disabledColor;
   box-shadow: none;
 }
-
 
 // ------------------------------------
 // readonly
@@ -188,12 +247,12 @@ input[disabled] {
 /* 按鈕的 readonly and disabled*/
 button[disabled],
 button.disabled,
-input[type="button"][disabled],
-input[type="submit"][disabled],
+input[type='button'][disabled],
+input[type='submit'][disabled],
 button[disabled]:hover,
-input[type="submit"][disabled]:hover,
+input[type='submit'][disabled]:hover,
 button[disabled]:focus,
-input[type="submit"][disabled]:focus {
+input[type='submit'][disabled]:focus {
   background-color: $grayLight;
   color: $fontColorPale;
   box-shadow: none;
@@ -202,26 +261,34 @@ input[type="submit"][disabled]:focus {
 
 // fieldset
 fieldset {
-  border: 1px solid $borderColorLight; border-radius: 8px;
-  &+fieldset {
+  border: 1px solid $borderColorLight;
+  border-radius: 8px;
+  & + fieldset {
     margin-top: 1em;
   }
   legend {
-    font-weight: normal; font-size: 1.4em; 
-    padding: 9px .8em 8px; margin: 0 0 .5em; line-height: 1.1;
+    font-weight: normal;
+    font-size: 1.4em;
+    padding: 9px 0.8em 8px;
+    margin: 0 0 0.5em;
+    line-height: 1.1;
     border: 2px solid $borderColorLight;
     border-radius: 2em;
   }
 
-  @media screen and (min-width: $wwNormal){
-    legend{margin-bottom: 1em;}
+  @media screen and (min-width: $wwNormal) {
+    legend {
+      margin-bottom: 1em;
+    }
   }
 }
 
-
 // 各種表單元件組合 =====================================
 // 必填欄位星號 //
-.required{
-  font-size: 1.3em;line-height: .6; margin-right: 3px;
-  text-decoration: none; color: $hilight ;
+.required {
+  font-size: 1.3em;
+  line-height: 0.6;
+  margin-right: 3px;
+  text-decoration: none;
+  color: $hilight;
 }

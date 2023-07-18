@@ -1,16 +1,22 @@
 .showHideList {
-  margin: 0 auto;padding: 20px 0;
-  position: relative; font-size: 1.125em;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  font-size: 1.125em;
   background-color: $white;
   button.ctrlBtn {
     display: none;
   }
-  &>ul{
-    list-style: none;margin: 0 auto;padding: 0;
+  & > ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
     width: 94%;
-    &>li {
-      margin: 10px 0;padding: 0;
-      line-height: 1.7; overflow: hidden;
+    & > li {
+      margin: 10px 0;
+      padding: 0;
+      line-height: 1.7;
+      overflow: hidden;
       border-radius: $radius;
       box-shadow: $borderColor 0 0 0 1px;
       transition: 0.15s;
@@ -21,42 +27,78 @@
       }
       button {
         width: 100%;
-        position: relative;padding: 15px 46px 12px 15px; margin: 0;
-        text-align: left; height: auto; line-height: 1.5;
-        font-size: 1.2em;font-weight: bold; 
-        background: none; border: none; box-shadow: none; border-radius: 0;
-        color: $fontColorDark; 
-        &:hover, &:focus{
+        position: relative;
+        padding: 15px 46px 12px 15px;
+        margin: 0;
+        text-align: left;
+        height: auto;
+        line-height: 1.5;
+        font-size: 1.2em;
+        font-weight: bold;
+        background: none;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        color: $fontColorDark;
+        &:hover,
+        &:focus {
           background: $hover;
         }
-     
-        &::after {
-          content: '';
-          position: absolute;right: 20px;top: 21px;
-          width: 10px;height: 10px;
-          border: 3px solid $borderColorDark;
-          border-left: none;border-top: none;
-          transform: rotate(45deg);
-          transition: 0.25s;
+
+        .openclose_btn {
+          position: absolute;
+          top: 12px;
+          right: 40px;
+          color: #333;
+          background-color: #eee;
+          border-radius: 5px;
+          padding: 3px 5px;
+          &:after {
+            content: '';
+            border: 2px solid #333;
+            border-top: none;
+            border-left: none;
+            position: absolute;
+            top: 9px;
+            right: -20px;
+            width: 8px;
+            height: 8px;
+            transform: rotate(45deg);
+            transition: transform 0.5s;
+          }
+        }
+        &.show {
+          .openclose_btn {
+            &:after {
+              top: 15px;
+              transform: rotate(225deg);
+            }
+          }
         }
       }
       .content {
         display: none;
-        padding: 16px; 
+        padding: 16px;
       }
-  
-      .image{
+
+      .image {
         margin: 20px 0;
-        img{ display: block; max-width: 100%; margin: 0 auto;}
+        img {
+          display: block;
+          max-width: 100%;
+          margin: 0 auto;
+        }
       }
-  
+
       &.show {
-        box-shadow: $secondaryColor 0 0 0 2px;       
+        box-shadow: $secondaryColor 0 0 0 2px;
         .title {
-          background-color: $secondaryColor; color: $fontInvert;
-          transition: .2s;
+          background-color: $secondaryColor;
+          color: $fontInvert;
+          transition: 0.2s;
           &::after {
-            transform: rotate(-135deg);top: 25px;
+            transform: rotate(-135deg);
+            top: 25px;
             border-color: $white;
           }
         }
@@ -64,25 +106,23 @@
     }
   }
 
-  @media screen and (min-width: $wwMedium){
-    @include blockStyle1;
-    width: 94%; padding: 30px 0;
+  @media screen and (min-width: $wwMedium) {
+    padding: 0;
   }
-
 
   @media screen and (min-width: $wwNormal) {
-    padding: 64px 20px 20px;
+    padding: 0;
     button.ctrlBtn {
       display: block;
-      position: absolute;right: 20px;top:10px;
-      height: 2.4em;line-height: 2.4;border-radius: 2em;  
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      height: 2.4em;
+      line-height: 2.4;
+      border-radius: 2em;
     }
-    &>ul{
+    & > ul {
       width: auto;
     }
-  }
-
-  @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.94;
   }
 }

@@ -1,0 +1,305 @@
+// 項目 ul, li 條列 ////////////////////////////////////////////////
+
+// -----------------------------------------------------------------
+
+// 表格 table 條列 /////////////////////////////////////////////////
+// 注意：表格樣式非小螢幕優先 ( mobile first )
+.list {
+  & > table {
+    border-collapse: collapse;
+    line-height: 1.5;
+    width: calc(100% - 8px);
+    margin: 4px;
+    border-top: 3px solid $borderColor;
+    border-bottom: 3px solid $borderColor;
+    thead {
+      tr {
+        border-bottom-color: $borderColor;
+      }
+    }
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+    tr {
+      border-bottom: 1px solid $borderColor;
+      &:nth-child(even) {
+        background: #eee;
+      }
+    }
+    th,
+    td {
+      padding: 14px 16px 12px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        left: 0;
+        width: 1px;
+        background: $borderColorLight;
+      }
+      &:first-child {
+        &::after {
+          background-color: transparent;
+        }
+      }
+    }
+    th {
+      background-color: $secondaryColor;
+      color: #fff;
+      &.downTh {
+        width: 28%;
+      }
+    }
+    td {
+      text-align: center;
+      &.aLeft {
+        text-align: left;
+      }
+      &.aRight {
+        text-align: right;
+      }
+
+      &.numb {
+        width: 4em;
+        text-align: right;
+        padding-right: 8px;
+        padding-left: 0;
+        &::after {
+          content: '.';
+          position: static;
+        }
+      }
+      &.from {
+        min-width: 5em;
+      }
+      &.title {
+        position: relative;
+        text-align: left;
+        font-size: 1.125em;
+      }
+      & > a {
+        display: block;
+        color: $fontColorDark;
+        text-decoration: none;
+        transition: 0.2s;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 3px;
+          right: 3px;
+          bottom: 3px;
+          top: 3px;
+          border-radius: 4px;
+          transition: 0.2s;
+        }
+        &:hover,
+        &:focus {
+          color: $primaryColor;
+          text-decoration: underline;
+          &::before {
+            z-index: 0;
+            box-shadow: $hilight 0 0 0 2px inset;
+          }
+        }
+      }
+
+      time {
+        display: inline-block;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @media screen and (max-width: $wwMedium - 1px) {
+    & > table.rwdTable {
+      thead {
+        display: none;
+      }
+      tr,
+      th,
+      td {
+        display: block;
+      }
+      tr {
+        position: relative;
+        overflow: hidden;
+        padding: 0.8em 0 0.7em 3.4em;
+      }
+      th,
+      td {
+        position: static;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        &::after {
+          display: none;
+        }
+      }
+      td {
+        padding: 0.3em 15px 0.3em 0;
+        &::before {
+          content: attr(data-th) ':';
+          display: inline-block;
+          margin-right: 0.5em;
+          color: $fontColorLight;
+        }
+
+        &.numb {
+          position: absolute;
+          top: 0.7em;
+          left: 0;
+          width: 3em;
+          text-align: right;
+          white-space: nowrap;
+          font-size: 1.125em;
+          font-weight: bold;
+          &::before {
+            display: none;
+          }
+          &::after {
+            display: inline-block;
+          }
+        }
+
+        &.title {
+          & > a {
+            display: inline;
+            &::before {
+              left: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+      .downloadFiles {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------
+// listTree
+.listTree {
+  & > ul {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    & > li {
+      position: relative;
+      margin: 0;
+      padding: 10px 0px 5px 34px;
+      border-bottom: 1px solid $borderColorLight;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: calc(1em + 7px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        box-shadow: $secondaryColor 0 0 0 5px;
+        background-color: $white;
+        transition: 0.2s;
+      }
+
+      & > a,
+      .title {
+        display: block;
+        padding: 6px 0 8px;
+      }
+      & > a {
+        color: $linkColor;
+        text-decoration: underline;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+
+      .downloadFiles {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        margin: 0 0 6px;
+        padding: 0;
+        // outline: 1px dashed #f002;
+      }
+      & > ul {
+        margin: 12px 0 12px 20px;
+        padding: 0;
+        font-size: 1.125rem;
+        list-style-type: disc;
+        & > li {
+          margin: 0;
+          padding: 0;
+
+          & > a {
+            position: relative;
+            display: block;
+            padding: 5px 0;
+            border-radius: 50px;
+            transition: 0.2s;
+            color: $primaryColor;
+            &:hover,
+            &:focus {
+              color: $secondaryColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium) {
+    & > ul {
+      & > li {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        // padding-bottom: 15px;
+        .downloadFiles {
+          flex: 1 1 auto;
+          margin: -4px 0;
+        }
+        .title {
+          padding-bottom: 12px;
+          flex: 1 1 auto;
+        }
+
+        & > ul {
+          flex: 1 0 100%;
+          flex-basis: 100%;
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $wwNormal) {
+    & > ul {
+      & > li {
+        .downloadFiles {
+          flex: 0 0 32%;
+        }
+        .title {
+          flex: 1 1 auto;
+          flex-basis: calc(100% - 32%);
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    & > ul {
+      & > li {
+        .downloadFiles {
+          flex: 0 0 28%;
+        }
+      }
+    }
+  }
+}

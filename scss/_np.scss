@@ -1,50 +1,84 @@
-.np, .npTree{
-  @extend %primSecWidth; margin: 0 auto; padding: 0 0 30px;
-  ul{ list-style: none; margin: 0; padding: 0; line-height: 1.6;}
-  li{ 
+.np,
+.npTree {
+  margin: 0 auto;
+  padding: 0 0 30px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  li {
     padding: 2px 0;
-    a{
-      position: relative; display: block;
-      text-decoration: none; color: $fontColor;
+    a {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: $fontColor;
     }
   }
 }
 
 // 一般節點頁 //
-.np{
-  &>ul>li>a{ padding-left: 30px; background-color: $white;}
-  &>ul{ margin: 15px 0; font-size: 1.25em; line-height: 1.5;
-    &>li{
-      margin: 0 0 12px; padding:0;
-      &>a{
-        padding: 15px 12px 14px 44px; height: 100%;border-radius: $radius;
+.np {
+  & > ul > li > a {
+    padding-left: 30px;
+    background-color: $white;
+  }
+  & > ul {
+    margin: 15px 0;
+    font-size: 1.25em;
+    line-height: 1.5;
+    & > li {
+      margin: 0 0 12px;
+      padding: 0;
+      & > a {
+        padding: 15px 12px 14px 44px;
+        height: 100%;
+        border-radius: $radius;
         box-shadow: $shadow1 0 1px 5px;
-        transition: .3s;
-        &::before{
-          content: ''; position: absolute; left: 18px; top: calc(1em + 5px); 
-          width: 10px; height: 10px; border-radius: 50%;
-          box-shadow: $secondaryColor 0 0 0 6px; background-color: $white;
-          transition: .2s;
+        transition: 0.3s;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 22px;
+          top: calc(1em + 7px);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          box-shadow: $secondaryColor 0 0 0 5px;
+          background-color: $white;
+          transition: 0.2s;
         }
-        &:hover, &:focus{
-          @include grandient1(20deg); 
-          box-shadow: $shadow2 0 6px 24px -3px;
-          color: $fontInvert; z-index: 19;
-          &::before{
+        &:hover,
+        &:focus {
+          @include grandient1(20deg);
+          box-shadow: $shadow2 0 5px 24px -3px;
+          color: $fontInvert;
+          z-index: 19;
+          &::before {
             background-color: $secondaryColor;
-            box-shadow: $white 0 0 0 8px;
+            box-shadow: $white 0 0 0 5px;
           }
         }
       }
     }
   }
-  @media screen and (min-width: $wwMedium){
-    &>ul{
-      display: flex; flex-flow: row wrap; justify-content: space-between;
-      &>li{ flex:0 0 calc(50% - 6px); margin: 6px;
-        &:nth-child(odd){ margin-left: 0;}
-        &:nth-child(even){ margin-right: 0;}
+  @media screen and (min-width: $wwMedium) {
+    & > ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      & > li {
+        flex: 0 0 calc(50% - 6px);
+        margin: 6px;
+        &:nth-child(odd) {
+          margin-left: 0;
+        }
+        &:nth-child(even) {
+          margin-right: 0;
+        }
       }
-    }  
+    }
   }
 }

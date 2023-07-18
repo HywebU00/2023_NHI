@@ -1,0 +1,182 @@
+// 照片、影片縮圖瀏覽 //////////////////////////////////////////////
+.thumbnail {
+  position: relative;
+  padding: 10px 0 40px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  & > ul {
+    line-height: 1.1;
+    & > li {
+      margin: 0 0 16px;
+      & > a {
+        position: relative;
+        display: block;
+        height: 100%;
+        padding: 5px 5px 16px;
+        background: $white;
+        color: $fontColor;
+        text-decoration: none;
+        transition: 0.3s;
+        border-radius: 20px;
+
+        &:hover {
+          img {
+            box-shadow: $borderColor 0 0 0 1px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+          }
+
+          border-radius: 20px;
+        }
+        &:focus {
+          img {
+            box-shadow: $assistant1 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+          }
+        }
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        margin: 0 0 1em;
+        border-radius: 20px;
+        box-shadow: $borderColor 0 0 10px;
+      }
+
+      // 影片縮圖
+      .videoThumb {
+        width: calc(100% + 10px);
+        height: $mobileWidth * 0.56;
+        margin: -5px -5px 12px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          max-height: none;
+          object-fit: cover;
+        }
+      }
+      h3 {
+        margin: 0 5px;
+        font-size: 1.125rem;
+        font-weight: normal;
+        line-height: 1.4;
+        color: $fontColorDark;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      p {
+        margin: 0 5px;
+        line-height: 1.5;
+        color: $fontColorDark;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      time {
+        display: block;
+        margin: 0 5px;
+        color: $primaryColor;
+      }
+      time + p,
+      time + h3,
+      p + time,
+      h3 + time {
+        margin-top: 0.6rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium) {
+    & > ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      & > li {
+        flex: 0 0 calc(50% - 8px);
+        margin-right: 16px;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+        img {
+          height: calc((#{$mobileWidth}/ 2 - 18px) * 0.6);
+          object-fit: contain;
+          background: desaturate($grayLight, 30%);
+        }
+        p {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+
+        // 影片縮圖
+        .videoThumb {
+          height: calc((#{$mobileWidth}/ 2 - 8px) * 0.56);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal) {
+    & > ul {
+      & > li {
+        flex-basis: calc(25% - 12px);
+        &:nth-child(n) {
+          margin-right: 16px;
+        }
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+        & > a {
+          &:hover,
+          &:focus {
+            transform: translateY(-4px);
+            p,
+            h3 {
+              text-decoration: underline;
+              color: $fontColorDark;
+            }
+          }
+          &:hover {
+            img {
+              box-shadow: $borderColor 0 0 0 1px, $borderColor 0 0 20px;
+            }
+          }
+          &:focus {
+            img {
+              box-shadow: $assistant1 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+            }
+          }
+        }
+        img {
+          height: calc((#{$normalWidth}/ 4 - 22px) * 0.6);
+        }
+
+        // 影片縮圖
+        .videoThumb {
+          height: calc(#{$normalWidth}* 0.14 - 6px);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum) {
+    & > ul {
+      & > li {
+        img {
+          height: calc((#{$wwMaximum}* 0.22 - 22px) * 0.63);
+        }
+        .videoThumb {
+          height: calc(#{$wwMaximum}* 0.1232 - 6px);
+        }
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------

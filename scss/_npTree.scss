@@ -1,83 +1,131 @@
 // 節點頁展開兩層
-.npTree{
-  &>ul{
-    font-size: 1.25rem; line-height: 1.5;
-    &>li{
+.npTree {
+  & > ul {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    & > li {
       position: relative;
-      margin: 12px 0; padding:10px 12px 6px 44px;
-      border-radius: $radius;
-      box-shadow: $shadow1 0 1px 6px;
-      background: $white;
-      &::before{
-        content: ''; position: absolute; left: 18px; top: 26px;
-        width: 10px; height: 10px; border-radius: 50%;
-        box-shadow: $secondaryColor 0 0 0 6px; background-color: $white;
+      margin: 0;
+      padding: 10px 0px 5px 34px;
+      border-bottom: 1px solid $borderColorLight;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: calc(1em + 7px);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        box-shadow: $secondaryColor 0 0 0 5px;
+        background-color: $white;
+        transition: 0.2s;
       }
 
-      &>a, .title{
-        display: block; padding:6px 0 8px;
+      & > a,
+      .title {
+        display: block;
+        padding: 6px 0 8px;
       }
-      &>a{
-        color: $linkColor; text-decoration: underline;
-        &:hover, &:focus { outline: 1px solid $focus; border-radius: 8px; text-decoration: none;}
+      & > a {
+        color: $linkColor;
+        text-decoration: underline;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
       }
 
-      .downloadFiles{
-        flex: 1 1 auto;justify-content: flex-end;
-        margin: 0 0 6px; padding: 0;
+      .downloadFiles {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        margin: 0 0 6px;
+        padding: 0;
         // outline: 1px dashed #f002;
       }
-      &>ul{
-        margin: 12px 0; padding: 0;
+      & > ul {
+        margin: 12px 0;
+        padding: 0;
         font-size: 1.125rem;
-        &>li{
-          margin: 7px 0; padding: 0;
-          &>a{
-            position: relative; display: block;
-            padding:8px 8px 7px 28px;border-radius: 8px;
-            box-shadow: $borderColor 0 0 0 1px;
-            transition: .2s;
-            &::before{
-              content: ''; position: absolute; left: 10px; top: 14px;
-              width: 1px; height: 1px; border-style: solid; border-radius: 3px;
-              border-width: 7px 0 7px 11px;
-              border-color: transparent transparent transparent $secondaryColor;
-              transition: .15s;
-            }
-            &:hover, &:focus{
+        & > li {
+          margin: 0 0 8px;
+          padding: 0;
+          & > a {
+            position: relative;
+            display: block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: 0.2s;
+            text-align: center;
+            @include grandient1(0deg);
+            color: #fff;
+
+            &:hover,
+            &:focus {
               box-shadow: $focus 0 0 0 1px;
-              &::before{  transform: scale(1.25); }
+              &::before {
+                transform: scale(1.25);
+              }
             }
-            &:focus{box-shadow: $focus 0 0 0 3px;}
+            &:focus {
+              box-shadow: $focus 0 0 0 3px;
+            }
           }
         }
       }
     }
   }
 
-  @media screen and (min-width: $wwMedium){
-    &>ul{
-      &>li {
-        display: flex; flex-flow: row wrap;
-        justify-content: space-between; align-items: center;
+  @media screen and (min-width: $wwMedium) {
+    & > ul {
+      & > li {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
         // padding-bottom: 15px;
-        .downloadFiles{  flex: 1 1 20%; margin:-4px 0;}
-        .title{ padding-bottom: 12px;}
+        .downloadFiles {
+          flex: 1 1 auto;
+          margin: -4px 0;
+        }
+        .title {
+          padding-bottom: 12px;
+          flex: 1 1 auto;
+        }
 
-        &>ul{
+        & > ul {
           flex: 1 0 calc(100% - 20px);
-          display: flex; flex-flow: row wrap;
-          margin: 8px 0;
+          display: flex;
+          flex-flow: row wrap;
           font-size: 1.125rem;
-          &>li{
-            flex: 0 1 calc(50% - 8px); margin: 4px;
+          & > li {
+            flex: 0 1 auto;
+            margin: 0 6px 8px 0;
           }
         }
-  
       }
     }
   }
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwNormal) {
+    & > ul {
+      & > li {
+        .downloadFiles {
+          flex: 0 0 32%;
+        }
+        .title {
+          flex: 1 1 auto;
+          flex-basis: calc(100% - 32%);
+        }
+      }
+    }
   }
-
+  @media screen and (min-width: 1100px) {
+    & > ul {
+      & > li {
+        .downloadFiles {
+          flex: 0 0 28%;
+        }
+      }
+    }
+  }
 }

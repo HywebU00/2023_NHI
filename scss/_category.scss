@@ -1,25 +1,45 @@
-.category{
-  @extend %primSecWidth;
-  ul{
-    list-style: none; margin: 0; padding: 0; line-height: 1.1;
-    &::after{ content: ''; display: block; clear: both;}
-  }
-  li{
-    float: left; margin: 4px;
-    a {
-      display: block;height: 2.4em; line-height: 2.5em; padding: 0 1.5em;
-      border-radius: 2em; text-decoration: none;
-      background-color: $white; color: $fontColor;
-      box-shadow: $borderColor 0 0 0 1px inset;
-      transition: .2s;
-      &:hover, &:focus{  box-shadow: transparent 0 0 0 1px inset, $primaryColor 0 0 0 2px;}
+.category {
+  // @extend %primSecWidth;
+  margin-bottom: 1em;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
     }
-    &.active{
-      a{
+  }
+  li {
+    float: left;
+    margin: 4px;
+    a {
+      display: block;
+      height: 2.4em;
+      line-height: 2.5em;
+      padding: 0 1.5em;
+      border-radius: 2em;
+      text-decoration: none;
+      background-color: $white;
+      color: $fontColor;
+      box-shadow: $borderColor 0 0 0 1px inset;
+      transition: 0.2s;
+      &:hover,
+      &:focus {
+        box-shadow: transparent 0 0 0 1px inset, $primaryColor 0 0 0 2px;
+      }
+    }
+    &.active {
+      a {
         @include grandient1(0deg);
         color: $fontInvert;
         box-shadow: none;
-        &:hover, &:focus{ box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;}
+        &:hover,
+        &:focus {
+          box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 3px;
+        }
       }
     }
   }

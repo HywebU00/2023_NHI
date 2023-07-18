@@ -1,96 +1,120 @@
-body{
-  margin: 0; padding: 0;
-  font-size: 1em; 
-  font-family:  arial, "Microsoft JhengHei", "微軟正黑體", sans-serif;
-  &.noScroll{ overflow: hidden; overflow-y:hidden; }
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-family: arial, 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+  &.noScroll {
+    overflow: hidden;
+    overflow-y: hidden;
+  }
 
-  *{box-sizing: border-box;}
-  
-  
-  @media screen and (min-width: $wwNormal){
-    &.smallFont{ 
+  * {
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: $wwNormal) {
+    &.smallFont {
       .webHeader .topLinks ul.text,
       .divisions,
       .bulletin,
-      .topics, .services,
+      .topics,
+      .services,
       .news,
       .appAndSocialMedia,
       .videoFlow,
       .contactUs,
       .webFooter,
-      .main.inner {font-size: .875em;}
+      .main.inner {
+        font-size: 0.875em;
+      }
     }
-    &.largeFont{ 
+    &.largeFont {
       .webHeader .topLinks ul.text,
       .divisions,
       .bulletin,
-      .topics, .services,
+      .topics,
+      .services,
       .news,
       .appAndSocialMedia,
       .videoFlow,
       .contactUs,
       .webFooter,
-      .main.inner {font-size: 1.25em;}
+      .main.inner {
+        font-size: 1.25em;
+      }
     }
-  
   }
 
   // &.smallFont{ font-size: .9375em;}
   // &.largeFont{ font-size: 1.25em;}
 }
 
-.main{
-  position: relative; margin: 0 auto;
-  background:
-  url(../images/bg_dot.png) repeat 0 0,
-  url(../images/bg+left.jpg) no-repeat left 0 top 400px,
-  url(../images/bg+right.jpg) no-repeat right 0 top 1110px;
+.main {
+  position: relative;
+  margin: 0 auto;
+  background: url(../images/bg_dot.png) repeat 0 0, url(../images/bg+left.jpg) no-repeat left 0 top 400px, url(../images/bg+right.jpg) no-repeat right 0 top 1110px;
   background-color: #fff;
 
-  &.inner{
-    padding: 12px 0 120px;
+  &.inner {
+    padding: 0 0 120px;
   }
 
-  @media screen and (min-width: $wwNormal){
-    &.inner{
-      position: relative;padding-top: 16.67vw;
-      &::before {
-        content: ''; position: absolute; top: 0; left: 0; right: 0;
-        height: 16.67vw;
-        // z-index: -1;
-        background:url(../images/innerBg.jpg) no-repeat center top, linear-gradient(90deg, #b3e5e8 49%, #70a7b1 50%);
-        background-size: auto 16.67vw, 100% 16.67vw;
-      }
-    }
-  }
-  @media screen and (min-width: $wwMaximum){
-    &.inner{
-      padding-top: 200px;
-      &::before{
-        height: 200px;
-        background-size: auto 200px, 100% 200px;
-      }
-    }
-  }
+  // @media screen and (min-width: $wwNormal) {
+  //   &.inner {
+  //     position: relative;
+  //     padding-top: 16.67vw;
+  //     &::before {
+  //       content: '';
+  //       position: absolute;
+  //       top: 0;
+  //       left: 0;
+  //       right: 0;
+  //       height: 16.67vw;
+  //       // z-index: -1;
+  //       background: url(../images/innerBg.jpg) no-repeat center top, linear-gradient(90deg, #b3e5e8 49%, #70a7b1 50%);
+  //       background-size: auto 16.67vw, 100% 16.67vw;
+  //     }
+  //   }
+  // }
+  // @media screen and (min-width: $wwMaximum) {
+  //   &.inner {
+  //     padding-top: 200px;
+  //     &::before {
+  //       height: 200px;
+  //       background-size: auto 200px, 100% 200px;
+  //     }
+  //   }
+  // }
 }
 
 // 首頁區塊標題字
-.blockHeader{
-  text-align: center; line-height: 1.2; margin:10px 0;
-  display: flex; flex-flow: column nowrap; align-items: center;
-  .major{
-    display: block;position: relative;
-    font-size: 2.25rem; font-weight: bold; letter-spacing: 2px;
+.blockHeader {
+  text-align: center;
+  line-height: 1.2;
+  margin: 10px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .major {
+    display: block;
+    position: relative;
+    font-size: 2.25rem;
+    font-weight: bold;
+    letter-spacing: 2px;
     padding-bottom: 10px;
-    &::after{
-      content: ''; display: block;
-      height: 3px; margin-left: -2px; margin-top: 4px;
+    &::after {
+      content: '';
+      display: block;
+      height: 3px;
+      margin-left: -2px;
+      margin-top: 4px;
       @include grandient2(90deg);
     }
   }
-  .engSub{
-    display: block; font-size: .75rem;
-    background-image: linear-gradient(90deg, #004f73 , #0094a0);
+  .engSub {
+    display: block;
+    font-size: 0.75rem;
+    background-image: linear-gradient(90deg, #004f73, #0094a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
