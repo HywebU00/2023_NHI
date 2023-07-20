@@ -38,8 +38,9 @@
         box-shadow: rgba(255, 255, 255, 1) 0 0 0 2px;
       }
       &.active {
-        background-color: $white;
-        color: $fontColor;
+        background-color: #012c40;
+        background-image: none;
+        color: #fff;
       }
     }
   }

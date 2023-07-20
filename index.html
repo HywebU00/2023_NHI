@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>健保署中文網</title>
-
+  <link href="images/favicon.png" rel="icon" type="image/x-icon" /><!-- favicon -->
   <style>
     body {
       margin: 0;
@@ -14,14 +14,47 @@
       background: #fff;
     }
 
+    .header {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1400px;
+      width: 96%;
+      margin: 0 auto 20px;
+      background: #018a9a;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
     h1 {
       text-align: center;
-      background: #018a9a;
+
       color: #fff;
       margin: 0 0 10px;
       padding: 10px;
       font-size: 22px;
-      font-family: Georgia, 'Times New Roman', Times, serif
+      font-family: Georgia, 'Times New Roman', Times, serif;
+
+    }
+
+    .btn_grp {
+      flex: 0 0 none;
+      display: block;
+      width: 200px;
+    }
+
+    .btn_grp a {
+      display: block;
+      padding: 12px 20px;
+      background-color: #ddd;
+      color: #333;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .btn_grp a:hover {
+      color: #000;
+      text-decoration: none;
     }
 
     table {
@@ -31,7 +64,7 @@
       max-width: 1400px;
       width: 96%;
       line-height: 1.5;
-      border-bottom: 2px solid #bbb;
+      border-bottom: 3px solid #bbb;
       color: #456;
     }
 
@@ -49,6 +82,14 @@
 
     tr.new {
       background: #f1fad0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f3f3f3;
+    }
+
+    tr.separate {
+      border-top: 3px solid #07b4b1;
     }
 
     th:after,
@@ -87,6 +128,7 @@
     }
 
 
+
     td ul,
     td ol {
       margin: 0;
@@ -116,6 +158,21 @@
 
     /* tr.hidden, tr.hidden ~ tr{display: none} */
     @media screen and (max-width: 700px) {
+      .header {
+        flex-wrap: wrap;
+
+      }
+
+      h1,
+      .btn_grp {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        text-align: center;
+      }
+
+      .btn_grp {
+        width: 250px;
+      }
 
       tr,
       td,
@@ -174,13 +231,20 @@
       .seperator td:first-child {
         display: none
       }
+
     }
   </style>
 
 </head>
 
 <body>
-  <h1>2023《健保署中文網》 gui 清單</h1>
+  <div class="header">
+    <h1>2023《健保署中文網》 gui 清單</h1>
+    <div class="btn_grp">
+      <a href="https://github.com/HywebU00/2023_NHI" class="btn">切版檔案請按此下載</a>
+    </div>
+  </div>
+
   <table>
     <tr>
       <th style="width: 2em;">序號</th>
@@ -194,7 +258,7 @@
       <td><a href="mp.html">mp.html</a></td>
       <td>2023/7/17 完成。</td>
     </tr>
-    <tr>
+    <tr class="separate">
       <td></td>
       <td>LP01_一般列表頁</td>
       <td><a href="lp01.html">lp01.html</a></td>
@@ -232,8 +296,26 @@
     </tr>
     <tr>
       <td></td>
+      <td>LP07_展開內容列表</td>
+      <td><a href="lp07_tree.html">lp07_tree.html</a></td>
+      <td>7/20 完成。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP08_問答列表</td>
+      <td><a href="lp08.html">lp08.html</a></td>
+      <td>7/20 完成。</td>
+    </tr>
+    <tr class="separate">
+      <td></td>
       <td>NP01_一般節點頁</td>
       <td><a href="np01.html">np01.html</a></td>
+      <td>7/17 完成。</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>NP02_banner</td>
+      <td><a href="np02.html">np02.html</a></td>
       <td>7/17 完成。</td>
     </tr>
     <tr>
@@ -249,11 +331,11 @@
       <td>7/17 完成。</td>
     </tr>
 
-    <tr>
+    <tr class="separate">
       <td></td>
       <td>CP01_一般內容頁</td>
-      <td><!-- <a href="cp01.html" >cp01.html</a> --></td>
-      <td></td>
+      <td><a href="cp01.html">cp01.html</a></td>
+      <td>未完成</td>
     </tr>
     <tr>
       <td></td>
@@ -261,7 +343,7 @@
       <td><a href="cp02_table.html">cp02_table.html</a></td>
       <td>7/17 完成。</td>
     </tr>
-    <tr>
+    <tr class="separate">
       <td></td>
       <td>SP02_內文區塊展開／收合樣式</td>
       <td><a href="sp02_showHideList.html">sp02_showHideList.html</a></td>

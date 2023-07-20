@@ -25,6 +25,14 @@
           border-color: $fontColorDark;
         }
       }
+      p {
+        a {
+          color: $primaryColor;
+          &:hover {
+            color: $secondaryColor;
+          }
+        }
+      }
       button {
         width: 100%;
         position: relative;
@@ -39,23 +47,25 @@
         border: none;
         box-shadow: none;
         border-radius: 0;
-        color: $fontColorDark;
+        color: #fff;
+        background-color: $secondaryColor;
         &:hover,
         &:focus {
-          background: $hover;
+          background: $focus;
         }
 
         .openclose_btn {
           position: absolute;
           top: 12px;
           right: 40px;
-          color: #333;
-          background-color: #eee;
+          color: #eee;
+          background-color: darken($color: $secondaryColor, $amount: 5);
           border-radius: 5px;
           padding: 3px 5px;
+
           &:after {
             content: '';
-            border: 2px solid #333;
+            border: 2px solid #fff;
             border-top: none;
             border-left: none;
             position: absolute;
@@ -63,6 +73,7 @@
             right: -20px;
             width: 8px;
             height: 8px;
+
             transform: rotate(45deg);
             transition: transform 0.5s;
           }

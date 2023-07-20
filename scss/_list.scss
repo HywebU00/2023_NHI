@@ -22,10 +22,11 @@
         padding: 0.8em 5px 0.8em;
         border-radius: 6px;
         text-decoration: none;
-        color: $fontColor;
+        color: $fontColorDark;
         transition: 0.2s;
         &:hover,
         &:focus {
+          color: $primaryColor;
           background-color: $hover;
         }
         &:focus {

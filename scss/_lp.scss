@@ -49,7 +49,7 @@
       background-color: $secondaryColor;
       color: #fff;
       &.downTh {
-        width: 28%;
+        width: 16%;
       }
     }
     td {
@@ -109,9 +109,47 @@
         display: inline-block;
         white-space: nowrap;
       }
+      .downloadFiles {
+        justify-content: center;
+      }
     }
   }
-
+  @media screen and (max-width: 1200px) {
+    & > table {
+      th {
+        &.downTh {
+          width: 19%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    & > table {
+      th {
+        &.downTh {
+          width: 22%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 850px) {
+    & > table {
+      th {
+        &.downTh {
+          width: 24%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    & > table {
+      th {
+        &.downTh {
+          width: 27%;
+        }
+      }
+    }
+  }
   @media screen and (max-width: $wwMedium - 1px) {
     & > table.rwdTable {
       thead {
@@ -137,6 +175,7 @@
           display: none;
         }
       }
+
       td {
         padding: 0.3em 15px 0.3em 0;
         &::before {
@@ -230,24 +269,81 @@
         // outline: 1px dashed #f002;
       }
       & > ul {
-        margin: 12px 0 12px 20px;
+        margin: 12px 0;
         padding: 0;
         font-size: 1.125rem;
-        list-style-type: disc;
+        list-style-type: none;
         & > li {
-          margin: 0;
+          margin: 0 0 5px;
           padding: 0;
 
           & > a {
             position: relative;
             display: block;
-            padding: 5px 0;
-            border-radius: 50px;
+            padding: 10px 10px 10px 30px;
+            border-left: 6px solid $secondaryColor;
             transition: 0.2s;
             color: $primaryColor;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+
             &:hover,
             &:focus {
               color: $secondaryColor;
+            }
+          }
+        }
+      }
+      .contentblock {
+        background-color: #f5f5f5;
+        padding: 30px;
+        font-size: 1.125rem;
+        margin: 10px 0 20px;
+        border-radius: 5px;
+        width: 100%;
+        .titlelink {
+          font-weight: bolder;
+          font-size: 1.25rem;
+          a {
+            color: $primaryColor;
+            text-decoration: underline;
+            &:hover {
+              color: $secondaryColor;
+            }
+          }
+        }
+        p {
+          font-size: 1.125rem;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          font-size: 1.125rem;
+          li {
+            margin: 0 0 5px;
+            padding: 0px 0 5px;
+            border-bottom: 1px dashed #ccc;
+            position: relative;
+            .subtitle {
+              display: block;
+            }
+            .downloadFiles {
+              margin: 0 0 6px;
+              padding: 0;
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              li {
+                padding: 0;
+                border-bottom: none;
+                float: left;
+                margin: 3px;
+
+                &:before {
+                  display: none;
+                }
+              }
             }
           }
         }
@@ -280,15 +376,41 @@
       }
     }
   }
+  @media screen and (min-width: 900px) {
+    & > ul {
+      & > li {
+        .contentblock {
+          ul {
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+
+              .subtitle {
+                flex: 1 1 auto;
+                padding: 8px 0;
+              }
+              .downloadFiles {
+                flex: 0 0 auto;
+                flex-basis: 20%;
+                margin: 0 0 0;
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   @media screen and (min-width: $wwNormal) {
     & > ul {
       & > li {
         .downloadFiles {
-          flex: 0 0 32%;
+          flex: 0 0 17%;
         }
         .title {
           flex: 1 1 auto;
-          flex-basis: calc(100% - 32%);
+          flex-basis: calc(100% - 17%);
         }
       }
     }
@@ -297,7 +419,7 @@
     & > ul {
       & > li {
         .downloadFiles {
-          flex: 0 0 28%;
+          flex: 0 0 15%;
         }
       }
     }

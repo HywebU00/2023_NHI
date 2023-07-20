@@ -617,7 +617,8 @@ button.closeThis {
     margin: -10px 0 0 -4px;
   }
 }
-a:hover .videoThumb {
+a:hover .videoThumb,
+a:focus .videoThumb {
   &::before,
   &::after {
     opacity: 1;

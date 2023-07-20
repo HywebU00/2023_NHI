@@ -110,11 +110,11 @@
     & > ul {
       & > li {
         .downloadFiles {
-          flex: 0 0 32%;
+          flex: 0 0 17%;
         }
         .title {
           flex: 1 1 auto;
-          flex-basis: calc(100% - 32%);
+          flex-basis: calc(100% - 17%);
         }
       }
     }
@@ -123,7 +123,7 @@
     & > ul {
       & > li {
         .downloadFiles {
-          flex: 0 0 28%;
+          flex: 0 0 15%;
         }
       }
     }

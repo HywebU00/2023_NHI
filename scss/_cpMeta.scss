@@ -20,7 +20,8 @@
       text-align: center;
       th {
         border-bottom: 1px solid $borderColorDark;
-        color: $fontColorDark;
+        background-color: $secondaryColor;
+        color: #fff;
         &:first-child {
           position: relative;
           &::after {
@@ -36,6 +37,12 @@
       }
     }
     tbody {
+      tr {
+        border-bottom: 1px solid $borderColor;
+        &:nth-child(even) {
+          background: #eee;
+        }
+      }
       th {
         position: relative;
         padding-left: 3px;
@@ -98,7 +105,7 @@
         }
         th,
         td {
-          padding: 0;
+          padding: 0 0.5em;
         }
         th {
           float: left;

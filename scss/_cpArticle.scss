@@ -1,9 +1,5 @@
 .cpArticle {
-  @extend %primSecWidth;
-  padding: 40px 20px;
   margin-bottom: 60px;
-  @include blockStyle1;
-
   line-height: 1.9;
   font-size: 1.125rem;
   a {
@@ -42,13 +38,32 @@
   h6 {
     font-size: 1em;
   }
-
+  figure {
+    display: block;
+    margin: 0 auto 1.5em;
+    border: 1px solid $borderColorLight;
+    border-radius: 5px;
+    img {
+      display: block;
+      width: 100%;
+      max-height: 55vh;
+      object-fit: contain;
+    }
+    figcaption {
+      display: block;
+      margin: 0;
+      line-height: 1.6;
+      font-size: 0.875em;
+      padding: 0.5em 1em;
+      background-color: #eee;
+    }
+  }
   blockquote {
     position: relative;
     font-style: italic;
     padding: 1em 1.5em 1em;
-    margin-left: 2.5em;
-    margin-right: 1em;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 2.5em;
     &::before,
     &::after {
@@ -68,44 +83,145 @@
       border-left: none;
     }
   }
-
+  .buttonCenter {
+    text-align: center;
+  }
+  button {
+    max-width: 200px;
+    margin: 0 auto;
+  }
   table {
     border-collapse: collapse;
     margin: 2em 0;
     width: 100%;
-    border: 2px solid $borderColor;
+    border: 1px solid $borderColor;
     background-color: $mainBg;
     line-height: 1.5;
-    font-size: 1.125em;
+    &.noborder {
+      border-color: #fff;
+      tr {
+        border-bottom: 1px solid $borderColor;
+        &:nth-child(odd) {
+          background: #eee;
+        }
+      }
+      tr:first-child th {
+        border-bottom-color: #fff;
+      }
+      th,
+      td {
+        border-color: #fff;
+      }
+      th {
+        &:first-child {
+          border-color: #fff;
+        }
+      }
+    }
     th,
     td {
-      padding: 0.5em;
+      padding: 0.5em 1em;
       border: 1px solid $borderColorLight;
     }
     th {
-      background-color: $primaryColor;
-      color: $fontInvert;
+      background-color: $secondaryColor;
+      color: #fff;
+      white-space: nowrap;
       &:first-child {
         border-right-color: $borderColor;
       }
       &:only-of-type:first-child {
-        background: lighten($primaryColor, 40%);
-        color: $fontColorDark;
+        background-color: $secondaryColor;
+        color: #fff;
       }
     }
     tr:first-child th {
-      border-bottom-color: $borderColor;
+      border-bottom-color: $borderColorLight;
     }
   }
-
+  .illustrate_group {
+    .illustrate_btn {
+      margin: 0 0 0.5em;
+      a {
+        display: inline-block;
+        padding: 0.2em 1em 0.2em 1em;
+        background-color: $secondaryColor;
+        color: #fff;
+        font-size: 1.3rem;
+        text-decoration: none;
+        border-radius: 5px;
+        position: relative;
+        border-right: 40px solid $focus;
+        &:before {
+          content: '';
+          border: 8px solid #fff;
+          border-color: #fff transparent transparent transparent;
+          position: absolute;
+          top: 1em;
+          right: -1.3em;
+          transition: 0.5s;
+        }
+        &:hover {
+          background-color: darken($color: $secondaryColor, $amount: 5);
+          border-right: 40px solid darken($color: $focus, $amount: 5);
+        }
+      }
+      &.open {
+        a {
+          &:before {
+            // transform: rotate(180deg);
+            top: 0.6em;
+            border-color: transparent transparent #fff transparent;
+          }
+        }
+      }
+    }
+    .illustrate_block {
+      display: none;
+    }
+  }
+  .illustrate_block {
+    border: 1px solid $borderColorLight;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    .title {
+      background-color: $secondaryColor;
+      color: #fff;
+      padding: 0.2em 1em;
+      font-size: 1.3rem;
+      border-radius: 5px 5px 0 0;
+    }
+    .content {
+      padding: 1em;
+      .subtitle {
+        font-weight: bolder;
+        position: relative;
+        padding-left: 30px;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 10px;
+          top: 13px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          box-shadow: #018a9a 0 0 0 5px;
+          background-color: #fff;
+          transition: 0.2s;
+        }
+      }
+      ol {
+        margin-left: 0.9em;
+      }
+    }
+  }
   @media screen and (min-width: $wwMedium) {
   }
 
   @media screen and (min-width: $wwNormal) {
-    padding: 40px;
     font-size: 1.125em;
     blockquote {
-      margin-left: 4em;
+      margin-left: 0;
     }
   }
 }

@@ -25,14 +25,14 @@
 
         &:hover {
           img {
-            box-shadow: $borderColor 0 0 0 1px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+            box-shadow: $borderColor 0 0 0 1px, $borderColor 0 4px 16px;
           }
 
           border-radius: 20px;
         }
         &:focus {
           img {
-            box-shadow: $assistant1 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+            box-shadow: $assistant1 0 0 0 2px, $borderColor 0 4px 16px;
           }
         }
       }
@@ -58,8 +58,8 @@
           object-fit: cover;
         }
       }
-      h3 {
-        margin: 0 5px;
+      .title {
+        margin: 0 5px 0;
         font-size: 1.125rem;
         font-weight: normal;
         line-height: 1.4;
@@ -84,9 +84,9 @@
         color: $primaryColor;
       }
       time + p,
-      time + h3,
+      time + .title,
       p + time,
-      h3 + time {
+      .title + time {
         margin-top: 0.6rem;
       }
     }
@@ -138,19 +138,19 @@
           &:focus {
             transform: translateY(-4px);
             p,
-            h3 {
+            .title {
               text-decoration: underline;
               color: $fontColorDark;
             }
           }
           &:hover {
             img {
-              box-shadow: $borderColor 0 0 0 1px, $borderColor 0 0 20px;
+              box-shadow: $primaryColor 0 0 0 1px, $borderColor 0 0 20px;
             }
           }
           &:focus {
             img {
-              box-shadow: $assistant1 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+              box-shadow: $primaryColor 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
             }
           }
         }

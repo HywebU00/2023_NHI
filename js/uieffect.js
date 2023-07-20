@@ -956,4 +956,10 @@ $(function () {
       $(this).removeClass('closed').text(text1);
     }
   });
+
+  // cp說明文字展開收合
+  $('.illustrate_group .illustrate_btn').click(function () {
+    $(this).toggleClass('open');
+    $('.illustrate_group .illustrate_block').slideToggle();
+  });
 });
