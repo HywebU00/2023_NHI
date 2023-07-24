@@ -27,7 +27,7 @@ $wwMaximum: 1200px;
 
 // ---------- 顏色變數 ----------- //
 $primaryColor: #004f73;
-$secondaryColor: #018a9a;
+$secondaryColor: #018392;
 $assistant1: #b5e7e4;
 $assistant2: #fff677;
 $hilight: #e81158;
@@ -59,6 +59,33 @@ $btnBg2: #01425c;
 
 $footBg: $primaryColor;
 $sidebarBg: $grayDark;
+
+// $textBlock1: $primaryColor;
+// $textBlock2: #017383;
+@mixin textBlock1 {
+  background-image: url('../images/textBlock_bg1.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  border: 4px solid #fff;
+  transition: 0.5s;
+}
+@mixin textBlock1hover {
+  background-image: none;
+  background: rgb(1, 127, 140);
+  background: linear-gradient(180deg, rgba(1, 127, 140, 1) 0%, rgba(0, 74, 102, 1) 100%);
+  border: 4px solid #72f2ff;
+}
+@mixin textBlock2 {
+  background-image: url('../images/textBlock_bg2.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  border: 4px solid #fff;
+}
+@mixin textBlock2hover {
+  background: rgb(44, 130, 93) !important;
+  background: linear-gradient(180deg, rgba(44, 130, 93, 1) 0%, rgba(7, 101, 97, 1) 100%) !important;
+  border: 4px solid #79ffce !important;
+}
 
 // ---------- 顏色變數 ----------- //
 

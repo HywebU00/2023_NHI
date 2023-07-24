@@ -1,23 +1,23 @@
 .webHeader {
   position: relative;
-  // background: linear-gradient(90deg, $primaryColor 10%, $secondaryColor 90%);
-  background: url(../images/bg_dot.png) repeat 0 0;
-
+  background: url(../images/bg_tinyDots.png) repeat, linear-gradient(90deg, #004f73, #0094a0);
   h1 {
     margin: 0 60px;
-    padding: 10px 0;
+    padding: 8px 0;
     height: 80px;
-    background: url(../images/h1_mobile.png) no-repeat center center;
+    // background: url(../images/h1_mobile.png) no-repeat center center;
     background-size: auto 60px;
     a {
       display: block;
-      height: 100%;
+
       &:focus {
         box-shadow: $focus 0 0 0 1px;
       }
     }
     img {
-      display: none;
+      display: block;
+      height: 65px;
+      margin: 0 auto;
     }
   }
 

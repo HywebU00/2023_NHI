@@ -167,7 +167,7 @@ a:focus {
 
 // 查詢圖示 ////////////////////
 .searchCtrl {
-  --tinge: #000;
+  --tinge: #fff;
   transition: background-color 0.2s, box-shadow 0.2s;
   &:hover,
   &:focus {
@@ -211,7 +211,7 @@ a:focus {
 
 // 行動版側欄開關 //////////////////////
 .sidebarCtrl {
-  --tinge: #000;
+  --tinge: #fff;
   &::before,
   &::after {
     content: '';

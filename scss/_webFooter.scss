@@ -1,214 +1,337 @@
-.webFooter{
+.webFooter {
   position: relative;
-  a{text-decoration: none; }
+  a {
+    text-decoration: none;
+  }
 
-  ul, ol{ list-style: none; margin: 0; padding: 0;}
+  ul,
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-  .fatFooter{
-    position: relative; overflow: hidden;
-    background: 
-    url(../images/bg_tinyDots.png) repeat, 
-    linear-gradient( 180deg, #004f73 , #0094a0);
+  .fatFooter {
+    position: relative;
+    overflow: hidden;
+    background: url(../images/bg_tinyDots.png) repeat, linear-gradient(180deg, #004f73, #0094a0);
 
-    &::after{
+    &::after {
       content: '';
-      position: absolute; right: -80px; bottom: 60px;
-      width: 420px; height: 420px;
+      position: absolute;
+      right: -80px;
+      bottom: 60px;
+      width: 420px;
+      height: 420px;
       background: url(../images/bg_circle.png) no-repeat 0 0;
       background-size: 100% auto;
       transform: rotate(100deg);
-      transition: .4s;
+      transition: 0.4s;
     }
   }
 
-  .middle{
-    padding: 30px 3%; line-height: 1.5;font-size: 1.125rem;
+  .middle {
+    padding: 30px 3%;
+    line-height: 1.5;
+    font-size: 1.125rem;
     background: #e5e5e5 url(../images/bg_dot.png) repeat 0 0;
   }
 
   // 健保諮詢服務專線
-  .phones{
-    color: #042047;font-size: 1.25rem;
-    p{
-      margin: .4em 0;
-      em{ display: inline-block; font-style: normal; font-weight: bold; font-size: 1.12em;}
-      &.highlight{
-        margin: 1em auto; padding: 5px .8em 3px;
-        text-align: center;border-radius: 1em;
+  .phones {
+    color: #042047;
+    font-size: 1.25rem;
+    p {
+      margin: 0.4em 0;
+      em {
+        display: inline-block;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.12em;
+      }
+      &.highlight {
+        margin: 1em auto;
+        padding: 5px 0.8em 3px;
+        text-align: center;
+        border-radius: 1em;
         font-weight: normal;
-        background-color: #042047; color: $fontInvert;
+        background-color: #042047;
+        color: $fontInvert;
       }
     }
   }
 
   // 分區業務組
-  .regDivisions{
-    li{
-      margin: .6em 0 0; padding: 0 0 .6em;
+  .regDivisions {
+    li {
+      margin: 0.6em 0 0;
+      padding: 0 0 0.6em;
       border-bottom: 1px solid $white;
-      .tel{
-        display: inline-block;white-space: nowrap; width: 7em; margin: 0 .3em;
+      .tel {
+        display: inline-block;
+        white-space: nowrap;
+        width: 7em;
+        margin: 0 0.3em;
       }
-      .address{ display: block;}
+      .address {
+        display: block;
+      }
     }
   }
 
-
   // logo 區
-  .base{
-    position: relative; padding:40px 3%; margin: 0 auto;
+  .base {
+    position: relative;
+    padding: 40px 3%;
+    margin: 0 auto;
     line-height: 1.5;
-    display: flex; flex-flow: column nowrap; align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     background: url(../images/bg_dot.png) repeat 0 0;
 
-    .logo{
-      display: block; margin: 0 auto;
-      height: 80px; width: 94%; object-fit: contain;
+    .logo {
+      display: block;
+      margin: 0 auto;
+      height: 80px;
+      width: 94%;
+      object-fit: contain;
     }
 
-    .phoneAddress{
-      margin: 1.2em auto; font-size: 1.06rem;
-      p{margin: .5em 0;}
+    .phoneAddress {
+      margin: 1.2em auto;
+      font-size: 1.06rem;
+      p {
+        margin: 0.5em 0;
+      }
       // border: 1px solid pink;
     }
 
-    .findUsHere{
-      list-style: none; margin: 0 auto;padding: 0 0 1em;
+    .findUsHere {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0 0 1em;
       max-width: 400px;
-      border-bottom: 1px solid $borderColor;
-      display: flex; justify-content: center; flex-flow: row wrap;
-      li{
+      // border-bottom: 1px solid $borderColor;
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      li {
         margin: 4px;
-        img{
-          display: block; margin:0 auto;width: 52px; height: 52px; 
-          border-radius: 50%; transition: .2s;
+        img {
+          display: block;
+          margin: 0 auto;
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          transition: 0.2s;
         }
-        a{display: block;
-          &:hover, &:focus{
-            img{
+        a {
+          display: block;
+          &:hover,
+          &:focus {
+            img {
               box-shadow: $white 0 0 0 1px, $fontColorLight 0 0 0 4px;
             }
           }
         }
       }
     }
-    
-    .otherLinks{
-      display: none;
-    }
-  
-    .others{
-      text-align: center;
-      padding-top: 1em;
-      li{
-        display: inline-block; margin-left: 3px;
-        img{
-          display: block; height: 46px;
-        }
-        a{
-          display: block;
-          &:hover{ box-shadow: $focus 0 0 0 1px;}
-          &:focus{ box-shadow: $fontColorLight 0 0 0 2px;}
-        }
+    .otherAll {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 0 0 0;
+
+      border-top: 1px solid $borderColor;
+      justify-content: center;
+      .otherLinks {
+        display: none;
       }
-    }
-  }
 
-
-
-  @media screen and (min-width: $wwMedium){
-    .fatFooter{
-      &::after{ width: 435px; height: 435px; bottom: -50px;}
-      
-    }
-    // 分區業務組
-    .regDivisions{
-      li{
-        border: none;
-        .address{ display: inline-block;}
-      }
-    }
-  }
-
-  @media screen and (min-width: $wwNormal){
-
-    .middle{
-      display: flex; font-size: 1em;
-      // &>*{ outline: 1px solid #c003;}
-      .phones{ flex: 0 1 46%; }
-      .regDivisions{flex: 0 1 52%; margin-left: 2%;}
-    }
-    .phones{
-      font-size: 1.125em;
-      p.highlight{max-width: 24em; width: 100%; padding-bottom: .25em;float: left;}
-    }
-
-    .regDivisions{
-      font-size: 1em;
-      li {padding-bottom: .2em;}
-    }
-
-    .base{
-      display: flex; flex-flow: row wrap; align-items: flex-start;
-      justify-content: space-between;
-      .logo{
-        flex: 0 0 294px; width: 294px; height: auto;margin: 0; padding: 0;
-      }
-      .phoneAddress{
-        font-size: 1.06em;
-        flex: 0 0 calc(96% - 630px); margin: 0 2%;
-      }
-      .findUsHere{
-        flex: 0 0 330px; width: 330px; align-self: flex-end;
-        border: none; padding-bottom: 4px; margin: 0;
-        justify-content: flex-end;
-        li{
-          img{ width: 46px; height: 46px;}
-        }
-      }
-      .otherLinks{
-        display: block; flex: 0 0 100%; margin: 20px 0 0; padding:30px 188px 0 0;
-        font-size: .875em; line-height: 1.1;
-        border-top: 1px solid $borderColor;
-        li{
-          float: left; position: relative;
-          margin: 0 .5em .7em 0; padding: 0 .5em 0 0;
-          &::after{
-            content: ''; position: absolute; right: 0; top: .1em;
-            width: 1px; height: .8em; background-color: $fontColor;
+      .others {
+        text-align: center;
+        flex: 0 0 100%;
+        li {
+          display: inline-block;
+          margin-left: 3px;
+          img {
+            display: block;
+            height: 46px;
           }
-          a{
-            display: block; color: $fontColor;
-            border-bottom: 1px solid transparent;
-            &:hover, &:focus {
-              border-bottom-color: $fontColor;
+          a {
+            display: block;
+            &:hover {
+              box-shadow: $focus 0 0 0 1px;
+            }
+            &:focus {
+              box-shadow: $fontColorLight 0 0 0 2px;
             }
           }
-          &:last-child{
-            &::after{display: none;}
+        }
+      }
+      .counter {
+        flex: 0 0 100%;
+        text-align: center;
+        em {
+          font-style: normal;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium) {
+    .fatFooter {
+      &::after {
+        width: 435px;
+        height: 435px;
+        bottom: -50px;
+      }
+    }
+    // 分區業務組
+    .regDivisions {
+      li {
+        border: none;
+        .address {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal) {
+    .middle {
+      display: flex;
+      font-size: 1em;
+      // &>*{ outline: 1px solid #c003;}
+      .phones {
+        flex: 0 1 46%;
+      }
+      .regDivisions {
+        flex: 0 1 52%;
+        margin-left: 2%;
+      }
+    }
+    .phones {
+      font-size: 1.125em;
+      p.highlight {
+        max-width: 24em;
+        width: 100%;
+        padding-bottom: 0.25em;
+        float: left;
+      }
+    }
+
+    .regDivisions {
+      font-size: 1em;
+      li {
+        padding-bottom: 0.2em;
+      }
+    }
+
+    .base {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      .logo {
+        flex: 0 0 294px;
+        width: 294px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+      }
+      .phoneAddress {
+        font-size: 1.06em;
+        flex: 0 0 calc(96% - 630px);
+        margin: 0 2%;
+      }
+      .findUsHere {
+        flex: 0 0 330px;
+        width: 330px;
+        align-self: flex-end;
+        border: none;
+        padding-bottom: 4px;
+        margin: 0;
+        justify-content: flex-end;
+        li {
+          img {
+            width: 46px;
+            height: 46px;
           }
         }
       }
+      .otherAll {
+        margin-top: 1em;
+        .otherLinks {
+          display: block;
+          flex: 0 0 auto;
+          flex-basis: calc(100% - 200px);
+          margin: 0;
+          padding: 0;
+          font-size: 0.875em;
+          line-height: 1.1;
 
-      .others{
-        position: absolute; right: 3%; bottom: 28px;
+          li {
+            float: left;
+            position: relative;
+            margin: 0 0.5em 0.7em 0;
+            padding: 0 0.5em 0 0;
+            &::after {
+              content: '';
+              position: absolute;
+              right: 0;
+              top: 0.1em;
+              width: 1px;
+              height: 0.8em;
+              background-color: $fontColor;
+            }
+            a {
+              display: block;
+              color: $fontColor;
+              border-bottom: 1px solid transparent;
+              &:hover,
+              &:focus {
+                border-bottom-color: $fontColor;
+              }
+            }
+            &:last-child {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .others {
+          flex: 0 0 200px;
+          padding: 0;
+        }
+        .counter {
+          flex: 0 0 100%;
+          text-align: right;
+          padding: 0 5px;
+        }
       }
     }
   }
 
-  @media screen and (min-width: $wwMaximum){
-    .base{
-      padding-left: $wwMaximum*.03;padding-right: $wwMaximum*.03;
+  @media screen and (min-width: $wwMaximum) {
+    .base {
+      padding-left: $wwMaximum * 0.03;
+      padding-right: $wwMaximum * 0.03;
       width: $wwMaximum;
     }
-    .middle{
-      padding-left:calc(50% - $wwMaximum*.47);
-      .phones{ flex-basis: $wwMaximum*.44;}
-      .regDivisions{flex-basis: $wwMaximum*.5; margin-left: $wwMaximum*.02;}
+    .middle {
+      padding-left: calc(50% - $wwMaximum * 0.47);
+      .phones {
+        flex-basis: $wwMaximum * 0.44;
+      }
+      .regDivisions {
+        flex-basis: $wwMaximum * 0.5;
+        margin-left: $wwMaximum * 0.02;
+      }
     }
   }
-
-
 }
 
 ////////////////////////////////////////////////////////////
@@ -216,110 +339,164 @@
 ////////////////////////////////////////////////////////////
 
 // 控制 fat footer 開合的 button
-.fatFootCtrl{
-  position: absolute; left:calc(50% - 24px); top: 12px; z-index: 9;
-  width: 48px; height: 48px; padding: 0; border-radius: 50%;
-  text-indent: -10em; overflow: hidden; border: none;
+.fatFootCtrl {
+  position: absolute;
+  left: calc(50% - 24px);
+  top: 12px;
+  z-index: 9;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  text-indent: -10em;
+  overflow: hidden;
+  border: none;
   background: transparent;
-  transition:.3s;
-  &::before, &::after{
-    content: '';position: absolute; top: 20px; 
-    width: 18px; height: 5px; border-radius: 3px;
+  transition: 0.3s;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 18px;
+    height: 5px;
+    border-radius: 3px;
     background-color: $white;
   }
-  &::before{
+  &::before {
     transform: rotate(-45deg);
     right: calc(50% - 4px);
   }
-  &::after{
+  &::after {
     transform: rotate(45deg);
     left: calc(50% - 4px);
   }
-  &:hover, &:focus{ 
-    box-shadow: transparentize($black, .7) 0 0 0 4px; outline: none;
-    background-color: transparentize($black, .4);
+  &:hover,
+  &:focus {
+    box-shadow: transparentize($black, 0.7) 0 0 0 4px;
+    outline: none;
+    background-color: transparentize($black, 0.4);
   }
 
-  &.closed{ transform: rotate(180deg);
-    & ~ .fatFooter{
-      &::after{margin-bottom: -150px;}
+  &.closed {
+    transform: rotate(180deg);
+    & ~ .fatFooter {
+      &::after {
+        margin-bottom: -150px;
+      }
     }
   }
 
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwNormal) {
     right: 9vw;
   }
-  @media screen and (min-width: $wwMaximum){
-    right: calc(50vw - #{$wwMaximum}*.41); 
+  @media screen and (min-width: $wwMaximum) {
+    right: calc(50vw - #{$wwMaximum}* 0.41);
   }
 }
-
 
 // 頁腳的選單 ////////////////////////////////////////////////////////////
-.siteTree{
-  position: relative; z-index: 2; overflow: hidden;
-  margin: 0 auto; padding: 80px 0 60px; font-size: 1rem;
+.siteTree {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 80px 0 60px;
+  font-size: 1rem;
   color: $fontInvert;
-  ul{list-style: none; margin: 0 auto; padding: 0; line-height: 1.2;}
-  
-  &>ul{
-    @extend %primSecWidth; margin: 0 auto;
-    &>li{ padding:0; margin: 0 auto 2em; 
-      a{
-        display: block; position: relative;
-        border-bottom: 1px solid transparent; transition: .2s;
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.2;
+  }
+
+  & > ul {
+    @extend %primSecWidth;
+    margin: 0 auto;
+    & > li {
+      padding: 0;
+      margin: 0 auto 2em;
+      a {
+        display: block;
+        position: relative;
+        border-bottom: 1px solid transparent;
+        transition: 0.2s;
       }
-      &>a{
-        color: #8affdf; border-bottom-width: 2px;font-size: 1.25em;
-        &:hover, &:focus{border-bottom-color: $assistant1;}
+      & > a {
+        color: #8affdf;
+        border-bottom-width: 2px;
+        font-size: 1.25em;
+        &:hover,
+        &:focus {
+          border-bottom-color: $assistant1;
+        }
       }
-      &>ul{ 
+      & > ul {
         font-size: 1em;
-        &>li{margin: 1em 0;
-          &>a{ 
+        & > li {
+          margin: 1em 0;
+          & > a {
             color: $fontInvert;
-            &:hover, &:focus{border-bottom-color: $fontInvert;}
+            &:hover,
+            &:focus {
+              border-bottom-color: $fontInvert;
+            }
           }
         }
-        ul{display: none;} // 第三層開始不顯示
+        ul {
+          display: none;
+        } // 第三層開始不顯示
       }
     }
   }
 
-  @media screen and (min-width: $wwSlim){
-    &>ul{
-      display: flex; flex-flow: row wrap;
-      &>li{
-        flex: 0 0 47%; margin: 1em 0;
-        &:nth-child(2n){margin-left: 6%;}
+  @media screen and (min-width: $wwSlim) {
+    & > ul {
+      display: flex;
+      flex-flow: row wrap;
+      & > li {
+        flex: 0 0 47%;
+        margin: 1em 0;
+        &:nth-child(2n) {
+          margin-left: 6%;
+        }
       }
     }
   }
 
-  @media screen and (min-width: $wwMedium){
-    &>ul{
-      &>li{
+  @media screen and (min-width: $wwMedium) {
+    & > ul {
+      & > li {
         flex: 0 0 30%;
-        &:nth-child(n){ margin-left: 0;}
-        &:nth-child(3n + 2){ margin-left: 5%; margin-right: 5%;}
+        &:nth-child(n) {
+          margin-left: 0;
+        }
+        &:nth-child(3n + 2) {
+          margin-left: 5%;
+          margin-right: 5%;
+        }
       }
     }
   }
 
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwNormal) {
     font-size: 1em;
-    &>ul{
-      &>li {
+    & > ul {
+      & > li {
         flex-basis: 21%;
-        &:nth-child(n){ margin-left: 0; margin-right: 4%;}
-        &:nth-child(4n) {margin-right: 0;}
+        &:nth-child(n) {
+          margin-left: 0;
+          margin-right: 4%;
+        }
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
       }
     }
 
-    &::after{ width: 40%;}
+    &::after {
+      width: 40%;
+    }
   }
-
-
 }
-
-

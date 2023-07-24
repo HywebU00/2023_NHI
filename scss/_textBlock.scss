@@ -1,0 +1,194 @@
+.textBlock {
+  margin-bottom: 3em;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 1em;
+      @include textBlock1;
+      border-radius: 0.8em;
+      &:hover {
+        @include textBlock1hover;
+      }
+      &:nth-child(2n) {
+        @include textBlock2;
+        &:hover {
+          @include textBlock2hover;
+        }
+      }
+      a {
+        display: block;
+        padding: 2em 1.5em;
+        font-size: 1.313rem;
+        text-align: center;
+        font-weight: bolder;
+        color: #fff;
+        text-decoration: none;
+        height: 100%;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+  @media screen and (min-width: $wwMedium) {
+    &.column4,
+    &.column2,
+    &.column3 {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 48%;
+
+          &:nth-child(2n + 2) {
+            @include textBlock1;
+          }
+          &:nth-child(4n + 2),
+          &:nth-child(4n + 3) {
+            @include textBlock2;
+            &:hover {
+              @include textBlock2hover;
+            }
+          }
+          &:hover {
+            @include textBlock1hover;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $wwNormal) {
+    &.column4 {
+      ul {
+        justify-content: flex-start;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 31%;
+          margin: 0 1.166% 1em;
+          &:nth-child(n) {
+            @include textBlock1;
+          }
+          &:nth-child(6n + 2),
+          &:nth-child(6n + 4),
+          &:nth-child(6n + 6) {
+            @include textBlock2;
+            &:hover {
+              @include textBlock2hover;
+            }
+          }
+          &:hover {
+            @include textBlock1hover;
+          }
+        }
+      }
+    }
+    &.column3 {
+      ul {
+        justify-content: flex-start;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 31%;
+          margin: 0 1.166% 1em;
+          &:nth-child(n) {
+            @include textBlock1;
+          }
+          &:nth-child(6n + 2),
+          &:nth-child(6n + 4),
+          &:nth-child(6n + 6) {
+            @include textBlock2;
+            &:hover {
+              @include textBlock2hover;
+            }
+          }
+          &:hover {
+            @include textBlock1hover;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $wwMaximum) {
+    &.column4 {
+      ul {
+        justify-content: flex-start;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 24%;
+          margin: 0 0.5% 1em;
+
+          &:nth-child(n) {
+            @include textBlock1;
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          &:nth-child(8n + 2),
+          &:nth-child(8n + 4),
+          &:nth-child(8n + 5),
+          &:nth-child(8n + 7) {
+            @include textBlock2;
+            &:hover {
+              @include textBlock2hover;
+            }
+          }
+          &:hover {
+            @include textBlock1hover;
+          }
+        }
+      }
+    }
+    &.column2 {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 48%;
+          &:nth-child(2n + 2) {
+            @include textBlock1;
+          }
+          &:nth-child(4n + 2),
+          &:nth-child(4n + 3) {
+            @include textBlock2;
+            &:hover {
+              @include textBlock2hover;
+            }
+          }
+          &:hover {
+            @include textBlock1hover;
+          }
+        }
+      }
+    }
+    &.column3 {
+      ul {
+        justify-content: flex-start;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 31%;
+          margin: 0 1.166% 1em;
+          &:nth-child(n) {
+            @include textBlock1;
+          }
+          &:nth-child(6n + 2),
+          &:nth-child(6n + 4),
+          &:nth-child(6n + 6) {
+            @include textBlock2;
+            &:hover {
+              @include textBlock2hover;
+            }
+          }
+          &:hover {
+            @include textBlock1hover;
+          }
+        }
+      }
+    }
+  }
+}

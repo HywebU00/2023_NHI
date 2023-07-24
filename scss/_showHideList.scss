@@ -51,7 +51,7 @@
         background-color: $secondaryColor;
         &:hover,
         &:focus {
-          background: $focus;
+          background: $primaryColor;
         }
 
         .openclose_btn {
@@ -136,4 +136,10 @@
       width: auto;
     }
   }
+}
+// 圖書概要
+.bookSummary {
+}
+// 展開收合內文
+.showHideContent {
 }
