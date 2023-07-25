@@ -27,7 +27,10 @@
         color: #fff;
         text-decoration: none;
         height: 100%;
-        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+        &:hover {
+          text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8), 0px 0px 5px rgba(0, 0, 0, 0.8);
+        }
       }
     }
   }
@@ -42,9 +45,11 @@
         li {
           flex: 0 0 auto;
           flex-basis: 48%;
-
-          &:nth-child(2n + 2) {
+          &:nth-child(n) {
             @include textBlock1;
+            &:hover {
+              @include textBlock1hover;
+            }
           }
           &:nth-child(4n + 2),
           &:nth-child(4n + 3) {
@@ -70,6 +75,9 @@
           margin: 0 1.166% 1em;
           &:nth-child(n) {
             @include textBlock1;
+            &:hover {
+              @include textBlock1hover;
+            }
           }
           &:nth-child(6n + 2),
           &:nth-child(6n + 4),
@@ -94,6 +102,9 @@
           margin: 0 1.166% 1em;
           &:nth-child(n) {
             @include textBlock1;
+            &:hover {
+              @include textBlock1hover;
+            }
           }
           &:nth-child(6n + 2),
           &:nth-child(6n + 4),
@@ -121,6 +132,9 @@
 
           &:nth-child(n) {
             @include textBlock1;
+            &:hover {
+              @include textBlock1hover;
+            }
             a {
               display: flex;
               align-items: center;

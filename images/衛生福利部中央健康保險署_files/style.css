@@ -6239,7 +6239,7 @@ table.formLayout td {
   background: rgb(1, 127, 140);
   background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
   border: 4px solid #72f2ff;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
 }
 .textBlock ul li:nth-child(2n) {
   background-image: url("../images/textBlock_bg2.jpg");
@@ -6248,10 +6248,9 @@ table.formLayout td {
   border: 4px solid #fff;
 }
 .textBlock ul li:nth-child(2n):hover {
-  background: rgb(44, 130, 93);
-  background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-  border: 4px solid #79ffce;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: rgb(44, 130, 93) !important;
+  background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%) !important;
+  border: 4px solid #79ffce !important;
 }
 .textBlock ul li a {
   display: block;
@@ -6262,10 +6261,6 @@ table.formLayout td {
   color: #fff;
   text-decoration: none;
   height: 100%;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
-}
-.textBlock ul li a:hover {
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8), 0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 @media screen and (min-width: 700px) {
   .textBlock.column4 ul, .textBlock.column2 ul, .textBlock.column3 ul {
@@ -6289,227 +6284,12 @@ table.formLayout td {
     background: rgb(1, 127, 140);
     background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
     border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column4 ul li:nth-child(4n+2), .textBlock.column4 ul li:nth-child(4n+3), .textBlock.column2 ul li:nth-child(4n+2), .textBlock.column2 ul li:nth-child(4n+3), .textBlock.column3 ul li:nth-child(4n+2), .textBlock.column3 ul li:nth-child(4n+3) {
-    background-image: url("../images/textBlock_bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-  }
-  .textBlock.column4 ul li:nth-child(4n+2):hover, .textBlock.column4 ul li:nth-child(4n+3):hover, .textBlock.column2 ul li:nth-child(4n+2):hover, .textBlock.column2 ul li:nth-child(4n+3):hover, .textBlock.column3 ul li:nth-child(4n+2):hover, .textBlock.column3 ul li:nth-child(4n+3):hover {
-    background: rgb(44, 130, 93);
-    background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-    border: 4px solid #79ffce;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
   .textBlock.column4 ul li:hover, .textBlock.column2 ul li:hover, .textBlock.column3 ul li:hover {
     background-image: none;
     background: rgb(1, 127, 140);
     background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
     border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .textBlock.column4 ul {
-    justify-content: flex-start;
-  }
-  .textBlock.column4 ul li {
-    flex: 0 0 auto;
-    flex-basis: 31%;
-    margin: 0 1.166% 1em;
-  }
-  .textBlock.column4 ul li:nth-child(n) {
-    background-image: url("../images/textBlock_bg1.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-    transition: 0.5s;
-  }
-  .textBlock.column4 ul li:nth-child(n):hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column4 ul li:nth-child(6n+2), .textBlock.column4 ul li:nth-child(6n+4), .textBlock.column4 ul li:nth-child(6n+6) {
-    background-image: url("../images/textBlock_bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-  }
-  .textBlock.column4 ul li:nth-child(6n+2):hover, .textBlock.column4 ul li:nth-child(6n+4):hover, .textBlock.column4 ul li:nth-child(6n+6):hover {
-    background: rgb(44, 130, 93);
-    background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-    border: 4px solid #79ffce;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column4 ul li:hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column3 ul {
-    justify-content: flex-start;
-  }
-  .textBlock.column3 ul li {
-    flex: 0 0 auto;
-    flex-basis: 31%;
-    margin: 0 1.166% 1em;
-  }
-  .textBlock.column3 ul li:nth-child(n) {
-    background-image: url("../images/textBlock_bg1.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-    transition: 0.5s;
-  }
-  .textBlock.column3 ul li:nth-child(n):hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column3 ul li:nth-child(6n+2), .textBlock.column3 ul li:nth-child(6n+4), .textBlock.column3 ul li:nth-child(6n+6) {
-    background-image: url("../images/textBlock_bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-  }
-  .textBlock.column3 ul li:nth-child(6n+2):hover, .textBlock.column3 ul li:nth-child(6n+4):hover, .textBlock.column3 ul li:nth-child(6n+6):hover {
-    background: rgb(44, 130, 93);
-    background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-    border: 4px solid #79ffce;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column3 ul li:hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .textBlock.column4 ul {
-    justify-content: flex-start;
-  }
-  .textBlock.column4 ul li {
-    flex: 0 0 auto;
-    flex-basis: 24%;
-    margin: 0 0.5% 1em;
-  }
-  .textBlock.column4 ul li:nth-child(n) {
-    background-image: url("../images/textBlock_bg1.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-    transition: 0.5s;
-  }
-  .textBlock.column4 ul li:nth-child(n):hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column4 ul li:nth-child(n) a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .textBlock.column4 ul li:nth-child(8n+2), .textBlock.column4 ul li:nth-child(8n+4), .textBlock.column4 ul li:nth-child(8n+5), .textBlock.column4 ul li:nth-child(8n+7) {
-    background-image: url("../images/textBlock_bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-  }
-  .textBlock.column4 ul li:nth-child(8n+2):hover, .textBlock.column4 ul li:nth-child(8n+4):hover, .textBlock.column4 ul li:nth-child(8n+5):hover, .textBlock.column4 ul li:nth-child(8n+7):hover {
-    background: rgb(44, 130, 93);
-    background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-    border: 4px solid #79ffce;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column4 ul li:hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column2 ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .textBlock.column2 ul li {
-    flex: 0 0 auto;
-    flex-basis: 48%;
-  }
-  .textBlock.column2 ul li:nth-child(2n+2) {
-    background-image: url("../images/textBlock_bg1.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-    transition: 0.5s;
-  }
-  .textBlock.column2 ul li:nth-child(4n+2), .textBlock.column2 ul li:nth-child(4n+3) {
-    background-image: url("../images/textBlock_bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-  }
-  .textBlock.column2 ul li:nth-child(4n+2):hover, .textBlock.column2 ul li:nth-child(4n+3):hover {
-    background: rgb(44, 130, 93);
-    background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-    border: 4px solid #79ffce;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column2 ul li:hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column3 ul {
-    justify-content: flex-start;
-  }
-  .textBlock.column3 ul li {
-    flex: 0 0 auto;
-    flex-basis: 31%;
-    margin: 0 1.166% 1em;
-  }
-  .textBlock.column3 ul li:nth-child(n) {
-    background-image: url("../images/textBlock_bg1.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-    transition: 0.5s;
-  }
-  .textBlock.column3 ul li:nth-child(6n+2), .textBlock.column3 ul li:nth-child(6n+4), .textBlock.column3 ul li:nth-child(6n+6) {
-    background-image: url("../images/textBlock_bg2.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    border: 4px solid #fff;
-  }
-  .textBlock.column3 ul li:nth-child(6n+2):hover, .textBlock.column3 ul li:nth-child(6n+4):hover, .textBlock.column3 ul li:nth-child(6n+6):hover {
-    background: rgb(44, 130, 93);
-    background: linear-gradient(180deg, rgb(44, 130, 93) 0%, rgb(7, 101, 97) 100%);
-    border: 4px solid #79ffce;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  }
-  .textBlock.column3 ul li:hover {
-    background-image: none;
-    background: rgb(1, 127, 140);
-    background: linear-gradient(180deg, rgb(1, 127, 140) 0%, rgb(0, 74, 102) 100%);
-    border: 4px solid #72f2ff;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
 }
 
