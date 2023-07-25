@@ -198,7 +198,7 @@
     }
   }
 }
-// 展開收合內文
+// 展開收合區塊
 .showHideContent {
   padding: 1.5em;
   border: 1px solid $borderColorLight;
@@ -214,20 +214,21 @@
     color: $secondaryColor;
   }
 }
+//展開收合內文
 .expansile {
   position: relative;
   overflow: hidden;
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 2em 0;
   border-bottom: 1px solid #ffe;
   line-height: 1.7;
   color: #000;
   border-radius: 6px;
-
+  box-sizing: content-box;
   overflow: hidden;
 }
 .expansile.partial {
-  height: 5.5em;
+  height: 1.5em;
 }
 .expansile:after {
   content: '';
@@ -268,8 +269,9 @@
   cursor: pointer;
   z-index: 9;
 }
-.expansile .readAll:hover {
-  // box-shadow: #222 0 0 0 2px;
+.expansile .readAll:hover,
+.expansile .readAll:focus {
+  box-shadow: none;
 }
 .expansile .readAll:before {
   content: '';

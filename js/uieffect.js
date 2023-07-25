@@ -1004,7 +1004,7 @@ $(document).ready(function () {
   var textAll = '查看全文';
   _expansile.addClass('partial').wrapInner('<div class="innerPart"></div>');
   var hPartial = _expansile.height();
-  _expansile.append('<span class="readAll"></span>');
+  _expansile.append('<button type="button" class="readAll"></button>');
 
   _expansile.each(function () {
     var _this = $(this);

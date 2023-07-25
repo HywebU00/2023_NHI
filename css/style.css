@@ -5821,17 +5821,18 @@ table.formLayout td {
 .expansile {
   position: relative;
   overflow: hidden;
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 2em 0;
   border-bottom: 1px solid #ffe;
   line-height: 1.7;
   color: #000;
   border-radius: 6px;
+  box-sizing: content-box;
   overflow: hidden;
 }
 
 .expansile.partial {
-  height: 5.5em;
+  height: 1.5em;
 }
 
 .expansile:after {
@@ -5874,6 +5875,11 @@ table.formLayout td {
   background-color: #018392;
   cursor: pointer;
   z-index: 9;
+}
+
+.expansile .readAll:hover,
+.expansile .readAll:focus {
+  box-shadow: none;
 }
 
 .expansile .readAll:before {
