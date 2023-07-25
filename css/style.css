@@ -3663,6 +3663,7 @@ fieldset legend {
     display: block;
     flex: 0 0 80px;
     height: 80px;
+    border-radius: 0;
   }
   .appAndSocialMedia .appgroup .app_block .text:nth-last-child(2) {
     margin-right: 2%;
