@@ -994,3 +994,48 @@ $(function () {
   });
   //
 });
+
+// 內文展開收合
+$(document).ready(function () {
+  var _window = $(window);
+
+  var _expansile = $('.expansile');
+  var textLess = '收起全文';
+  var textAll = '查看全文';
+  _expansile.addClass('partial').wrapInner('<div class="innerPart"></div>');
+  var hPartial = _expansile.height();
+  _expansile.append('<span class="readAll"></span>');
+
+  _expansile.each(function () {
+    var _this = $(this);
+    var _readAll = _this.find('.readAll').text(textAll);
+    var hFull;
+    _readAll.click(function () {
+      if (_this.hasClass('partial')) {
+        hFull = _this.find('.innerPart').innerHeight();
+        _this.animate({ height: hFull }, 500, function () {
+          _this.removeClass('partial');
+          _readAll.text(textLess);
+        });
+      } else {
+        _this.animate({ height: hPartial }, 500, function () {
+          _this.addClass('partial');
+          _readAll.text(textAll);
+        });
+      }
+    });
+  });
+
+  function resetHeight() {
+    _expansile.removeAttr('style');
+  }
+
+  // window resize
+  var winResizeTimer;
+  _window.resize(function () {
+    clearTimeout(winResizeTimer);
+    winResizeTimer = setTimeout(function () {
+      resetHeight();
+    });
+  });
+});

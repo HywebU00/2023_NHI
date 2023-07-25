@@ -58,7 +58,7 @@ body * {
   background-color: #fff;
 }
 .main.inner {
-  padding: 0 0 120px;
+  padding: 0 0 1em;
 }
 
 .blockHeader {
@@ -635,7 +635,6 @@ button.closeThis:focus {
   border-radius: 50%;
   margin: -22px 0 0 -22px;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: #fff 0 0 0 4px;
 }
 .videoThumb::after {
   width: 0;
@@ -653,7 +652,7 @@ a:focus .videoThumb::after {
 }
 a:hover .videoThumb::before,
 a:focus .videoThumb::before {
-  background-color: rgba(204, 0, 0, 0.8); /* box-shadow: #c00b 0 0 0 4px; */
+  background-color: rgba(0, 0, 0, 0.8); /* box-shadow: #c00b 0 0 0 4px; */
 }
 
 .goTop {
@@ -960,6 +959,10 @@ kbd {
 }
 .preface a {
   color: #004c7c;
+  text-decoration: none;
+}
+.preface a:hover {
+  text-decoration: underline;
 }
 .preface h3 {
   font-size: 1.25em;
@@ -1337,7 +1340,7 @@ a:focus .fileType.other {
 }
 
 .wordred {
-  color: #d70202;
+  color: #e81158;
 }
 
 .buttonCenter {
@@ -2644,7 +2647,8 @@ input[type=button] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  height: 3.2em;
+  font-size: 1.125rem;
+  height: 3em;
   line-height: 3.1em;
   padding: 0 1em;
   margin: 3px;
@@ -2665,9 +2669,10 @@ input[type=reset]:hover,
 input[type=reset]:focus,
 input[type=button]:hover,
 input[type=button]:focus {
-  background-color: #01425c;
+  background: #004f73;
+  background-color: #004f73;
   border-color: transparent;
-  box-shadow: #01425c 0 0 0 2px;
+  box-shadow: #004f73 0 0 0 2px;
 }
 
 input[type=reset] {
@@ -2676,7 +2681,8 @@ input[type=reset] {
   border-color: #c1c4c6;
 }
 input[type=reset]:hover, input[type=reset]:focus {
-  background-color: #fff;
+  background-color: #424344;
+  box-shadow: none;
 }
 
 .button {
@@ -3582,14 +3588,15 @@ fieldset legend {
 }
 .appAndSocialMedia .appgroup .app_block img {
   display: block;
-  border-radius: 50%;
 }
 .appAndSocialMedia .appgroup .app_block img.leading {
   flex: 0 0 15vw;
   height: 15vw;
+  border-radius: 50%;
 }
 .appAndSocialMedia .appgroup .app_block img.qrcode {
   display: none;
+  border-radius: 0;
 }
 .appAndSocialMedia .appgroup .app_block .text {
   flex: 1 1 auto;
@@ -3663,7 +3670,6 @@ fieldset legend {
     display: block;
     flex: 0 0 80px;
     height: 80px;
-    border-radius: 0;
   }
   .appAndSocialMedia .appgroup .app_block .text:nth-last-child(2) {
     margin-right: 2%;
@@ -4504,7 +4510,7 @@ fieldset legend {
   margin-top: 30px;
   padding: 10px 0;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.125em;
   line-height: 1.5;
 }
 .pagination form {
@@ -4544,10 +4550,10 @@ fieldset legend {
   transition: 0.2s;
 }
 .pagination .items a:hover, .pagination .items a:focus {
-  box-shadow: #004f73 0 0 0 2px;
+  box-shadow: #e81158 0 0 0 2px;
 }
 .pagination .items a.active {
-  background: #004f73;
+  background: #e81158;
   color: #fff;
 }
 .pagination .page {
@@ -4569,21 +4575,55 @@ fieldset legend {
   height: 2.5em;
   line-height: 2.5em;
   color: #081c36;
-  border-radius: 3px;
   background-color: #fff;
-  box-shadow: #d2d2d2 0 0 0 1px;
   transition: 0.2s;
+  position: relative;
+  padding-left: 8px;
+}
+.pagination .page > li a:before {
+  content: "";
+  width: 5px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  top: 49%;
 }
 .pagination .page > li a:hover, .pagination .page > li a:focus {
-  box-shadow: #004f73 0 0 0 2px;
+  color: #e81158;
+}
+.pagination .page > li a:hover:before, .pagination .page > li a:focus:before {
+  content: "";
+  width: 5px;
+  height: 2px;
+  background-color: #e81158;
+  position: absolute;
+  left: 0;
+  top: 49%;
 }
 .pagination .page > li.active a {
-  background-color: #004f73;
-  color: #fff;
-  box-shadow: #004f73 0 0 0 1px;
+  background-color: #fff;
+  color: #e81158;
+  position: relative;
 }
-.pagination .page > li.active a:hover, .pagination .page > li.active a:focus {
-  box-shadow: #fff 0 0 0 1px, #004f73 0 0 0 3px;
+.pagination .page > li.active a:before {
+  content: "";
+  width: 5px;
+  height: 2px;
+  background-color: #e81158;
+  position: absolute;
+  left: 0;
+  top: 49%;
+}
+.pagination .page > li.active a:after {
+  content: "";
+  width: auto;
+  height: 2px;
+  background-color: #e81158;
+  position: absolute;
+  right: 5px;
+  left: 0;
+  bottom: 0;
 }
 .pagination .page > li.first, .pagination .page > li.prev, .pagination .page > li.next, .pagination .page > li.last {
   text-indent: -20em;
@@ -4595,12 +4635,13 @@ fieldset legend {
 }
 .pagination .page > li.first a::before, .pagination .page > li.first a::after, .pagination .page > li.prev a::before, .pagination .page > li.prev a::after, .pagination .page > li.next a::before, .pagination .page > li.next a::after, .pagination .page > li.last a::before, .pagination .page > li.last a::after {
   content: "";
+  background-color: transparent;
   position: absolute;
   top: 50%;
   width: 8px;
   height: 8px;
   margin-top: -5px;
-  border: 2px solid #081c36;
+  border: 2px solid #aaa;
   border-top: none;
   border-right: none;
   transform: rotate(45deg);
@@ -4621,7 +4662,7 @@ fieldset legend {
   transform: rotate(180deg);
 }
 .category {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .category ul {
   list-style: none;
@@ -4645,9 +4686,8 @@ fieldset legend {
   padding: 0 1.5em;
   border-radius: 2em;
   text-decoration: none;
-  background-color: #fff;
-  color: #081c36;
-  box-shadow: #c1c4c6 0 0 0 1px inset;
+  background-color: #767676;
+  color: #fff;
   transition: 0.2s;
 }
 .category li a:hover, .category li a:focus {
@@ -4676,7 +4716,7 @@ table.formLayout th {
   text-align: center;
   color: #fff;
   background-color: #767676;
-  width: 15%;
+  width: 150px;
 }
 table.formLayout td {
   padding: 4px;
@@ -4802,7 +4842,7 @@ table.formLayout td {
   position: relative;
   height: 2.5em;
   line-height: 2.4;
-  min-width: 8em;
+  width: 150px;
   padding: 0 44px 0 28px;
   text-align: left;
   background-image: linear-gradient(0deg, #00486a, #018e9f);
@@ -4823,7 +4863,7 @@ table.formLayout td {
   border-color: #fff;
 }
 .drawer button.handle:focus {
-  box-shadow: #374459 0 0 0 2px;
+  box-shadow: none;
 }
 .drawer button.handle::after {
   content: "";
@@ -4865,7 +4905,6 @@ table.formLayout td {
   width: 100%;
   line-height: 1.8;
   font-size: 1.125em;
-  border-top: 2px solid #c1c4c6;
   border-bottom: 2px solid #c1c4c6;
 }
 .cpMeta > table td,
@@ -4877,7 +4916,6 @@ table.formLayout td {
   text-align: center;
 }
 .cpMeta > table thead th {
-  border-bottom: 1px solid #434242;
   background-color: #018392;
   color: #fff;
 }
@@ -5619,7 +5657,7 @@ table.formLayout td {
   height: auto;
   line-height: 1.5;
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: normal;
   background: none;
   border: none;
   box-shadow: none;
@@ -5704,6 +5742,164 @@ table.formLayout td {
   }
 }
 
+.bookpreface {
+  font-size: 1.125rem;
+  background-color: #018392;
+  color: #fff;
+  padding: 1.5em;
+  line-height: 1.7em;
+  margin-bottom: 0.5em;
+}
+
+.bookSummaryblock {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5em;
+  background-color: #eee;
+  margin-bottom: 2em;
+}
+.bookSummaryblock .bookbox {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.bookSummaryblock .bookbox img {
+  width: 200px;
+}
+.bookSummaryblock .bookSummary {
+  flex: 1 1 auto;
+  flex-basis: 100%;
+  padding: 0 0 0 1em;
+  box-sizing: border-box;
+}
+.bookSummaryblock .bookSummary .title {
+  font-size: 1.25rem;
+  color: #018392;
+  font-weight: bolder;
+  margin-bottom: 0.5em;
+}
+.bookSummaryblock .bookSummary p {
+  line-height: 1.7em;
+}
+.bookSummaryblock .bookSummary ol li {
+  line-height: 1.7em;
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 700px) {
+  .bookSummaryblock {
+    flex-wrap: nowrap;
+  }
+  .bookSummaryblock .bookbox {
+    flex-basis: 200px;
+    margin-right: 1em;
+    overflow: hidden;
+  }
+  .bookSummaryblock .bookSummary {
+    flex: 1 1 auto;
+    flex-basis: calc(100% - 200px - 1em);
+    overflow: hidden;
+  }
+}
+
+.showHideContent {
+  padding: 1.5em;
+  border: 1px solid #d2d2d2;
+}
+.showHideContent .title {
+  font-size: 1.25rem;
+  color: #018392;
+  font-weight: bolder;
+  margin-bottom: 1em;
+}
+.showHideContent .authorname {
+  text-align: right;
+  font-size: 1.125rem;
+  color: #018392;
+}
+
+.expansile {
+  position: relative;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 2em 0;
+  border-bottom: 1px solid #ffe;
+  line-height: 1.7;
+  color: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.expansile.partial {
+  height: 5.5em;
+}
+
+.expansile:after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: 2vw;
+  bottom: 0;
+  top: auto;
+  height: 1.6em;
+  width: 16em;
+  background: linear-gradient(to right, rgba(191, 194, 194, 0) 1%, #fff 50%);
+}
+
+.expansile.partial:after {
+  display: inline-block;
+}
+
+.expansile p {
+  margin: 0;
+  padding: 0;
+}
+
+.expansile p + p {
+  margin-top: 1.4em;
+}
+
+.expansile .readAll {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1.6em;
+  line-height: 1.6;
+  padding: 0 0.6em 0 22px;
+  margin: 0;
+  font-size: 1em;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.2s;
+  background-color: #018392;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.expansile .readAll:before {
+  content: "";
+  display: inline-block;
+  margin: 0 auto;
+  width: 6px;
+  height: 6px;
+  border-width: 2px;
+  border-color: #fff;
+  border-style: solid;
+  border-left: none;
+  border-top: none;
+  transform: rotate(225deg);
+  transition: 0.3s;
+  position: absolute;
+  left: 8px;
+  top: 0.6em;
+  transition: 0.3s;
+}
+
+.expansile.partial .readAll:before {
+  transform: rotate(45deg);
+  top: 0.4em;
+}
+
 .list > table {
   border-collapse: collapse;
   line-height: 1.5;
@@ -5775,7 +5971,6 @@ table.formLayout td {
 .list > table td.title {
   position: relative;
   text-align: left;
-  font-size: 1.125em;
 }
 .list > table td > a {
   display: block;
@@ -5909,12 +6104,13 @@ table.formLayout td {
   position: absolute;
   left: 10px;
   top: calc(1em + 7px);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  box-shadow: #018392 0 0 0 5px;
-  background-color: #fff;
-  transition: 0.2s;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #898989;
+  border-color: #898989 #898989 transparent transparent;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(45deg);
 }
 .listTree > ul > li > a,
 .listTree > ul > li .title {
@@ -5923,10 +6119,10 @@ table.formLayout td {
 }
 .listTree > ul > li > a {
   color: #004c7c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .listTree > ul > li > a:hover, .listTree > ul > li > a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .listTree > ul > li .downloadFiles {
   flex: 1 1 auto;
@@ -5950,12 +6146,14 @@ table.formLayout td {
   padding: 10px 10px 10px 30px;
   border-left: 6px solid #018392;
   transition: 0.2s;
-  color: #004f73;
+  color: #004c7c;
   background-color: #f5f5f5;
   border-radius: 5px;
+  text-decoration: none;
 }
 .listTree > ul > li > ul > li > a:hover, .listTree > ul > li > ul > li > a:focus {
-  color: #018392;
+  text-decoration: underline;
+  background-color: #eee;
 }
 .listTree > ul > li .contentblock {
   background-color: #f5f5f5;
@@ -6089,15 +6287,6 @@ table.formLayout td {
   transition: 0.3s;
   border-radius: 20px;
 }
-.thumbnail > ul > li > a:hover {
-  border-radius: 20px;
-}
-.thumbnail > ul > li > a:hover img {
-  box-shadow: #c1c4c6 0 0 0 1px, #c1c4c6 0 4px 16px;
-}
-.thumbnail > ul > li > a:focus img {
-  box-shadow: #b5e7e4 0 0 0 2px, #c1c4c6 0 4px 16px;
-}
 .thumbnail > ul > li img {
   display: block;
   width: 100%;
@@ -6196,12 +6385,6 @@ table.formLayout td {
     text-decoration: underline;
     color: #000;
   }
-  .thumbnail > ul > li > a:hover img {
-    box-shadow: #004f73 0 0 0 1px, #c1c4c6 0 0 20px;
-  }
-  .thumbnail > ul > li > a:focus img {
-    box-shadow: #004f73 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
-  }
   .thumbnail > ul > li img {
     height: calc((94vw/ 4 - 22px) * 0.6);
   }
@@ -6230,7 +6413,7 @@ table.formLayout td {
   margin-bottom: 1em;
   background-image: url("../images/textBlock_bg1.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top left;
   border: 4px solid #fff;
   transition: 0.5s;
   border-radius: 0.8em;
@@ -6245,7 +6428,7 @@ table.formLayout td {
 .textBlock ul li:nth-child(2n) {
   background-image: url("../images/textBlock_bg2.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top left;
   border: 4px solid #fff;
 }
 .textBlock ul li:nth-child(2n):hover {
@@ -6281,7 +6464,7 @@ table.formLayout td {
   .textBlock.column4 ul li:nth-child(n), .textBlock.column2 ul li:nth-child(n), .textBlock.column3 ul li:nth-child(n) {
     background-image: url("../images/textBlock_bg1.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
     transition: 0.5s;
   }
@@ -6295,7 +6478,7 @@ table.formLayout td {
   .textBlock.column4 ul li:nth-child(4n+2), .textBlock.column4 ul li:nth-child(4n+3), .textBlock.column2 ul li:nth-child(4n+2), .textBlock.column2 ul li:nth-child(4n+3), .textBlock.column3 ul li:nth-child(4n+2), .textBlock.column3 ul li:nth-child(4n+3) {
     background-image: url("../images/textBlock_bg2.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
   }
   .textBlock.column4 ul li:nth-child(4n+2):hover, .textBlock.column4 ul li:nth-child(4n+3):hover, .textBlock.column2 ul li:nth-child(4n+2):hover, .textBlock.column2 ul li:nth-child(4n+3):hover, .textBlock.column3 ul li:nth-child(4n+2):hover, .textBlock.column3 ul li:nth-child(4n+3):hover {
@@ -6324,7 +6507,7 @@ table.formLayout td {
   .textBlock.column4 ul li:nth-child(n) {
     background-image: url("../images/textBlock_bg1.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
     transition: 0.5s;
   }
@@ -6338,7 +6521,7 @@ table.formLayout td {
   .textBlock.column4 ul li:nth-child(6n+2), .textBlock.column4 ul li:nth-child(6n+4), .textBlock.column4 ul li:nth-child(6n+6) {
     background-image: url("../images/textBlock_bg2.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
   }
   .textBlock.column4 ul li:nth-child(6n+2):hover, .textBlock.column4 ul li:nth-child(6n+4):hover, .textBlock.column4 ul li:nth-child(6n+6):hover {
@@ -6365,7 +6548,7 @@ table.formLayout td {
   .textBlock.column3 ul li:nth-child(n) {
     background-image: url("../images/textBlock_bg1.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
     transition: 0.5s;
   }
@@ -6379,7 +6562,7 @@ table.formLayout td {
   .textBlock.column3 ul li:nth-child(6n+2), .textBlock.column3 ul li:nth-child(6n+4), .textBlock.column3 ul li:nth-child(6n+6) {
     background-image: url("../images/textBlock_bg2.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
   }
   .textBlock.column3 ul li:nth-child(6n+2):hover, .textBlock.column3 ul li:nth-child(6n+4):hover, .textBlock.column3 ul li:nth-child(6n+6):hover {
@@ -6408,7 +6591,7 @@ table.formLayout td {
   .textBlock.column4 ul li:nth-child(n) {
     background-image: url("../images/textBlock_bg1.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
     transition: 0.5s;
   }
@@ -6427,7 +6610,7 @@ table.formLayout td {
   .textBlock.column4 ul li:nth-child(8n+2), .textBlock.column4 ul li:nth-child(8n+4), .textBlock.column4 ul li:nth-child(8n+5), .textBlock.column4 ul li:nth-child(8n+7) {
     background-image: url("../images/textBlock_bg2.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
   }
   .textBlock.column4 ul li:nth-child(8n+2):hover, .textBlock.column4 ul li:nth-child(8n+4):hover, .textBlock.column4 ul li:nth-child(8n+5):hover, .textBlock.column4 ul li:nth-child(8n+7):hover {
@@ -6455,14 +6638,14 @@ table.formLayout td {
   .textBlock.column2 ul li:nth-child(2n+2) {
     background-image: url("../images/textBlock_bg1.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
     transition: 0.5s;
   }
   .textBlock.column2 ul li:nth-child(4n+2), .textBlock.column2 ul li:nth-child(4n+3) {
     background-image: url("../images/textBlock_bg2.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
   }
   .textBlock.column2 ul li:nth-child(4n+2):hover, .textBlock.column2 ul li:nth-child(4n+3):hover {
@@ -6489,14 +6672,14 @@ table.formLayout td {
   .textBlock.column3 ul li:nth-child(n) {
     background-image: url("../images/textBlock_bg1.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
     transition: 0.5s;
   }
   .textBlock.column3 ul li:nth-child(6n+2), .textBlock.column3 ul li:nth-child(6n+4), .textBlock.column3 ul li:nth-child(6n+6) {
     background-image: url("../images/textBlock_bg2.jpg");
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: top left;
     border: 4px solid #fff;
   }
   .textBlock.column3 ul li:nth-child(6n+2):hover, .textBlock.column3 ul li:nth-child(6n+4):hover, .textBlock.column3 ul li:nth-child(6n+6):hover {
@@ -6512,6 +6695,63 @@ table.formLayout td {
     border: 4px solid #72f2ff;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   }
+}
+
+.qaBlock {
+  font-size: 1.125rem;
+}
+.qaBlock .qalist {
+  border-bottom: 1px dashed #d2d2d2;
+  margin-bottom: 1.5em;
+}
+.qaBlock .qalist .question {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  color: #018392;
+  font-size: 1.375rem;
+}
+.qaBlock .qalist .question span {
+  font-size: 2.5rem;
+  color: #018392;
+  flex: 0 0 1.5em;
+  padding: 0;
+  line-height: 1;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.qaBlock .qalist .answer {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.7;
+}
+.qaBlock .qalist .answer span {
+  font-size: 2.5rem;
+  color: #004f73;
+  flex: 0 0 auto;
+  flex-basis: 1.5em;
+  padding: 0;
+  line-height: 1;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.qaBlock .qalist .answer .Acontent {
+  flex: 1 1 auto;
+  flex-basis: calc(100% - 2em);
 }
 
 .sitemap {

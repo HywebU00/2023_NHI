@@ -60,12 +60,10 @@ $btnBg2: #01425c;
 $footBg: $primaryColor;
 $sidebarBg: $grayDark;
 
-// $textBlock1: $primaryColor;
-// $textBlock2: #017383;
 @mixin textBlock1 {
   background-image: url('../images/textBlock_bg1.jpg');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top left;
   border: 4px solid #fff;
   transition: 0.5s;
 }
@@ -79,7 +77,7 @@ $sidebarBg: $grayDark;
 @mixin textBlock2 {
   background-image: url('../images/textBlock_bg2.jpg');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top left;
   border: 4px solid #fff;
 }
 @mixin textBlock2hover {

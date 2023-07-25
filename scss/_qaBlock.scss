@@ -1,0 +1,59 @@
+.qaBlock {
+  font-size: 1.125rem;
+
+  .qalist {
+    border-bottom: 1px dashed $borderColorLight;
+    margin-bottom: 1.5em;
+    .question {
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+      line-height: 1.7;
+      color: $secondaryColor;
+      font-size: 1.375rem;
+      span {
+        font-size: 2.5rem;
+        color: $secondaryColor;
+        flex: 0 0 1.5em;
+        padding: 0;
+        line-height: 1;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 0.5em;
+      }
+    }
+
+    .answer {
+      margin-bottom: 1em;
+      display: flex;
+      align-items: flex-start;
+      line-height: 1.7;
+
+      span {
+        font-size: 2.5rem;
+        color: $primaryColor;
+        flex: 0 0 auto;
+        flex-basis: 1.5em;
+        padding: 0;
+        line-height: 1;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 0.5em;
+      }
+      .Acontent {
+        flex: 1 1 auto;
+        flex-basis: calc(100% - 2em);
+      }
+    }
+  }
+}

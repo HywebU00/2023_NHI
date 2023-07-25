@@ -23,18 +23,18 @@
         transition: 0.3s;
         border-radius: 20px;
 
-        &:hover {
-          img {
-            box-shadow: $borderColor 0 0 0 1px, $borderColor 0 4px 16px;
-          }
+        // &:hover {
+        //   img {
+        //     box-shadow: $borderColor 0 0 0 1px, $borderColor 0 4px 16px;
+        //   }
 
-          border-radius: 20px;
-        }
-        &:focus {
-          img {
-            box-shadow: $assistant1 0 0 0 2px, $borderColor 0 4px 16px;
-          }
-        }
+        //   border-radius: 20px;
+        // }
+        // &:focus {
+        //   img {
+        //     box-shadow: $assistant1 0 0 0 2px, $borderColor 0 4px 16px;
+        //   }
+        // }
       }
 
       img {
@@ -143,16 +143,16 @@
               color: $fontColorDark;
             }
           }
-          &:hover {
-            img {
-              box-shadow: $primaryColor 0 0 0 1px, $borderColor 0 0 20px;
-            }
-          }
-          &:focus {
-            img {
-              box-shadow: $primaryColor 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
-            }
-          }
+          // &:hover {
+          //   img {
+          //     box-shadow: $primaryColor 0 0 0 1px, $borderColor 0 0 20px;
+          //   }
+          // }
+          // &:focus {
+          //   img {
+          //     box-shadow: $primaryColor 0 0 0 2px, rgba(0, 0, 0, 0.8) 0 4px 16px;
+          //   }
+          // }
         }
         img {
           height: calc((#{$normalWidth}/ 4 - 22px) * 0.6);

@@ -606,7 +606,7 @@ button.closeThis {
     border-radius: 50%;
     margin: -22px 0 0 -22px;
     background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: #fff 0 0 0 4px;
+    // box-shadow: #fff 0 0 0 4px;
   }
   &::after {
     width: 0;
@@ -624,7 +624,7 @@ a:focus .videoThumb {
     opacity: 1;
   }
   &::before {
-    background-color: rgba(204, 0, 0, 0.8); /* box-shadow: #c00b 0 0 0 4px; */
+    background-color: rgba(0, 0, 0, 0.8); /* box-shadow: #c00b 0 0 0 4px; */
   }
 }
 

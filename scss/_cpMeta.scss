@@ -9,7 +9,7 @@
     width: 100%;
     line-height: 1.8;
     font-size: 1.125em;
-    border-top: 2px solid $borderColor;
+
     border-bottom: 2px solid $borderColor;
     td,
     th {
@@ -19,7 +19,6 @@
     thead {
       text-align: center;
       th {
-        border-bottom: 1px solid $borderColorDark;
         background-color: $secondaryColor;
         color: #fff;
         &:first-child {

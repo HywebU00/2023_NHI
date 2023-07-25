@@ -29,13 +29,15 @@
       }
       img {
         display: block;
-        border-radius: 50%;
+
         &.leading {
           flex: 0 0 15vw;
           height: 15vw;
+          border-radius: 50%;
         }
         &.qrcode {
           display: none;
+          border-radius: 0;
         }
       }
       .text {
@@ -113,7 +115,6 @@
             display: block;
             flex: 0 0 80px;
             height: 80px;
-            border-radius: 0;
           }
         }
         .text {
