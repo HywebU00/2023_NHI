@@ -72,7 +72,7 @@ body * {
 .blockHeader .major {
   display: block;
   position: relative;
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   font-weight: bold;
   letter-spacing: 2px;
   padding-bottom: 10px;
@@ -91,6 +91,11 @@ body * {
   background-image: linear-gradient(90deg, #004f73, #0094a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 700px) {
+  .blockHeader .major {
+    font-size: 2.125rem;
+  }
 }
 
 a:focus {
@@ -1953,7 +1958,7 @@ a:focus .fileType.other {
 }
 .webHeader h1 {
   margin: 0 60px;
-  padding: 8px 0;
+  padding: 12px 0;
   height: 80px;
   background-size: auto 60px;
 }
@@ -1965,7 +1970,7 @@ a:focus .fileType.other {
 }
 .webHeader h1 img {
   display: block;
-  height: 65px;
+  height: 60px;
   margin: 0 auto;
 }
 .webHeader .sidebarCtrl,
@@ -2000,6 +2005,11 @@ a:focus .fileType.other {
 .webHeader.fixed .menu > ul > li > a {
   color: #fff;
   transition: color 0.3s;
+}
+@media screen and (min-width: 480px) {
+  .webHeader h1 img {
+    height: 65px;
+  }
 }
 @media screen and (min-width: 1000px) {
   .webHeader {
@@ -3848,7 +3858,7 @@ fieldset legend {
   z-index: 9;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.25) 0 4px 16px;
-  padding: 1em 1.2em;
+  padding: 0.6em 0.8em;
   width: 12em;
   margin: 0 auto;
   border-radius: 3em;
@@ -3906,11 +3916,10 @@ fieldset legend {
   left: -30px;
   right: -30px;
   display: flex;
-  justify-content: space-between;
 }
 .contactUs .cardBox .slick-dots li {
   flex: 0 1 auto;
-  margin: 0;
+  margin: 0 1.8%;
 }
 .contactUs .cardBox .slick-dots li button {
   position: relative;
@@ -3921,7 +3930,7 @@ fieldset legend {
   height: 1.6em;
   line-height: 1.5;
   white-space: nowrap;
-  font-size: 1.25rem;
+  font-size: 1.063rem;
   font-weight: bold;
   border-radius: 0;
   box-shadow: none;
@@ -3936,6 +3945,18 @@ fieldset legend {
   bottom: 0;
   height: 3px;
   transition: 0.2s;
+}
+.contactUs .cardBox .slick-dots li button:before {
+  content: "";
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+  position: absolute;
+  left: -5px;
+  top: 5px;
+}
+.contactUs .cardBox .slick-dots li:nth-of-type(1) button:before {
+  display: none;
 }
 .contactUs .cardBox .slick-dots li.slick-active button {
   color: #005a7f;
@@ -4008,7 +4029,24 @@ fieldset legend {
 .contactUs .mapList .map a:focus::before {
   box-shadow: #000 0 0 0 3px inset;
 }
+@media screen and (min-width: 480px) {
+  .contactUs .cardBox .slick-dots {
+    justify-content: space-between;
+  }
+  .contactUs .cardBox .slick-dots li {
+    margin: 0;
+  }
+  .contactUs .cardBox .slick-dots li button {
+    font-size: 1.125rem;
+  }
+  .contactUs .cardBox .slick-dots li button:before {
+    display: none;
+  }
+}
 @media screen and (min-width: 700px) {
+  .contactUs .blockHeader {
+    padding: 1em 1.2em;
+  }
   .contactUs .cardBox {
     padding: 5em 30px 30px;
   }
@@ -4016,6 +4054,9 @@ fieldset legend {
     padding: 25px 25px 22px 130px;
     background-size: 77px, auto;
     background-position: 30px center, 0 0;
+  }
+  .contactUs .cardBox .slick-dots li button {
+    font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 1000px) {
