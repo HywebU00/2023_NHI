@@ -23,7 +23,17 @@
     tr {
       border-bottom: 1px solid $borderColor;
       &:nth-child(even) {
-        background: #eee;
+        background: #f4f4f4;
+        .downloadFiles {
+          li {
+            a {
+              background-color: #d7d7d7;
+              &:after {
+                border-color: #f4f4f4 #f4f4f4 #b1b7bc #b1b7bc;
+              }
+            }
+          }
+        }
       }
     }
     th,
@@ -303,7 +313,7 @@
         }
       }
       .contentblock {
-        background-color: #f5f5f5;
+        background-color: #f4f4f4;
         padding: 30px;
         font-size: 1.125rem;
         margin: 10px 0 20px;
@@ -347,6 +357,13 @@
                 border-bottom: none;
                 float: left;
                 margin: 3px;
+                a {
+                  background-color: #d7d7d7;
+                  &:after {
+                    content: '';
+                    border-color: #f4f4f4 #f4f4f4 #bbb #bbb;
+                  }
+                }
 
                 &:before {
                   display: none;

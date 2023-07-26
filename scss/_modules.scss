@@ -264,71 +264,70 @@
 }
 
 // 檔案類型圖示 //
+.downloadFiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin: 3px 1px 3px 8px;
+    a {
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 2rem;
+      height: 2.5rem;
+      text-decoration: none;
+      background-color: #e2e5e7;
+      border-radius: 5px;
+      position: relative;
+      &:after {
+        content: '';
+        border: 4px solid #b1b7bc;
+        border-color: #fff #fff #b1b7bc #b1b7bc;
+        border-radius: 2px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 3px;
+      }
+    }
+    .fileSize {
+      font-size: 0.9rem;
+      color: $fontColor;
+      display: inline-block;
+      margin-left: 3px;
+    }
+  }
+}
 .fileType {
   display: block;
-  position: relative;
-  margin: 0;
-  width: 2.2rem;
-  height: 2.5rem;
-  line-height: 3.8rem;
-  font-size: 0.813rem;
+  position: absolute;
+  top: 16px;
+  left: -4px;
+  right: auto;
+  height: 18px;
+  width: 2.5em;
+  border-radius: 1px;
+  line-height: 1rem;
+  font-size: 0.75rem;
   text-decoration: none;
-  text-align: center;
-  color: $fontInvert;
-  background-color: #aaa;
+  text-align: left;
+  color: #fff;
+  background: #e2e5e7;
   transition: 0.2s;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: rgba(255, 255, 255, 0.7) 0 5px 0, rgba(255, 255, 255, 0.7) 0 10px 0;
-  }
-
-  &.mp3,
-  &.mp4,
-  &.mov,
-  &.wmv {
-    &::before {
-      width: 0;
-      height: 0;
-      top: 10px;
-      left: 16px;
-      right: auto;
-      background-color: transparent;
-      box-shadow: none;
-      border-style: solid;
-      border-width: 5px 0 5px 8px;
-      border-color: transparent transparent transparent rgba(255, 255, 255, 0.8);
-    }
-  }
-  &.jpg {
-    &::before {
-      width: 8px;
-      height: 8px;
-      top: 9px;
-      right: auto;
-      left: 7px;
-      background-color: rgba(255, 255, 255, 0.8);
-      box-shadow: none;
-    }
-    &::after {
-      position: absolute;
-      content: '';
-      width: 10px;
-      height: 10px;
-      top: 8px;
-      right: 7px;
-      left: auto;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.8);
-      box-shadow: none;
-    }
-  }
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #cbd1d7 0px 2px 0px;
 
   &.pdf {
     background: #c00;
@@ -457,31 +456,6 @@ a:focus {
     }
     &.other {
       box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #555 0 0 0 2px;
-    }
-  }
-}
-
-.downloadFiles {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: flex;
-  flex-flow: row wrap;
-  li {
-    float: left;
-    margin: 3px;
-    a {
-      display: block;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-    }
-    .fileSize {
-      font-size: 0.9rem;
-      color: $fontColor;
-      display: inline-block;
-      margin-left: 3px;
     }
   }
 }
