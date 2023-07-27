@@ -833,8 +833,13 @@ kbd {
   box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
   border-radius: 32px;
   background-color: #fff;
-  padding: 30px;
+  padding: 30px 20px;
   box-sizing: border-box;
+}
+@media screen and (min-width: 480px) {
+  .contentbox {
+    padding: 30px;
+  }
 }
 @media screen and (min-width: 1000px) {
   .contentbox {
@@ -5653,7 +5658,6 @@ table.formLayout td {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 94%;
 }
 .showHideList > ul > li {
   margin: 10px 0;
@@ -5676,7 +5680,7 @@ table.formLayout td {
 .showHideList > ul > li button {
   width: 100%;
   position: relative;
-  padding: 15px 46px 12px 15px;
+  padding: 15px 95px 12px 15px;
   margin: 0;
   text-align: left;
   height: auto;
@@ -6038,7 +6042,7 @@ table.formLayout td {
   white-space: nowrap;
 }
 .list > table td .downloadFiles {
-  justify-content: center;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 1200px) {
   .list > table th.downTh {
@@ -6118,7 +6122,6 @@ table.formLayout td {
     right: 0;
   }
   .list > table.rwdTable .downloadFiles {
-    display: inline-block;
     vertical-align: middle;
   }
 }

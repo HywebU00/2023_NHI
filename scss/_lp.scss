@@ -120,7 +120,7 @@
         white-space: nowrap;
       }
       .downloadFiles {
-        justify-content: center;
+        justify-content: flex-end;
       }
     }
   }
@@ -223,7 +223,7 @@
         }
       }
       .downloadFiles {
-        display: inline-block;
+        // display: block;
         vertical-align: middle;
       }
     }
