@@ -4656,7 +4656,7 @@ fieldset legend {
   position: absolute;
   right: 5px;
   left: 0;
-  bottom: 0;
+  bottom: 5px;
 }
 .pagination .page > li.first, .pagination .page > li.prev, .pagination .page > li.next, .pagination .page > li.last {
   margin: 3px;
