@@ -83,7 +83,9 @@
       border-left: none;
     }
   }
-
+  .scroltable-container {
+    overflow: auto;
+  }
   table {
     border-collapse: collapse;
     margin: 2em 0;

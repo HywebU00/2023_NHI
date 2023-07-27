@@ -5140,6 +5140,9 @@ table.formLayout td {
   right: 0;
   border-left: none;
 }
+.cpArticle .scroltable-container {
+  overflow: auto;
+}
 .cpArticle table {
   border-collapse: collapse;
   margin: 2em 0;

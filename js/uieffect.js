@@ -993,6 +993,7 @@ $(function () {
     }
   });
   //
+  $('.cpArticle table').wrap('<div class="scroltable-container"></div>');
 });
 
 // 內文展開收合
