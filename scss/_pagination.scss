@@ -59,11 +59,11 @@
     margin: 8px auto;
     padding: 3px;
     & > li {
-      margin: 3px;
+      margin: 3px 8px;
       flex: 0 0 auto;
       a {
         display: block;
-        min-width: 2.5em;
+        min-width: 1.5em;
         height: 2.5em;
         line-height: 2.5em;
         color: $fontColor;
@@ -73,6 +73,7 @@
         transition: 0.2s;
         position: relative;
         padding-left: 8px;
+        text-align: left;
         &:before {
           content: '';
           width: 5px;
@@ -113,7 +114,7 @@
           }
           &:after {
             content: '';
-            width: auto;
+            width: 100%;
             height: 2px;
             background-color: $hilight;
             position: absolute;
@@ -131,6 +132,7 @@
       &.prev,
       &.next,
       &.last {
+        margin: 3px;
         text-indent: -20em;
         a {
           position: relative;

@@ -1,0 +1,227 @@
+@import '_variables';
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, Arial, sans-serif;
+  background: url(../images/bg_dot.png) repeat 0 0;
+  background-color: #fff;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  // outline: 1px solid red;
+}
+header {
+  width: 100%;
+  height: 100px;
+  h1 {
+    padding: 0 20px 0;
+    font-size: 1.3rem;
+    height: 75px;
+    width: 325px;
+    margin-top: 20px;
+
+    img {
+      display: block;
+      max-height: 75px;
+      max-width: 325px;
+    }
+  }
+  h2 {
+    position: relative;
+    margin: 0;
+    padding: 0 0 14px;
+    font-size: 2rem;
+    line-height: 1.3;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      // @extend %grandient;
+    }
+  }
+}
+.main {
+  background-color: #00848c;
+  background-image: url('../images/underbg03.jpg');
+  background-repeat: repeat-x;
+  background-position: top center;
+
+  .container {
+    background-image: url('../images/underbg01.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
+article {
+  padding: 30px 100px 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #fff;
+  background-image: url('../images/underbg02.jpg');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+
+  h2 {
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 8px 0;
+
+    span {
+      font-size: 1.875rem;
+      margin-left: 0.8em;
+      font-weight: bolder;
+      line-height: 1.2;
+    }
+  }
+  .columnblock {
+    display: flex;
+
+    .leftblock {
+      flex: 0 0 none;
+      flex-basis: 40%;
+    }
+    .rightblock {
+      flex: 1 1 auto;
+      position: relative;
+      .image {
+        position: absolute;
+        bottom: -2.8em;
+        img {
+        }
+      }
+    }
+  }
+  p {
+    line-height: 1.4em;
+    padding: 0;
+    margin: 0 0 5px;
+    font-size: 1.125rem;
+    &.en {
+      font-size: 0.875rem;
+      letter-spacing: 0.03em;
+    }
+  }
+  .period {
+    padding: 1em;
+    margin: 1em 0 -1em;
+    background-color: #0b454f;
+    color: #fff;
+    border-radius: 8px;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    h3 {
+      margin: 0;
+      font-size: 1.125rem;
+      color: #00ffde;
+      border-bottom: 1px solid #2d7582;
+      padding-bottom: 7px;
+      text-align: center;
+    }
+    p {
+      margin: 0.5em 0 0;
+      color: #fff;
+      text-align: center;
+    }
+    time {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      color: #fff;
+      font-size: 1.063rem;
+
+      &::before {
+        content: attr(title);
+        display: inline-block;
+        width: 5em;
+        margin-right: 0.5em;
+        color: #fff;
+        text-align: right;
+      }
+    }
+  }
+  @media screen and (max-width: $wwMaximum) {
+    h2 {
+      flex-wrap: wrap;
+      line-height: 1.5;
+
+      span {
+        flex: 1 1 100%;
+        margin: 0 0 0.5em 0;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    padding: 30px 40px 0;
+    h2 {
+      justify-content: center;
+      text-align: center;
+    }
+    .columnblock {
+      flex-wrap: wrap;
+      .leftblock {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        p {
+          text-align: center;
+        }
+      }
+      .rightblock {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        .image {
+          position: relative;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .period {
+        time {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $wwSlim) {
+    h2 {
+      font-size: 2.5rem;
+
+      span {
+        font-size: 1.75rem;
+        margin-left: 0.8em;
+        font-weight: bolder;
+      }
+    }
+    .columnblock {
+      .leftblock {
+        .period {
+          time {
+            white-space: normal;
+            margin: 0 0 10px;
+            display: block;
+            &:before {
+              display: block;
+              text-align: center;
+              width: 100%;
+              background-color: #10606e;
+              border-radius: 50px;
+              padding: 3px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

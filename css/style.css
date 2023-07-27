@@ -4590,12 +4590,12 @@ fieldset legend {
   padding: 3px;
 }
 .pagination .page > li {
-  margin: 3px;
+  margin: 3px 8px;
   flex: 0 0 auto;
 }
 .pagination .page > li a {
   display: block;
-  min-width: 2.5em;
+  min-width: 1.5em;
   height: 2.5em;
   line-height: 2.5em;
   color: #081c36;
@@ -4603,6 +4603,7 @@ fieldset legend {
   transition: 0.2s;
   position: relative;
   padding-left: 8px;
+  text-align: left;
 }
 .pagination .page > li a:before {
   content: "";
@@ -4641,7 +4642,7 @@ fieldset legend {
 }
 .pagination .page > li.active a:after {
   content: "";
-  width: auto;
+  width: 100%;
   height: 2px;
   background-color: #e81158;
   position: absolute;
@@ -4650,6 +4651,7 @@ fieldset legend {
   bottom: 0;
 }
 .pagination .page > li.first, .pagination .page > li.prev, .pagination .page > li.next, .pagination .page > li.last {
+  margin: 3px;
   text-indent: -20em;
 }
 .pagination .page > li.first a, .pagination .page > li.prev a, .pagination .page > li.next a, .pagination .page > li.last a {
