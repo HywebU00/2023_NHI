@@ -1963,7 +1963,7 @@ a:focus .fileType.other {
 }
 .webHeader h1 {
   margin: 0 60px;
-  padding: 12px 0;
+  padding: 10px 0;
   height: 80px;
   background-size: auto 60px;
 }
@@ -2012,6 +2012,9 @@ a:focus .fileType.other {
   transition: color 0.3s;
 }
 @media screen and (min-width: 480px) {
+  .webHeader h1 {
+    padding: 8px 0;
+  }
   .webHeader h1 img {
     height: 65px;
   }

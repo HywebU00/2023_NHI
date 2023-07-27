@@ -3,13 +3,12 @@
   background: url(../images/bg_tinyDots.png) repeat, linear-gradient(90deg, #004f73, #0094a0);
   h1 {
     margin: 0 60px;
-    padding: 12px 0;
+    padding: 10px 0;
     height: 80px;
     // background: url(../images/h1_mobile.png) no-repeat center center;
     background-size: auto 60px;
     a {
       display: block;
-
       &:focus {
         box-shadow: $focus 0 0 0 1px;
       }
@@ -60,6 +59,7 @@
 
   @media screen and (min-width: $wwSlim) {
     h1 {
+      padding: 8px 0;
       img {
         height: 65px;
       }
