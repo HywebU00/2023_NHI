@@ -1,148 +1,217 @@
 // 首頁：主題專區 ＋ 常用服務 ////////////////////////////////////////////////
-.topics, .services{
+.topics,
+.services {
   @extend %primSecWidth;
-  box-shadow: rgba(57, 120, 132, .3) 0 0 20px;
+  box-shadow: rgba(57, 120, 132, 0.3) 0 0 20px;
   border-radius: $bigRadius;
-  background-color: rgba(255,255,255,.65);
-  .blockHeader{
-    .major{
-      font-size: 1.875rem; padding-bottom: 4px;
-      &::after{display: none;}
+  background-color: rgba(255, 255, 255, 0.65);
+  .blockHeader {
+    .major {
+      font-size: 1.875rem;
+      padding-bottom: 4px;
+      &::after {
+        display: none;
+      }
     }
   }
 }
 // 首頁：主題專區 //////////////////////////////////////////////////
-.topics{
+.topics {
   padding: 25px 0 30px;
-  .flowList{
-    overflow: hidden;position: relative; margin: 0 auto; padding: 0 40px;
+  .flowList {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 40px;
   }
-  .flowItem{
-    text-align: center;margin:10px 8px;
-    a{ 
+  .flowItem {
+    text-align: center;
+    margin: 10px 8px;
+    a {
       display: block;
-      color: $fontColor; text-decoration: none;
-      &:hover, &:focus{
-        img{transform: scale(1.05);}
-        p{text-decoration: underline;}
+      color: $fontColor;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        img {
+          transform: scale(1.05);
+        }
+        p {
+          text-decoration: underline;
+        }
       }
-      &:focus{
-        img{box-shadow: $borderColorDark 0 0 0 2px;}
+      &:focus {
+        img {
+          box-shadow: $borderColorDark 0 0 0 2px;
+        }
       }
     }
-    img{ display: block; width: 100%; height: calc(47vw - 56px); transition: .2s; }
-    p{
-      margin: 12px auto 0;  text-align: left;
-      font-weight: bold; line-height: 1.3; font-size: 1.2em;
-      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+    img {
+      display: block;
+      width: 100%;
+      height: calc(47vw - 56px);
+      transition: 0.2s;
+    }
+    p {
+      margin: 12px auto 0;
+      text-align: left;
+      font-weight: bold;
+      line-height: 1.3;
+      font-size: 1.2em;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
       overflow: hidden;
     }
   }
-  .slick-arrow{
-    top: calc( 23.5vw - 18px);
-    &.slick-prev{left: 6px;}
-    &.slick-next{right: 6px;}    
-  }
-
-
-  @media screen and (min-width: $wwMedium){
-    .flowItem{
-      margin:10px 12px;
-      img{ height: calc((94vw - 152px)/3);}
+  .slick-arrow {
+    top: calc(23.5vw - 18px);
+    &.slick-prev {
+      left: 6px;
     }
-    .slick-arrow{top: calc((94vw - 92px)/6 );}
-
+    &.slick-next {
+      right: 6px;
+    }
   }
 
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwMedium) {
+    .flowItem {
+      margin: 10px 12px;
+      img {
+        height: calc((94vw - 152px) / 3);
+      }
+    }
+    .slick-arrow {
+      top: calc((94vw - 92px) / 6);
+    }
+  }
+
+  @media screen and (min-width: $wwNormal) {
     position: relative;
     padding: 25px 10px 10px 30px;
-    display: flex; flex-wrap: nowrap;align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 
-    .blockHeader{
+    .blockHeader {
       flex: 0 0 220px;
-      padding: 0 0 200px; margin: 0;
-      background: url(../images/topic_img.png) no-repeat center bottom;
+      padding: 0 0 200px;
+      margin: 0;
+      background: url(../images/topic_img.gif) no-repeat center bottom;
       background-size: 100% auto;
     }
 
-    .flowItem{
+    .flowItem {
       margin: 10px 20px;
-      img{ height: calc((94vw - 460px)/3);}
+      img {
+        height: calc((94vw - 460px) / 3);
+      }
     }
 
-    .slick-arrow{top: calc((94vw - 400px)/6);}
-  }
-
-  @media screen and (min-width: $wwMaximum){
-    .flowItem{
-      img{ height: calc(($wwMaximum*.94 - 460px)/3);}
+    .slick-arrow {
+      top: calc((94vw - 400px) / 6);
     }
-    .slick-arrow{top: calc(($wwMaximum*.94 - 400px)/6);}
   }
 
+  @media screen and (min-width: $wwMaximum) {
+    .flowItem {
+      img {
+        height: calc(($wwMaximum * 0.94 - 460px) / 3);
+      }
+    }
+    .slick-arrow {
+      top: calc(($wwMaximum * 0.94 - 400px) / 6);
+    }
+  }
 }
 
-
-
 // 首頁：常用服務 //////////////////////////////////////////////////
-.services{
+.services {
   padding: 20px 0 40px;
-  .servList{
-    width: 96%;list-style: none; margin: 0 auto;padding: 0; 
-    display: flex; flex-flow: row wrap; justify-content: center;
-    text-align: center; font-size: 1.125em; line-height: 1.3;
-    &>li{
-      flex: 0 0 calc(33% - 20px); margin: 5px 10px;
-      a{
-        display: block; padding: 16px 5px 8px; height: 100%;
-        text-decoration: none;color: $fontColor; border-radius: 16px;
-        transition: .2s;
-        &:hover, &:focus{
-          img{ transform: scale(1.1);}
+  .servList {
+    width: 96%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.125em;
+    line-height: 1.3;
+    & > li {
+      flex: 0 0 calc(33% - 20px);
+      margin: 5px 10px;
+      a {
+        display: block;
+        padding: 16px 5px 8px;
+        height: 100%;
+        text-decoration: none;
+        color: $fontColor;
+        border-radius: 16px;
+        transition: 0.2s;
+        &:hover,
+        &:focus {
+          img {
+            transform: scale(1.1);
+          }
         }
-        &:focus{
+        &:focus {
           box-shadow: $primaryColor 0 0 12px;
         }
       }
-      img{
-        display: block; margin: 0 auto 8px; padding: 0;
-        width: 18vw; height: auto;border-radius: 50%;
+      img {
+        display: block;
+        margin: 0 auto 8px;
+        padding: 0;
+        width: 18vw;
+        height: auto;
+        border-radius: 50%;
         @include grandient1(0deg);
-        transition: .2s;
+        transition: 0.2s;
       }
     }
   }
 
-  @media screen and (min-width: $wwMedium){
-    .servList{
-      &>li{
+  @media screen and (min-width: $wwMedium) {
+    .servList {
+      & > li {
         flex-basis: calc(25% - 20px);
-        img{width: 76%;}
+        img {
+          width: 76%;
+        }
       }
     }
   }
 
-
-  @media screen and (min-width: $wwNormal){
-    display: flex; flex-flow: row nowrap; align-items: center;
+  @media screen and (min-width: $wwNormal) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     padding: 30px;
-    .blockHeader{
-      flex: 0 0 220px; margin: 0; min-height: 250px;
-      background: url(../images/services_img.png) no-repeat center bottom 0;
+    .blockHeader {
+      flex: 0 0 220px;
+      margin: 0;
+      min-height: 250px;
+      background: url(../images/services_img.gif) no-repeat center bottom 0;
       background-size: 100% auto;
     }
 
-    .servList{
-      flex: 1 1 auto; width: auto;
-      &>li{
+    .servList {
+      flex: 1 1 auto;
+      width: auto;
+      & > li {
         margin: 5px;
         flex-basis: calc(16.66% - 10px);
-        a{ padding: 12px 6px 6px;}
-        img{ width: 80px; height: 80px;object-fit: contain;}
+        a {
+          padding: 12px 6px 6px;
+        }
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: contain;
+        }
       }
     }
   }
-
 }
-
