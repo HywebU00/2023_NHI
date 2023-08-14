@@ -52,7 +52,7 @@ body {
 .main {
   position: relative;
   margin: 0 auto;
-  background: url(../images/bg_dot.png) repeat 0 0, url(../images/bg+left.jpg) no-repeat left 0 top 400px, url(../images/bg+right.jpg) no-repeat right 0 top 1110px;
+  background: url(../images/bg_dot.png) repeat 0 0, url(../images/bg_left.jpg) no-repeat left 0 top 400px, url(../images/bg_right.jpg) no-repeat right 0 top 1110px;
   background-color: #fff;
 
   &.inner {
