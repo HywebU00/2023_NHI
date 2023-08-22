@@ -5079,7 +5079,8 @@ table.formLayout td {
   text-decoration: none;
 }
 .cpArticle p {
-  margin: 1em 0 3em;
+  margin: 1em 0 1.5em;
+  line-height: 1.7;
 }
 .cpArticle h3,
 .cpArticle h4,
