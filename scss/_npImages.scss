@@ -19,7 +19,7 @@
       .image {
         display: block;
         background-color: $bgc1;
-        padding: 30px 40px;
+        padding: 40px 40px;
         width: auto;
         border-radius: $radius;
         transition: 0.25s;
@@ -28,7 +28,7 @@
         display: block;
         margin: 0 auto;
 
-        height: 150px;
+        height: 90px;
         object-fit: contain;
         transition: 0.25s;
       }
@@ -83,7 +83,7 @@
         .image {
           display: block;
           background-color: $bgc1;
-          padding: 30px 40px;
+          padding: 40px 40px;
           width: auto;
           border-radius: $radius;
           transition: 0.25s;
@@ -93,7 +93,7 @@
           margin: 0 auto;
           width: 100%;
           // height: calc(47vw - 148px);
-          height: 150px;
+          height: 90px;
           object-fit: contain;
           transition: 0.25s;
         }
@@ -164,9 +164,12 @@
             background-color: $bgc2;
           }
         }
+        .image {
+          padding: 50px 40px;
+        }
         img {
           // height: calc(31.33vw - 148px);
-          height: 150px;
+          height: 90px;
         }
       }
     }
@@ -183,9 +186,12 @@
             background-color: $bgc1;
           }
         }
+        .image {
+          padding: 40px 40px;
+        }
         img {
           // height: calc(23.5vw - 145px);
-          height: 150px;
+          height: 90px;
         }
 
         &:nth-child(8n + 2),
@@ -205,9 +211,12 @@
     padding-top: $wwMaximum * 0.0282;
     padding-bottom: $wwMaximum * 0.0282;
     & > ul > li {
+      .image {
+        padding: 40px 40px;
+      }
       img {
         // height: calc($wwMaximum * 0.235 - 145px);
-        height: 150px;
+        height: 90px;
       }
     }
   }

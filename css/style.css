@@ -4331,7 +4331,7 @@ fieldset legend {
 .npImages > ul > li .image {
   display: block;
   background-color: #e4edf4;
-  padding: 30px 40px;
+  padding: 40px 40px;
   width: auto;
   border-radius: 16px;
   transition: 0.25s;
@@ -4339,7 +4339,7 @@ fieldset legend {
 .npImages > ul > li img {
   display: block;
   margin: 0 auto;
-  height: 150px;
+  height: 90px;
   -o-object-fit: contain;
      object-fit: contain;
   transition: 0.25s;
@@ -4383,7 +4383,7 @@ fieldset legend {
   .npImages > ul > li .image {
     display: block;
     background-color: #e4edf4;
-    padding: 30px 40px;
+    padding: 40px 40px;
     width: auto;
     border-radius: 16px;
     transition: 0.25s;
@@ -4392,7 +4392,7 @@ fieldset legend {
     display: block;
     margin: 0 auto;
     width: 100%;
-    height: 150px;
+    height: 90px;
     -o-object-fit: contain;
        object-fit: contain;
     transition: 0.25s;
@@ -4445,8 +4445,11 @@ fieldset legend {
   .npImages > ul > li:nth-child(6n+2) .image, .npImages > ul > li:nth-child(6n+4) .image, .npImages > ul > li:nth-child(6n+6) .image {
     background-color: #e8f0f2;
   }
+  .npImages > ul > li .image {
+    padding: 50px 40px;
+  }
   .npImages > ul > li img {
-    height: 150px;
+    height: 90px;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -4459,8 +4462,11 @@ fieldset legend {
   .npImages > ul > li:nth-child(n) .image {
     background-color: #e4edf4;
   }
+  .npImages > ul > li .image {
+    padding: 40px 40px;
+  }
   .npImages > ul > li img {
-    height: 150px;
+    height: 90px;
   }
   .npImages > ul > li:nth-child(8n+2) .image, .npImages > ul > li:nth-child(8n+4) .image, .npImages > ul > li:nth-child(8n+5) .image, .npImages > ul > li:nth-child(8n+7) .image {
     background-color: #e8f0f2;
@@ -4471,8 +4477,11 @@ fieldset legend {
     padding-top: 33.84px;
     padding-bottom: 33.84px;
   }
+  .npImages > ul > li .image {
+    padding: 40px 40px;
+  }
   .npImages > ul > li img {
-    height: 150px;
+    height: 90px;
   }
 }
 
