@@ -622,12 +622,3 @@ a:focus {
 .wordred {
   color: $hilight;
 }
-// 內容button置中
-.buttonCenter {
-  text-align: center;
-  margin-bottom: 2em;
-  button {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-}

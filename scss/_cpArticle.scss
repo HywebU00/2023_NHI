@@ -222,3 +222,23 @@
     }
   }
 }
+// 內容button置中
+.buttonCenter {
+  text-align: center;
+  margin-bottom: 2em;
+  a {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1em 2em;
+    text-decoration: none;
+    background-color: $primaryColor;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: 0.5s;
+    &:hover {
+      background-color: lighten($color: $primaryColor, $amount: 8);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+  }
+}

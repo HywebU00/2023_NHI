@@ -1338,15 +1338,6 @@ a:focus .fileType.other {
   color: #e81158;
 }
 
-.buttonCenter {
-  text-align: center;
-  margin-bottom: 2em;
-}
-.buttonCenter button {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
 .menu ul {
   list-style: none;
   margin: 0;
@@ -4603,74 +4594,36 @@ fieldset legend {
   color: #fff;
 }
 .pagination .page {
-  list-style: none;
-  line-height: 1;
+  margin: 10px auto;
+  padding: 0;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  margin: 8px auto;
-  padding: 3px;
+  flex-wrap: wrap;
 }
 .pagination .page > li {
-  margin: 3px 8px;
+  min-width: 40px;
+  height: 40px;
+  margin: 2px;
+  list-style: none;
   flex: 0 0 auto;
 }
 .pagination .page > li a {
   display: block;
-  min-width: 1.5em;
-  height: 2.5em;
-  line-height: 2.5em;
   color: #081c36;
+  border-radius: 3px;
   background-color: #fff;
+  border: #ccc solid 1px;
   transition: 0.2s;
   position: relative;
-  padding-left: 8px;
-  text-align: left;
-}
-.pagination .page > li a:before {
-  content: "";
-  width: 5px;
-  height: 2px;
-  background-color: #000;
-  position: absolute;
-  left: 0;
-  top: 49%;
+  padding: 6px 10px;
 }
 .pagination .page > li a:hover, .pagination .page > li a:focus {
   color: #e81158;
 }
-.pagination .page > li a:hover:before, .pagination .page > li a:focus:before {
-  content: "";
-  width: 5px;
-  height: 2px;
-  background-color: #e81158;
-  position: absolute;
-  left: 0;
-  top: 49%;
-}
 .pagination .page > li.active a {
-  background-color: #fff;
-  color: #e81158;
+  background-color: #e81158;
+  color: #fff;
   position: relative;
-}
-.pagination .page > li.active a:before {
-  content: "";
-  width: 5px;
-  height: 2px;
-  background-color: #e81158;
-  position: absolute;
-  left: 0;
-  top: 49%;
-}
-.pagination .page > li.active a:after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: #e81158;
-  position: absolute;
-  right: 5px;
-  left: 0;
-  bottom: 5px;
 }
 .pagination .page > li.first, .pagination .page > li.prev, .pagination .page > li.next, .pagination .page > li.last {
   margin: 3px;
@@ -4690,6 +4643,19 @@ fieldset legend {
   height: 8px;
   margin-top: -5px;
   border: 2px solid #aaa;
+  border-top: none;
+  border-right: none;
+  transform: rotate(45deg);
+}
+.pagination .page > li.first a:hover::before, .pagination .page > li.first a:hover::after, .pagination .page > li.prev a:hover::before, .pagination .page > li.prev a:hover::after, .pagination .page > li.next a:hover::before, .pagination .page > li.next a:hover::after, .pagination .page > li.last a:hover::before, .pagination .page > li.last a:hover::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -5px;
+  border: 2px solid #e81158;
   border-top: none;
   border-right: none;
   transform: rotate(45deg);
@@ -5284,6 +5250,26 @@ table.formLayout td {
   .cpArticle blockquote {
     margin-left: 0;
   }
+}
+
+.buttonCenter {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.buttonCenter a {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1em 2em;
+  text-decoration: none;
+  background-color: #004f73;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: 0.5s;
+}
+.buttonCenter a:hover {
+  background-color: #006b9c;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .photoflow {
