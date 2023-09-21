@@ -71,6 +71,8 @@
     display: inline-block;
     position: relative;
     line-height: 1.3;
+    color: $titlecolor;
+    font-weight: bolder;
     &:before {
       content: '';
       width: 100%;

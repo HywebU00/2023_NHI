@@ -59,6 +59,7 @@ $btnBg2: #01425c;
 
 $footBg: $primaryColor;
 $sidebarBg: $grayDark;
+$titlecolor: #042047;
 
 @mixin textBlock1 {
   background-image: url('../images/textBlock_bg1.jpg');
@@ -104,4 +105,7 @@ $sidebarBg: $grayDark;
 }
 @mixin grandient3($degree: 0deg) {
   background-image: linear-gradient($degree, #6e6e6e, #767676);
+}
+@mixin grandient4($degree: 0deg) {
+  background-image: linear-gradient($degree, #5d4a2a, #91813f);
 }

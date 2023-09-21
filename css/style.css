@@ -129,7 +129,6 @@ a:focus {
     color: #fff;
   }
   .main .accesskey {
-    background-color: rgba(255, 255, 255, 0.4);
     z-index: 19;
   }
 }
@@ -817,6 +816,8 @@ kbd {
   display: inline-block;
   position: relative;
   line-height: 1.3;
+  color: #042047;
+  font-weight: bolder;
 }
 .pageHeader h2:before {
   content: "";
@@ -6921,5 +6922,406 @@ table.formLayout td {
   }
   .sitemap .cascading > ul > li:nth-child(4n+1) {
     margin-left: 0;
+  }
+}
+
+.health_insurance_block {
+  font-size: 1.125rem;
+  margin-bottom: 30px;
+  padding: 1em 0;
+}
+.health_insurance_block:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+.health_insurance_block.bgcolor {
+  background-color: #e1f7f7;
+  padding: 50px 30px 0;
+}
+.health_insurance_block.bgcolor .title {
+  text-align: center;
+}
+.health_insurance_block .health_insurance_content {
+  padding-bottom: 2em;
+}
+.health_insurance_block .health_insurance_pic {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+.health_insurance_block .health_insurance_pic.imgdistance {
+  margin-right: 0;
+}
+.health_insurance_block .health_insurance_pic .pic {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  line-height: 0;
+}
+.health_insurance_block .health_insurance_pic .pic img {
+  margin: 0;
+}
+.health_insurance_block .health_insurance_pic .wordblock {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  margin-top: -3em;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+}
+.health_insurance_block .health_insurance_pic .wordblock .wordbig {
+  font-size: 1.875rem;
+  color: #042047;
+  margin-bottom: 0.2em;
+  letter-spacing: 0.05em;
+}
+.health_insurance_block .health_insurance_pic .wordblock .wordmid {
+  font-size: 1.313rem;
+  color: #10838e;
+  letter-spacing: 0.35em;
+}
+.health_insurance_block .health_insurance_pic .wordblock .wore_e {
+  font-size: 1rem;
+  color: #10838e;
+  letter-spacing: 0.01em;
+}
+.health_insurance_block .title {
+  color: #042047;
+  font-size: 1.75rem;
+  margin: 0 0 1em;
+  font-weight: bolder;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+}
+.health_insurance_block .title em {
+  margin: 0 0.5em;
+  font-style: normal;
+  color: #007e89;
+}
+.health_insurance_block p {
+  margin: 1em 0 1.5em;
+  line-height: 1.7;
+  color: #4b4b4b;
+}
+.health_insurance_block.originblock .health_insurance_pic .pic img {
+  width: 90%;
+}
+.health_insurance_block.service_features {
+  background-image: url("../images/health_insurance_pic02bg.jpg");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 20%;
+  background-size: contain;
+}
+.health_insurance_block.service_features .health_insurance_content {
+  padding-bottom: 0;
+}
+.health_insurance_block .features {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #042047;
+}
+.health_insurance_block .features li {
+  padding: 0 0 0 30px;
+  background-image: url("../images/health_icon01.png");
+  background-position: 0 3px;
+  background-repeat: no-repeat;
+  margin-bottom: 1em;
+  font-weight: bolder;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+}
+.health_insurance_block .more {
+  --moreColor: #fff;
+  --hoverBg: rgba(0, 0, 0, 0.3);
+  font-size: 1.125rem;
+}
+.health_insurance_block .more a {
+  display: block;
+  background-image: linear-gradient(0deg, #00486a, #018e9f);
+  height: auto;
+  line-height: 1.5;
+  text-align: left;
+  padding: 10px 70px 10px 25px;
+  border-radius: 10px;
+}
+.health_insurance_block .project_title {
+  color: #042047;
+  padding-left: 25px;
+  background-image: url("../images/project_title_icon.png");
+  background-position: 0 8px;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+  font-size: 1.188rem;
+  margin-bottom: 1em;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+}
+.health_insurance_block .numtitle {
+  color: #042047;
+  font-size: 1.188rem;
+  margin-bottom: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+}
+.health_insurance_block .pipeline {
+  margin: 2em auto 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+}
+.health_insurance_block .pipeline li {
+  margin-bottom: 0.5em;
+  padding: 1.5em 1em;
+  background-image: linear-gradient(0deg, #00486a, #018e9f);
+  border-radius: 18px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.375rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+}
+.health_insurance_block .pipeline li:nth-child(2n) {
+  background-image: linear-gradient(0deg, #5d4a2a, #91813f);
+}
+.health_insurance_block .listblock {
+  font-size: 1.125rem;
+  margin: 0 0 2em 40px;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+}
+.health_insurance_block .listblock li {
+  margin: 0 0 0.5em;
+}
+.health_insurance_block .telephoneblock {
+  color: #042047;
+  font-weight: bolder;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+}
+.health_insurance_block.quitblock {
+  background-image: url("../images/health_insurance_shadow2.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.health_insurance_block.contactus {
+  background: url("../images/health_insurance_shadow.jpg") no-repeat right bottom;
+  padding: 50px 30px 30px 30px;
+  background-color: #e1f7f7;
+}
+.health_insurance_block.contactus p {
+  margin: 1em 0;
+  line-height: 1.7;
+  color: #4b4b4b;
+}
+.health_insurance_block ol {
+  margin: 0 0 2em 20px;
+  padding: 0;
+}
+.health_insurance_block ol li {
+  margin-bottom: 0.5em;
+  color: #4b4b4b;
+}
+.health_insurance_block .partitionphoto_block {
+  position: relative;
+  width: 100%;
+  margin: 1em auto 2em;
+}
+.health_insurance_block .partitionphoto_block .image {
+  position: relative;
+  width: 100%;
+}
+.health_insurance_block .partitionphoto_block .image img {
+  width: 100% !important;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto auto;
+}
+.health_insurance_block .partitionphoto_block .explaincontent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  background: #000;
+  background: linear-gradient(0deg, #000 20%, transparent 100%);
+  z-index: 2;
+  text-align: center;
+}
+.health_insurance_block .partitionphoto_block .explaincontent span {
+  color: #fff;
+  font-size: 1.687em;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.health_insurance_block .partition_business_block .businessblock:nth-of-type(2n) .partitiontitle {
+  background-image: linear-gradient(0deg, #00486a, #018e9f);
+}
+.health_insurance_block .partition_business_block .businessblock .partitiontitle {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.125em;
+  background-image: linear-gradient(0deg, #5d4a2a, #91813f);
+  color: #fff;
+  margin-bottom: 0.8em;
+  border-radius: 10px;
+}
+.health_insurance_block .partition_business_block .businessblock ul {
+  margin: 0 1em 1em;
+  padding: 0;
+  list-style-type: none;
+}
+.health_insurance_block .partition_business_block .businessblock ul li {
+  margin-bottom: 0.5em;
+}
+.health_insurance_block .partition_business_block .businessblock ul li img {
+  margin-left: 10px;
+}
+.health_insurance_block.easytouse .health_insurance_pic {
+  position: relative;
+}
+.health_insurance_block.easytouse .health_insurance_pic .appbtn {
+  position: absolute;
+  top: 50%;
+}
+.health_insurance_block.easytouse .health_insurance_pic .appbtn ul {
+  margin: 10px 0 0 10px;
+  padding: 0;
+  list-style-type: none;
+}
+.health_insurance_block.easytouse .health_insurance_pic .appbtn ul li {
+  margin-bottom: 0.5em;
+}
+.health_insurance_block.easytouse .health_insurance_pic .appbtn ul li a {
+  display: block;
+  padding: 0;
+  border-radius: 50px;
+  width: 154px;
+  height: 47px;
+}
+.health_insurance_block.easytouse .health_insurance_pic .appbtn ul li a:hover {
+  box-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px;
+}
+.health_insurance_block.easytouse .health_insurance_pic .wordblock {
+  margin-top: -1.5em;
+}
+@media screen and (min-width: 480px) {
+  .health_insurance_block.bgcolor {
+    padding: 50px 50px 0;
+  }
+  .health_insurance_block.contactus {
+    padding: 50px 30px 30px 30px;
+  }
+  .health_insurance_block.originblock .health_insurance_pic .pic img {
+    width: auto;
+  }
+  .health_insurance_block.service_features {
+    padding-bottom: 20%;
+  }
+  .health_insurance_block .health_insurance_pic .pic img {
+    margin: 0;
+    width: auto;
+  }
+}
+@media screen and (min-width: 700px) {
+  .health_insurance_block.bgcolor {
+    padding: 70px 50px 0;
+  }
+  .health_insurance_block.service_features {
+    padding-bottom: 24%;
+    background-size: contain;
+  }
+  .health_insurance_block .health_insurance_pic.imgdistance {
+    margin-right: 0;
+  }
+  .health_insurance_block .pipeline {
+    display: flex;
+    width: 95%;
+  }
+  .health_insurance_block .pipeline li {
+    flex: 0 0 auto;
+    flex-basis: 31.5%;
+    margin: 0 0.91%;
+  }
+  .health_insurance_block .more a {
+    border-radius: 50px;
+  }
+  .health_insurance_block.contactus {
+    background: url("../images/health_insurance_shadow.jpg") no-repeat right bottom;
+    padding: 50px 30px 60px 30px;
+    background-color: #e1f7f7;
+  }
+  .health_insurance_block.contactus .more {
+    width: 80%;
+  }
+  .health_insurance_block .partitionphoto_block {
+    width: 600px;
+  }
+  .health_insurance_block .partition_business_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .health_insurance_block .partition_business_block .businessblock {
+    flex: 0 0 auto;
+    flex-basis: 48%;
+  }
+  .health_insurance_block .partition_business_block .businessblock:nth-of-type(n) .partitiontitle {
+    background-image: linear-gradient(0deg, #5d4a2a, #91813f);
+  }
+  .health_insurance_block .partition_business_block .businessblock:nth-child(4n+2) .partitiontitle, .health_insurance_block .partition_business_block .businessblock:nth-child(4n+3) .partitiontitle {
+    background-image: linear-gradient(0deg, #00486a, #018e9f);
+  }
+}
+@media screen and (min-width: 820px) {
+  .health_insurance_block.contactus {
+    background: url("../images/health_insurance_pic06.jpg") no-repeat -30% top/contain, url("../images/health_insurance_shadow.jpg") no-repeat right bottom;
+    padding: 50px 30px 60px 40%;
+    background-color: #e1f7f7;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .health_insurance_block {
+    display: flex;
+    margin-bottom: 50px;
+  }
+  .health_insurance_block.bgcolor {
+    padding: 70px 0 0 70px;
+  }
+  .health_insurance_block.service_features {
+    padding-bottom: 22%;
+    background-size: auto;
+  }
+  .health_insurance_block .health_insurance_content {
+    flex: 1 1 auto;
+    padding-bottom: 2em;
+  }
+  .health_insurance_block .health_insurance_pic {
+    flex: 0 0 auto;
+    max-width: 430px;
+    margin-left: 2em;
+    padding-top: 0;
+  }
+  .health_insurance_block .health_insurance_pic.imgdistance {
+    margin-right: 70px;
+  }
+  .health_insurance_block .features {
+    margin: 0 0 0 3em;
+  }
+  .health_insurance_block .pipeline {
+    width: 75%;
+  }
+  .health_insurance_block.contactus {
+    background: url("../images/health_insurance_pic06.jpg") no-repeat left top/contain, url("../images/health_insurance_shadow.jpg") no-repeat right bottom;
+    padding: 50px 30px 60px 40%;
+    background-color: #e1f7f7;
   }
 }/*# sourceMappingURL=style.css.map */
