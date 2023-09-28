@@ -120,7 +120,7 @@
         white-space: nowrap;
       }
       .downloadFiles {
-        justify-content: flex-end;
+        justify-content: center;
       }
     }
   }
@@ -194,6 +194,15 @@
           margin-right: 0.5em;
           color: $fontColorLight;
         }
+        &.notitle {
+          padding: 0;
+          &::before {
+            content: '';
+            display: block;
+            margin-right: 0;
+            color: $fontColorLight;
+          }
+        }
 
         &.numb {
           position: absolute;
@@ -225,6 +234,7 @@
       .downloadFiles {
         // display: block;
         vertical-align: middle;
+        justify-content: flex-start;
       }
     }
   }

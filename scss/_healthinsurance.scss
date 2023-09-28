@@ -156,25 +156,32 @@
     margin: 2em auto 0;
     padding: 0;
     list-style-type: none;
-
     width: 100%;
-
     li {
       margin-bottom: 0.5em;
-      padding: 1.5em 1em;
       @include grandient1(0deg);
-      border-radius: 18px;
-      line-height: 1.5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-      font-weight: bolder;
-      font-size: 1.375rem;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+      border-radius: 18px;
+      transition: 0.5s;
+      a {
+        padding: 1.5em 1em;
+        height: 100%;
+
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 1.375rem;
+        text-decoration: none;
+      }
       &:nth-child(2n) {
         @include grandient4(0deg);
+      }
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
     }
   }

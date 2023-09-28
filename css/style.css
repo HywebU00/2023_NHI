@@ -4478,7 +4478,7 @@ fieldset legend {
 }
 
 .list {
-  margin: 20px auto 0;
+  margin: 20px auto 20px;
   position: relative;
   background: #fff;
 }
@@ -4537,7 +4537,7 @@ fieldset legend {
 }
 @media screen and (min-width: 1000px) {
   .list {
-    padding: 0 0 40px 0;
+    padding: 0;
   }
   .list > ul > li .numb {
     flex-basis: 2.2em;
@@ -4545,14 +4545,14 @@ fieldset legend {
 }
 
 .pagination {
-  margin-top: 30px;
+  margin-top: 0px;
   padding: 10px 0;
   text-align: center;
   font-size: 1.125em;
   line-height: 1.5;
 }
 .pagination form {
-  display: inline-block;
+  display: block;
 }
 .pagination input,
 .pagination select {
@@ -4572,6 +4572,9 @@ fieldset legend {
   font-style: normal;
   font-weight: bold;
   color: #e81158;
+}
+.pagination .total {
+  display: none;
 }
 .pagination .items {
   display: inline;
@@ -4607,6 +4610,9 @@ fieldset legend {
   margin: 2px;
   list-style: none;
   flex: 0 0 auto;
+}
+.pagination .page > li.hidden_wwMedium {
+  display: none;
 }
 .pagination .page > li a {
   display: block;
@@ -4676,6 +4682,15 @@ fieldset legend {
 .pagination .page > li.last, .pagination .page > li.next {
   transform: rotate(180deg);
 }
+@media screen and (min-width: 780px) {
+  .pagination .total {
+    display: block;
+  }
+  .pagination .page > li.hidden_wwMedium {
+    display: block;
+  }
+}
+
 .category {
   margin-bottom: 1em;
 }
@@ -6050,7 +6065,7 @@ table.formLayout td {
   white-space: nowrap;
 }
 .list > table td .downloadFiles {
-  justify-content: flex-end;
+  justify-content: center;
 }
 @media screen and (max-width: 1200px) {
   .list > table th.downTh {
@@ -6106,6 +6121,15 @@ table.formLayout td {
     margin-right: 0.5em;
     color: #374459;
   }
+  .list > table.rwdTable td.notitle {
+    padding: 0;
+  }
+  .list > table.rwdTable td.notitle::before {
+    content: "";
+    display: block;
+    margin-right: 0;
+    color: #374459;
+  }
   .list > table.rwdTable td.numb {
     position: absolute;
     top: 0.7em;
@@ -6131,6 +6155,7 @@ table.formLayout td {
   }
   .list > table.rwdTable .downloadFiles {
     vertical-align: middle;
+    justify-content: flex-start;
   }
 }
 
@@ -7073,9 +7098,14 @@ table.formLayout td {
 }
 .health_insurance_block .pipeline li {
   margin-bottom: 0.5em;
-  padding: 1.5em 1em;
   background-image: linear-gradient(0deg, #00486a, #018e9f);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
   border-radius: 18px;
+  transition: 0.5s;
+}
+.health_insurance_block .pipeline li a {
+  padding: 1.5em 1em;
+  height: 100%;
   line-height: 1.5;
   display: flex;
   justify-content: center;
@@ -7084,10 +7114,13 @@ table.formLayout td {
   text-align: center;
   font-weight: bolder;
   font-size: 1.375rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+  text-decoration: none;
 }
 .health_insurance_block .pipeline li:nth-child(2n) {
   background-image: linear-gradient(0deg, #5d4a2a, #91813f);
+}
+.health_insurance_block .pipeline li:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .health_insurance_block .listblock {
   font-size: 1.125rem;

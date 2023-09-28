@@ -1,11 +1,12 @@
 .pagination {
-  margin-top: 30px;
+  margin-top: 0px;
   padding: 10px 0;
   text-align: center;
   font-size: 1.125em;
   line-height: 1.5;
+
   form {
-    display: inline-block;
+    display: block;
   }
   input,
   select {
@@ -26,7 +27,9 @@
     font-weight: bold;
     color: $hilight;
   }
-
+  .total {
+    display: none;
+  }
   .items {
     display: inline;
     a {
@@ -56,12 +59,16 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     & > li {
       min-width: 40px;
       height: 40px;
       margin: 2px;
       list-style: none;
       flex: 0 0 auto;
+      &.hidden_wwMedium {
+        display: none;
+      }
       a {
         display: block;
         color: $fontColor;
@@ -155,8 +162,16 @@
     }
   }
 
-  @media screen and (min-width: $wwMedium) {
+  @media screen and (min-width: 780px) {
+    .total {
+      display: block;
+    }
     .page {
+      > li {
+        &.hidden_wwMedium {
+          display: block;
+        }
+      }
     }
   }
 }

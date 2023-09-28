@@ -468,8 +468,8 @@
         <h3>下載PDF檔</h3>
         <p>說明：</p>
         <ol>
-          <li>選擇查詢條件「年度」「分區業務組」「特約類別」「醫事機構名稱」，點選開始查詢可顯示查詢結果。</li>
-          <li>不選擇時，查詢全部範圍資料。</li>
+          <li>選擇查詢條件請提供「年度」、「分區業務組」、「機構層級/特約類別」、「醫事機構名稱」查詢條件，點選查詢可顯示查詢結果。</li>
+          <!-- <li>不選擇時，查詢全部範圍資料。</li> -->
 
         </ol>
       </article>
@@ -523,7 +523,7 @@
               <tr>
                 <th>醫事機構名稱</th>
                 <td>
-                  <input class="fullWidth" type="text" placeholder="請輸入事機構名稱">
+                  <input class="fullWidth" type="text" placeholder="可輸入部分醫事機構名稱">
                 </td>
               </tr>
             </table>
@@ -538,21 +538,28 @@
       <section class="list">
         <table class="rwdTable">
           <thead>
-            <tr>
+            <!-- <tr>
               <th>編號</th>
               <th>醫事機構名稱</th>
               <th>組別</th>
               <th>特約類別</th>
+              <th class="downTh">下載</th>
+            </tr> -->
+            <tr>
+              <th>編號</th>
+              <th>分區業務組</th>
+              <th>機構層級/特約類別</th>
+              <th>醫事機構名稱</th>
               <th class="downTh">下載</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="numb">1</td>
-              <td class="aLeft">國立臺灣大學醫學院附設醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">國立臺灣大學醫學院附設醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType doc">doc</span></a></li>
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
@@ -561,21 +568,25 @@
             </tr>
             <tr>
               <td class="numb">2</td>
-              <td class="aLeft">三軍總醫院附設民眾診療服務處</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">三軍總醫院附設民眾診療服務處</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
+                  <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
+                  <li><a download href="filename.zip" title="download filename.zip"><span class="fileType zip">zip</span></a></li>
+                  <li><a download href="filename.docx" title="download filename.docx"><span class="fileType docx">docx</span></a></li>
+                  <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType xls">xls</span></a></li>
                 </ol>
               </td>
             </tr>
             <tr>
               <td class="numb">3</td>
-              <td class="aLeft">臺北榮民總醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">臺北榮民總醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -583,10 +594,10 @@
             </tr>
             <tr>
               <td class="numb">4</td>
-              <td class="aLeft">國泰醫療財團法人國泰綜合醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">國泰醫療財團法人國泰綜合醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -594,10 +605,10 @@
             </tr>
             <tr>
               <td class="numb">5</td>
-              <td class="aLeft">財團法人臺灣基督長老教會馬偕紀念社會事業基金會馬偕紀念醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">財團法人臺灣基督長老教會馬偕紀念社會事業基金會馬偕紀念醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -605,10 +616,10 @@
             </tr>
             <tr>
               <td class="numb">6</td>
-              <td class="aLeft">新光醫療財團法人新光吳火獅紀念醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">新光醫療財團法人新光吳火獅紀念醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -616,10 +627,10 @@
             </tr>
             <tr>
               <td class="numb">7</td>
-              <td class="aLeft">醫療財團法人徐元智先生醫藥基金會亞東紀念醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">醫療財團法人徐元智先生醫藥基金會亞東紀念醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -627,10 +638,10 @@
             </tr>
             <tr>
               <td class="numb">8888</td>
-              <td class="aLeft">台北市立萬芳醫院－委託財團法人私立臺北醫學大學辦理</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">台北市立萬芳醫院－委託財團法人私立臺北醫學大學辦理</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -638,10 +649,10 @@
             </tr>
             <tr>
               <td class="numb">999</td>
-              <td class="aLeft">國立臺灣大學醫學院附設醫院</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">國立臺灣大學醫學院附設醫院</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -649,10 +660,10 @@
             </tr>
             <tr>
               <td class="numb">10</td>
-              <td class="aLeft">三軍總醫院附設民眾診療服務處</td>
-              <td>臺北業務組</td>
+              <td>臺北</td>
               <td>醫學中心</td>
-              <td>
+              <td class="aLeft">三軍總醫院附設民眾診療服務處</td>
+              <td class="notitle">
                 <ol class="downloadFiles">
                   <li><a download href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
                 </ol>
@@ -672,16 +683,16 @@
         <ul class="page">
           <li class="first"><a title="第一頁" href="?">第一頁</a></li>
           <li class="prev"><a title="上一頁" href="?">上一頁</a></li>
-          <li><a title="1" href="?">01</a></li>
-          <li><a title="2" href="?">02</a></li>
+          <li class="hidden_wwMedium"><a title="1" href="?">01</a></li>
+          <li class="hidden_wwMedium"><a title="2" href="?">02</a></li>
           <li class="active"><a title="3" href="?">03</a></li>
-          <li><a title="4" href="?">04</a></li>
-          <li><a title="5" href="?">05</a></li>
-          <li><a title="6" href="?">06</a></li>
-          <li><a title="7" href="?">07</a></li>
-          <li><a title="8" href="?">08</a></li>
-          <li><a title="9" href="?">09</a></li>
-          <li><a title="10" href="?">10</a></li>
+          <li class="hidden_wwMedium"><a title="4" href="?">04</a></li>
+          <li class="hidden_wwMedium"><a title="5" href="?">05</a></li>
+          <li class="hidden_wwMedium"><a title="6" href="?">06</a></li>
+          <li class="hidden_wwMedium"><a title="7" href="?">07</a></li>
+          <li class="hidden_wwMedium"><a title="8" href="?">08</a></li>
+          <li class="hidden_wwMedium"><a title="9" href="?">09</a></li>
+          <li class="hidden_wwMedium"><a title="10" href="?">10</a></li>
           <li class="next"><a title="下一頁" href="?">下一頁</a></li>
           <li class="last"><a title="最後一頁" href="?">最後一頁</a></li>
         </ul>
