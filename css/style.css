@@ -5978,11 +5978,17 @@ table.formLayout td {
 .list > table tr:nth-child(even) {
   background: #f4f4f4;
 }
+.list > table tr:nth-child(even) td {
+  padding: 0;
+}
 .list > table tr:nth-child(even) .downloadFiles li a {
   background-color: #d7d7d7;
 }
 .list > table tr:nth-child(even) .downloadFiles li a:after {
   border-color: #f4f4f4 #f4f4f4 #b1b7bc #b1b7bc;
+}
+.list > table tr.active {
+  background: #effaf9;
 }
 .list > table th,
 .list > table td {
@@ -6027,9 +6033,6 @@ table.formLayout td {
   text-align: left;
   width: 160px;
 }
-.list > table td.active {
-  background: #effaf9;
-}
 .list > table td.numb {
   width: 4em;
   text-align: right;
@@ -6047,9 +6050,10 @@ table.formLayout td {
   position: relative;
   text-align: left;
 }
-.list > table td.answer {
+.list > table td .answerblock {
   display: none;
   background: #effaf9;
+  padding: 1em;
 }
 .list > table td > a {
   display: block;
@@ -6121,7 +6125,7 @@ table.formLayout td {
     padding: 0em;
   }
   .list > table.rwdTable tr:nth-child(even) td {
-    padding: 0.8em;
+    padding: 0;
   }
   .list > table.rwdTable tr:nth-child(even) td:before {
     display: none;
@@ -6186,7 +6190,7 @@ table.formLayout td {
     text-align: left;
     width: auto;
   }
-  .list > table.rwdTable td.answer {
+  .list > table.rwdTable td .answerblock {
     display: none;
   }
   .list > table.rwdTable .downloadFiles {

@@ -24,6 +24,9 @@
       border-bottom: 1px solid $borderColor;
       &:nth-child(even) {
         background: #f4f4f4;
+        td {
+          padding: 0;
+        }
         .downloadFiles {
           li {
             a {
@@ -34,6 +37,9 @@
             }
           }
         }
+      }
+      &.active {
+        background: lighten($color: $assistant1, $amount: 15);
       }
     }
     th,
@@ -78,9 +84,7 @@
         text-align: left;
         width: 160px;
       }
-      &.active {
-        background: lighten($color: $assistant1, $amount: 15);
-      }
+
       &.numb {
         width: 4em;
         text-align: right;
@@ -99,9 +103,10 @@
         text-align: left;
         // font-size: 1.125em;
       }
-      &.answer {
+      .answerblock {
         display: none;
         background: lighten($color: $assistant1, $amount: 15);
+        padding: 1em;
       }
       & > a {
         display: block;
@@ -194,7 +199,7 @@
         &:nth-child(even) {
           padding: 0em;
           td {
-            padding: 0.8em;
+            padding: 0;
             &:before {
               display: none;
             }
@@ -264,7 +269,7 @@
           text-align: left;
           width: auto;
         }
-        &.answer {
+        .answerblock {
           display: none;
         }
       }
