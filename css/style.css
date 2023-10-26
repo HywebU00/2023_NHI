@@ -6019,6 +6019,17 @@ table.formLayout td {
 .list > table td.aRight {
   text-align: right;
 }
+.list > table td.mainsort {
+  text-align: center;
+  width: 130px;
+}
+.list > table td.subsort {
+  text-align: left;
+  width: 160px;
+}
+.list > table td.active {
+  background: #effaf9;
+}
 .list > table td.numb {
   width: 4em;
   text-align: right;
@@ -6035,6 +6046,10 @@ table.formLayout td {
 .list > table td.title {
   position: relative;
   text-align: left;
+}
+.list > table td.answer {
+  display: none;
+  background: #effaf9;
 }
 .list > table td > a {
   display: block;
@@ -6059,6 +6074,7 @@ table.formLayout td {
 .list > table td > a:hover::before, .list > table td > a:focus::before {
   z-index: 0;
   box-shadow: #e81158 0 0 0 2px inset;
+  box-shadow: none;
 }
 .list > table td time {
   display: inline-block;
@@ -6100,6 +6116,15 @@ table.formLayout td {
     position: relative;
     overflow: hidden;
     padding: 0.8em 0 0.7em 3.4em;
+  }
+  .list > table.rwdTable tr:nth-child(even) {
+    padding: 0em;
+  }
+  .list > table.rwdTable tr:nth-child(even) td {
+    padding: 0.8em;
+  }
+  .list > table.rwdTable tr:nth-child(even) td:before {
+    display: none;
   }
   .list > table.rwdTable th,
   .list > table.rwdTable td {
@@ -6152,6 +6177,17 @@ table.formLayout td {
   .list > table.rwdTable td.title > a::before {
     left: 0;
     right: 0;
+  }
+  .list > table.rwdTable td.mainsort {
+    text-align: left;
+    width: auto;
+  }
+  .list > table.rwdTable td.subsort {
+    text-align: left;
+    width: auto;
+  }
+  .list > table.rwdTable td.answer {
+    display: none;
   }
   .list > table.rwdTable .downloadFiles {
     vertical-align: middle;

@@ -70,7 +70,17 @@
       &.aRight {
         text-align: right;
       }
-
+      &.mainsort {
+        text-align: center;
+        width: 130px;
+      }
+      &.subsort {
+        text-align: left;
+        width: 160px;
+      }
+      &.active {
+        background: lighten($color: $assistant1, $amount: 15);
+      }
       &.numb {
         width: 4em;
         text-align: right;
@@ -88,6 +98,10 @@
         position: relative;
         text-align: left;
         // font-size: 1.125em;
+      }
+      &.answer {
+        display: none;
+        background: lighten($color: $assistant1, $amount: 15);
       }
       & > a {
         display: block;
@@ -108,9 +122,11 @@
         &:focus {
           color: $primaryColor;
           text-decoration: underline;
+
           &::before {
             z-index: 0;
             box-shadow: $hilight 0 0 0 2px inset;
+            box-shadow: none;
           }
         }
       }
@@ -174,6 +190,16 @@
         position: relative;
         overflow: hidden;
         padding: 0.8em 0 0.7em 3.4em;
+
+        &:nth-child(even) {
+          padding: 0em;
+          td {
+            padding: 0.8em;
+            &:before {
+              display: none;
+            }
+          }
+        }
       }
       th,
       td {
@@ -229,6 +255,17 @@
               right: 0;
             }
           }
+        }
+        &.mainsort {
+          text-align: left;
+          width: auto;
+        }
+        &.subsort {
+          text-align: left;
+          width: auto;
+        }
+        &.answer {
+          display: none;
         }
       }
       .downloadFiles {

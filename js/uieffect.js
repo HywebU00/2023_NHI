@@ -1040,3 +1040,13 @@ $(document).ready(function () {
     });
   });
 });
+
+// 常見問答
+$(function () {
+  $('.list table td a.question').click(function () {
+    $(this).parent('.title').toggleClass('active');
+    $(this).parents('tr').siblings('tr').find('td.active').removeClass('active');
+    $(this).parents('tr').siblings('tr').find('td.answer').stop().slideUp();
+    $(this).parents('tr').next('tr').find('td.answer').stop().slideToggle();
+  });
+});
