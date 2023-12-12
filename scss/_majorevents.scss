@@ -1,0 +1,51 @@
+// 大事紀） //////////////////////////////////////////////////
+.majorevents_block {
+  .majorevents_group {
+    padding-top: 1em;
+    .year {
+      font-size: 1.75em;
+      font-weight: bolder;
+      color: $secondaryColor;
+    }
+    .majorevents {
+      font-size: 1.125em;
+      margin: 10px 0px 10px 25px;
+      padding: 0 0 0 30px;
+      border-left: 6px solid $focus;
+      .majorevents_list {
+        border-bottom: 1px dotted #333;
+        margin-bottom: 1em;
+        line-height: 1;
+        .date {
+          color: $majoreventsdate;
+          padding-left: 15px;
+          position: relative;
+          &:before {
+            content: '';
+            border: 5px solid $majoreventsdate;
+            border-color: transparent transparent transparent $majoreventsdate;
+            position: absolute;
+            left: 0;
+            top: 4px;
+          }
+        }
+        p {
+          line-height: 1.5;
+        }
+        .pic {
+          margin-bottom: 1em;
+          img {
+            max-width: 100%;
+          }
+        }
+        a {
+          color: $secondaryColor;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

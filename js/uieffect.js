@@ -1050,3 +1050,24 @@ $(function () {
     $(this).parents('tr').next('tr').find('.answerblock').stop().slideToggle();
   });
 });
+// 大事紀
+$(function () {
+  $('.events_category ul li a').each(function (index, el) {
+    $(this).bind('click', function () {
+      var num = $(this).parent('li').index() + 1;
+      //先抓每一個li的序列，index從0開始，所以要+1
+      $('body,html')
+        .stop(true, true)
+        .animate(
+          {
+            scrollTop: $('.s_' + num).offset().top - 70,
+          },
+          0,
+          'easeOutExpo'
+        );
+      //移動body scrollTop，做動畫，去取對應的section序列設定為offset=0，把該section推到最頂端
+      // $('.s_' + num).find('a:first').focus();//可以這樣加
+      return false;
+    });
+  });
+});
