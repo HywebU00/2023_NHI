@@ -1062,8 +1062,8 @@ $(function () {
           {
             scrollTop: $('.s_' + num).offset().top - 70,
           },
-          0,
-          'easeOutExpo'
+          1200,
+          'linear'
         );
       //移動body scrollTop，做動畫，去取對應的section序列設定為offset=0，把該section推到最頂端
       // $('.s_' + num).find('a:first').focus();//可以這樣加
