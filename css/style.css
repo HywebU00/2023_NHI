@@ -7428,6 +7428,7 @@ table.formLayout td {
   border-bottom: 1px dotted #333;
   margin-bottom: 1em;
   line-height: 1;
+  padding-bottom: 0.5em;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list .date {
   color: #b45f00;
@@ -7450,7 +7451,7 @@ table.formLayout td {
   margin: 0 0 0.5em 1em;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list .pic {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   margin-left: 1em;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list .pic img {
