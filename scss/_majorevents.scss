@@ -20,20 +20,25 @@
           color: $majoreventsdate;
           padding-left: 15px;
           position: relative;
+          font-size: 1.125em;
+          font-weight: bolder;
+          margin: 0 0 0.5em;
           &:before {
             content: '';
             border: 5px solid $majoreventsdate;
             border-color: transparent transparent transparent $majoreventsdate;
             position: absolute;
             left: 0;
-            top: 4px;
+            top: 5px;
           }
         }
         p {
           line-height: 1.5;
+          margin: 0 0 0.5em 1em;
         }
         .pic {
           margin-bottom: 1em;
+          margin-left: 1em;
           img {
             max-width: 100%;
           }

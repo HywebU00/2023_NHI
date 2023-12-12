@@ -7433,6 +7433,9 @@ table.formLayout td {
   color: #b45f00;
   padding-left: 15px;
   position: relative;
+  font-size: 1.125em;
+  font-weight: bolder;
+  margin: 0 0 0.5em;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list .date:before {
   content: "";
@@ -7440,13 +7443,15 @@ table.formLayout td {
   border-color: transparent transparent transparent #b45f00;
   position: absolute;
   left: 0;
-  top: 4px;
+  top: 5px;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list p {
   line-height: 1.5;
+  margin: 0 0 0.5em 1em;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list .pic {
   margin-bottom: 1em;
+  margin-left: 1em;
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list .pic img {
   max-width: 100%;
