@@ -38,8 +38,9 @@
         box-shadow: rgba(255, 255, 255, 1) 0 0 0 2px;
       }
       &.active {
-        background-color: #012c40;
+        background-color: $secondaryColor;
         background-image: none;
+        box-shadow: rgba(255, 255, 255, 1) 0 0 0 2px;
         color: #fff;
       }
     }

@@ -577,7 +577,7 @@ $(function () {
     let _handle = _this.find('.handle');
     let _tray = _this.find('.tray');
     const speed = 500;
-
+    _handle.addClass('openIt');
     _handle.click(function () {
       if (_tray.is(':hidden')) {
         _tray.stop(true, false).slideDown(speed);

@@ -965,7 +965,7 @@ kbd {
 }
 
 .preface {
-  padding: 30px 5vw;
+  padding: 15px 5vw;
   margin: 0px auto 30px;
   line-height: 2;
   background-color: #f4f4f4;
@@ -3371,8 +3371,9 @@ fieldset legend {
   box-shadow: rgb(255, 255, 255) 0 0 0 2px;
 }
 .news .tabItems button.active {
-  background-color: #012c40;
+  background-color: #018392;
   background-image: none;
+  box-shadow: rgb(255, 255, 255) 0 0 0 2px;
   color: #fff;
 }
 .news .tabContent {
@@ -4933,6 +4934,7 @@ table.formLayout td {
   clear: both;
   position: relative;
   padding: 1px 0;
+  display: none;
 }
 
 .cpMeta {
@@ -5988,9 +5990,6 @@ table.formLayout td {
 .list > table tr:nth-child(even) {
   background: #f4f4f4;
 }
-.list > table tr:nth-child(even) td {
-  padding: 0;
-}
 .list > table tr:nth-child(even) .downloadFiles li a {
   background-color: #d7d7d7;
 }
@@ -6067,7 +6066,7 @@ table.formLayout td {
 }
 .list > table td > a {
   display: block;
-  color: #000;
+  color: #004f73;
   text-decoration: none;
   transition: 0.2s;
 }
@@ -6082,7 +6081,7 @@ table.formLayout td {
   transition: 0.2s;
 }
 .list > table td > a:hover, .list > table td > a:focus {
-  color: #004f73;
+  color: #018392;
   text-decoration: underline;
 }
 .list > table td > a:hover::before, .list > table td > a:focus::before {
@@ -6130,12 +6129,6 @@ table.formLayout td {
     position: relative;
     overflow: hidden;
     padding: 0.8em 0 0.7em 3.4em;
-  }
-  .list > table.rwdTable tr:nth-child(even) {
-    padding: 0em;
-  }
-  .list > table.rwdTable tr:nth-child(even) td {
-    padding: 0;
   }
   .list > table.rwdTable tr:nth-child(even) td:before {
     display: none;
