@@ -5076,6 +5076,9 @@ table.formLayout td {
   margin: 1em 0 1.5em;
   line-height: 1.7;
 }
+.cpArticle img {
+  max-width: 100%;
+}
 .cpArticle h3,
 .cpArticle h4,
 .cpArticle h5,
