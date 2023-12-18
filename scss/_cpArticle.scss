@@ -1,7 +1,8 @@
 .cpArticle {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   line-height: 1.9;
   font-size: 1.125rem;
+
   a {
     color: $linkColor;
     &:hover {
@@ -16,6 +17,16 @@
   img {
     max-width: 100%;
   }
+  iframe {
+    width: 100%;
+    height: 56.25vw;
+    margin: 0 0 1em;
+    @media screen and (min-width: $wwMedium) {
+      width: 560px;
+      height: 315px;
+    }
+  }
+
   h3,
   h4,
   h5,
@@ -61,6 +72,7 @@
       background-color: #eee;
     }
   }
+
   blockquote {
     position: relative;
     font-style: italic;
@@ -238,6 +250,7 @@
     color: #fff;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: 0.5s;
+    display: block;
     &:hover {
       background-color: lighten($color: $primaryColor, $amount: 8);
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;

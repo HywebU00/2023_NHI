@@ -993,6 +993,20 @@ kbd {
     padding-right: 30px;
   }
 }
+.preface img {
+  max-width: 100%;
+}
+.preface iframe {
+  width: 100%;
+  height: 56.25vw;
+  margin: 0 0 1em;
+}
+@media screen and (min-width: 700px) {
+  .preface iframe {
+    width: 560px;
+    height: 315px;
+  }
+}
 
 .downloadFiles {
   list-style: none;
@@ -5062,7 +5076,7 @@ table.formLayout td {
 }
 
 .cpArticle {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   line-height: 1.9;
   font-size: 1.125rem;
 }
@@ -5078,6 +5092,17 @@ table.formLayout td {
 }
 .cpArticle img {
   max-width: 100%;
+}
+.cpArticle iframe {
+  width: 100%;
+  height: 56.25vw;
+  margin: 0 0 1em;
+}
+@media screen and (min-width: 700px) {
+  .cpArticle iframe {
+    width: 560px;
+    height: 315px;
+  }
 }
 .cpArticle h3,
 .cpArticle h4,
@@ -5297,6 +5322,7 @@ table.formLayout td {
   color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   transition: 0.5s;
+  display: block;
 }
 .buttonCenter a:hover {
   background-color: #006b9c;
