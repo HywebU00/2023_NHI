@@ -3122,25 +3122,45 @@ fieldset legend {
 .bulletin .subject a {
   display: block;
   color: #081c36;
+  text-decoration: none;
 }
 .bulletin .subject a:focus, .bulletin .subject a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .bulletin .subject a:focus {
   outline: 1px solid #07b4b1;
 }
+.bulletin .more {
+  flex: 0 0 auto;
+  flex-basis: 150px;
+  margin: 10px 0 0 0;
+}
+.bulletin .more a {
+  background-color: hsla(199, 100%, 23%, 0.306);
+  color: #000;
+  font-size: 1.125rem;
+  height: 2em;
+  line-height: 2;
+}
 @media screen and (min-width: 1000px) {
   .bulletin {
     font-size: 1.125em;
+    display: flex;
+    align-items: center;
   }
   .bulletin .blockHeader {
-    display: inline-block;
-    margin-right: 10px;
+    flex: 0 0 auto;
+    flex-basis: 120px;
+    margin: 0 10px 0 0;
   }
   .bulletin .subject {
-    display: inline-block;
+    flex: 1 1 auto;
     padding-top: 0.25em;
     font-size: 1.125em;
+    margin: 0;
+  }
+  .bulletin .more {
+    margin: 0;
   }
 }
 

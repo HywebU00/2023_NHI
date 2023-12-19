@@ -1,33 +1,79 @@
 // 首頁：系統公告 //////////////////////////////////////////////////
-.bulletin{
+.bulletin {
   @extend %primSecWidth;
   font-size: 1.125rem;
-  .blockHeader{
-    margin: 0 ; align-items: flex-start;
+
+  .blockHeader {
+    margin: 0;
+    align-items: flex-start;
     font-size: 1em;
-    .major{
-      padding: 0 1em; height: 2em; line-height: 2.1;
-      font-size: inherit; display: inline-block; width: auto;
+
+    .major {
+      padding: 0 1em;
+      height: 2em;
+      line-height: 2.1;
+      font-size: inherit;
+      display: inline-block;
+      width: auto;
       letter-spacing: 1px;
-      @include grandient1(180deg); color: $fontInvert;
+      @include grandient1(180deg);
+      color: $fontInvert;
       border-radius: 2em;
-      &::after{display: none;}
+      &::after {
+        display: none;
+      }
     }
   }
-  .subject{
-    margin: .8em 0 0;font-weight: bold; line-height: 1.6;
-    a{
-      display: block; color: $fontColor;
-      &:focus, &:hover {
-        text-decoration: none; 
+  .subject {
+    margin: 0.8em 0 0;
+    font-weight: bold;
+    line-height: 1.6;
+
+    a {
+      display: block;
+      color: $fontColor;
+      text-decoration: none;
+      &:focus,
+      &:hover {
+        text-decoration: underline;
       }
-      &:focus{outline: 1px solid $focus; }
+      &:focus {
+        outline: 1px solid $focus;
+      }
+    }
+  }
+  .more {
+    flex: 0 0 auto;
+    flex-basis: 150px;
+    margin: 10px 0 0 0;
+
+    a {
+      background-color: hsla(199, 100%, 23%, 0.306);
+      color: #000;
+      font-size: 1.125rem;
+      height: 2em;
+      line-height: 2;
     }
   }
 
-  @media screen and (min-width: $wwNormal){
+  @media screen and (min-width: $wwNormal) {
     font-size: 1.125em;
-    .blockHeader{ display: inline-block; margin-right: 10px;}
-    .subject{  display: inline-block; padding-top: .25em; font-size: 1.125em;}
+    display: flex;
+    align-items: center;
+    .blockHeader {
+      flex: 0 0 auto;
+      flex-basis: 120px;
+
+      margin: 0 10px 0 0;
+    }
+    .subject {
+      flex: 1 1 auto;
+      padding-top: 0.25em;
+      font-size: 1.125em;
+      margin: 0;
+    }
+    .more {
+      margin: 0;
+    }
   }
 }
