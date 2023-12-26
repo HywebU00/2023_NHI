@@ -424,7 +424,10 @@
     margin-bottom: 50px;
 
     &.bgcolor {
-      padding: 70px 0 0 70px;
+      padding: 70px 0 0 50px;
+      &.nopic {
+        padding: 70px 50px 0;
+      }
     }
     &.service_features {
       padding-bottom: 22%;

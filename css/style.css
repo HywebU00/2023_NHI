@@ -7420,7 +7420,10 @@ table.formLayout td {
     margin-bottom: 50px;
   }
   .health_insurance_block.bgcolor {
-    padding: 70px 0 0 70px;
+    padding: 70px 0 0 50px;
+  }
+  .health_insurance_block.bgcolor.nopic {
+    padding: 70px 50px 0;
   }
   .health_insurance_block.service_features {
     padding-bottom: 22%;
