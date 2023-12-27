@@ -6179,9 +6179,6 @@ table.formLayout td {
     overflow: hidden;
     padding: 0.8em 0 0.7em 3.4em;
   }
-  .list > table.rwdTable tr:nth-child(even) td:before {
-    display: none;
-  }
   .list > table.rwdTable th,
   .list > table.rwdTable td {
     position: static;
@@ -6210,6 +6207,9 @@ table.formLayout td {
     display: block;
     margin-right: 0;
     color: #374459;
+  }
+  .list > table.rwdTable td.answer::before {
+    display: none;
   }
   .list > table.rwdTable td.numb {
     position: absolute;
