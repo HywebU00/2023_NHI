@@ -73,6 +73,7 @@
   & > ul {
     border-top: 3px solid $borderColor;
     border-bottom: 2px solid $borderColor;
+
     & > li {
       margin: 0;
       padding: 0 0 0 3px;
@@ -86,13 +87,28 @@
   .fileName {
     margin: 6px 0 3px;
     flex: 1 1 auto;
+
+    @media screen and (max-width: $wwMedium) {
+      flex-basis: 100%;
+    }
   }
 
   .downloadFiles {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+    flex-basis: 390px;
+
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: $wwMedium) {
+      flex-basis: 100%;
+    }
     li {
-      margin: 0 0 0 25px;
+      flex: 0 0 auto;
+      flex-basis: 120px;
+      margin: 0 0 0 10px;
       padding: 3px 0;
+
+      flex-wrap: nowrap;
     }
     a {
       padding: 5px;
@@ -100,9 +116,9 @@
       &:hover,
       &:focus {
         outline: none;
-        .fileSize {
-          text-decoration: underline;
-        }
+        // .fileSize {
+        //   text-decoration: underline;
+        // }
       }
       &:focus {
         box-shadow: $linkColor 0 0 0 1px inset;
