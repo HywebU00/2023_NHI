@@ -5115,14 +5115,12 @@ table.formLayout td {
 }
 .cpArticle iframe {
   width: 100%;
-  height: 56.25vw;
-  margin: 0 0 1em;
+  height: 315px;
+  margin: 0 0 2em;
 }
-@media screen and (min-width: 700px) {
-  .cpArticle iframe {
-    width: 560px;
-    height: 315px;
-  }
+.cpArticle .iframestyle {
+  width: 100%;
+  height: 56.25vw;
 }
 .cpArticle h3,
 .cpArticle h4,

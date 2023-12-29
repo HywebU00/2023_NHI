@@ -19,12 +19,17 @@
   }
   iframe {
     width: 100%;
+    height: 315px;
+    // height: 56.25vw;
+    margin: 0 0 2em;
+    // @media screen and (min-width: $wwMedium) {
+    //   width: 560px;
+    //   height: 315px;
+    // }
+  }
+  .iframestyle {
+    width: 100%;
     height: 56.25vw;
-    margin: 0 0 1em;
-    @media screen and (min-width: $wwMedium) {
-      width: 560px;
-      height: 315px;
-    }
   }
 
   h3,
