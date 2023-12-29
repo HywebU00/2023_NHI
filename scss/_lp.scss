@@ -103,9 +103,11 @@
         text-align: left;
         // font-size: 1.125em;
       }
+      &.answer {
+        padding: 0;
+      }
       .answerblock {
         display: none;
-        background: lighten($color: $assistant1, $amount: 15);
         padding: 1em;
       }
       & > a {
@@ -195,14 +197,14 @@
         position: relative;
         overflow: hidden;
         padding: 0.8em 0 0.7em 3.4em;
-
-        &:nth-child(even) {
-          // padding: 0em;
-          td {
-            // padding: 0;
-            // &:before {
-            //   display: none;
-            // }
+      }
+      &.qa {
+        tr {
+          &:nth-child(even) {
+            padding: 0em;
+            td {
+              padding: 0;
+            }
           }
         }
       }
@@ -274,7 +276,7 @@
           width: auto;
         }
         .answerblock {
-          display: none;
+          padding: 1em;
         }
       }
       .downloadFiles {

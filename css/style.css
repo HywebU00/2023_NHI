@@ -5634,6 +5634,7 @@ table.formLayout td {
   flex-basis: 390px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 700px) {
   .fileDownload .downloadFiles {
@@ -6119,9 +6120,11 @@ table.formLayout td {
   position: relative;
   text-align: left;
 }
+.list > table td.answer {
+  padding: 0;
+}
 .list > table td .answerblock {
   display: none;
-  background: #effaf9;
   padding: 1em;
 }
 .list > table td > a {
@@ -6190,6 +6193,12 @@ table.formLayout td {
     overflow: hidden;
     padding: 0.8em 0 0.7em 3.4em;
   }
+  .list > table.rwdTable.qa tr:nth-child(even) {
+    padding: 0em;
+  }
+  .list > table.rwdTable.qa tr:nth-child(even) td {
+    padding: 0;
+  }
   .list > table.rwdTable th,
   .list > table.rwdTable td {
     position: static;
@@ -6254,7 +6263,7 @@ table.formLayout td {
     width: auto;
   }
   .list > table.rwdTable td .answerblock {
-    display: none;
+    padding: 1em;
   }
   .list > table.rwdTable .downloadFiles {
     vertical-align: middle;
