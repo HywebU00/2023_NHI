@@ -5116,12 +5116,7 @@ table.formLayout td {
 }
 .cpArticle iframe {
   width: 100%;
-  height: 315px;
   margin: 0 0 2em;
-}
-.cpArticle .iframestyle {
-  width: 100%;
-  height: 56.25vw;
 }
 .cpArticle h3,
 .cpArticle h4,
