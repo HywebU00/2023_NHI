@@ -965,7 +965,7 @@ kbd {
 }
 
 .preface {
-  padding: 15px 5vw;
+  padding: 0.5em 5vw;
   margin: 0px auto 30px;
   line-height: 2;
   background-color: #f4f4f4;
