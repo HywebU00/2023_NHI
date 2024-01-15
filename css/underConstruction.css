@@ -98,6 +98,13 @@ article .columnblock .rightblock .image {
   position: absolute;
   bottom: -2.8em;
 }
+article .columnblock .image {
+  position: relative;
+  margin: 1em 0;
+}
+article .columnblock .image img {
+  width: 100%;
+}
 article p {
   line-height: 1.4em;
   padding: 0;
@@ -178,6 +185,7 @@ article .period time::before {
   }
   article .columnblock .rightblock .image {
     position: relative;
+    bottom: auto;
   }
   article .columnblock .rightblock .image img {
     width: 100%;

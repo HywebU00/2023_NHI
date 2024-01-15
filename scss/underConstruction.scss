@@ -100,6 +100,13 @@ article {
         }
       }
     }
+    .image {
+      position: relative;
+      margin: 1em 0;
+      img {
+        width: 100%;
+      }
+    }
   }
   p {
     line-height: 1.4em;
@@ -181,11 +188,13 @@ article {
         flex-basis: 100%;
         .image {
           position: relative;
+          bottom: auto;
           img {
             width: 100%;
           }
         }
       }
+
       .period {
         time {
           margin: 0 10px;
