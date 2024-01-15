@@ -92,18 +92,17 @@ article .columnblock .leftblock {
 }
 article .columnblock .rightblock {
   flex: 1 1 auto;
+  padding-left: 2em;
   position: relative;
-}
-article .columnblock .rightblock .image {
-  position: absolute;
-  bottom: -2.8em;
 }
 article .columnblock .image {
   position: relative;
   margin: 1em 0;
+  text-align: center;
 }
 article .columnblock .image img {
   width: 100%;
+  margin: 0 auto;
 }
 article p {
   line-height: 1.4em;
@@ -182,13 +181,10 @@ article .period time::before {
   article .columnblock .rightblock {
     flex: 1 1 auto;
     flex-basis: 100%;
+    padding: 0;
   }
-  article .columnblock .rightblock .image {
-    position: relative;
-    bottom: auto;
-  }
-  article .columnblock .rightblock .image img {
-    width: 100%;
+  article .columnblock .image img {
+    width: 80%;
   }
   article .columnblock .period time {
     margin: 0 10px;
@@ -216,5 +212,11 @@ article .period time::before {
     border-radius: 50px;
     padding: 3px;
     margin-bottom: 5px;
+  }
+  article .columnblock .image {
+    margin: 2em 0;
+  }
+  article .columnblock .image img {
+    width: 60%;
   }
 }/*# sourceMappingURL=underConstruction.css.map */

@@ -92,19 +92,16 @@ article {
     }
     .rightblock {
       flex: 1 1 auto;
+      padding-left: 2em;
       position: relative;
-      .image {
-        position: absolute;
-        bottom: -2.8em;
-        img {
-        }
-      }
     }
     .image {
       position: relative;
       margin: 1em 0;
+      text-align: center;
       img {
         width: 100%;
+        margin: 0 auto;
       }
     }
   }
@@ -186,12 +183,11 @@ article {
       .rightblock {
         flex: 1 1 auto;
         flex-basis: 100%;
-        .image {
-          position: relative;
-          bottom: auto;
-          img {
-            width: 100%;
-          }
+        padding: 0;
+      }
+      .image {
+        img {
+          width: 80%;
         }
       }
 
@@ -229,6 +225,12 @@ article {
               margin-bottom: 5px;
             }
           }
+        }
+      }
+      .image {
+        margin: 2em 0;
+        img {
+          width: 60%;
         }
       }
     }
