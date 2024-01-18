@@ -645,7 +645,10 @@ a:focus {
     right: 30px;
     top: 30px;
   }
-  @media screen and (max-width: $wwMedium) {
+  @media screen and (max-width: $wwSlim) {
+    right: 20px;
+  }
+  @media (max-width: 374px) {
     position: relative;
     text-align: right;
     right: auto;
@@ -654,9 +657,12 @@ a:focus {
   }
   button.btn {
     border-radius: 5px;
-    height: 2.3em;
+    height: 2.9em;
     line-height: 2.5em;
     border: none;
     background-image: linear-gradient(0deg, #c67001, #ff9c00);
+    @media (max-width: 374px) {
+      width: 100%;
+    }
   }
 }
