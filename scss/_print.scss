@@ -1,0 +1,96 @@
+@media print {
+  // %no-bg {
+  //     background: none;
+  // }
+  /* -------------------------------不需要列印的區塊，請放置於這----//*/
+  header,
+  .fatfooter,
+  footer,
+  .accesskey,
+  .funcBar,
+  .innerbanner {
+    display: none;
+  }
+  /* -------------------------------各別顯示設定----//*/
+  body {
+    background: transparent;
+    // font-size: 12pt;
+    float: none;
+    width: 100%;
+
+    -webkit-print-color-adjust: exact;
+  }
+  .container {
+    margin: 0px auto;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0;
+  }
+  .main {
+    .pageHeader {
+      padding: 0;
+    }
+    .contentbox {
+      padding: 0;
+    }
+  }
+  .cp {
+    padding: 0;
+  }
+  .textBlock {
+    &.column4 {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        li {
+          border: 1px solid #999;
+          width: 23%;
+          margin: 0 1% 1em;
+        }
+      }
+    }
+    &.column3 {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          border: 1px solid #999;
+          width: 32%;
+          margin: 0 0.66% 1em;
+        }
+      }
+    }
+    &.column2 {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          border: 1px solid #999;
+          width: 48%;
+          margin: 0 1% 1em;
+        }
+      }
+    }
+  }
+  /* 檔案下載*/
+
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  p:first-line,
+  div:first-line,
+  blockquote:first-line,
+  li:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  thead {
+    display: table-header-group;
+    /* 表格即使分頁也會顯示表頭 */
+  }
+}

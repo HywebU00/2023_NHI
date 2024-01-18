@@ -946,14 +946,17 @@ $(function () {
   var _footSiteTree = $('.fatFooter').find('.siteTree>ul>li>ul');
   const text1 = _fatFootCtrl.text();
   const text2 = _fatFootCtrl.attr('data-altText');
+  _footSiteTree.hide();
 
   _fatFootCtrl.click(function () {
     if (_footSiteTree.is(':visible')) {
       _footSiteTree.slideUp();
-      $(this).addClass('closed').text(text2);
+      $(this).addClass('closed').text('開啟');
+      $(this).attr('name', '展開選單/OPEN');
     } else {
       _footSiteTree.slideDown();
-      $(this).removeClass('closed').text(text1);
+      $(this).removeClass('closed').text('收合');
+      $(this).attr('name', '收合選單/CLOSE');
     }
   });
 
