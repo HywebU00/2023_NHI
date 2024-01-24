@@ -1074,3 +1074,12 @@ $(function () {
     });
   });
 });
+
+// 當有rss時
+$(function () {
+  if ($('.rssbtn').siblings().hasClass('drawer')) {
+    $('.rssbtn').addClass('has_search');
+  } else {
+    $('.rssbtn').removeClass('has_search');
+  }
+});

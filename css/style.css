@@ -1355,23 +1355,34 @@ a:focus .fileType.other {
 }
 
 .rssbtn {
+  position: relative;
+  text-align: right;
+  right: auto;
+  top: auto;
+  margin-bottom: 1em;
+}
+.rssbtn.has_search {
   position: absolute;
   right: 50px;
   top: 50px;
+  margin-bottom: 0.5em;
+}
+.rssbtn.has_search button.btn {
+  height: 2.5em;
 }
 @media screen and (max-width: 1000px) {
-  .rssbtn {
+  .rssbtn.has_search {
     right: 30px;
     top: 30px;
   }
 }
 @media screen and (max-width: 480px) {
-  .rssbtn {
+  .rssbtn.has_search {
     right: 20px;
   }
 }
 @media (max-width: 374px) {
-  .rssbtn {
+  .rssbtn.has_search {
     position: relative;
     text-align: right;
     right: auto;
