@@ -7601,7 +7601,8 @@ table.formLayout td {
   footer,
   .accesskey,
   .funcBar,
-  .innerbanner {
+  .innerbanner,
+  .character {
     display: none;
   }
   /* -------------------------------各別顯示設定----//*/
