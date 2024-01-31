@@ -2,12 +2,13 @@
 .appAndSocialMedia, .topics,
 .services, .bulletin, .siteTree > ul, .contentbox, .pageHeader, .breadcrumb {
   width: 94%;
-  margin: 30px auto;
+  margin: 10px auto;
 }
 @media screen and (min-width: 1200px) {
   .appAndSocialMedia, .topics,
   .services, .bulletin, .siteTree > ul, .contentbox, .pageHeader, .breadcrumb {
     width: 1128px;
+    margin: 30px auto;
   }
 }
 
@@ -804,20 +805,30 @@ kbd {
 }
 
 .pageHeader {
-  margin: 40px auto 20px;
+  margin: 20px auto 0;
   color: #000;
   font-size: 1.4em;
   line-height: 1.5;
   text-align: center;
 }
+@media screen and (min-width: 1000px) {
+  .pageHeader {
+    margin: 40px auto 20px;
+  }
+}
 .pageHeader h2 {
   padding: 0 0 0.3em;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   display: inline-block;
   position: relative;
   line-height: 1.3;
   color: #042047;
   font-weight: bolder;
+}
+@media screen and (min-width: 1000px) {
+  .pageHeader h2 {
+    margin: 0 0 20px;
+  }
 }
 .pageHeader h2:before {
   content: "";
@@ -1369,6 +1380,7 @@ a:focus .fileType.other {
 }
 .rssbtn.has_search button.btn {
   height: 2.5em;
+  padding: 0 0.8em;
 }
 @media screen and (max-width: 1000px) {
   .rssbtn.has_search {
@@ -1381,21 +1393,14 @@ a:focus .fileType.other {
     right: 20px;
   }
 }
-@media (max-width: 374px) {
-  .rssbtn.has_search {
-    position: relative;
-    text-align: right;
-    right: auto;
-    top: auto;
-    margin-bottom: 1em;
-  }
-}
 .rssbtn button.btn {
   border-radius: 5px;
-  height: 2.9em;
+  height: 2.5em;
   line-height: 2.5em;
+  padding: 0 0.8em;
   border: none;
-  background-image: linear-gradient(0deg, #c67001, #ff9c00);
+  color: #333;
+  background-image: linear-gradient(0deg, #c1c4c6, #c1c4c6);
 }
 @media (max-width: 374px) {
   .rssbtn button.btn {
@@ -4583,7 +4588,7 @@ fieldset legend {
 }
 .list > ul > li a {
   display: flex;
-  flex-flow: row nowrap;
+  flex-wrap: wrap;
   padding: 0.8em 5px 0.8em;
   border-radius: 6px;
   text-decoration: none;
@@ -4614,11 +4619,22 @@ fieldset legend {
   font-size: 1.125em;
 }
 .list > ul > li time {
-  flex: 0 0 5.5em;
-  text-align: right;
+  flex: 1 1 auto;
+  flex-basis: 100%;
+  text-align: left;
+  margin-left: 2.6em;
 }
 .list > ul > li:last-child {
   border-bottom: none;
+}
+@media screen and (min-width: 700px) {
+  .list > ul > li a {
+    flex-wrap: nowrap;
+  }
+  .list > ul > li a time {
+    flex: 0 0 5.5em;
+    text-align: right;
+  }
 }
 @media screen and (min-width: 1000px) {
   .list {
@@ -4967,8 +4983,8 @@ table.formLayout td {
   position: relative;
   height: 2.5em;
   line-height: 2.4;
-  width: 150px;
-  padding: 0 44px 0 28px;
+  width: 110px;
+  padding: 0 25px 0 18px;
   text-align: left;
   background-image: linear-gradient(0deg, #00486a, #018e9f);
   color: #fff;

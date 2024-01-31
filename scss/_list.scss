@@ -18,7 +18,7 @@
       clear: both;
       a {
         display: flex;
-        flex-flow: row nowrap;
+        flex-wrap: wrap;
         padding: 0.8em 5px 0.8em;
         border-radius: 6px;
         text-decoration: none;
@@ -50,15 +50,29 @@
         font-size: 1.125em;
       }
       time {
-        flex: 0 0 5.5em;
-        text-align: right;
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        text-align: left;
+        margin-left: 2.6em;
       }
       &:last-child {
         border-bottom: none;
       }
     }
   }
-
+  @media screen and (min-width: $wwMedium) {
+    & > ul {
+      & > li {
+        a {
+          flex-wrap: nowrap;
+          time {
+            flex: 0 0 5.5em;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
   @media screen and (min-width: $wwNormal) {
     padding: 0;
     & > ul {
