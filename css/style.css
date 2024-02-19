@@ -669,8 +669,8 @@ a:focus .videoThumb::before {
   z-index: 90;
   padding: 14px 0 0;
   margin: 0;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   line-height: 1;
   overflow: hidden;
   font-size: 0.85rem;
@@ -696,7 +696,8 @@ a:focus .videoThumb::before {
   position: absolute;
   width: 10px;
   height: 10px;
-  left: 18px;
+  left: 50%;
+  margin-left: -5px;
   top: 12px;
   border: 2px solid #fff;
   border-bottom: none;
@@ -5410,6 +5411,100 @@ table.formLayout td {
   text-decoration: none;
 }
 
+.experience_group .experience_content {
+  position: relative;
+}
+.experience_group .experience_content .name {
+  font-size: 1.75em;
+  font-weight: bolder;
+  color: #004f73;
+  margin-bottom: 0.5em;
+}
+.experience_group .experience_content .name span {
+  color: #018392;
+  margin-left: 0.5em;
+}
+.experience_group .experience_content .jobtitle {
+  font-size: 1.125em;
+  padding-left: 1.2em;
+  position: relative;
+  margin-bottom: 2em;
+  line-height: 1.3em;
+}
+.experience_group .experience_content .jobtitle:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+  border: 5px solid #004f73;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+@media (max-width: 700px) {
+  .experience_group .experience_content .jobtitle {
+    margin-bottom: 1em;
+  }
+}
+.experience_group .experience_content .photo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 0;
+  display: inline-block;
+  margin-bottom: 2em;
+}
+.experience_group .experience_content .photo img {
+  margin: 0;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+}
+@media (max-width: 700px) {
+  .experience_group .experience_content .photo {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .experience_group .experience_content .photo img {
+    margin: 0 auto;
+    width: 200px;
+  }
+}
+.experience_group .experience_content .character button {
+  height: 2.5em;
+  line-height: 2.5em;
+}
+.experience_group .experience_content .character button.avtive {
+  background-image: linear-gradient(0deg, #018392, #07b4b1);
+  border: 1px solid #018392;
+  position: relative;
+}
+.experience_group .experience_content .character button.avtive:before {
+  content: "";
+  border: 10px solid #018392;
+  border-color: #018392 transparent transparent transparent;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -10px;
+}
+.experience_group .experience_content h3 {
+  color: #018392;
+}
+.experience_group .experience_content .experience_ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.experience_group .experience_content .experience_ul li {
+  padding: 5px 10px;
+}
+.experience_group .experience_content .experience_ul li:nth-child(even) {
+  background-color: #eee;
+}
+
 .photoflow {
   margin-bottom: 50px;
 }
@@ -7601,8 +7696,8 @@ table.formLayout td {
   footer,
   .accesskey,
   .funcBar,
-  .innerbanner,
-  .character {
+  .contentbox .pubInfo,
+  .goTop {
     display: none;
   }
   /* -------------------------------各別顯示設定----//*/
@@ -7621,10 +7716,20 @@ table.formLayout td {
   .main .pageHeader {
     padding: 0;
   }
+  .main .innerbanner {
+    display: none;
+  }
   .main .contentbox {
     padding: 0;
   }
   .cp {
+    padding: 0;
+  }
+  .pageHeader h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .contentbox {
     padding: 0;
   }
   .textBlock.column4 ul {
@@ -7655,6 +7760,23 @@ table.formLayout td {
     border: 1px solid #999;
     width: 48%;
     margin: 0 1% 1em;
+  }
+  .experience_group .experience_content .name {
+    margin: 0 0 0.5em;
+  }
+  .experience_group .experience_content .character {
+    display: none;
+  }
+  .experience_group .experience_content .experience_ul {
+    padding: 0;
+    margin: 0 0 0.5em;
+  }
+  .experience_group .experience_content .experience_ul li {
+    padding: 0;
+    margin: 0;
+  }
+  .experience_group .experience_content h3 {
+    margin: 0;
   }
   /* 檔案下載*/
   *,
