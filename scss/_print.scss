@@ -18,7 +18,6 @@
     // font-size: 12pt;
     float: none;
     width: 100%;
-
     -webkit-print-color-adjust: exact;
   }
   .container {
@@ -28,16 +27,24 @@
     padding: 0;
   }
   .main {
+    .innerbanner {
+      display: none;
+      overflow: hidden;
+      height: 0;
+      &:before {
+        display: none;
+        padding-top: 0;
+      }
+    }
     .pageHeader {
       padding: 0;
     }
-    .innerbanner {
-      display: none;
-    }
+
     .contentbox {
       padding: 0;
     }
   }
+
   .cp {
     padding: 0;
   }
@@ -86,21 +93,23 @@
     }
   }
   // 學經歷
-  .experience_group {
-    .experience_content {
+  .experience_content {
+    .content_box {
       .name {
-        margin: 0 0 0.5em;
+        display: none;
       }
       .character {
         display: none;
       }
-
       .experience_ul {
         padding: 0;
         margin: 0 0 0.5em;
         li {
           padding: 0;
           margin: 0;
+          &:nth-child(even) {
+            background-color: #eee !important;
+          }
         }
       }
       h3 {
@@ -108,6 +117,7 @@
       }
     }
   }
+
   /* 檔案下載*/
 
   *,

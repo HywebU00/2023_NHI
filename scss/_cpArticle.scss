@@ -254,9 +254,43 @@
   }
 }
 // 學經歷
-.experience_group {
-  .experience_content {
-    position: relative;
+.experience_content {
+  position: relative;
+  display: flex;
+  @media (max-width: 700px) {
+    display: block;
+  }
+  .content_photo {
+    flex: 0 0 auto;
+    flex-basis: 200px;
+    margin-right: 2em;
+    .photo {
+      width: 200px;
+      line-height: 0;
+      display: inline-block;
+      margin-bottom: 2em;
+      img {
+        margin: 0;
+        background-color: #fff;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 10px;
+        width: 100%;
+      }
+    }
+    @media (max-width: 700px) {
+      margin-right: 0;
+      .photo {
+        width: 100%;
+        text-align: center;
+        img {
+          width: 200px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .content_box {
+    flex: 1 1 auto;
     .name {
       font-size: 1.75em;
       font-weight: bolder;
@@ -288,62 +322,39 @@
         margin-bottom: 1em;
       }
     }
-    .photo {
-      position: absolute;
-      right: 0;
-      top: 0;
-      line-height: 0;
-      display: inline-block;
-      margin-bottom: 2em;
-      img {
-        margin: 0;
-        background-color: #fff;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        padding: 10px;
-      }
-      @media (max-width: 700px) {
-        position: relative;
+  }
 
-        text-align: center;
-        width: 100%;
-        img {
-          margin: 0 auto;
-          width: 200px;
+  .character {
+    button {
+      height: 2.5em;
+      line-height: 2.5em;
+      &.avtive {
+        background-image: linear-gradient(0deg, #018392, #07b4b1);
+        border: 1px solid $secondaryColor;
+        position: relative;
+        &:before {
+          content: '';
+          border: 10px solid $secondaryColor;
+          border-color: $secondaryColor transparent transparent transparent;
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          margin-left: -10px;
         }
       }
     }
-    .character {
-      button {
-        height: 2.5em;
-        line-height: 2.5em;
-        &.avtive {
-          background-image: linear-gradient(0deg, #018392, #07b4b1);
-          border: 1px solid $secondaryColor;
-          position: relative;
-          &:before {
-            content: '';
-            border: 10px solid $secondaryColor;
-            border-color: $secondaryColor transparent transparent transparent;
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            margin-left: -10px;
-          }
-        }
-      }
-    }
-    h3 {
-      color: $secondaryColor;
-    }
-    .experience_ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      li {
-        padding: 5px 10px;
-        &:nth-child(even) {
-          background-color: #eee;
-        }
+  }
+  h3 {
+    color: $secondaryColor;
+  }
+  .experience_ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      padding: 5px 10px;
+      &:nth-child(even) {
+        background-color: #eee;
       }
     }
   }
