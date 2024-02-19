@@ -5423,7 +5423,7 @@ table.formLayout td {
 .experience_content .content_photo {
   flex: 0 0 auto;
   flex-basis: 200px;
-  margin-right: 2em;
+  margin-left: 2em;
 }
 .experience_content .content_photo .photo {
   width: 200px;
@@ -5435,7 +5435,7 @@ table.formLayout td {
   margin: 0;
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  padding: 10px;
+  padding: 0;
   width: 100%;
 }
 @media (max-width: 700px) {
@@ -7712,8 +7712,9 @@ table.formLayout td {
   .accesskey,
   .funcBar,
   .contentbox .pubInfo,
+  .innerbanner,
   .goTop {
-    display: none;
+    display: none !important;
   }
   /* -------------------------------各別顯示設定----//*/
   body {
@@ -7727,15 +7728,6 @@ table.formLayout td {
     max-width: 100% !important;
     width: 100% !important;
     padding: 0;
-  }
-  .main .innerbanner {
-    display: none;
-    overflow: hidden;
-    height: 0;
-  }
-  .main .innerbanner:before {
-    display: none;
-    padding-top: 0;
   }
   .main .pageHeader {
     padding: 0;
@@ -7781,9 +7773,6 @@ table.formLayout td {
     border: 1px solid #999;
     width: 48%;
     margin: 0 1% 1em;
-  }
-  .experience_content .content_box .name {
-    display: none;
   }
   .experience_content .content_box .character {
     display: none;

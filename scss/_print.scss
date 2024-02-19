@@ -9,8 +9,9 @@
   .accesskey,
   .funcBar,
   .contentbox .pubInfo,
+  .innerbanner,
   .goTop {
-    display: none;
+    display: none !important;
   }
   /* -------------------------------各別顯示設定----//*/
   body {
@@ -27,15 +28,6 @@
     padding: 0;
   }
   .main {
-    .innerbanner {
-      display: none;
-      overflow: hidden;
-      height: 0;
-      &:before {
-        display: none;
-        padding-top: 0;
-      }
-    }
     .pageHeader {
       padding: 0;
     }
@@ -95,9 +87,6 @@
   // 學經歷
   .experience_content {
     .content_box {
-      .name {
-        display: none;
-      }
       .character {
         display: none;
       }
