@@ -5417,7 +5417,7 @@ table.formLayout td {
 }
 @media (max-width: 700px) {
   .experience_content {
-    display: block;
+    flex-wrap: wrap;
   }
 }
 .experience_content .content_photo {
@@ -5440,7 +5440,10 @@ table.formLayout td {
 }
 @media (max-width: 700px) {
   .experience_content .content_photo {
-    margin-right: 0;
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    order: 0;
+    margin-left: 0;
   }
   .experience_content .content_photo .photo {
     width: 100%;
@@ -5453,6 +5456,11 @@ table.formLayout td {
 }
 .experience_content .content_box {
   flex: 1 1 auto;
+}
+@media (max-width: 700px) {
+  .experience_content .content_box {
+    order: 1;
+  }
 }
 .experience_content .content_box .name {
   font-size: 1.75em;

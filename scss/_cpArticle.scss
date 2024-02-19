@@ -258,7 +258,7 @@
   position: relative;
   display: flex;
   @media (max-width: 700px) {
-    display: block;
+    flex-wrap: wrap;
   }
   .content_photo {
     flex: 0 0 auto;
@@ -278,7 +278,10 @@
       }
     }
     @media (max-width: 700px) {
-      margin-right: 0;
+      flex: 1 1 auto;
+      flex-basis: 100%;
+      order: 0;
+      margin-left: 0;
       .photo {
         width: 100%;
         text-align: center;
@@ -291,6 +294,9 @@
   }
   .content_box {
     flex: 1 1 auto;
+    @media (max-width: 700px) {
+      order: 1;
+    }
     .name {
       font-size: 1.75em;
       font-weight: bolder;
