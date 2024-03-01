@@ -171,7 +171,7 @@ table.formLayout {
     color: $fontInvert;
     box-shadow: none;
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     font-size: inherit;
     margin-left: 1px;
 
@@ -179,8 +179,10 @@ table.formLayout {
     &:focus {
       background-color: $fontColorLight;
       border-color: $borderColorDark;
+      background-image: linear-gradient(0deg, #0178af, #02adc0);
       box-shadow: none;
       color: $fontInvert;
+      border-radius: 5px;
       &::after {
         border-color: $fontInvert;
       }

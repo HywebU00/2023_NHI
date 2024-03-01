@@ -362,6 +362,12 @@
       &:nth-child(even) {
         background-color: #eee;
       }
+      a {
+        color: $primaryColor;
+        &:focus {
+          box-shadow: 0 0 0 2px $focus;
+        }
+      }
     }
   }
 }

@@ -4991,15 +4991,17 @@ table.formLayout td {
   color: #fff;
   box-shadow: none;
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   font-size: inherit;
   margin-left: 1px;
 }
 .drawer button.handle:hover, .drawer button.handle:focus {
   background-color: #374459;
   border-color: #434242;
+  background-image: linear-gradient(0deg, #0178af, #02adc0);
   box-shadow: none;
   color: #fff;
+  border-radius: 5px;
 }
 .drawer button.handle:hover::after, .drawer button.handle:focus::after {
   border-color: #fff;
@@ -5526,6 +5528,12 @@ table.formLayout td {
 }
 .experience_content .experience_ul li:nth-child(even) {
   background-color: #eee;
+}
+.experience_content .experience_ul li a {
+  color: #004f73;
+}
+.experience_content .experience_ul li a:focus {
+  box-shadow: 0 0 0 2px #07b4b1;
 }
 
 .photoflow {
@@ -7710,6 +7718,92 @@ table.formLayout td {
 }
 .majorevents_block .majorevents_group .majorevents .majorevents_list a:hover {
   text-decoration: underline;
+}
+
+.experience_content a {
+  color: #fff;
+  text-decoration: none;
+}
+.experience_content .tabSet {
+  padding: 0 0 30px;
+}
+.experience_content .tabItems {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 5px;
+}
+.experience_content .tabItems button {
+  flex: 0 0 auto;
+  height: auto;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  word-break: break-all;
+  margin: 2px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  position: relative;
+  padding: 0.65em 1em 0.5em;
+  background-image: none;
+}
+.experience_content .tabItems button:hover {
+  box-shadow: rgba(255, 255, 255, 0.4) 0 0 0 2px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.experience_content .tabItems button:focus {
+  box-shadow: rgb(255, 255, 255) 0 0 0 2px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.experience_content .tabItems button.active {
+  background-color: #018392;
+  background-image: none;
+  box-shadow: rgb(255, 255, 255) 0 0 0 2px;
+  color: #fff;
+}
+.experience_content .tabItems button.active:before {
+  content: "";
+  border: 10px solid #018392;
+  border-color: #018392 transparent transparent transparent;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -10px;
+}
+.experience_content .tabContent {
+  display: none;
+  padding-top: 20px;
+}
+.experience_content .more {
+  --moreColor: #fff;
+  --hoverBg: #0005;
+}
+.experience_content .more a {
+  transition: background 0.3s;
+}
+@media screen and (min-width: 1000px) {
+  .experience_content {
+    position: relative;
+    width: auto;
+    margin-top: 0;
+  }
+  .experience_content .blockHeader {
+    margin-bottom: 40px;
+  }
+  .experience_content .tabItems {
+    margin-left: -5px;
+  }
+  .experience_content .tabItems button {
+    flex: 0 0 auto;
+    padding: 0.65em 1em 0.5em;
+    margin: 3px;
+    font-size: 1.2rem;
+  }
+  .experience_content .more {
+    text-align: right;
+    margin: 0;
+  }
 }
 
 @media print {
