@@ -7837,6 +7837,9 @@ table.formLayout td {
   .main .contentbox {
     padding: 0;
   }
+  .main .innerbanner {
+    display: none;
+  }
   .cp {
     padding: 0;
   }
@@ -7892,6 +7895,9 @@ table.formLayout td {
   }
   .experience_content .content_box h3 {
     margin: 0;
+  }
+  .experience_content .content_box .tabItems button.tabBtn {
+    display: none;
   }
   /* 檔案下載*/
   *,

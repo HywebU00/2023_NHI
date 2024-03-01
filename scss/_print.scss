@@ -35,6 +35,9 @@
     .contentbox {
       padding: 0;
     }
+    .innerbanner {
+      display: none;
+    }
   }
 
   .cp {
@@ -103,6 +106,11 @@
       }
       h3 {
         margin: 0;
+      }
+      .tabItems {
+        button.tabBtn {
+          display: none;
+        }
       }
     }
   }
