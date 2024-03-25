@@ -1380,7 +1380,7 @@ a:focus .fileType.other {
   margin-bottom: 0.5em;
 }
 .rssbtn.has_search button.btn {
-  height: 2.5em;
+  height: 1.8em;
   padding: 0 0.8em;
 }
 @media screen and (max-width: 1000px) {
@@ -1396,11 +1396,12 @@ a:focus .fileType.other {
 }
 .rssbtn button.btn {
   border-radius: 5px;
-  height: 2.5em;
-  line-height: 2.5em;
+  height: 1.8em;
+  line-height: 1.8em;
   padding: 0 0.8em;
   border: none;
   color: #333;
+  font-size: 1em;
   background-image: linear-gradient(0deg, #c1c4c6, #c1c4c6);
 }
 @media (max-width: 374px) {
