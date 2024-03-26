@@ -990,6 +990,9 @@ kbd {
 .preface a:hover {
   text-decoration: underline;
 }
+.preface a:focus {
+  outline: 2px solid #07b4b1;
+}
 .preface h3 {
   font-size: 1.25em;
   margin: 0.8em 0;
@@ -1408,6 +1411,18 @@ a:focus .fileType.other {
   .rssbtn button.btn {
     width: 100%;
   }
+}
+.rssbtn a {
+  display: inline-block;
+  color: #004f73;
+  text-decoration: underline;
+}
+.rssbtn a:hover {
+  color: #004f73;
+  text-decoration: none;
+}
+.rssbtn a:focus {
+  outline: 2px solid #07b4b1;
 }
 
 .menu ul {

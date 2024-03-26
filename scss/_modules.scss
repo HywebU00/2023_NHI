@@ -256,6 +256,9 @@
     &:hover {
       text-decoration: underline;
     }
+    &:focus {
+      outline: 2px solid $focus;
+    }
   }
   h3 {
     font-size: 1.25em;
@@ -667,13 +670,6 @@ a:focus {
     @media screen and (max-width: $wwSlim) {
       right: 20px;
     }
-    // @media (max-width: 374px) {
-    //   position: relative;
-    //   text-align: right;
-    //   right: auto;
-    //   top: auto;
-    //   margin-bottom: 1em;
-    // }
   }
 
   button.btn {
@@ -687,6 +683,18 @@ a:focus {
     background-image: linear-gradient(0deg, #c1c4c6, #c1c4c6);
     @media (max-width: 374px) {
       width: 100%;
+    }
+  }
+  a {
+    display: inline-block;
+    color: $primaryColor;
+    text-decoration: underline;
+    &:hover {
+      color: $primaryColor;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: 2px solid $focus;
     }
   }
 }
