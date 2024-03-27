@@ -7831,7 +7831,9 @@ table.formLayout td {
   .funcBar,
   .contentbox .pubInfo,
   .innerbanner,
-  .goTop {
+  .goTop,
+  .sidebar,
+  .divisions {
     display: none !important;
   }
   /* -------------------------------各別顯示設定----//*/
