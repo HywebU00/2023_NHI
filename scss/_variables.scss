@@ -111,3 +111,6 @@ $majoreventsdate: #b45f00;
 @mixin grandient4($degree: 0deg) {
   background-image: linear-gradient($degree, #5d4a2a, #91813f);
 }
+@mixin grandient5($degree: 0deg) {
+  background-image: linear-gradient($degree, #086d99, #15a2af);
+}

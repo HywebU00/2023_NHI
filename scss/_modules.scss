@@ -69,6 +69,19 @@
   @media screen and (min-width: $wwNormal) {
     margin: 40px auto 20px;
   }
+  .sort_tags {
+    margin-bottom: 1em;
+    display: block;
+    span {
+      display: inline-block;
+      padding: 0.1em 1.5em;
+      background-color: #008489;
+      font-size: 1.063rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      border-radius: 20px;
+    }
+  }
   h2 {
     padding: 0 0 0.3em;
     margin: 0 0 10px;

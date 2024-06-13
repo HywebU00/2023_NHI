@@ -1,0 +1,929 @@
+// 安寧療護 //////////////////////////////////////////////////
+.hospicecare_block {
+  --medicalblueColor: #1b6d89;
+  --medicalgreenColor: #008489;
+  --medicalbgcolor: #e8f1f1;
+  --arrowcolor: #006999;
+  --darkblue: #042047;
+
+  .block_title {
+    color: var(--darkblue);
+    font-size: 1.75rem;
+    margin: 0 0 1em;
+    // font-weight: bolder;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    text-align: center;
+  }
+  .title_directions {
+    color: #0b7295;
+    font-size: 1.063rem;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2em;
+  }
+}
+// 給付方式
+.paymentMethod_block {
+  padding: 0 10px;
+  margin-bottom: 4em;
+  .block_title {
+    margin: 0 0 0.2em;
+  }
+  .method_slider {
+    text-align: center;
+    .method_list {
+      padding: 0 30px;
+
+      .pic {
+        background-color: #e6f2f5;
+        padding: 30px 40px;
+        border-radius: 70px;
+        margin-bottom: 1em;
+        display: flex;
+        justify-content: center;
+      }
+      .sub_title {
+        color: #4b4b4b;
+        font-size: 1.125em;
+        margin-bottom: 1em;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .downloadFiles {
+        justify-content: flex-start;
+        width: 123px;
+        margin: 0 auto;
+        // outline: 1px solid red;
+      }
+      // @media screen and (max-width: 800px) {
+      //   .downloadFiles {
+      //     width: 164px;
+      //   }
+      // }
+    }
+    // 箭頭
+    .slick-arrow {
+      background-image: none;
+      &::before,
+      &::after {
+        content: '';
+        background-color: #7d7d7d;
+      }
+      &.slick-prev {
+        left: -30px;
+      }
+      &.slick-next {
+        transform: scaleX(-100%);
+        right: -30px;
+      }
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        box-shadow: none;
+      }
+      &.slick-disabled {
+        opacity: 0.25;
+      }
+    }
+  }
+}
+// 醫療條例
+.medicalRegulations_block {
+  margin-bottom: 4em;
+  .content {
+    padding-top: 1em;
+  }
+  .relatedlist_group {
+    margin: 0 0 1em 0;
+
+    button {
+      width: 100%;
+      border-radius: 50px;
+      text-align: left;
+      border: none;
+      font-size: 1.25em;
+      font-weight: bold;
+      height: 2.5em;
+      line-height: 2.5em;
+      padding: 0 1.5em;
+      letter-spacing: 0.05em;
+      @include grandient5(0deg);
+      position: relative;
+      &:before {
+        content: '';
+        background-image: url('../images/arrow_white.svg');
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 12px;
+        position: absolute;
+        right: 2em;
+        top: 40%;
+        transition: 0.2s;
+      }
+
+      &.close {
+        &::before {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    .listTree {
+      margin: 0 1.5em;
+      @media screen and (max-width: $wwMedium) {
+        margin: 0;
+      }
+      ul {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+//分類瀏覽
+.categoryBrowsing_block {
+  margin-bottom: 4em;
+  .block_title {
+    margin-bottom: 1.5em;
+  }
+  .categorylist {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      li {
+        flex: 0 0 auto;
+        flex-basis: 190px;
+
+        a {
+          display: flex;
+          position: relative;
+          width: 100%;
+          height: 225px;
+          background-color: #fff;
+          border-radius: 30px;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          padding: 15px;
+          box-sizing: border-box;
+          transition: 0.5s;
+          overflow: hidden;
+          letter-spacing: 0.05em;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.42);
+            z-index: 4;
+            transition: 0.5s;
+          }
+          img {
+            width: 100%;
+            height: 225px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            object-fit: cover;
+            border-radius: 30px;
+            opacity: 1;
+            z-index: 1;
+            transition: 0.5s;
+          }
+          span {
+            position: relative;
+            z-index: 5;
+            color: #fff;
+            font-size: 1.438em;
+            text-align: center;
+          }
+          &:hover,
+          &:focus {
+            box-shadow: rgba(0, 0, 0, 0.8) 0px 4px 12px;
+            &:before {
+              background-color: rgba(0, 0, 0, 0.1);
+            }
+            span {
+              text-shadow: 0px 0px 8px rgba(19, 19, 19, 0.9), 0px 0px 10px rgba(19, 19, 19, 0.9), 0px 0px 12px rgba(19, 19, 19, 0.9);
+            }
+          }
+        }
+        @media (max-width: 950px) {
+          flex-basis: 47%;
+          margin-bottom: 1em;
+        }
+        @media (max-width: 460px) {
+          flex-basis: 100%;
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}
+//安寧教育
+.peaceEducation_block {
+  .block_title {
+    margin-bottom: 1.5em;
+  }
+  .unitlist {
+    position: relative;
+    padding-bottom: 4em;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      &.open {
+        li {
+          &:nth-child(n) {
+            display: block;
+          }
+        }
+      }
+
+      li {
+        flex: 0 0 auto;
+        flex-basis: 23%;
+        margin: 0 1% 1.5em;
+        &:nth-child(n + 9) {
+          display: none;
+        }
+        @media (max-width: 700px) {
+          &:nth-child(n) {
+            display: block;
+          }
+          &:nth-child(n + 7) {
+            display: none;
+          }
+        }
+        @media (max-width: 500px) {
+          &:nth-child(n) {
+            display: block;
+          }
+          &:nth-child(n + 5) {
+            display: none;
+          }
+        }
+
+        @media (max-width: 700px) {
+          flex-basis: 31%;
+          margin: 0 1.16% 1em;
+        }
+        @media (max-width: 500px) {
+          flex-basis: 48%;
+          margin: 0 1% 1em;
+        }
+        a {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          color: #333;
+          padding: 0.5em 0.5em 1em 0.5em;
+          text-decoration: none;
+          border-radius: 30px;
+          transition: 0.5s;
+          // height: 100%;
+          img {
+            flex: 0 0 auto;
+            flex-basis: 60px;
+            height: 60px;
+            display: block;
+            margin-bottom: 0.5em;
+          }
+          span {
+            flex: 1 1 auto;
+            flex-basis: 100%;
+            font-size: 1.125em;
+            text-align: center;
+            vertical-align: top;
+            em {
+              font-style: normal;
+              display: none;
+            }
+          }
+          &:hover,
+          &:focus {
+            color: $primaryColor;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+        }
+      }
+    }
+    .unitlistctrl {
+      position: absolute;
+      left: calc(50% - 24px);
+      bottom: 0;
+      z-index: 9;
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border-radius: 50%;
+      text-indent: -10em;
+      overflow: hidden;
+      border: none;
+      background: transparent;
+      transition: 0.3s;
+      transform: rotate(180deg);
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 18px;
+        height: 5px;
+        border-radius: 3px;
+        background-color: $fontColorPale;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        right: calc(50% - 4px);
+      }
+      &::after {
+        transform: rotate(45deg);
+        left: calc(50% - 4px);
+      }
+      &:hover,
+      &:focus {
+        background-color: #eee;
+        box-shadow: none;
+      }
+
+      &.closed {
+        transform: rotate(0deg);
+        & ~ .fatFooter {
+          &::after {
+            margin-bottom: -150px;
+          }
+        }
+      }
+
+      @media screen and (min-width: $wwNormal) {
+        right: 9vw;
+      }
+      @media screen and (min-width: $wwMaximum) {
+        right: calc(50vw - #{$wwMaximum}* 0.41);
+      }
+    }
+  }
+}
+
+// 角色選擇
+.characterSelection_block {
+  background-color: var(--medicalbgcolor);
+  border-radius: 8px;
+  margin-bottom: 4em;
+  .character_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 15px;
+    .people_version {
+      display: flex;
+      align-items: center;
+      // outline: 1px solid red;
+      a {
+        display: block;
+        padding: 0 20px;
+        background-color: var(--medicalgreenColor);
+        color: #fff;
+        font-size: 1.188em;
+        border-radius: 15px;
+        text-decoration: none;
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        margin-left: 1.5em;
+        margin-top: 1em;
+        white-space: nowrap;
+      }
+    }
+    .explain_block {
+      text-align: center;
+      margin-top: -1.8em;
+      .sub_title {
+        font-size: 1.8125em;
+        color: var(--darkblue);
+        font-weight: bold;
+        margin-bottom: 0.3em;
+        letter-spacing: 0.05em;
+      }
+      .choose {
+        display: block;
+        font-size: 1.25rem;
+        color: #0b7295;
+        font-weight: bold;
+        position: relative;
+        background: url('../images/choose_arrowleft.png') left center no-repeat, url('../images/choose_arrowright.png') right center no-repeat;
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          transition: 0.2s;
+        }
+
+        &::after {
+          border-bottom: 2px dotted var(--arrowcolor);
+          right: 0;
+          left: 0;
+          top: calc(50% - 1px);
+        }
+
+        span {
+          position: relative;
+          background-color: var(--medicalbgcolor);
+          z-index: 2;
+          padding: 0 0.6em;
+        }
+      }
+    }
+    .professional_version {
+      display: flex;
+      align-items: center;
+      // outline: 1px solid red;
+      a {
+        display: block;
+        padding: 0 20px;
+        background-color: var(--medicalblueColor);
+        color: #fff;
+        font-size: 1.188em;
+        border-radius: 15px;
+        text-decoration: none;
+        height: 60px;
+        line-height: 60px;
+        cursor: pointer;
+        margin-right: 1.5em;
+        margin-top: 1em;
+        white-space: nowrap;
+      }
+    }
+    @media (max-width: 800px) {
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+      .people_version {
+        order: 2;
+        padding: 5px 15px 0;
+        background-color: #fff;
+        border-radius: 15px;
+        a {
+          margin-left: 1em;
+        }
+      }
+      .explain_block {
+        order: 1;
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        margin-bottom: 0;
+        margin-top: 0;
+        .choose {
+          background: none;
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .professional_version {
+        order: 3;
+        padding: 5px 15px 0;
+        background-color: #fff;
+        border-radius: 15px;
+        img {
+          order: 1;
+        }
+        a {
+          order: 2;
+          margin-right: 0;
+          margin-left: 1em;
+        }
+      }
+    }
+    @media (max-width: 650px) {
+      .people_version {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+
+        justify-content: center;
+      }
+      .professional_version {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+// DRGs
+.DRGs_block {
+  margin-bottom: 4em;
+  .explain_block {
+    background-color: var(--medicalbgcolor);
+    border-radius: 8px;
+    padding: 1.5em;
+    line-height: 1.8em;
+    font-size: 1.125em;
+    margin-bottom: 1em;
+    .markcolor {
+      color: #e81158;
+    }
+  }
+  .tabsblock {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    .tabsbtn_group {
+      flex: 0 0 auto;
+      flex-basis: 240px;
+      max-width: 240px;
+      min-height: 386px;
+      background-image: url('../images/DRGs_tabsbg.jpg');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      padding-top: 60px;
+      box-sizing: border-box;
+      border-radius: 8px 0 0 8px;
+      background-color: #c8dce2;
+      .tabsbtn {
+        margin-left: 1em;
+        margin-right: -2em;
+        a {
+          display: block;
+          padding: 0.5em 1.5em 0.5em 2em;
+          font-size: 1.25em;
+          font-weight: bold;
+          color: var(--darkblue);
+          text-decoration: none;
+          background-color: transparent;
+          border-radius: 50px;
+          letter-spacing: 0.05em;
+          position: relative;
+          transition: 0.5s;
+          span {
+            margin-right: 0.5em;
+          }
+          &:hover,
+          &.active {
+            @include grandient5(0deg);
+            color: #fff;
+            &:after {
+              content: '';
+              background-image: url('../images/arrow_white.svg');
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              background-size: 20px 12px;
+              transform: rotate(-90deg);
+              position: absolute;
+              right: 1.5em;
+              z-index: 2;
+              top: calc(50% - 6px);
+              width: 20px;
+              height: 12px;
+            }
+          }
+        }
+      }
+    }
+    .tabscontent {
+      flex: 1 1 auto;
+      padding: 2em 2em 2em 3em;
+      box-sizing: border-box;
+      .sub_title {
+        font-size: 1.125em;
+        color: var(--darkblue);
+        margin-bottom: 1em;
+        font-weight: bold;
+      }
+      .soundfile_group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        .soundfile_list {
+          flex: 0 0 auto;
+          flex-basis: 30%;
+          @media (max-width: 1100px) {
+            flex-basis: 47%;
+          }
+          @media (max-width: 810px) {
+            flex-basis: 100%;
+          }
+          .soundfileblock {
+            background-color: var(--medicalbgcolor);
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            border-radius: 5px;
+            background-image: url('../images/sound_stop.gif');
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+
+            &.active {
+              background-image: url('../images/sound_play.gif');
+            }
+            // /* 隱藏預設的音頻控制元件 */
+            audio {
+              display: none;
+            }
+            /* 自訂播放按鈕樣式 */
+            .play-button,
+            .pause-button {
+              display: inline-block;
+              width: 35px;
+              height: 35px;
+              background-color: #fff;
+              border-radius: 50%;
+              background-size: cover;
+              cursor: pointer;
+              user-select: none;
+            }
+            .play-button {
+              background-image: url('../images/play_icon.png');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 35px;
+            }
+            .pause-button {
+              background-image: url('../images/pause_icon.png');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 35px;
+            }
+          }
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+// 支付標準
+.paymentStandard_block {
+  margin-bottom: 4em;
+  .explain_block {
+    background-color: var(--medicalbgcolor);
+    border-radius: 8px;
+    padding: 1.5em;
+    line-height: 1.8em;
+    font-size: 1.125em;
+    margin-bottom: 1em;
+    .markcolor {
+      color: #e81158;
+    }
+  }
+}
+// 版本介紹
+.versionIntroduction_block {
+  margin-bottom: 4em;
+  .version_group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    .version_list {
+      flex: 0 0 28%;
+      &:first-child {
+        flex: 0 0 40%;
+      }
+
+      a {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url('../images/version_bg01.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        padding: 15px 20px;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 8px;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.42);
+          border-radius: 8px;
+          z-index: 1;
+          transition: 0.5s;
+        }
+
+        .current_versio,
+        .version,
+        p {
+          // flex: 1 1 auto;
+          // flex-basis: 100%;
+          text-align: center;
+          padding: 0;
+          margin: 0 0 0.2em;
+          position: relative;
+          z-index: 2;
+        }
+        .current_versio {
+          margin: 0 0 0.4em;
+          span {
+            display: inline-block;
+            background-color: #fff;
+            color: var(--darkblue);
+            padding: 0.2em 1em;
+            font-size: 1em;
+            border-radius: 50px;
+            font-weight: bold;
+          }
+        }
+        .version {
+          font-size: 1.188em;
+          font-weight: bold;
+        }
+        p {
+          margin: 0;
+        }
+        &:hover,
+        &:focus {
+          box-shadow: rgba(0, 0, 0, 0.8) 0px 4px 12px;
+          &:before {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          .version,
+          p {
+            text-shadow: 0px 0px 8px rgba(19, 19, 19, 0.9), 0px 0px 10px rgba(19, 19, 19, 0.9), 0px 0px 12px rgba(19, 19, 19, 0.9);
+          }
+        }
+      }
+    }
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+      .version_list {
+        flex: 1 1 100%;
+        &:first-child {
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+}
+// 常見問答集
+.commonQA_block {
+  display: flex;
+  background-color: var(--medicalbgcolor);
+  border-radius: 8px;
+  margin-bottom: 4em;
+  .title_group {
+    flex: 0 0 auto;
+    flex-basis: 340px;
+    padding: 2em 3em;
+    background-image: url('../images/commonQA_bg.jpg');
+    background-position: left top;
+    background-repeat: no-repeat;
+    border-radius: 8px 0 0 8px;
+    .block_title {
+      text-align: left;
+    }
+    .explain_block {
+      font-size: 1.125em;
+      font-weight: bold;
+      color: var(--darkblue);
+      line-height: 1.8;
+    }
+  }
+  .contentqa_group {
+    flex: 1 1 auto;
+    padding: 2em 3em;
+    .quesiton {
+      font-size: 1.125em;
+      font-weight: bold;
+      color: var(--darkblue);
+      margin-bottom: 1em;
+    }
+    .answer {
+      font-size: 1.125em;
+      color: #4b4b4b;
+      margin-bottom: 1em;
+    }
+    .quesiton,
+    .answer {
+      line-height: 1.8;
+      span {
+        padding-right: 1em;
+        position: relative;
+        &:before {
+          content: '：';
+          position: absolute;
+          right: 2px;
+          top: -5px;
+        }
+      }
+    }
+    .more {
+      text-align: right;
+      --moreColor: #fff;
+      a {
+        background-color: var(--arrowcolor);
+        color: #fff;
+        height: 2em;
+        line-height: 2;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .title_group,
+    .contentqa_group {
+      flex: 0 0 auto;
+      flex-basis: 50%;
+    }
+  }
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+    .title_group,
+    .contentqa_group {
+      flex: 1 1 auto;
+      flex-basis: 100%;
+      padding: 2em;
+    }
+    .title_group {
+      background-size: 100%;
+      border-radius: 8px 8px 0 0;
+
+      .block_title {
+        text-align: center;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+// 參考資料
+.references_block {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      flex: 0 0 49%;
+      margin-bottom: 1em;
+      padding: 1.5em 2.5em 1.5em 1.5em;
+      background-color: var(--darkblue);
+      position: relative;
+      border-radius: 8px;
+      &:after {
+        content: '';
+        background-image: url('../images/arrow_white.svg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 20px 12px;
+        transform: rotate(-90deg);
+        width: 20px;
+        height: 12px;
+        position: absolute;
+        right: 1em;
+        top: calc(50% - 6px);
+      }
+      @media (max-width: 700px) {
+        flex: 1 1 100%;
+      }
+      a {
+        display: block;
+        padding: 0;
+        font-weight: bold;
+        color: #fff;
+        line-height: 1.8em;
+        text-decoration: none;
+        position: relative;
+        transition: 0.5s;
+
+        span {
+          font-size: 1.25em;
+          margin-bottom: 0.5em;
+          display: block;
+        }
+      }
+      &:hover {
+        background-color: var(--arrowcolor);
+      }
+    }
+  }
+}
