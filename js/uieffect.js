@@ -1177,7 +1177,7 @@ $(function () {
 
   //
 
-  $('.soundfile_list .soundfileblock .play-button').click(function () {
+  $('.soundfile_list .soundfileblock .play_btn').click(function () {
     if ($('.soundfile_list .soundfileblock').hasClass('active')) {
       $(this).parent('.soundfileblock').removeClass('active');
     } else {
