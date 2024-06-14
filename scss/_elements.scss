@@ -1,7 +1,13 @@
-a:focus {
+// a:focus {
+//   outline: none;
+// }
+:focus:not(:focus-visible) {
   outline: none;
 }
 
+:focus-visible {
+  outline: 2px dashed $focus;
+}
 //  快捷鍵 ----------------------------------------------
 .accesskey {
   display: none;

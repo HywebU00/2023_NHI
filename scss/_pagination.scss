@@ -119,7 +119,8 @@
             border-right: none;
             transform: rotate(45deg);
           }
-          &:hover {
+          &:hover,
+          &:focus {
             &::before,
             &::after {
               content: '';

@@ -134,6 +134,9 @@
               box-shadow: $white 0 0 0 1px, $fontColorLight 0 0 0 4px;
             }
           }
+          // &:focus-visible {
+          //   outline: none;
+          // }
         }
       }
     }
@@ -431,6 +434,9 @@
         &:focus {
           border-bottom-color: $assistant1;
         }
+        // &:focus-visible {
+        //   outline: none;
+        // }
       }
       & > ul {
         font-size: 1em;

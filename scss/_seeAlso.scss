@@ -53,12 +53,12 @@
       &:focus {
         padding-left: 22px;
         padding-right: 2px;
-        outline: none;
-        &::before {
-          border-color: transparent;
-          border-left-color: $fontColorDark;
-          border-width: 6px 0 6px 9px;
-        }
+        // outline: none;
+        // &::before {
+        //   border-color: transparent;
+        //   border-left-color: $fontColorDark;
+        //   border-width: 6px 0 6px 9px;
+        // }
       }
       &:focus {
         box-shadow: $linkColor 0 0 0 1px inset;
@@ -116,14 +116,14 @@
       display: block;
       &:hover,
       &:focus {
-        outline: none;
+        // outline: none;
         // .fileSize {
         //   text-decoration: underline;
         // }
       }
       &:focus {
         box-shadow: $linkColor 0 0 0 1px inset;
-        outline: none;
+        // outline: none;
       }
     }
   }
