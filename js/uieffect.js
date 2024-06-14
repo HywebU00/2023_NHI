@@ -963,12 +963,11 @@ $(function () {
   // cp說明文字展開收合
   $('.illustrate_group .illustrate_btn').click(function () {
     $(this).toggleClass('open');
-	if($(this).hasClass('open')){
-		$(this).find('a').attr('aria-expanded', true);
-	}
-	else{
-		$(this).find('a').attr('aria-expanded',false);
-	}
+    if ($(this).hasClass('open')) {
+      $(this).find('a').attr('aria-expanded', true);
+    } else {
+      $(this).find('a').attr('aria-expanded', false);
+    }
     $('.illustrate_group .illustrate_block').slideToggle();
   });
 
@@ -1088,4 +1087,107 @@ $(function () {
   } else {
     $('.rssbtn').removeClass('has_search');
   }
+});
+
+// 給付方式
+$(function () {
+  $('.method_slider').slick({
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
+  });
+});
+// 安寧教育
+
+$(function () {
+  var _unitlistctrlbtn = $('.peaceEducation_block .unitlist button');
+  var _unitlistul = $('.peaceEducation_block .unitlist ul');
+  $(function () {
+    _unitlistctrlbtn.click(function () {
+      if (_unitlistul.hasClass('close')) {
+        _unitlistul.removeClass('close').addClass('open');
+        $(this).addClass('closed').text('收合');
+        $(this).attr('name', '收合選單/CLOSE');
+      } else {
+        _unitlistul.removeClass('open').addClass('close');
+        $(this).removeClass('closed').text('開啟');
+        $(this).attr('name', '展開選單/OPEN');
+      }
+    });
+  });
+});
+// 醫療條例
+$(function () {
+  $('.relatedlist_group button').click(function () {
+    $(this).toggleClass('close');
+    $(this).siblings('.listTree').slideToggle();
+  });
+});
+// 播放聲音
+$(function () {
+  function initializeAudioPlayer(audioPlayerId, buttonId) {
+    const audioPlayer = document.getElementById(audioPlayerId);
+    const playPauseButton = document.getElementById(buttonId);
+
+    playPauseButton.addEventListener('click', function () {
+      if (audioPlayer.paused) {
+        audioPlayer
+          .play()
+          .then(() => {
+            playPauseButton.classList.remove('play-button');
+            playPauseButton.classList.add('pause-button');
+          })
+          .catch((error) => {
+            console.error('播放失敗：', error);
+          });
+      } else {
+        audioPlayer.pause();
+        playPauseButton.classList.remove('pause-button');
+        playPauseButton.classList.add('play-button');
+      }
+    });
+  }
+
+  initializeAudioPlayer('audio-player-1', 'play-pause-button-1');
+  initializeAudioPlayer('audio-player-2', 'play-pause-button-2');
+  initializeAudioPlayer('audio-player-3', 'play-pause-button-3');
+  initializeAudioPlayer('audio-player-4', 'play-pause-button-4');
+  initializeAudioPlayer('audio-player-5', 'play-pause-button-5');
+
+  //
+
+  $('.soundfile_list .soundfileblock .play_btn').click(function () {
+    if ($('.soundfile_list .soundfileblock').hasClass('active')) {
+      $(this).parent('.soundfileblock').removeClass('active');
+    } else {
+      $(this).parent('.soundfileblock').addClass('active');
+    }
+  });
 });
