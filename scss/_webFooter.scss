@@ -148,7 +148,46 @@
       border-top: 1px solid $borderColor;
       justify-content: center;
       .otherLinks {
-        display: none;
+        flex-wrap: wrap;
+        flex: 0 0 auto;
+        flex-basis: 100%;
+        max-width: 400px;
+        margin: 0 auto 1em;
+        padding: 0;
+        font-size: 0.875em;
+        line-height: 1.1;
+        display: flex;
+        justify-content: center;
+
+        li {
+          // float: left;
+          position: relative;
+          margin: 0 0.5em 0.7em 0;
+          padding: 0 0.5em 0 0;
+          &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0.1em;
+            width: 1px;
+            height: 0.8em;
+            background-color: $fontColor;
+          }
+          a {
+            display: block;
+            color: $fontColor;
+            border-bottom: 1px solid transparent;
+            &:hover,
+            &:focus {
+              border-bottom-color: $fontColor;
+            }
+          }
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
       }
 
       .others {
@@ -265,17 +304,22 @@
       }
       .otherAll {
         margin-top: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
         .otherLinks {
-          display: block;
-          flex: 0 0 auto;
+          flex: 1 1 auto;
           flex-basis: calc(100% - 200px);
+          max-width: calc(100% - 200px);
           margin: 0;
           padding: 0;
           font-size: 0.875em;
           line-height: 1.1;
+          display: flex;
+          justify-content: flex-start;
 
           li {
-            float: left;
+            // float: left;
             position: relative;
             margin: 0 0.5em 0.7em 0;
             padding: 0 0.5em 0 0;
