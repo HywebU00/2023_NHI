@@ -1191,3 +1191,18 @@ $(function () {
     }
   });
 });
+// DRG tab
+$(function () {
+  // var _DRGtabsbtn = $('.DRGs_block .tabsblock .tabsbtn_group .tabsbtn a');
+  var _tabsbtn = $('.DRGs_block .tabsblock .tabsbtn_group .tabsbtn ');
+  var _tabsbtnA = _tabsbtn.find('a');
+
+  _tabsbtnA.on('mouseenter', function () {
+    $(this).addClass('active');
+    $(this).parent().siblings().find('a').removeClass('active');
+  });
+  _tabsbtnA.on('mouseleave', function () {
+    $(this).removeClass('active');
+    _tabsbtn.filter('.specify').find('a').addClass('active');
+  });
+});

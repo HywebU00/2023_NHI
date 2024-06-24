@@ -8406,6 +8406,11 @@ table.formLayout td {
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+@media (max-width: 810px) {
+  .DRGs_block .tabsblock {
+    flex-wrap: wrap;
+  }
+}
 .DRGs_block .tabsblock .tabsbtn_group {
   flex: 0 0 auto;
   flex-basis: 240px;
@@ -8439,11 +8444,11 @@ table.formLayout td {
 .DRGs_block .tabsblock .tabsbtn_group .tabsbtn a span {
   margin-right: 0.5em;
 }
-.DRGs_block .tabsblock .tabsbtn_group .tabsbtn a:hover, .DRGs_block .tabsblock .tabsbtn_group .tabsbtn a.active {
+.DRGs_block .tabsblock .tabsbtn_group .tabsbtn a.active {
   background-image: linear-gradient(0deg, #086d99, #15a2af);
   color: #fff;
 }
-.DRGs_block .tabsblock .tabsbtn_group .tabsbtn a:hover:after, .DRGs_block .tabsblock .tabsbtn_group .tabsbtn a.active:after {
+.DRGs_block .tabsblock .tabsbtn_group .tabsbtn a.active:after {
   content: "";
   background-image: url("../images/arrow_white.svg");
   background-repeat: no-repeat;
@@ -8457,10 +8462,54 @@ table.formLayout td {
   width: 20px;
   height: 12px;
 }
+@media (max-width: 810px) {
+  .DRGs_block .tabsblock .tabsbtn_group {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    max-width: 100%;
+    min-height: auto;
+    display: flex;
+    padding-top: 0;
+    border-radius: 0;
+  }
+  .DRGs_block .tabsblock .tabsbtn_group .tabsbtn {
+    margin: 0;
+    flex: 0 0 auto;
+    flex-basis: 33.3333333333%;
+  }
+  .DRGs_block .tabsblock .tabsbtn_group .tabsbtn a {
+    border-radius: 0;
+    padding: 1em 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .DRGs_block .tabsblock .tabsbtn_group .tabsbtn a span {
+    display: none;
+  }
+  .DRGs_block .tabsblock .tabsbtn_group .tabsbtn a.active:after {
+    background-image: none;
+    border: 10px solid #086d99;
+    border-color: #086d99 transparent transparent transparent;
+    transform: rotate(0);
+    position: absolute;
+    right: calc(50% - 5px);
+    z-index: 2;
+    top: auto;
+    bottom: -20px;
+    width: auto;
+    height: auto;
+  }
+}
 .DRGs_block .tabsblock .tabscontent {
   flex: 1 1 auto;
   padding: 2em 2em 2em 3em;
   box-sizing: border-box;
+}
+@media (max-width: 810px) {
+  .DRGs_block .tabsblock .tabscontent {
+    padding: 2em 1.5em;
+  }
 }
 .DRGs_block .tabsblock .tabscontent .sub_title {
   font-size: 1.125em;
@@ -8532,6 +8581,67 @@ table.formLayout td {
 }
 .DRGs_block .tabsblock .tabscontent .soundfile_group p {
   text-align: center;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list {
+  flex: 0 0 auto;
+  flex-basis: 30%;
+}
+@media (max-width: 1100px) {
+  .DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list {
+    flex-basis: 47%;
+  }
+}
+@media (max-width: 550px) {
+  .DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list {
+    flex-basis: 100%;
+  }
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a .soundfileblock {
+  background-color: var(--medicalbgcolor);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-image: url("../images/sound_stop.gif");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  transition: 0.5s;
+  margin-bottom: 0.5em;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a .soundfileblock .play-button {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a:hover {
+  color: #004f73;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a:hover .soundfileblock {
+  background-color: #fff677;
+  background-image: url("../images/sound_play.gif");
 }
 
 .paymentStandard_block {

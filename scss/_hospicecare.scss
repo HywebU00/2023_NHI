@@ -554,6 +554,9 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    @media (max-width: 810px) {
+      flex-wrap: wrap;
+    }
     .tabsbtn_group {
       flex: 0 0 auto;
       flex-basis: 240px;
@@ -566,6 +569,7 @@
       box-sizing: border-box;
       border-radius: 8px 0 0 8px;
       background-color: #c8dce2;
+
       .tabsbtn {
         margin-left: 1em;
         margin-right: -2em;
@@ -584,7 +588,7 @@
           span {
             margin-right: 0.5em;
           }
-          &:hover,
+
           &.active {
             @include grandient5(0deg);
             color: #fff;
@@ -605,11 +609,53 @@
           }
         }
       }
+      @media (max-width: 810px) {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        max-width: 100%;
+        min-height: auto;
+        display: flex;
+        padding-top: 0;
+        border-radius: 0;
+        .tabsbtn {
+          margin: 0;
+          flex: 0 0 auto;
+          flex-basis: calc(100% / 3);
+          a {
+            border-radius: 0;
+            padding: 1em 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+              display: none;
+            }
+            &.active {
+              &:after {
+                background-image: none;
+                border: 10px solid #086d99;
+                border-color: #086d99 transparent transparent transparent;
+                transform: rotate(0);
+                position: absolute;
+                right: calc(50% - 5px);
+                z-index: 2;
+                top: auto;
+                bottom: -20px;
+                width: auto;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
     }
     .tabscontent {
       flex: 1 1 auto;
       padding: 2em 2em 2em 3em;
       box-sizing: border-box;
+      @media (max-width: 810px) {
+        padding: 2em 1.5em;
+      }
       .sub_title {
         font-size: 1.125em;
         color: var(--darkblue);
@@ -675,6 +721,63 @@
         }
         p {
           text-align: center;
+        }
+      }
+      .soundfile_group2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        .soundfile_list {
+          flex: 0 0 auto;
+          flex-basis: 30%;
+          @media (max-width: 1100px) {
+            flex-basis: 47%;
+          }
+          @media (max-width: 550px) {
+            flex-basis: 100%;
+          }
+          a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            .soundfileblock {
+              background-color: var(--medicalbgcolor);
+              padding: 8px;
+              display: flex;
+              align-items: center;
+              box-sizing: border-box;
+              border-radius: 5px;
+              background-image: url('../images/sound_stop.gif');
+              background-repeat: no-repeat;
+              background-position: right 16px center;
+              transition: 0.5s;
+              margin-bottom: 0.5em;
+              .play-button {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+            p {
+              text-align: center;
+              padding: 0;
+              margin: 0;
+            }
+            &:hover {
+              color: $primaryColor;
+              box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+              .soundfileblock {
+                background-color: $assistant2;
+                background-image: url('../images/sound_play.gif');
+              }
+            }
+          }
         }
       }
     }
