@@ -15,6 +15,11 @@
   .divisions {
     display: none !important;
   }
+  body,
+  .medium {
+    position: static !important;
+    top: 0 !important;
+  }
   /* -------------------------------各別顯示設定----//*/
   body {
     background: transparent;

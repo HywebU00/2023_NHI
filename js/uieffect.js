@@ -1193,7 +1193,6 @@ $(function () {
 });
 // DRG tab
 $(function () {
-  // var _DRGtabsbtn = $('.DRGs_block .tabsblock .tabsbtn_group .tabsbtn a');
   var _tabsbtn = $('.DRGs_block .tabsblock .tabsbtn_group .tabsbtn ');
   var _tabsbtnA = _tabsbtn.find('a');
 
