@@ -9313,8 +9313,14 @@ table.formLayout td {
     width: 100% !important;
     padding: 0;
   }
+  .main {
+    -moz-column-break-before: avoid;
+         break-before: avoid;
+  }
   .main .pageHeader {
     padding: 0;
+    -moz-column-break-before: avoid;
+         break-before: avoid;
   }
   .main .contentbox {
     padding: 0;
@@ -9328,6 +9334,8 @@ table.formLayout td {
   .pageHeader h2 {
     margin: 0;
     padding: 0;
+    -moz-column-break-before: avoid;
+         break-before: avoid;
   }
   .contentbox {
     padding: 0;
@@ -9361,16 +9369,24 @@ table.formLayout td {
     width: 48%;
     margin: 0 1% 1em;
   }
+  .experience_content {
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+  }
   .experience_content .content_box .character {
     display: none;
   }
   .experience_content .content_box .experience_ul {
     padding: 0;
     margin: 0 0 0.5em;
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
   }
   .experience_content .content_box .experience_ul li {
     padding: 0;
     margin: 0;
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
   }
   .experience_content .content_box .experience_ul li:nth-child(even) {
     background-color: #eee !important;
@@ -9380,6 +9396,14 @@ table.formLayout td {
   }
   .experience_content .content_box .tabItems button.tabBtn {
     display: none;
+  }
+  .experience_content .content_box .tabContent {
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+  }
+  .breadcrumb {
+    -moz-column-break-before: avoid;
+         break-before: avoid;
   }
   /* 檔案下載*/
   *,

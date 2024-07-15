@@ -2,6 +2,7 @@
   // %no-bg {
   //     background: none;
   // }
+
   /* -------------------------------不需要列印的區塊，請放置於這----//*/
   header,
   .fatfooter,
@@ -35,8 +36,10 @@
     padding: 0;
   }
   .main {
+    break-before: avoid;
     .pageHeader {
       padding: 0;
+      break-before: avoid;
     }
 
     .contentbox {
@@ -53,6 +56,7 @@
   .pageHeader h2 {
     margin: 0;
     padding: 0;
+    break-before: avoid;
   }
   .contentbox {
     padding: 0;
@@ -96,6 +100,7 @@
   }
   // 學經歷
   .experience_content {
+    break-inside: avoid;
     .content_box {
       .character {
         display: none;
@@ -103,9 +108,11 @@
       .experience_ul {
         padding: 0;
         margin: 0 0 0.5em;
+        break-inside: avoid;
         li {
           padding: 0;
           margin: 0;
+          break-inside: avoid;
           &:nth-child(even) {
             background-color: #eee !important;
           }
@@ -119,9 +126,14 @@
           display: none;
         }
       }
+      .tabContent {
+        break-inside: avoid;
+      }
     }
   }
-
+  .breadcrumb {
+    break-before: avoid;
+  }
   /* 檔案下載*/
 
   *,
