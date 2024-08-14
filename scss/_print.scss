@@ -17,6 +17,7 @@
   .breadcrumb {
     display: none !important;
     break-before: avoid;
+    overflow: hidden;
   }
   body,
   .medium {
@@ -39,6 +40,7 @@
   }
   .main {
     break-before: avoid;
+    overflow: hidden;
     .pageHeader {
       padding: 0;
       break-before: avoid;
@@ -47,24 +49,43 @@
     .contentbox {
       padding: 0;
       break-before: avoid;
+      overflow: hidden;
     }
     .innerbanner {
       display: none;
     }
   }
-  .pageHeader h2 {
-    break-before: avoid;
-  }
+
   .cp {
     padding: 0;
+  }
+
+  .pageHeader {
+    break-before: avoid;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 1em;
+    .funcBar {
+      break-before: avoid;
+    }
   }
   .pageHeader h2 {
     margin: 0;
     padding: 0;
     break-before: avoid;
+    overflow: hidden;
   }
   .contentbox {
     padding: 0;
+    overflow: hidden;
+    break-before: avoid;
+    margin: 0;
+  }
+  .cpArticle {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    break-before: avoid;
   }
   .textBlock {
     &.column4 {
@@ -103,21 +124,54 @@
       }
     }
   }
+
   // 學經歷
   .experience_content {
-    break-inside: avoid;
+    display: block;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    break-before: avoid;
     .content_box {
+      width: 430px;
+      float: left;
+      break-before: avoid;
+      overflow: hidden;
+      .name,
+      .jobtitle {
+        break-before: avoid;
+        margin-bottom: 0;
+        overflow: hidden;
+      }
       .character {
         display: none;
+      }
+      .tabSet {
+        break-before: avoid;
+        overflow: hidden;
+      }
+      .tabItems {
+        break-before: avoid;
+        display: none;
+        overflow: hidden;
+        button.tabBtn {
+          display: none;
+        }
+      }
+
+      .tabContent {
+        break-before: avoid;
+        overflow: hidden;
       }
       .experience_ul {
         padding: 0;
         margin: 0 0 0.5em;
-        break-inside: avoid;
+        break-before: avoid;
+        overflow: hidden;
         li {
           padding: 0;
           margin: 0;
-          break-inside: avoid;
+          overflow: hidden;
           &:nth-child(even) {
             background-color: #eee !important;
           }
@@ -125,20 +179,19 @@
       }
       h3 {
         margin: 0;
+        break-before: avoid;
+        overflow: hidden;
       }
-      .tabItems {
-        break-inside: avoid;
-        button.tabBtn {
-          display: none;
-        }
-      }
-      .tabContent {
-        break-inside: avoid;
-      }
+    }
+    .content_photo {
+      width: 200px;
+      margin-left: 2em;
+      float: left;
     }
   }
   .breadcrumb {
     break-before: avoid;
+    overflow: hidden;
   }
   /* 檔案下載*/
 
