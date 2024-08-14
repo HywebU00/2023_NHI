@@ -9292,8 +9292,11 @@ table.formLayout td {
   .innerbanner,
   .goTop,
   .sidebar,
-  .divisions {
+  .divisions,
+  .breadcrumb {
     display: none !important;
+    -moz-column-break-before: avoid;
+         break-before: avoid;
   }
   body,
   .medium {
@@ -9324,9 +9327,15 @@ table.formLayout td {
   }
   .main .contentbox {
     padding: 0;
+    -moz-column-break-before: avoid;
+         break-before: avoid;
   }
   .main .innerbanner {
     display: none;
+  }
+  .pageHeader h2 {
+    -moz-column-break-before: avoid;
+         break-before: avoid;
   }
   .cp {
     padding: 0;
@@ -9393,6 +9402,10 @@ table.formLayout td {
   }
   .experience_content .content_box h3 {
     margin: 0;
+  }
+  .experience_content .content_box .tabItems {
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
   }
   .experience_content .content_box .tabItems button.tabBtn {
     display: none;

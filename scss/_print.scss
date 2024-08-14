@@ -13,8 +13,10 @@
   .innerbanner,
   .goTop,
   .sidebar,
-  .divisions {
+  .divisions,
+  .breadcrumb {
     display: none !important;
+    break-before: avoid;
   }
   body,
   .medium {
@@ -44,12 +46,15 @@
 
     .contentbox {
       padding: 0;
+      break-before: avoid;
     }
     .innerbanner {
       display: none;
     }
   }
-
+  .pageHeader h2 {
+    break-before: avoid;
+  }
   .cp {
     padding: 0;
   }
@@ -122,6 +127,7 @@
         margin: 0;
       }
       .tabItems {
+        break-inside: avoid;
         button.tabBtn {
           display: none;
         }
