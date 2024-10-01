@@ -8633,10 +8633,12 @@ table.formLayout td {
   justify-content: center;
   align-items: center;
 }
-.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a p {
+.DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a .title {
   text-align: center;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 .DRGs_block .tabsblock .tabscontent .soundfile_group2 .soundfile_list a:hover {
   color: #004f73;
@@ -8706,7 +8708,7 @@ table.formLayout td {
 }
 .versionIntroduction_block .version_group .version_list a .current_versio,
 .versionIntroduction_block .version_group .version_list a .version,
-.versionIntroduction_block .version_group .version_list a p {
+.versionIntroduction_block .version_group .version_list a .title {
   text-align: center;
   padding: 0;
   margin: 0 0 0.2em;
@@ -8729,7 +8731,7 @@ table.formLayout td {
   font-size: 1.188em;
   font-weight: bold;
 }
-.versionIntroduction_block .version_group .version_list a p {
+.versionIntroduction_block .version_group .version_list a .title {
   margin: 0;
 }
 .versionIntroduction_block .version_group .version_list a:hover, .versionIntroduction_block .version_group .version_list a:focus {
@@ -8739,8 +8741,8 @@ table.formLayout td {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .versionIntroduction_block .version_group .version_list a:hover .version,
-.versionIntroduction_block .version_group .version_list a:hover p, .versionIntroduction_block .version_group .version_list a:focus .version,
-.versionIntroduction_block .version_group .version_list a:focus p {
+.versionIntroduction_block .version_group .version_list a:hover .title, .versionIntroduction_block .version_group .version_list a:focus .version,
+.versionIntroduction_block .version_group .version_list a:focus .title {
   text-shadow: 0px 0px 8px rgba(19, 19, 19, 0.9), 0px 0px 10px rgba(19, 19, 19, 0.9), 0px 0px 12px rgba(19, 19, 19, 0.9);
 }
 @media (max-width: 600px) {
@@ -9121,7 +9123,7 @@ table.formLayout td {
   transition: 0.5s;
 }
 .versionIntroduction_tabblock .version_group .version_list a .version,
-.versionIntroduction_tabblock .version_group .version_list a p {
+.versionIntroduction_tabblock .version_group .version_list a .title {
   text-align: center;
   padding: 0;
   margin: 0 0 0.2em;
@@ -9133,8 +9135,10 @@ table.formLayout td {
   font-size: 1.188em;
   font-weight: bold;
 }
-.versionIntroduction_tabblock .version_group .version_list a p {
+.versionIntroduction_tabblock .version_group .version_list a .title {
   margin: 0;
+  display: flex;
+  justify-content: center;
 }
 .versionIntroduction_tabblock .version_group .version_list a:hover, .versionIntroduction_tabblock .version_group .version_list a:focus {
   box-shadow: rgba(0, 0, 0, 0.8) 0px 4px 12px;
@@ -9143,8 +9147,8 @@ table.formLayout td {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .versionIntroduction_tabblock .version_group .version_list a:hover .version,
-.versionIntroduction_tabblock .version_group .version_list a:hover p, .versionIntroduction_tabblock .version_group .version_list a:focus .version,
-.versionIntroduction_tabblock .version_group .version_list a:focus p {
+.versionIntroduction_tabblock .version_group .version_list a:hover .title, .versionIntroduction_tabblock .version_group .version_list a:focus .version,
+.versionIntroduction_tabblock .version_group .version_list a:focus .title {
   text-shadow: 0px 0px 8px rgba(19, 19, 19, 0.9), 0px 0px 10px rgba(19, 19, 19, 0.9), 0px 0px 12px rgba(19, 19, 19, 0.9);
 }
 @media (max-width: 600px) {
