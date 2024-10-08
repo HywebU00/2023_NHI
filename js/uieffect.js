@@ -554,6 +554,21 @@ $(function () {
         _this.parent().siblings().find('.openclose_btn').text('展開');
       }
     });
+    // _title.focus(function () {
+    //   let _this = $(this);
+    //   console.log(_this);
+    //   if (_this.hasClass('show')) {
+    //     _this.next().slideUp(400);
+    //     _this.removeClass('show');
+    //     _this.find('.openclose_btn').text('展開');
+    //   } else {
+    //     _this.next().slideDown(400);
+    //     _this.addClass('show').parent().siblings().find('.content').slideUp(400);
+    //     _this.addClass('show').parent().siblings().find('.title').removeClass('show');
+    //     _this.find('.openclose_btn').text('收合');
+    //     _this.parent().siblings().find('.openclose_btn').text('展開');
+    //   }
+    // });
 
     _ctrlBtn.click(function () {
       let _this = $(this);

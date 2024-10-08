@@ -47,11 +47,12 @@
         border: none;
         box-shadow: none;
         border-radius: 0;
-        color: #fff;
-        background-color: $secondaryColor;
-        &:hover,
-        &:focus {
+        color: #333;
+        background-color: #b3e5e8;
+
+        &:focus-visible {
           background: $primaryColor;
+          color: #fff;
         }
 
         .openclose_btn {
@@ -65,7 +66,7 @@
 
           &:after {
             content: '';
-            border: 2px solid #fff;
+            border: 2px solid #333;
             border-top: none;
             border-left: none;
             position: absolute;
@@ -79,8 +80,13 @@
           }
         }
         &.show {
+          background: $primaryColor;
+          color: #fff;
           .openclose_btn {
             &:after {
+              border: 2px solid #fff;
+              border-top: none;
+              border-left: none;
               top: 15px;
               transform: rotate(225deg);
             }

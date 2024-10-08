@@ -2413,12 +2413,12 @@ a:focus .fileType.other {
   }
   .webFooter .base .phoneAddress {
     font-size: 1.06em;
-    flex: 0 0 calc(96% - 630px);
-    margin: 0 2%;
+    flex: 0 0 calc(96% - 680px);
+    margin: 0 1% 0 2%;
   }
   .webFooter .base .findUsHere {
-    flex: 0 0 330px;
-    width: 330px;
+    flex: 1 1 380px;
+    width: 380px;
     align-self: flex-end;
     border: none;
     padding-bottom: 4px;
@@ -6037,11 +6037,12 @@ table.formLayout td {
   border: none;
   box-shadow: none;
   border-radius: 0;
-  color: #fff;
-  background-color: #018392;
+  color: #333;
+  background-color: #b3e5e8;
 }
-.showHideList > ul > li button:hover, .showHideList > ul > li button:focus {
+.showHideList > ul > li button:focus-visible {
   background: #004f73;
+  color: #fff;
 }
 .showHideList > ul > li button .openclose_btn {
   position: absolute;
@@ -6054,7 +6055,7 @@ table.formLayout td {
 }
 .showHideList > ul > li button .openclose_btn:after {
   content: "";
-  border: 2px solid #fff;
+  border: 2px solid #333;
   border-top: none;
   border-left: none;
   position: absolute;
@@ -6065,7 +6066,14 @@ table.formLayout td {
   transform: rotate(45deg);
   transition: transform 0.5s;
 }
+.showHideList > ul > li button.show {
+  background: #004f73;
+  color: #fff;
+}
 .showHideList > ul > li button.show .openclose_btn:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
   top: 15px;
   transform: rotate(225deg);
 }
