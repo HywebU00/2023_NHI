@@ -5618,11 +5618,11 @@ table.formLayout td {
 }
 .cp_itemlist ul li {
   flex: 0 0 auto;
-  flex-basis: calc(16.6666666667% - 8px);
+  flex-basis: calc(16.6666666667% - 6px);
   font-size: 1.125em;
   background: rgb(158, 216, 220);
   background: linear-gradient(0deg, rgb(158, 216, 220) 0%, rgb(236, 254, 255) 100%);
-  margin: 0 4px;
+  margin: 0 3px;
   border-radius: 5px;
   margin-bottom: 5px;
 }
@@ -5635,7 +5635,7 @@ table.formLayout td {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 0.5em;
+  padding: 0.7em 0.5em;
   height: 100%;
   text-align: center;
   color: #004f73;
@@ -5659,12 +5659,12 @@ table.formLayout td {
     flex-wrap: wrap;
   }
   .cp_itemlist ul li {
-    flex-basis: calc(33.3333333333% - 8px);
+    flex-basis: calc(33.3333333333% - 6px);
   }
 }
 @media (max-width: 700px) {
   .cp_itemlist ul li {
-    flex-basis: calc(50% - 8px);
+    flex-basis: calc(50% - 6px);
   }
 }
 @media (max-width: 480px) {

@@ -381,12 +381,12 @@
     list-style-type: none;
     li {
       flex: 0 0 auto;
-      flex-basis: calc(100% / 6 - 8px);
+      flex-basis: calc(100% / 6 - 6px);
       font-size: 1.125em;
 
       background: rgb(158, 216, 220);
       background: linear-gradient(0deg, rgba(158, 216, 220, 1) 0%, rgba(236, 254, 255, 1) 100%);
-      margin: 0 4px;
+      margin: 0 3px;
       border-radius: 5px;
       margin-bottom: 5px;
 
@@ -399,7 +399,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        padding: 0.5em;
+        padding: 0.7em 0.5em;
         height: 100%;
         text-align: center;
         color: $primaryColor;
@@ -422,12 +422,12 @@
     @media (max-width: $wwMaximum) {
       flex-wrap: wrap;
       li {
-        flex-basis: calc(100% / 3 - 8px);
+        flex-basis: calc(100% / 3 - 6px);
       }
     }
     @media (max-width: $wwMedium) {
       li {
-        flex-basis: calc(100% / 2 - 8px);
+        flex-basis: calc(100% / 2 - 6px);
       }
     }
     @media (max-width: $wwSlim) {
