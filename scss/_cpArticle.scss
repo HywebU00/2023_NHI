@@ -371,3 +371,69 @@
     }
   }
 }
+// cp項目list
+.cp_itemlist {
+  margin-bottom: 2em;
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      flex: 0 0 auto;
+      flex-basis: calc(100% / 6 - 8px);
+      font-size: 1.125em;
+
+      background: rgb(158, 216, 220);
+      background: linear-gradient(0deg, rgba(158, 216, 220, 1) 0%, rgba(236, 254, 255, 1) 100%);
+      margin: 0 4px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+
+      &:hover {
+        background: rgb(120, 214, 221);
+        background: linear-gradient(0deg, rgba(120, 214, 221, 1) 0%, rgba(197, 251, 254, 1) 100%);
+      }
+      a {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        height: 100%;
+        text-align: center;
+        color: $primaryColor;
+        font-weight: 500;
+        line-height: 1.2em;
+        span {
+          flex: 1 1 auto;
+          flex-basis: 100%;
+          display: block;
+          font-size: 0.938em;
+          line-height: 1.2em;
+          padding-top: 5px;
+          font-weight: 400;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    @media (max-width: $wwMaximum) {
+      flex-wrap: wrap;
+      li {
+        flex-basis: calc(100% / 3 - 8px);
+      }
+    }
+    @media (max-width: $wwMedium) {
+      li {
+        flex-basis: calc(100% / 2 - 8px);
+      }
+    }
+    @media (max-width: $wwSlim) {
+      li {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
