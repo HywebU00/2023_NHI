@@ -5608,18 +5608,18 @@ table.formLayout td {
 }
 
 .cp_itemlist,
-.cp_itemlist02 {
+.cp_itemlist2 {
   margin-bottom: 2em;
 }
 .cp_itemlist ul,
-.cp_itemlist02 ul {
+.cp_itemlist2 ul {
   display: flex;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 .cp_itemlist ul li,
-.cp_itemlist02 ul li {
+.cp_itemlist2 ul li {
   flex: 0 0 auto;
   flex-basis: calc(16.6666666667% - 6px);
   font-size: 1.063em;
@@ -5630,12 +5630,12 @@ table.formLayout td {
   margin-bottom: 5px;
 }
 .cp_itemlist ul li:hover,
-.cp_itemlist02 ul li:hover {
+.cp_itemlist2 ul li:hover {
   background: rgb(120, 214, 221);
   background: linear-gradient(0deg, rgb(120, 214, 221) 0%, rgb(197, 251, 254) 100%);
 }
 .cp_itemlist ul li a,
-.cp_itemlist02 ul li a {
+.cp_itemlist2 ul li a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -5647,7 +5647,7 @@ table.formLayout td {
   line-height: 1.2em;
 }
 .cp_itemlist ul li a span,
-.cp_itemlist02 ul li a span {
+.cp_itemlist2 ul li a span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5659,37 +5659,37 @@ table.formLayout td {
   font-weight: 400;
 }
 .cp_itemlist ul li a:hover,
-.cp_itemlist02 ul li a:hover {
+.cp_itemlist2 ul li a:hover {
   text-decoration: none;
 }
 @media (max-width: 1200px) {
   .cp_itemlist ul,
-  .cp_itemlist02 ul {
+  .cp_itemlist2 ul {
     flex-wrap: wrap;
   }
   .cp_itemlist ul li,
-  .cp_itemlist02 ul li {
+  .cp_itemlist2 ul li {
     flex-basis: calc(33.3333333333% - 6px);
   }
 }
 @media (max-width: 700px) {
   .cp_itemlist ul li,
-  .cp_itemlist02 ul li {
+  .cp_itemlist2 ul li {
     flex-basis: calc(50% - 6px);
   }
 }
 @media (max-width: 480px) {
   .cp_itemlist ul li,
-  .cp_itemlist02 ul li {
+  .cp_itemlist2 ul li {
     flex-basis: 100%;
   }
 }
 
-.cp_itemlist02 ul li {
+.cp_itemlist2 ul li {
   background: rgb(158, 216, 220);
   background: linear-gradient(180deg, rgb(158, 216, 220) 0%, rgb(236, 254, 255) 100%);
 }
-.cp_itemlist02 ul li:hover {
+.cp_itemlist2 ul li:hover {
   background: rgb(120, 214, 221);
   background: linear-gradient(180deg, rgb(120, 214, 221) 0%, rgb(197, 251, 254) 100%);
 }
