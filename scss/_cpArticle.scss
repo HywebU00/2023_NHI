@@ -372,7 +372,8 @@
   }
 }
 // cp項目list
-.cp_itemlist {
+.cp_itemlist,
+.cp_itemlist2 {
   margin-bottom: 2em;
   ul {
     display: flex;
@@ -410,8 +411,7 @@
           justify-content: center;
           flex: 1 1 auto;
           flex-basis: 100%;
-
-          font-size: 0.938em;
+          font-size: 0.875em;
           line-height: 1.2em;
           padding-top: 5px;
           font-weight: 400;
@@ -435,6 +435,18 @@
     @media (max-width: $wwSlim) {
       li {
         flex-basis: 100%;
+      }
+    }
+  }
+}
+.cp_itemlist2 {
+  ul {
+    li {
+      background: rgb(158, 216, 220);
+      background: linear-gradient(180deg, rgba(158, 216, 220, 1) 0%, rgba(236, 254, 255, 1) 100%);
+      &:hover {
+        background: rgb(120, 214, 221);
+        background: linear-gradient(180deg, rgba(120, 214, 221, 1) 0%, rgba(197, 251, 254, 1) 100%);
       }
     }
   }
