@@ -5610,6 +5610,7 @@ table.formLayout td {
 .cp_itemlist_group .cp_itemlist,
 .cp_itemlist_group .cp_itemlist02 {
   margin-bottom: 2em;
+  display: block;
 }
 @media (max-width: 700px) {
   .cp_itemlist_group .cp_itemlist,
