@@ -11,6 +11,11 @@
 
     .title {
       text-align: center;
+      line-height: 1.7;
+      em {
+        display: inline-block;
+        line-height: 1.7;
+      }
     }
   }
   &.paddingsame {
@@ -83,6 +88,7 @@
     font-weight: bolder;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
+    line-height: 1.7;
     &.aCenter {
       text-align: center;
     }
@@ -90,6 +96,8 @@
       margin: 0 0.5em;
       font-style: normal;
       color: #007e89;
+      line-height: 1.7;
+      display: inline-block;
     }
     &.singlecolor {
       em {
@@ -115,6 +123,7 @@
       margin: 0 0.5em;
       font-style: normal;
       color: #007e89;
+      display: inline-block;
     }
   }
   p {

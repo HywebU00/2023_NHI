@@ -7482,6 +7482,11 @@ table.formLayout td {
 }
 .health_insurance_block.bgcolor .title {
   text-align: center;
+  line-height: 1.7;
+}
+.health_insurance_block.bgcolor .title em {
+  display: inline-block;
+  line-height: 1.7;
 }
 .health_insurance_block.paddingsame {
   padding: 50px 30px 50px 30px;
@@ -7546,6 +7551,7 @@ table.formLayout td {
   font-weight: bolder;
   font-family: "Noto Sans TC", sans-serif;
   font-weight: 700;
+  line-height: 1.7;
 }
 .health_insurance_block .title.aCenter {
   text-align: center;
@@ -7554,6 +7560,8 @@ table.formLayout td {
   margin: 0 0.5em;
   font-style: normal;
   color: #007e89;
+  line-height: 1.7;
+  display: inline-block;
 }
 .health_insurance_block .title.singlecolor em {
   margin: 0;
@@ -7577,6 +7585,7 @@ table.formLayout td {
   margin: 0 0.5em;
   font-style: normal;
   color: #007e89;
+  display: inline-block;
 }
 .health_insurance_block p {
   margin: 1em 0 1.5em;
