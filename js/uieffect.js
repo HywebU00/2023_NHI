@@ -214,9 +214,11 @@ $(function () {
         fixHeadThreshold = hh - _menu.outerHeight();
         _window.trigger('scroll');
       }
-
-      // 由寬螢幕到小螢幕
+      if (ww < wwMedium && wwNew >= wwMedium) {
+        $('.cp_itemlist, .cp_itemlist02').removeAttr('style');
+      }
       if (ww >= wwNormal && wwNew < wwNormal) {
+        // 由寬螢幕到小螢幕
         hh = _webHeader.outerHeight();
         fixHeadThreshold = 0;
         _body.removeAttr('style');
