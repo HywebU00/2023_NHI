@@ -970,6 +970,32 @@ $(function () {
     }
     $('.illustrate_group .illustrate_block').slideToggle();
   });
+  // cp 項目展開收合
+
+  $('.cp_itemlist_group .itemlist_btn').click(function () {
+    $(this).toggleClass('open');
+    if ($(this).hasClass('open')) {
+      $(this).find('a').attr('aria-expanded', true);
+      $(this).siblings('.cp_itemlist').slideDown();
+      $(this).find('a').text('收闔項目');
+    } else {
+      $(this).find('a').attr('aria-expanded', false);
+      $(this).siblings('.cp_itemlist').slideUp();
+      $(this).find('a').text('展開項目');
+    }
+  });
+  $('.cp_itemlist_group .itemlist_btn2').click(function () {
+    $(this).toggleClass('open');
+    if ($(this).hasClass('open')) {
+      $(this).find('a').attr('aria-expanded', true);
+      $(this).siblings('.cp_itemlist02').slideDown();
+      $(this).find('a').text('收闔項目');
+    } else {
+      $(this).find('a').attr('aria-expanded', false);
+      $(this).siblings('.cp_itemlist02').slideUp();
+      $(this).find('a').text('展開項目');
+    }
+  });
 
   /*-----------------------------------*/
   /////////// 無障礙快捷鍵盤組合  //////////
