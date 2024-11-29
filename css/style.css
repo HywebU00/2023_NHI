@@ -5714,10 +5714,10 @@ table.formLayout td {
 .cp_itemlist_group .itemlist_btn a,
 .cp_itemlist_group .itemlist_btn2 a {
   display: inline-block;
-  padding: 0.2em 1em 0.2em 1em;
+  padding: 0.1em 0.5em 0.1em 0.5em;
   background-color: #018392;
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 1.063rem;
   text-decoration: none;
   border-radius: 5px;
   position: relative;
@@ -5726,11 +5726,11 @@ table.formLayout td {
 .cp_itemlist_group .itemlist_btn a:before,
 .cp_itemlist_group .itemlist_btn2 a:before {
   content: "";
-  border: 8px solid #fff;
+  border: 6px solid #fff;
   border-color: #fff transparent transparent transparent;
   position: absolute;
   top: 1em;
-  right: -1.3em;
+  right: -1.2em;
   transition: 0.5s;
 }
 .cp_itemlist_group .itemlist_btn a:hover,
