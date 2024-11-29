@@ -390,8 +390,8 @@
         flex: 0 0 auto;
         flex-basis: calc(100% / 6 - 6px);
         font-size: 1.063em;
-        background: rgb(158, 216, 220);
-        background: linear-gradient(0deg, rgba(158, 216, 220, 1) 0%, rgba(236, 254, 255, 1) 100%);
+        background: rgb(189, 242, 245);
+        background: linear-gradient(0deg, rgba(189, 242, 245, 1) 0%, rgba(239, 254, 255, 1) 100%);
         margin: 0 3px;
         border-radius: 5px;
         margin-bottom: 5px;
@@ -448,8 +448,8 @@
   .cp_itemlist02 {
     ul {
       li {
-        background: rgb(158, 216, 220);
-        background: linear-gradient(180deg, rgba(158, 216, 220, 1) 0%, rgba(236, 254, 255, 1) 100%);
+        background: rgb(189, 242, 245);
+        background: linear-gradient(180deg, rgba(189, 242, 245, 1) 0%, rgba(239, 254, 255, 1) 100%);
         &:hover {
           background: rgb(120, 214, 221);
           background: linear-gradient(180deg, rgba(120, 214, 221, 1) 0%, rgba(197, 251, 254, 1) 100%);
@@ -457,11 +457,11 @@
       }
     }
   }
-
   // 按鈕
   .itemlist_btn,
   .itemlist_btn2 {
     margin: 0 0 1em;
+    max-width: 140px;
     display: none;
     @media (max-width: $wwMedium) {
       display: block;
@@ -471,11 +471,11 @@
       padding: 0.2em 1em 0.2em 1em;
       background-color: $secondaryColor;
       color: #fff;
-      font-size: 1.3rem;
+      font-size: 1.125rem;
       text-decoration: none;
       border-radius: 5px;
       position: relative;
-      border-right: 40px solid $focus;
+      border-right: 30px solid $focus;
 
       &:before {
         content: '';
@@ -488,7 +488,7 @@
       }
       &:hover {
         background-color: darken($color: $secondaryColor, $amount: 5);
-        border-right: 40px solid darken($color: $focus, $amount: 5);
+        border-right: 30px solid darken($color: $focus, $amount: 5);
         text-decoration: none;
       }
     }
