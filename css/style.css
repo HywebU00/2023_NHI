@@ -1136,10 +1136,10 @@ kbd {
 .fileType.txt:hover, .fileType.txt:focus {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px;
 }
-.fileType.jpg {
+.fileType.jpg, .fileType.tif {
   background: #0b9fb2;
 }
-.fileType.jpg:hover, .fileType.jpg:focus {
+.fileType.jpg:hover, .fileType.jpg:focus, .fileType.tif:hover, .fileType.tif:focus {
   box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #0b9fb2 0 0 0 2px;
 }
 .fileType.mp3, .fileType.mp4 {
@@ -1970,8 +1970,12 @@ a:focus .fileType.other {
 .search a {
   color: #fff;
 }
+.search label {
+  font-size: 0;
+}
 .search input[type=text],
-.search input[type=button], .search input[type=submit] {
+.search input[type=button],
+.search input[type=submit] {
   float: left;
   padding: 0 0.5em;
   margin: 0;
@@ -1990,14 +1994,17 @@ a:focus .fileType.other {
 .search input[type=text]:focus {
   box-shadow: #07b4b1 0 0 0 2px;
 }
-.search input[type=button], .search input[type=submit] {
+.search input[type=button],
+.search input[type=submit] {
   width: 5em;
   background-color: #004f73;
 }
-.search input[type=button]:hover, .search input[type=submit]:hover {
+.search input[type=button]:hover,
+.search input[type=submit]:hover {
   background-color: #01425c;
 }
-.search input[type=button]:focus, .search input[type=submit]:focus {
+.search input[type=button]:focus,
+.search input[type=submit]:focus {
   background-color: #01425c;
   box-shadow: #07b4b1 0 0 0 2px;
 }

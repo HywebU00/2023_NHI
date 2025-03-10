@@ -412,7 +412,8 @@
       box-shadow: rgba(255, 255, 255, 0.6) 0 0 0 1px inset, #1d98e4 0 0 0 2px;
     }
   }
-  &.jpg {
+  &.jpg,
+  &.tif {
     background: #0b9fb2;
     &:hover,
     &:focus {
