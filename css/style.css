@@ -9739,6 +9739,7 @@ table.formLayout td {
   background-position: left top;
   border-radius: 8px;
   padding: 1.5em 1.5em 2em;
+  margin-bottom: 4em;
 }
 .proposal_block .block_title {
   flex: 0 0 auto;
