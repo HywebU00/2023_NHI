@@ -529,7 +529,7 @@ $(function () {
   tabFun();
   // 頁籤功能 end //////////////////////////////////////////////////////////
 
-  // 內文區塊展開／收合 //////////////////////////////////////////////////////////
+  // 內文區塊展開1／收合 //////////////////////////////////////////////////////////
   $('.showHideList').each(function () {
     let _showHideList = $(this);
     let _ctrlBtn = _showHideList.find('.ctrlBtn');
@@ -570,7 +570,79 @@ $(function () {
       }
     });
   });
-  // 內文區塊展開／收合 end //////////////////////////////////////////////////////////
+  // 內文區塊展開1／收合 end ////////////////////
+  // 內文區塊展開2／收合 ////////////////////////
+  $('.showHideList2').each(function () {
+    let _showHideList2 = $(this);
+    let _ctrlBtn = _showHideList2.find('.ctrlBtn');
+    let _showHideItems2 = _showHideList2.children('ul').children('li');
+    let _title = _showHideItems2.find('.title');
+    let _content = _showHideItems2.find('.content');
+    const textOpen = _ctrlBtn.text();
+    const textClose = _ctrlBtn.attr('data-altitle');
+
+    // 動態加上 aria-controls、aria-labelledby、id、hidden（初始化）
+    _title.each(function (i) {
+      const btn = $(this);
+      const content = btn.next('.content');
+
+      const btnId = `faqBtn${i}`;
+      const contentId = `faqContent${i}`;
+
+      btn.attr({
+        id: btnId,
+        'aria-expanded': 'false',
+        'aria-controls': contentId,
+      });
+
+      content.attr({
+        id: contentId,
+        role: 'region',
+        'aria-labelledby': btnId,
+        hidden: 'hidden',
+      });
+    });
+
+    // 點擊展開收合
+    _title.click(function () {
+      let _this = $(this);
+      let _content = _this.next('.content');
+      let isExpanded = _this.attr('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        _this.removeClass('show').attr('aria-expanded', 'false');
+        _content.slideUp(400).attr('hidden', 'hidden');
+        _this.find('.openclose_btn').text('展開');
+      } else {
+        // 關閉其他
+        _title.removeClass('show').attr('aria-expanded', 'false');
+        _showHideItems2.find('.content').slideUp(400).attr('hidden', 'hidden');
+        _title.find('.openclose_btn').text('展開');
+
+        // 展開目前
+        _this.addClass('show').attr('aria-expanded', 'true');
+        _content.slideDown(400).removeAttr('hidden');
+        _this.find('.openclose_btn').text('收合');
+      }
+    });
+
+    // 全部展開/收合按鈕（如有）
+    _ctrlBtn.click(function () {
+      let _this = $(this);
+      if (_this.hasClass('closeAll')) {
+        _content.slideUp(400).attr('hidden', 'hidden');
+        _title.removeClass('show').attr('aria-expanded', 'false');
+        _this.removeClass('closeAll').text(textOpen);
+        _title.find('.openclose_btn').text('展開');
+      } else {
+        _content.slideDown(400).removeAttr('hidden');
+        _title.addClass('show').attr('aria-expanded', 'true');
+        _this.addClass('closeAll').text(textClose);
+        _title.find('.openclose_btn').text('收合');
+      }
+    });
+  });
+  // 內文區塊展開2／收合 end /////////////////////
 
   // 可收合區 //////////////////////////////////////////////////////////
   _drawer = $('.drawer');
