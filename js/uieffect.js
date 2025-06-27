@@ -1305,3 +1305,383 @@ $(function () {
     _tabsbtn.filter('.specify').find('a').addClass('active');
   });
 });
+// 健保櫃檯App按鈕位置
+$(function () {
+  $('.health_apppicture_slider').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+    ],
+  });
+});
+//
+$(function () {
+  $('.health_apppicture_slidertwo').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          dots: true,
+        },
+      },
+    ],
+  });
+});
+$(function () {
+  $('.health_apppicture_sliderLeaflet').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          dots: false,
+        },
+      },
+    ],
+  });
+});
+$(function () {
+  $('.health_apppicture_sliderstep').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+          dots: true,
+        },
+      },
+    ],
+  });
+});
+
+//
+// 亂數數字
+function randomFloor(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// 亂數英文字
+function randomLetter(max) {
+  let text = '';
+  let letter = 'abcdefghijklmnopqrstuvwxyz';
+
+  for (let i = 0; i < max; i++) text += letter.charAt(Math.floor(Math.random() * letter.length));
+  return text;
+}
+
+// 頁籤
+$(function () {
+  let wwSmall = 700;
+  //
+  function tabFunction(obj) {
+    ('use strict');
+    const { target, autoClose = true, openContent = false, modeSwitch = false, windowWidth = wwSmall, openIndex = 0, openSwitch = true } = obj;
+    const tabSet = target === undefined ? $(obj) : $(target);
+
+    if (tabSet === null) return;
+    const tabItem = $('.tabItems');
+    const tabBtns = tabSet.find('.tabItems .tabBtn');
+    const tabContent = tabSet.find('.tabContent');
+    const tabContentIn = tabSet.find('.tabContent .tabContentIn');
+
+    //初始設定
+    function tabInit(targetIndex) {
+      tabItem.attr('role', 'tablist');
+
+      tabBtns.each(function (i) {
+        const id = `tab_${randomLetter(3)}${randomFloor(0, 999)}`;
+        const controls = `${id}_con`;
+        $(this).attr({
+          id: id,
+          'aria-controls': controls,
+          'aria-selected': 'false',
+          'aria-expanded': 'false',
+          tabindex: '-1',
+        });
+        setAttribute(tabContent.eq(i), 'tabpanel', controls, id);
+
+        //模式切換-新增按鈕
+        if (modeSwitch) {
+          const mobileTabBtn = createMobileTabBtn(id, controls, $(this).text());
+          tabContent.eq(i).prepend(mobileTabBtn);
+        }
+      });
+
+      checkTarget(targetIndex);
+      tabSet.data('nowIndex', targetIndex);
+    }
+
+    // 創建移動版選項按鈕
+    function createMobileTabBtn(id, controls, textContent) {
+      return $('<button>', {
+        class: 'mobileTabBtn',
+        id: id,
+        'aria-controls': controls,
+        type: 'button',
+        'aria-expanded': 'false',
+      }).text(textContent);
+    }
+
+    //執行
+    tabInit(openIndex);
+
+    //切換動作
+    function checkTarget(targetIndex) {
+      tabSet.data('nowIndex', targetIndex);
+
+      //點選的按鈕增加active
+      tabBtns.eq(targetIndex).addClass('active');
+      tabBtns.eq(targetIndex).attr({
+        'aria-selected': 'true',
+        'aria-expanded': 'true',
+        tabindex: '0',
+      });
+
+      //移除其他按鈕的active
+      const siblingsBtn = tabBtns.eq(targetIndex).siblings();
+      siblingsBtn.each(function (e) {
+        $(this).removeClass('active');
+        $(this).attr({
+          'aria-selected': 'false',
+          'aria-expanded': 'false',
+          tabindex: '-1',
+        });
+      });
+
+      tabContent.eq(targetIndex).removeClass('hidden');
+      // tabContent.eq(targetIndex).removeAttr('aria-hidden');
+
+      //移除其他內容的active
+      const siblingsPanel = tabContent.eq(targetIndex).siblings();
+      siblingsPanel.each(function (e) {
+        $(this).addClass('hidden');
+        // $(this).attr('aria-hidden', 'true');
+      });
+
+      $('.health_apppicture_sliderLeaflet').slick('refresh');
+      $('.health_apppicture_slidertwo').slick('refresh');
+    }
+
+    // 是否可開合/切換
+    if (openSwitch) {
+      //tab動作
+      tabSet.on('click', function (e) {
+        if (!$(e.target).hasClass('tabBtn')) return;
+        let index = $(e.target).index() % tabBtns.length;
+        checkTarget(index);
+      });
+
+      tabSet.on('keydown', function (e) {
+        if (!$(e.target).hasClass('tabBtn')) return;
+        let index;
+        //左右操作tab
+        if (e.code === 'ArrowRight') {
+          index = ($(e.target).index() + 1) % tabBtns.length;
+          tabBtns.eq(index).focus();
+          checkTarget(index);
+        } else if (e.code === 'ArrowLeft') {
+          index = ($(e.target).index() - 1 + tabBtns.length) % tabBtns.length;
+          tabBtns.eq(index).focus();
+          checkTarget(index);
+        }
+      });
+
+      //模式切換-手風琴動作
+      if (modeSwitch) {
+        const mobileTabBtn = tabSet.find('.mobileTabBtn');
+
+        tabSet.on('click', function (e) {
+          if (!$(e.target).hasClass('mobileTabBtn')) return;
+          let index = mobileTabBtn.index(e.target) % mobileTabBtn.length;
+          mobileTabFn(mobileTabBtn.eq(index), index, mobileTabBtn);
+        });
+      }
+    }
+
+    function mobileTabFn(btn, i, mobileTabBtn) {
+      tabContentIn.eq(i).slideToggle();
+      tabSet.data('nowIndex', i);
+
+      let check = btn.attr('aria-expanded') === 'true' ? false : true;
+      btn.attr('aria-expanded', check);
+      // tabContentIn.eq(i).attr('aria-hidden', !check);
+
+      // !check ? tabContentIn.eq(i).attr('aria-hidden', 'true') : tabContentIn.eq(i).removeAttr('aria-hidden');
+
+      btn.toggleClass('active');
+
+      if (!autoClose) return;
+      const siblingsMobileTabBtn = mobileTabBtn.eq(i).parent().siblings().children('.mobileTabBtn');
+      siblingsMobileTabBtn.each(function (e) {
+        $(this).removeClass('active');
+        $(this).attr('aria-expanded', 'false');
+      });
+      const siblingsPanel = tabContentIn.eq(i).parent().siblings().children('.tabContentIn');
+
+      siblingsPanel.each(function (e) {
+        $(this).slideUp();
+        // $(this).attr('aria-hidden', 'true');
+      });
+    }
+
+    function removeAttribute(item) {
+      // item.removeAttr('aria-hidden');
+      item.removeAttr('role');
+      item.removeAttr('aria-labelledby');
+      item.removeAttr('id');
+    }
+    function setAttribute(item, role, id, labelledby) {
+      item.attr({
+        role: role,
+        id: id,
+        'aria-labelledby': labelledby,
+      });
+      // .removeAttr('aria-hidden');
+    }
+    //模式切換-RWD
+    function checkRWD() {
+      const tabpanelBtn = tabSet.find('.tabContent .mobileTabBtn');
+      const nowOpen = tabSet.data('nowIndex');
+
+      // 電腦版
+      tabBtns.eq(nowOpen).addClass('active');
+      tabBtns.eq(nowOpen).attr({
+        'aria-selected': 'true',
+        'aria-expanded': 'true',
+        tabindex: '0',
+      });
+      const tabListSiblingsPanelBtn = tabBtns.eq(nowOpen).siblings();
+      tabListSiblingsPanelBtn.each(function (e) {
+        $(this).removeClass('active');
+        $(this).attr({
+          'aria-expanded': 'false',
+          'aria-selected': 'false',
+          tabindex: '-1',
+        });
+      });
+
+      // 手機版
+      tabpanelBtn.eq(nowOpen)?.addClass('active');
+      tabpanelBtn.eq(nowOpen)?.attr('aria-expanded', 'true');
+      const tabSiblingsPanelBtn = tabpanelBtn.eq(nowOpen).siblings();
+      tabSiblingsPanelBtn.each(function (e) {
+        $(this).removeClass('active');
+        $(this).attr('aria-expanded', 'false');
+      });
+
+      if (window.innerWidth < windowWidth && modeSwitch) {
+        //隱藏上方選單
+        tabItem.addClass('hidden');
+        // tabItem.attr('aria-hidden', 'true');
+
+        tabBtns.each(function (i) {
+          const id = tabpanelBtn.eq(i).attr('id');
+          const controls = tabpanelBtn.eq(i).attr('aria-controls');
+
+          //顯示所有tab內容標籤
+          tabContent.eq(i).removeClass('hidden');
+          //移除tab內容標籤
+          removeAttribute(tabContent.eq(i));
+
+          //顯示手風琴標籤按鈕
+          tabpanelBtn.eq(i).removeClass('hidden');
+          // tabpanelBtn.eq(i).removeAttr('aria-hidden');
+          //新增手風琴內容標籤
+          setAttribute(tabContentIn.eq(i), 'region', controls, id);
+        });
+
+        if (openContent) {
+          tabContentIn.each(function (i) {
+            $(this).css('display', 'block');
+            // $(this).removeAttr('aria-hidden');
+            tabpanelBtn.eq(i).addClass('active');
+          });
+        } else {
+          //隱藏其他手風琴內容
+          const siblingsPanel = tabContentIn.eq(nowOpen).parent().siblings().children('.tabContentIn');
+          console.log(siblingsPanel);
+
+          siblingsPanel.each(function (i) {
+            $(this).css('display', 'none');
+            // $(this).attr('aria-hidden', 'true');
+          });
+        }
+
+        //展開目前手風琴內容
+        tabpanelBtn.eq(nowOpen).attr('aria-expanded', 'true');
+        tabpanelBtn.eq(nowOpen).focus();
+      } else if (window.innerWidth >= windowWidth && modeSwitch) {
+        //增加上方選單
+        tabItem.removeClass('hidden');
+        // tabItem.removeAttr('aria-hidden');
+        tabItem.attr('role', 'tablist');
+
+        tabBtns.each(function (i) {
+          const id = tabpanelBtn.eq(i).attr('id');
+          const controls = tabpanelBtn.eq(i).attr('aria-controls');
+
+          //顯示所有Tab內容
+          tabContentIn.eq(i).removeClass('hidden');
+          //移除Tab內容標籤
+          removeAttribute(tabContentIn.eq(i));
+          tabContentIn.eq(i).removeAttr('style');
+
+          //隱藏Tab標籤按鈕
+          tabpanelBtn.eq(i).addClass('hidden');
+          // tabpanelBtn.eq(i).attr('aria-hidden', 'true');
+          //新增Tab內容標籤
+          setAttribute(tabContent.eq(i), 'tabpanel', controls, id);
+        });
+
+        //展開目前Tab內容
+        tabContent.eq(nowOpen).removeClass('hidden');
+        tabBtns.eq(nowOpen).focus();
+
+        //隱藏其他Tab內容
+        const siblingsPanel = tabContent.eq(nowOpen).siblings();
+        siblingsPanel.each(function () {
+          $(this).addClass('hidden');
+          // $(this).attr('aria-hidden', 'true');
+        });
+      }
+    }
+    checkRWD();
+    $(window).on('resize', checkRWD);
+  }
+  // tab功能
+  tabFunction({ target: '.target1', modeSwitch: false });
+});

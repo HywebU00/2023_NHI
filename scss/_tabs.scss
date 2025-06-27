@@ -1,0 +1,221 @@
+.tabSet {
+  margin: 30px auto;
+
+  .tabItems {
+    display: flex;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .modeBBtn,
+  .tabBtn {
+    flex: 1 1 auto;
+    font-size: 1.125em;
+    height: 2.8em;
+    text-align: center;
+    border: none;
+    margin: 1px;
+    border-radius: 0;
+    box-shadow: none;
+    background: #ddd;
+    cursor: pointer;
+    position: relative;
+    // &:focus-visible {
+    //   outline: none;
+    //   box-shadow: 0 0px 0px 2px red inset;
+    // }
+    &:after {
+      content: '';
+      width: 2px;
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    &:has(+ .active) {
+      &:after {
+        display: none;
+      }
+    }
+    &.active {
+      cursor: default;
+      background: $primaryColor;
+      color: #fff;
+      &:after {
+        display: none;
+      }
+    }
+    &:first-child {
+      &.active {
+        border-radius: 8px 0 0 0;
+      }
+    }
+    &:last-child {
+      &.active {
+        border-radius: 0 8px 0 0;
+      }
+      &:after {
+        display: none;
+      }
+    }
+    & > * {
+      pointer-events: none;
+    }
+  }
+
+  .tabContent {
+    // display: none;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    // &.active {
+    //   display: block;
+    // }
+
+    .mobileTabBtn {
+      width: 100%;
+      text-align: left;
+      margin: 0;
+      border-radius: 0;
+
+      &.active {
+        background: $primaryColor;
+        color: #fff;
+      }
+    }
+
+    .tabContentIn {
+      padding: 40px 30px;
+
+      ul {
+        margin: 0;
+      }
+    }
+  }
+
+  .modeBBtn {
+    width: 100%;
+    margin: 0;
+    display: none;
+  }
+
+  &.modeB {
+    .tabItems {
+      display: none;
+    }
+
+    .tabContent {
+      display: block;
+
+      .tabContentIn {
+        display: none;
+      }
+    }
+  }
+
+  .modeBBtn {
+    display: block;
+  }
+}
+//健保櫃檯
+.health_counter_tabs {
+  .tabSet {
+    .tabItems {
+      background-image: url('../images/tabItems_bg01.jpg');
+      background-position: right top;
+      background-color: #d6e7e7;
+      background-repeat: no-repeat;
+
+      .tabBtn {
+        background: transparent;
+        color: $titlecolor;
+        font-weight: bold;
+        height: 3.4em;
+        flex: 1 1 25%;
+        line-height: 1.3em;
+        padding: 0 5px;
+        &.active {
+          cursor: default;
+          background: #096c99;
+          background: linear-gradient(180deg, rgba(9, 108, 153, 1) 0%, rgba(31, 129, 144, 1) 100%);
+          color: #fff;
+          &:before {
+            content: '';
+            // border: 20px solid #1f8190;
+            // border-color: #1f8190 transparent transparent transparent;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-top: 20px solid #1f8190;
+            position: absolute;
+            bottom: -12px;
+            left: calc(50% - 30px);
+            z-index: 9;
+          }
+        }
+      }
+    }
+  }
+}
+// 條列
+.tabullist {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      padding-left: 25px;
+      background-image: url('../images/project_title_icon.png');
+      background-position: 0 12px;
+      background-repeat: no-repeat;
+      font-size: 1.125em;
+      margin-bottom: 1em;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 500;
+      line-height: 1.7;
+      color: #042047;
+      text-align: left;
+      font-weight: bolder;
+    }
+  }
+}
+// 資料路徑
+.datapath_block {
+  margin-left: 25px;
+  margin-bottom: 2em;
+  .datapath_list {
+    display: flex;
+
+    span {
+      white-space: nowrap;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        padding-left: 1.4em;
+        position: relative;
+        &:before {
+          content: '>';
+          position: absolute;
+          left: 0.4em;
+        }
+        &:first-child {
+          padding-left: 0;
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

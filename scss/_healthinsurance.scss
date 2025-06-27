@@ -1,6 +1,6 @@
 .health_insurance_block {
   font-size: 1.125rem;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding: 0;
   &:nth-last-of-type(1) {
     margin-bottom: 0;
@@ -18,9 +18,25 @@
       }
     }
   }
+  &.bgcolor2 {
+    --medicalbgcolor: #e8f1f1;
+    background-color: var(--medicalbgcolor);
+    padding: 50px 30px 0;
+    border-radius: 8px;
+
+    .title {
+      text-align: center;
+      line-height: 1.7;
+      em {
+        display: inline-block;
+        line-height: 1.7;
+      }
+    }
+  }
   &.paddingsame {
     padding: 50px 30px 50px 30px;
-    .passbook_friendly_content {
+    .passbook_friendly_content,
+    .health_counter_content {
       .title {
         &.aCenter {
           margin-bottom: 2em !important;
@@ -30,6 +46,8 @@
         }
       }
     }
+  }
+  &.health_counter {
   }
 
   .health_insurance_content {
@@ -106,6 +124,18 @@
         color: #007e89;
       }
     }
+    &:has(+ .title_directions) {
+      margin-bottom: 0.5em;
+    }
+  }
+  .title_directions {
+    color: #0b7295;
+    font-size: 1.063em;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2em;
+    text-align: center;
+    width: 100%;
   }
   .subtitle {
     flex: 1 1 auto;
@@ -152,6 +182,7 @@
         padding: 0;
         margin-right: 5px;
         line-height: 0;
+        text-align: center;
       }
     }
   }
@@ -493,6 +524,31 @@
       }
     }
   }
+  // 健保櫃檯
+  .health_counter_content {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .group_right {
+      flex: 1 1 auto;
+      flex-basis: 100%;
+      padding-right: 0;
+    }
+    .group_left {
+      flex: 1 1 auto;
+      flex-basis: 100%;
+      text-align: center;
+      .pic {
+        margin: 0 auto;
+        width: 100%;
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
   // 介紹
   .introduce_list {
     ul {
@@ -634,6 +690,38 @@
         flex: 1 1 auto;
         flex-basis: 100%;
         text-align: center;
+
+        .pic {
+          margin: 0 auto;
+          width: auto;
+          img {
+            width: auto;
+          }
+        }
+      }
+    }
+    // 櫃檯健保
+    .health_counter_content {
+      flex: 1 1 auto;
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .title {
+        margin-bottom: 1em;
+      }
+      .group_right {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        padding-right: 0;
+        order: 1;
+        margin-bottom: 2em;
+      }
+      .group_left {
+        flex: 1 1 auto;
+        flex-basis: 100%;
+        text-align: center;
+        order: 2;
+
         .pic {
           margin: 0 auto;
           width: auto;
@@ -649,7 +737,7 @@
       padding: 70px 50px 0;
     }
     &.paddingsame {
-      padding: 50px 30px 50px 50px;
+      padding: 50px 30px 50px 30px;
     }
     &.service_features {
       padding-bottom: 24%;
@@ -774,6 +862,27 @@
         justify-content: center;
       }
     }
+    // 櫃檯健保
+    .health_counter_content {
+      flex: 1 1 auto;
+      flex-basis: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .group_right {
+        flex: 0 0 auto;
+        flex-basis: calc(100% - 340px);
+        order: 2;
+      }
+      .group_left {
+        flex: 0 0 auto;
+        flex-basis: 320px;
+        display: flex;
+        justify-content: center;
+        padding-right: 20px;
+        order: 1;
+      }
+    }
   }
   @media screen and (min-width: $wwNormal) {
     display: flex;
@@ -826,6 +935,336 @@
       background: url('../images/health_insurance_pic06.jpg') no-repeat left top / contain, url('../images/health_insurance_shadow.jpg') no-repeat right bottom;
       padding: 50px 30px 60px 40%;
       background-color: #e1f7f7;
+    }
+    &.health_counter {
+      flex-wrap: wrap;
+    }
+  }
+
+  .explain_block {
+    --medicalbgcolor: #e8f1f1;
+    background-color: var(--medicalbgcolor);
+    border-radius: 8px;
+    padding: 1.5em;
+    line-height: 1.8em;
+    font-size: 1.125em;
+    margin-bottom: 1em;
+    &.nobgcolor {
+      background-color: transparent;
+      padding: 0 1.5em;
+    }
+  }
+  .health_apppicture_slider {
+    width: 90%;
+    margin: 0 auto;
+    &.noarrow {
+      div {
+        &:nth-of-type(1) {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+    div {
+      text-align: center;
+      position: relative;
+      img {
+        width: 240px;
+        height: 440px;
+        margin: 0 auto;
+      }
+      span {
+        text-align: center;
+        padding: 0.5em 0;
+      }
+      &:nth-of-type(1) {
+        &:after {
+          content: '';
+          background-image: url('../images/health_counter_arrow01.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          width: 50px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          right: -25px;
+        }
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    .slick-arrow {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      div {
+        &:nth-of-type(1) {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .slick-arrow.slick-prev {
+        left: 0px;
+      }
+      .slick-arrow.slick-next {
+        right: 0px;
+      }
+    }
+  }
+  .health_apppicture_slidertwo {
+    width: 90%;
+    margin: 0 auto;
+    div {
+      text-align: center;
+      position: relative;
+      img {
+        width: 240px;
+        height: auto;
+        // height: 440px;
+        margin: 0 auto 1em;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+      span {
+        text-align: center;
+      }
+    }
+    .slick-arrow {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      .slick-arrow.slick-prev {
+        left: -20px;
+      }
+      .slick-arrow.slick-next {
+        right: -20px;
+      }
+    }
+  }
+  //
+  .health_apppicture_sliderLeaflet {
+    width: 90%;
+    margin: 0 auto;
+    div {
+      text-align: center;
+      position: relative;
+      img {
+        width: 240px;
+        height: auto;
+        // height: 440px;
+        margin: 0 auto 1em;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+      span {
+        text-align: center;
+      }
+    }
+    .slick-arrow {
+      width: 50px;
+      height: 50px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      .slick-arrow.slick-prev {
+        left: -20px;
+      }
+      .slick-arrow.slick-next {
+        right: -20px;
+      }
+    }
+  }
+  //
+  .health_apppicture_sliderstep {
+    width: 90%;
+    margin: 0 auto;
+    div {
+      text-align: center;
+      position: relative;
+      img {
+        width: 240px;
+        height: auto;
+        // height: 440px;
+        margin: 0 auto 1em;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+      span {
+        text-align: center;
+        display: none;
+      }
+    }
+    .slick-arrow {
+      width: 50px;
+      height: 50px;
+    }
+    .slick-arrow.slick-prev {
+      left: -20px;
+    }
+    .slick-arrow.slick-next {
+      right: -20px;
+    }
+    @media (max-width: 900px) {
+      width: 100%;
+      div {
+        span {
+          display: block;
+        }
+      }
+      .slick-arrow.slick-prev {
+        left: 0;
+      }
+      .slick-arrow.slick-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+// 頁籤
+.health_counter_tabs {
+  width: 100%;
+}
+// 設定流程
+.settingProcess_block {
+  display: flex;
+  width: 95%;
+  margin: 0 auto 3em;
+  // align-items: center;
+  .group_left {
+    flex: 1 1 auto;
+    flex-basis: calc(100% - 400px - 40px);
+    max-width: calc(100% - 400px - 40px);
+    padding-right: 40px;
+    .settingProcess_list {
+      margin-top: 3em;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+          font-size: 1.063rem;
+          a {
+            display: block;
+            padding: 0.5em 0;
+            color: #757575;
+            font-weight: bold;
+            span {
+              margin-right: 5px;
+            }
+          }
+          &.active {
+            a {
+              color: $titlecolor;
+            }
+          }
+        }
+      }
+    }
+  }
+  .group_right {
+    flex: 0 0 auto;
+    flex-basis: 400px;
+    max-width: 400px;
+  }
+  @media (max-width: 900px) {
+    display: block;
+    width: 100%;
+    .group_left {
+      display: none;
+    }
+    .group_right {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+//
+.downloadAppblock {
+  flex: 1 1 100%;
+
+  border-radius: 8px;
+  padding: 40px 35px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f5f4f4;
+
+  &:before {
+    display: none;
+  }
+  &:after {
+    display: none;
+  }
+  @media (min-width: 800px) {
+    padding: 70px 35px;
+    &:before {
+      display: block;
+      content: '';
+      background-image: url('../images/downloadAppblock_rightbg01.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      width: 303px;
+      height: 370px;
+      position: absolute;
+      right: 70px;
+      bottom: 0;
+      z-index: 10;
+    }
+    &:after {
+      display: block;
+      content: '';
+      background-image: url('../images/downloadAppblock_rightbg02.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      width: 361px;
+      height: 274px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+    }
+  }
+
+  .group_left {
+    flex: 0 0 auto;
+    flex-basis: 100%;
+    position: relative;
+    z-index: 99;
+
+    .title {
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .title_directions {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    .downloadblock {
+      ul {
+        justify-content: center;
+      }
+    }
+    @media (min-width: 800px) {
+      .title_directions,
+      .title {
+        text-align: left;
+      }
+      .downloadblock {
+        ul {
+          justify-content: flex-start;
+        }
+      }
     }
   }
 }

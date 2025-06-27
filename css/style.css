@@ -7602,7 +7602,7 @@ table.formLayout td {
 
 .health_insurance_block {
   font-size: 1.125rem;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding: 0;
 }
 .health_insurance_block:nth-last-of-type(1) {
@@ -7620,13 +7620,29 @@ table.formLayout td {
   display: inline-block;
   line-height: 1.7;
 }
+.health_insurance_block.bgcolor2 {
+  --medicalbgcolor: #e8f1f1;
+  background-color: var(--medicalbgcolor);
+  padding: 50px 30px 0;
+  border-radius: 8px;
+}
+.health_insurance_block.bgcolor2 .title {
+  text-align: center;
+  line-height: 1.7;
+}
+.health_insurance_block.bgcolor2 .title em {
+  display: inline-block;
+  line-height: 1.7;
+}
 .health_insurance_block.paddingsame {
   padding: 50px 30px 50px 30px;
 }
-.health_insurance_block.paddingsame .passbook_friendly_content .title.aCenter {
+.health_insurance_block.paddingsame .passbook_friendly_content .title.aCenter,
+.health_insurance_block.paddingsame .health_counter_content .title.aCenter {
   margin-bottom: 2em !important;
 }
-.health_insurance_block.paddingsame .passbook_friendly_content .title.hassubtitle {
+.health_insurance_block.paddingsame .passbook_friendly_content .title.hassubtitle,
+.health_insurance_block.paddingsame .health_counter_content .title.hassubtitle {
   margin-bottom: 0.3em !important;
 }
 .health_insurance_block .health_insurance_content {
@@ -7700,6 +7716,18 @@ table.formLayout td {
   font-style: normal;
   color: #007e89;
 }
+.health_insurance_block .title:has(+ .title_directions) {
+  margin-bottom: 0.5em;
+}
+.health_insurance_block .title_directions {
+  color: #0b7295;
+  font-size: 1.063em;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 2em;
+  text-align: center;
+  width: 100%;
+}
 .health_insurance_block .subtitle {
   flex: 1 1 auto;
   flex-basis: 100%;
@@ -7747,6 +7775,7 @@ table.formLayout td {
   padding: 0;
   margin-right: 5px;
   line-height: 0;
+  text-align: center;
 }
 .health_insurance_block.originblock .health_insurance_pic .pic img {
   width: 90%;
@@ -8056,6 +8085,29 @@ table.formLayout td {
 .health_insurance_block .passbook_friendly_content .group_right .pic img {
   width: 100%;
 }
+.health_insurance_block .health_counter_content {
+  flex: 1 1 auto;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.health_insurance_block .health_counter_content .group_right {
+  flex: 1 1 auto;
+  flex-basis: 100%;
+  padding-right: 0;
+}
+.health_insurance_block .health_counter_content .group_left {
+  flex: 1 1 auto;
+  flex-basis: 100%;
+  text-align: center;
+}
+.health_insurance_block .health_counter_content .group_left .pic {
+  margin: 0 auto;
+  width: 100%;
+}
+.health_insurance_block .health_counter_content .group_left .pic img {
+  width: auto;
+}
 .health_insurance_block .introduce_list ul {
   margin: 0;
   padding: 0;
@@ -8181,13 +8233,42 @@ table.formLayout td {
   .health_insurance_block .passbook_friendly_content .group_right .pic img {
     width: auto;
   }
+  .health_insurance_block .health_counter_content {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .health_insurance_block .health_counter_content .title {
+    margin-bottom: 1em;
+  }
+  .health_insurance_block .health_counter_content .group_right {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    padding-right: 0;
+    order: 1;
+    margin-bottom: 2em;
+  }
+  .health_insurance_block .health_counter_content .group_left {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    text-align: center;
+    order: 2;
+  }
+  .health_insurance_block .health_counter_content .group_left .pic {
+    margin: 0 auto;
+    width: auto;
+  }
+  .health_insurance_block .health_counter_content .group_left .pic img {
+    width: auto;
+  }
 }
 @media screen and (min-width: 700px) {
   .health_insurance_block.bgcolor {
     padding: 70px 50px 0;
   }
   .health_insurance_block.paddingsame {
-    padding: 50px 30px 50px 50px;
+    padding: 50px 30px 50px 30px;
   }
   .health_insurance_block.service_features {
     padding-bottom: 24%;
@@ -8299,6 +8380,25 @@ table.formLayout td {
     display: flex;
     justify-content: center;
   }
+  .health_insurance_block .health_counter_content {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .health_insurance_block .health_counter_content .group_right {
+    flex: 0 0 auto;
+    flex-basis: calc(100% - 340px);
+    order: 2;
+  }
+  .health_insurance_block .health_counter_content .group_left {
+    flex: 0 0 auto;
+    flex-basis: 320px;
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+    order: 1;
+  }
 }
 @media screen and (min-width: 1000px) {
   .health_insurance_block {
@@ -8352,6 +8452,313 @@ table.formLayout td {
     background: url("../images/health_insurance_pic06.jpg") no-repeat left top/contain, url("../images/health_insurance_shadow.jpg") no-repeat right bottom;
     padding: 50px 30px 60px 40%;
     background-color: #e1f7f7;
+  }
+  .health_insurance_block.health_counter {
+    flex-wrap: wrap;
+  }
+}
+.health_insurance_block .explain_block {
+  --medicalbgcolor: #e8f1f1;
+  background-color: var(--medicalbgcolor);
+  border-radius: 8px;
+  padding: 1.5em;
+  line-height: 1.8em;
+  font-size: 1.125em;
+  margin-bottom: 1em;
+}
+.health_insurance_block .explain_block.nobgcolor {
+  background-color: transparent;
+  padding: 0 1.5em;
+}
+.health_insurance_block .health_apppicture_slider {
+  width: 90%;
+  margin: 0 auto;
+}
+.health_insurance_block .health_apppicture_slider.noarrow div:nth-of-type(1):after {
+  display: none;
+}
+.health_insurance_block .health_apppicture_slider div {
+  text-align: center;
+  position: relative;
+}
+.health_insurance_block .health_apppicture_slider div img {
+  width: 240px;
+  height: 440px;
+  margin: 0 auto;
+}
+.health_insurance_block .health_apppicture_slider div span {
+  text-align: center;
+  padding: 0.5em 0;
+}
+.health_insurance_block .health_apppicture_slider div:nth-of-type(1):after {
+  content: "";
+  background-image: url("../images/health_counter_arrow01.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 50px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  right: -25px;
+}
+.health_insurance_block .health_apppicture_slider div:last-child:after {
+  display: none;
+}
+.health_insurance_block .health_apppicture_slider .slick-arrow {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 767px) {
+  .health_insurance_block .health_apppicture_slider {
+    width: 100%;
+  }
+  .health_insurance_block .health_apppicture_slider div:nth-of-type(1):after {
+    display: none;
+  }
+  .health_insurance_block .health_apppicture_slider .slick-arrow.slick-prev {
+    left: 0px;
+  }
+  .health_insurance_block .health_apppicture_slider .slick-arrow.slick-next {
+    right: 0px;
+  }
+}
+.health_insurance_block .health_apppicture_slidertwo {
+  width: 90%;
+  margin: 0 auto;
+}
+.health_insurance_block .health_apppicture_slidertwo div {
+  text-align: center;
+  position: relative;
+}
+.health_insurance_block .health_apppicture_slidertwo div img {
+  width: 240px;
+  height: auto;
+  margin: 0 auto 1em;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.health_insurance_block .health_apppicture_slidertwo div span {
+  text-align: center;
+}
+.health_insurance_block .health_apppicture_slidertwo .slick-arrow {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 767px) {
+  .health_insurance_block .health_apppicture_slidertwo {
+    width: 100%;
+  }
+  .health_insurance_block .health_apppicture_slidertwo .slick-arrow.slick-prev {
+    left: -20px;
+  }
+  .health_insurance_block .health_apppicture_slidertwo .slick-arrow.slick-next {
+    right: -20px;
+  }
+}
+.health_insurance_block .health_apppicture_sliderLeaflet {
+  width: 90%;
+  margin: 0 auto;
+}
+.health_insurance_block .health_apppicture_sliderLeaflet div {
+  text-align: center;
+  position: relative;
+}
+.health_insurance_block .health_apppicture_sliderLeaflet div img {
+  width: 240px;
+  height: auto;
+  margin: 0 auto 1em;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.health_insurance_block .health_apppicture_sliderLeaflet div span {
+  text-align: center;
+}
+.health_insurance_block .health_apppicture_sliderLeaflet .slick-arrow {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 767px) {
+  .health_insurance_block .health_apppicture_sliderLeaflet {
+    width: 100%;
+  }
+  .health_insurance_block .health_apppicture_sliderLeaflet .slick-arrow.slick-prev {
+    left: -20px;
+  }
+  .health_insurance_block .health_apppicture_sliderLeaflet .slick-arrow.slick-next {
+    right: -20px;
+  }
+}
+.health_insurance_block .health_apppicture_sliderstep {
+  width: 90%;
+  margin: 0 auto;
+}
+.health_insurance_block .health_apppicture_sliderstep div {
+  text-align: center;
+  position: relative;
+}
+.health_insurance_block .health_apppicture_sliderstep div img {
+  width: 240px;
+  height: auto;
+  margin: 0 auto 1em;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.health_insurance_block .health_apppicture_sliderstep div span {
+  text-align: center;
+  display: none;
+}
+.health_insurance_block .health_apppicture_sliderstep .slick-arrow {
+  width: 50px;
+  height: 50px;
+}
+.health_insurance_block .health_apppicture_sliderstep .slick-arrow.slick-prev {
+  left: -20px;
+}
+.health_insurance_block .health_apppicture_sliderstep .slick-arrow.slick-next {
+  right: -20px;
+}
+@media (max-width: 900px) {
+  .health_insurance_block .health_apppicture_sliderstep {
+    width: 100%;
+  }
+  .health_insurance_block .health_apppicture_sliderstep div span {
+    display: block;
+  }
+  .health_insurance_block .health_apppicture_sliderstep .slick-arrow.slick-prev {
+    left: 0;
+  }
+  .health_insurance_block .health_apppicture_sliderstep .slick-arrow.slick-next {
+    right: 0;
+  }
+}
+
+.health_counter_tabs {
+  width: 100%;
+}
+
+.settingProcess_block {
+  display: flex;
+  width: 95%;
+  margin: 0 auto 3em;
+}
+.settingProcess_block .group_left {
+  flex: 1 1 auto;
+  flex-basis: calc(100% - 400px - 40px);
+  max-width: calc(100% - 400px - 40px);
+  padding-right: 40px;
+}
+.settingProcess_block .group_left .settingProcess_list {
+  margin-top: 3em;
+}
+.settingProcess_block .group_left .settingProcess_list ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.settingProcess_block .group_left .settingProcess_list ul li {
+  font-size: 1.063rem;
+}
+.settingProcess_block .group_left .settingProcess_list ul li a {
+  display: block;
+  padding: 0.5em 0;
+  color: #757575;
+  font-weight: bold;
+}
+.settingProcess_block .group_left .settingProcess_list ul li a span {
+  margin-right: 5px;
+}
+.settingProcess_block .group_left .settingProcess_list ul li.active a {
+  color: #042047;
+}
+.settingProcess_block .group_right {
+  flex: 0 0 auto;
+  flex-basis: 400px;
+  max-width: 400px;
+}
+@media (max-width: 900px) {
+  .settingProcess_block {
+    display: block;
+    width: 100%;
+  }
+  .settingProcess_block .group_left {
+    display: none;
+  }
+  .settingProcess_block .group_right {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.downloadAppblock {
+  flex: 1 1 100%;
+  border-radius: 8px;
+  padding: 40px 35px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f5f4f4;
+}
+.downloadAppblock:before {
+  display: none;
+}
+.downloadAppblock:after {
+  display: none;
+}
+@media (min-width: 800px) {
+  .downloadAppblock {
+    padding: 70px 35px;
+  }
+  .downloadAppblock:before {
+    display: block;
+    content: "";
+    background-image: url("../images/downloadAppblock_rightbg01.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 303px;
+    height: 370px;
+    position: absolute;
+    right: 70px;
+    bottom: 0;
+    z-index: 10;
+  }
+  .downloadAppblock:after {
+    display: block;
+    content: "";
+    background-image: url("../images/downloadAppblock_rightbg02.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 361px;
+    height: 274px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+  }
+}
+.downloadAppblock .group_left {
+  flex: 0 0 auto;
+  flex-basis: 100%;
+  position: relative;
+  z-index: 99;
+}
+.downloadAppblock .group_left .title {
+  margin-bottom: 0;
+  text-align: center;
+}
+.downloadAppblock .group_left .title_directions {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+.downloadAppblock .group_left .downloadblock ul {
+  justify-content: center;
+}
+@media (min-width: 800px) {
+  .downloadAppblock .group_left .title_directions,
+  .downloadAppblock .group_left .title {
+    text-align: left;
+  }
+  .downloadAppblock .group_left .downloadblock ul {
+    justify-content: flex-start;
   }
 }
 
@@ -9909,6 +10316,196 @@ table.formLayout td {
     padding: 0.5em 1.5em 1.5em;
     border-radius: 8px;
   }
+}
+
+.tabSet {
+  margin: 30px auto;
+}
+.tabSet .tabItems {
+  display: flex;
+  border-radius: 10px 10px 0 0;
+}
+.tabSet .hidden {
+  display: none;
+}
+.tabSet .modeBBtn,
+.tabSet .tabBtn {
+  flex: 1 1 auto;
+  font-size: 1.125em;
+  height: 2.8em;
+  text-align: center;
+  border: none;
+  margin: 1px;
+  border-radius: 0;
+  box-shadow: none;
+  background: #ddd;
+  cursor: pointer;
+  position: relative;
+}
+.tabSet .modeBBtn:after,
+.tabSet .tabBtn:after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.tabSet .modeBBtn:has(+ .active):after,
+.tabSet .tabBtn:has(+ .active):after {
+  display: none;
+}
+.tabSet .modeBBtn.active,
+.tabSet .tabBtn.active {
+  cursor: default;
+  background: #004f73;
+  color: #fff;
+}
+.tabSet .modeBBtn.active:after,
+.tabSet .tabBtn.active:after {
+  display: none;
+}
+.tabSet .modeBBtn:first-child.active,
+.tabSet .tabBtn:first-child.active {
+  border-radius: 8px 0 0 0;
+}
+.tabSet .modeBBtn:last-child.active,
+.tabSet .tabBtn:last-child.active {
+  border-radius: 0 8px 0 0;
+}
+.tabSet .modeBBtn:last-child:after,
+.tabSet .tabBtn:last-child:after {
+  display: none;
+}
+.tabSet .modeBBtn > *,
+.tabSet .tabBtn > * {
+  pointer-events: none;
+}
+.tabSet .tabContent {
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.tabSet .tabContent .mobileTabBtn {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  border-radius: 0;
+}
+.tabSet .tabContent .mobileTabBtn.active {
+  background: #004f73;
+  color: #fff;
+}
+.tabSet .tabContent .tabContentIn {
+  padding: 40px 30px;
+}
+.tabSet .tabContent .tabContentIn ul {
+  margin: 0;
+}
+.tabSet .modeBBtn {
+  width: 100%;
+  margin: 0;
+  display: none;
+}
+.tabSet.modeB .tabItems {
+  display: none;
+}
+.tabSet.modeB .tabContent {
+  display: block;
+}
+.tabSet.modeB .tabContent .tabContentIn {
+  display: none;
+}
+.tabSet .modeBBtn {
+  display: block;
+}
+
+.health_counter_tabs .tabSet .tabItems {
+  background-image: url("../images/tabItems_bg01.jpg");
+  background-position: right top;
+  background-color: #d6e7e7;
+  background-repeat: no-repeat;
+}
+.health_counter_tabs .tabSet .tabItems .tabBtn {
+  background: transparent;
+  color: #042047;
+  font-weight: bold;
+  height: 3.4em;
+  flex: 1 1 25%;
+  line-height: 1.3em;
+  padding: 0 5px;
+}
+.health_counter_tabs .tabSet .tabItems .tabBtn.active {
+  cursor: default;
+  background: #096c99;
+  background: linear-gradient(180deg, rgb(9, 108, 153) 0%, rgb(31, 129, 144) 100%);
+  color: #fff;
+}
+.health_counter_tabs .tabSet .tabItems .tabBtn.active:before {
+  content: "";
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 20px solid #1f8190;
+  position: absolute;
+  bottom: -12px;
+  left: calc(50% - 30px);
+  z-index: 9;
+}
+
+.tabullist ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tabullist ul li {
+  padding-left: 25px;
+  background-image: url("../images/project_title_icon.png");
+  background-position: 0 12px;
+  background-repeat: no-repeat;
+  font-size: 1.125em;
+  margin-bottom: 1em;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #042047;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.datapath_block {
+  margin-left: 25px;
+  margin-bottom: 2em;
+}
+.datapath_block .datapath_list {
+  display: flex;
+}
+.datapath_block .datapath_list span {
+  white-space: nowrap;
+}
+.datapath_block .datapath_list ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.datapath_block .datapath_list ul li {
+  padding-left: 1.4em;
+  position: relative;
+}
+.datapath_block .datapath_list ul li:before {
+  content: ">";
+  position: absolute;
+  left: 0.4em;
+}
+.datapath_block .datapath_list ul li:first-child {
+  padding-left: 0;
+}
+.datapath_block .datapath_list ul li:first-child:before {
+  display: none;
 }
 
 @media print {
