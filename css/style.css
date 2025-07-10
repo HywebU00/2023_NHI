@@ -995,10 +995,11 @@ kbd {
 }
 
 .preface {
-  padding: 0.5em 5vw;
+  padding: 1.5em 5vw;
   margin: 0px auto 30px;
   line-height: 2;
   background-color: #f4f4f4;
+  border-radius: 8px;
 }
 .preface a {
   color: #004c7c;
@@ -1010,15 +1011,41 @@ kbd {
 .preface a:focus {
   outline: 2px solid #07b4b1;
 }
+.preface .title {
+  color: #042047;
+  font-size: 1.75rem;
+  margin: 0 0 1em;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 900;
+  line-height: 1.7;
+}
+.preface .title.aCenter {
+  text-align: center;
+}
+.preface .title em {
+  margin: 0 0.5em;
+  font-style: normal;
+  color: #007e89;
+  line-height: 1.7;
+  display: inline-block;
+}
 .preface h3 {
-  font-size: 1.25em;
+  font-size: 1.313em;
   margin: 0.8em 0;
 }
 .preface h3:first-child {
   margin-top: 0;
 }
+.preface p {
+  font-size: 1.125em;
+}
 .preface p:last-child {
   margin-bottom: 0;
+}
+.preface p span {
+  padding: 0.5em 0;
+  color: #042047;
+  font-weight: bold;
 }
 @media screen and (min-width: 1000px) {
   .preface {
@@ -1039,6 +1066,39 @@ kbd {
     width: 560px;
     height: 315px;
   }
+}
+.preface .autopassApp {
+  background-color: #fff;
+  padding: 2em 1em 1em;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+  margin: 0 auto 1em;
+  transition: 0.5s;
+}
+@media screen and (min-width: 700px) {
+  .preface .autopassApp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .preface .autopassApp {
+    width: 60%;
+  }
+}
+.preface .autopassApp .download_app {
+  flex: 0 0 auto;
+  margin-right: 1em;
+}
+.preface .autopassApp .download_app ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .downloadFiles {
