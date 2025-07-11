@@ -1369,7 +1369,9 @@ $(function () {
 });
 
 $(function () {
-  $('.health_apppicture_sliderstep').slick({
+  const $slider = $('.health_apppicture_sliderstep');
+  const $listItems = $('.settingProcess_list li');
+  $slider.slick({
     dots: true,
     infinite: false,
     speed: 300,
@@ -1387,16 +1389,21 @@ $(function () {
       },
     ],
   });
-  // 點選左側清單時切換 slick 對應圖片
-  $('.settingProcess_list li').on('click', function () {
+  // 左側點擊 → 切換 slick 並設定 active
+  $listItems.on('click', function () {
     const index = $(this).index();
-
-    // 讓 slick 切換到指定 index 的圖片
-    $('.health_apppicture_sliderstep').slick('slickGoTo', index);
-
-    // 左邊 li 標示 active
-    $(this).addClass('active').siblings().removeClass('active');
+    $slider.slick('slickGoTo', index);
+    $listItems.removeClass('active').eq(index).addClass('active');
   });
+
+  // slick 輪播切換後 → 左側同步 active
+  $slider.on('afterChange', function (event, slick, currentSlide) {
+    $listItems.removeClass('active').eq(currentSlide).addClass('active');
+  });
+
+  // ✅ 頁面載入時，主動設定第一個 active（或目前 slick 的 active）
+  const current = $slider.slick('slickCurrentSlide');
+  $listItems.removeClass('active').eq(current).addClass('active');
 });
 //
 // 亂數數字
