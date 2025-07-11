@@ -1367,6 +1367,7 @@ $(function () {
     ],
   });
 });
+
 $(function () {
   $('.health_apppicture_sliderstep').slick({
     dots: true,
@@ -1386,8 +1387,17 @@ $(function () {
       },
     ],
   });
-});
+  // 點選左側清單時切換 slick 對應圖片
+  $('.settingProcess_list li').on('click', function () {
+    const index = $(this).index();
 
+    // 讓 slick 切換到指定 index 的圖片
+    $('.health_apppicture_sliderstep').slick('slickGoTo', index);
+
+    // 左邊 li 標示 active
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+});
 //
 // 亂數數字
 function randomFloor(min, max) {
