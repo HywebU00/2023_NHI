@@ -1068,7 +1068,6 @@ kbd {
   }
 }
 .preface .autopassApp {
-  background-color: #fff;
   padding: 2em 1em 1em;
   border-radius: 5px;
   display: block;
@@ -3034,7 +3033,7 @@ fieldset legend {
   height: 100vh;
   overflow-y: scroll;
   padding: 30px 5%;
-  background-color: rgba(0, 51, 74, 0.95);
+  background-color: rgba(0, 50.972173913, 74.2, 0.95);
   color: #fff;
 }
 .divisions .closeThis {
@@ -5475,8 +5474,8 @@ table.formLayout td {
   transition: 0.5s;
 }
 .cpArticle .illustrate_group .illustrate_btn a:hover {
-  background-color: #016c79;
-  border-right: 40px solid #069b99;
+  background-color: rgb(0.8265306122, 108.2755102041, 120.6734693878);
+  border-right: 40px solid rgb(6.0454545455, 155.4545454545, 152.8636363636);
 }
 .cpArticle .illustrate_group .illustrate_btn.open a:before {
   top: 0.6em;
@@ -5546,7 +5545,7 @@ table.formLayout td {
   display: block;
 }
 .buttonCenter a:hover {
-  background-color: #006b9c;
+  background-color: rgb(0, 107.027826087, 155.8);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   text-decoration: none;
 }
@@ -5802,8 +5801,8 @@ table.formLayout td {
 }
 .cp_itemlist_group .itemlist_btn a:hover,
 .cp_itemlist_group .itemlist_btn2 a:hover {
-  background-color: #016c79;
-  border-right: 30px solid #069b99;
+  background-color: rgb(0.8265306122, 108.2755102041, 120.6734693878);
+  border-right: 30px solid rgb(6.0454545455, 155.4545454545, 152.8636363636);
   text-decoration: none;
 }
 .cp_itemlist_group .itemlist_btn.open a:before,
@@ -6254,7 +6253,7 @@ table.formLayout td {
   top: 12px;
   right: 40px;
   color: #eee;
-  background-color: #016c79;
+  background-color: rgb(0.8265306122, 108.2755102041, 120.6734693878);
   border-radius: 5px;
   padding: 3px 5px;
 }
@@ -6645,7 +6644,7 @@ table.formLayout td {
   border-color: #f4f4f4 #f4f4f4 #b1b7bc #b1b7bc;
 }
 .list > table tr.active {
-  background: #effaf9;
+  background: rgb(238.7653061224, 249.7346938776, 249.0765306122);
 }
 .list > table th,
 .list > table td {
@@ -9364,7 +9363,7 @@ table.formLayout td {
   transition: 0.5s;
 }
 .characterSelection_block .character_group .people_version a:hover, .characterSelection_block .character_group .people_version a:focus {
-  background-color: #006b70;
+  background-color: rgb(0, 107.4306569343, 111.5);
 }
 .characterSelection_block .character_group .explain_block {
   text-align: center;
@@ -9423,7 +9422,7 @@ table.formLayout td {
   transition: 0.5s;
 }
 .characterSelection_block .character_group .professional_version a:hover, .characterSelection_block .character_group .professional_version a:focus {
-  background-color: #175c74;
+  background-color: rgb(22.8018292683, 92.0518292683, 115.6981707317);
 }
 @media (max-width: 800px) {
   .characterSelection_block .character_group {

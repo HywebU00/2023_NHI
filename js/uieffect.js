@@ -1367,7 +1367,7 @@ $(function () {
     ],
   });
 });
-
+// 健保櫃檯
 $(function () {
   const $slider = $('.health_apppicture_sliderstep');
   const $listItems = $('.settingProcess_list li');
