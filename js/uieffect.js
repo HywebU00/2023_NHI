@@ -1255,7 +1255,7 @@ $(function () {
   function initializeAudioPlayer(audioPlayerId, buttonId) {
     const audioPlayer = document.getElementById(audioPlayerId);
     const playPauseButton = document.getElementById(buttonId);
-
+if(audioPlayer!=null && playPauseButton!=null){
     playPauseButton.addEventListener('click', function () {
       if (audioPlayer.paused) {
         audioPlayer
@@ -1273,6 +1273,7 @@ $(function () {
         playPauseButton.classList.add('play-button');
       }
     });
+}
   }
 
   initializeAudioPlayer('audio-player-1', 'play-pause-button-1');
