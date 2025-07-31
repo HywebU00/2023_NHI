@@ -10377,18 +10377,18 @@ table.formLayout td {
   }
 }
 
-.tabSet {
+.tabSet2 {
   margin: 30px auto;
 }
-.tabSet .tabItems {
+.tabSet2 .tabItems {
   display: flex;
   border-radius: 10px 10px 0 0;
 }
-.tabSet .hidden {
+.tabSet2 .hidden {
   display: none;
 }
-.tabSet .modeBBtn,
-.tabSet .tabBtn {
+.tabSet2 .modeBBtn,
+.tabSet2 .tabBtn {
   flex: 1 1 auto;
   font-size: 1.125em;
   height: 2.8em;
@@ -10401,8 +10401,8 @@ table.formLayout td {
   cursor: pointer;
   position: relative;
 }
-.tabSet .modeBBtn:after,
-.tabSet .tabBtn:after {
+.tabSet2 .modeBBtn:after,
+.tabSet2 .tabBtn:after {
   content: "";
   width: 2px;
   height: 100%;
@@ -10412,83 +10412,83 @@ table.formLayout td {
   top: 0;
   bottom: 0;
 }
-.tabSet .modeBBtn:has(+ .active):after,
-.tabSet .tabBtn:has(+ .active):after {
+.tabSet2 .modeBBtn:has(+ .active):after,
+.tabSet2 .tabBtn:has(+ .active):after {
   display: none;
 }
-.tabSet .modeBBtn.active,
-.tabSet .tabBtn.active {
+.tabSet2 .modeBBtn.active,
+.tabSet2 .tabBtn.active {
   cursor: default;
   background: #004f73;
   color: #fff;
 }
-.tabSet .modeBBtn.active:after,
-.tabSet .tabBtn.active:after {
+.tabSet2 .modeBBtn.active:after,
+.tabSet2 .tabBtn.active:after {
   display: none;
 }
-.tabSet .modeBBtn:first-child.active,
-.tabSet .tabBtn:first-child.active {
+.tabSet2 .modeBBtn:first-child.active,
+.tabSet2 .tabBtn:first-child.active {
   border-radius: 8px 0 0 0;
 }
-.tabSet .modeBBtn:last-child.active,
-.tabSet .tabBtn:last-child.active {
+.tabSet2 .modeBBtn:last-child.active,
+.tabSet2 .tabBtn:last-child.active {
   border-radius: 0 8px 0 0;
 }
-.tabSet .modeBBtn:last-child:after,
-.tabSet .tabBtn:last-child:after {
+.tabSet2 .modeBBtn:last-child:after,
+.tabSet2 .tabBtn:last-child:after {
   display: none;
 }
-.tabSet .modeBBtn > *,
-.tabSet .tabBtn > * {
+.tabSet2 .modeBBtn > *,
+.tabSet2 .tabBtn > * {
   pointer-events: none;
 }
-.tabSet .tabContent {
+.tabSet2 .tabContent {
   background-color: #fff;
   border-radius: 0 0 8px 8px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.tabSet .tabContent .mobileTabBtn {
+.tabSet2 .tabContent .mobileTabBtn {
   width: 100%;
   text-align: left;
   margin: 0;
   border-radius: 0;
 }
-.tabSet .tabContent .mobileTabBtn.active {
+.tabSet2 .tabContent .mobileTabBtn.active {
   background: #004f73;
   color: #fff;
 }
-.tabSet .tabContent .tabContentIn {
+.tabSet2 .tabContent .tabContentIn {
   padding: 40px 30px;
 }
-.tabSet .tabContent .tabContentIn ul {
+.tabSet2 .tabContent .tabContentIn ul {
   margin: 0;
 }
-.tabSet .modeBBtn {
+.tabSet2 .modeBBtn {
   width: 100%;
   margin: 0;
   display: none;
 }
-.tabSet.modeB .tabItems {
+.tabSet2.modeB .tabItems {
   display: none;
 }
-.tabSet.modeB .tabContent {
+.tabSet2.modeB .tabContent {
   display: block;
 }
-.tabSet.modeB .tabContent .tabContentIn {
+.tabSet2.modeB .tabContent .tabContentIn {
   display: none;
 }
-.tabSet .modeBBtn {
+.tabSet2 .modeBBtn {
   display: block;
 }
 
-.health_counter_tabs .tabSet .tabItems {
+.health_counter_tabs .tabSet2 .tabItems {
   background-image: url("../images/tabItems_bg01.jpg");
   background-position: right top;
   background-color: #d6e7e7;
   background-repeat: no-repeat;
 }
-.health_counter_tabs .tabSet .tabItems .tabBtn {
+.health_counter_tabs .tabSet2 .tabItems .tabBtn {
   background: transparent;
   color: #042047;
   font-weight: bold;
@@ -10497,13 +10497,13 @@ table.formLayout td {
   line-height: 1.3em;
   padding: 0 5px;
 }
-.health_counter_tabs .tabSet .tabItems .tabBtn.active {
+.health_counter_tabs .tabSet2 .tabItems .tabBtn.active {
   cursor: default;
   background: #096c99;
   background: linear-gradient(180deg, rgb(9, 108, 153) 0%, rgb(31, 129, 144) 100%);
   color: #fff;
 }
-.health_counter_tabs .tabSet .tabItems .tabBtn.active:before {
+.health_counter_tabs .tabSet2 .tabItems .tabBtn.active:before {
   content: "";
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
